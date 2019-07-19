@@ -1,0 +1,627 @@
+//Farms.gov Farmer's Forecast/Landing Page Styles
+#farmers-landing-page {
+    .usa-footer-return-to-top {
+        visibility: hidden;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.farmers-landing-page, .temp-ag-workers {
+    position: relative;
+    .usa-content {
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 1100px;
+    }
+    .back-wrap {
+        visibility: hidden;
+        height: 0;
+    }
+    .background-image {
+        background-image: url(../../../../modules/custom/farmers_landing_pages/images/grow-with-us.png);
+        background-size: cover;
+        height: 500px;
+        position: relative;
+        z-index: -1;
+        .together-card {
+            padding-left: 10rem;
+            padding-right: 10rem;
+            @media screen and (max-width: 740px) {
+                padding: 0;
+            }
+        }
+        .overlay-card {
+            position: absolute;
+            bottom: 150px;
+            color: #FFFFFF;
+            text-align: center;
+            width: 900px;
+            max-width: 95%;
+            h1,
+            h3 {
+                color: #FFFFFF;
+                margin: 0;
+            }
+            h1 {
+                font-size: 7rem;
+                line-height: 10.4rem;
+                @media screen and (max-width: 485px) {
+                    font-size: 4rem;
+                    line-height: 2;
+                }
+            }
+            h3 {
+                font-size: 3rem;
+                line-height: 4rem;
+                padding-bottom: 2rem;
+                @media screen and (max-width: 880px) {
+                    line-height: 1.1;
+                }
+            }
+            h3:after {
+                display: block;
+                padding: 0;
+                margin: 0;
+                content: "";
+                background: #FFFFFF;
+                position: absolute;
+                width: 50%;
+                height: 5px;
+                left: 22.5rem;
+                bottom: -0.5rem;
+                @media screen and (max-width: 880px) {
+                    display: none;
+                }
+            }
+            .overlay-card__title {
+                font-size: 80px;
+                font-weight: bold;
+                letter-spacing: -0.82px;
+                line-height: 80px;
+                text-shadow: 0px 0px 8px #666;
+                text-transform: uppercase;
+            }
+            .overlay-card__content {
+                margin-top: 20px;
+                font-size: 40px;
+                font-weight: bold;
+                letter-spacing: -0.41px;
+                line-height: 40px;
+            }
+        }
+        &.background-image-header {
+            height: 200px;
+            background-position-y: 50%;
+            .overlay-card {
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 80px;
+            }
+        }
+        &.desktop-background {
+            @media screen and (max-width: 600px) {
+                display: none;
+                background-image: none !important;
+            }
+            @media screen and (min-width: 601px) {
+                display: block;
+            }
+        }
+        &.mobile-background {
+            @media screen and (max-width: 600px) {
+                display: block;
+            }
+            @media screen and (min-width: 601px) {
+                display: none;
+                background-image: none !important;
+            }
+        }
+        &.background-image-footer {
+            height: 35rem;
+            margin-top: 2rem;
+            background-position: 0 0;
+            .overlay-card {
+                position: relative;
+                margin: auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-shadow: 0px 1px 2px #000000;
+            }
+            .farmers-gov-logo.small {
+                position: absolute;
+                margin: auto;
+                bottom: 1.75rem;
+                left: 0;
+                width: 100%;
+                img {
+                    display: block;
+                    margin: auto;
+                    bottom: 100px;
+                    max-width: 90%;
+                    width: 120px;
+                }
+                @media screen and (max-width: 768px) {
+                    bottom: 5.5rem;
+                }
+                @media screen and (max-width: 320px) {
+                    bottom: 2.5rem;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                height: 40rem;
+            }
+            @media screen and (max-width: 560px) {
+                height: 40rem;
+                background-position: 60% 0;
+            }
+            @media screen and (max-width: 370px) {
+                height: 45rem;
+            }
+        }
+    }
+    #background-image-2 {
+        background-image: url(../../../../modules/custom/farmers_playbook/images/tomato-hero-small.jpg);
+        background-size: cover;
+        z-index: -1;
+        position: absolute;
+        height: 900px;
+        bottom: -10px;
+        width: 100%;
+        @media screen and (max-width: 550px) {
+            height: 1500px;
+        }
+    }
+    .learn-more-farmers {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: 0 0 0 -3px #B3B3B3;
+        margin-bottom: 0;
+        transition: box-shadow 0.4s linear, margin-bottom 0.4s linear;
+        .learn-more-farmers-bounds {
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 1100px;
+            @media screen and (max-width: 1100px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        .learn-more-farmers__trigger {
+            text-align: right;
+            cursor: pointer;
+            color: $lightgreen;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 22px;
+            display: inline-block;
+            position: relative;
+            text-decoration: underline;
+            padding-right: 20px;
+            &:before {
+                position: absolute;
+                bottom: 8px;
+                right: 5px;
+                content: '';
+                z-index: 5;
+                width: 12px;
+                height: 0;
+                border-style: solid;
+                border-color: $lightgreen;
+                border-width: 2px;
+                border-radius: 2px;
+                transform: rotate(90deg);
+            }
+            &:after {
+                position: absolute;
+                bottom: 8px;
+                right: 5px;
+                content: '';
+                z-index: 5;
+                width: 12px;
+                height: 0;
+                border-style: solid;
+                border-color: $lightgreen;
+                border-width: 2px;
+                border-radius: 2px;
+            }
+        }
+        .learn-more-farmers__title {
+            text-align: right;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 22px;
+            margin-top: 20px;
+            user-select: none;
+        }
+        .learn-more-farmers__dropdown {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.4s linear;
+            padding-left: 30px;
+            padding-right: 30px;
+            @media screen and (max-width: 1100px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .learn-more-farmers__content {
+                font-size: 18px;
+                img {
+                  margin-bottom: -9px;
+                }
+                h2 {
+                    font-size: 30px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                p {
+                    font-family: $source-sans;
+                    margin-top: 0.8rem;
+                    margin-bottom: 0.8rem;
+                    color: $black;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 28px;
+                    &.playbook-link {
+                        font-weight: bold;
+                        a {
+                            position: relative;
+                            padding-right: 30px;
+                            img {
+                                position: absolute;
+                                right: 0px;
+                                width: 25px;
+                            }
+                        }
+                    }
+                }
+                text-align: left;
+                color: $black;
+                font-size: 19px;
+                font-weight: 300;
+                line-height: 22px;
+                margin-bottom: 25px;
+            }
+        }
+        &.active {
+            box-shadow: 0 5px 3px -3px #B3B3B3;
+            margin-bottom: 30px;
+            .learn-more-farmers__trigger {
+                &:before {
+                    display: none;
+                }
+                &:after {
+                    position: absolute;
+                    bottom: 8px;
+                    right: 5px;
+                    content: '';
+                    z-index: 5;
+                    width: 12px;
+                    height: 0;
+                    border-style: solid;
+                    border-color: $lightgreen;
+                    border-width: 2px;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+    .primary-region {
+        max-width: 1100px;
+        margin: auto;
+        .primary-region__title {
+            color: #212121;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 5px;
+            margin-top: 2.5rem; //margin-left: 10px;
+            //margin-right: 10px;
+            @media screen and (max-width: 1100px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        .primary-region__header {
+            color: #212121;
+            font-weight: 300;
+            line-height: 35px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-family: $merriweather;
+            a {
+                color: #006546;
+                font-weight: normal;
+            }
+            p {
+              color: #212121;
+              font-weight: 300;
+              line-height: 35px;
+              margin-bottom: 25px;
+              font-size: 20px;
+              font-family: $merriweather;
+            }
+            @media screen and (max-width: 1100px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            div {
+                margin-bottom: 1rem;
+            }
+        }
+        .accordion-card-grid {
+            .accordion-card {
+                .accordion-card__bellows {
+                    display: none;
+                }
+            }
+            .accordion-details {
+                &.active {
+                    float: left;
+                    width: 100%;
+                    @media screen and (max-width: 770px) {
+                        float: none;
+                        display: block;
+                    }
+                    .accordion-card__content {
+                        border-top: #49A564 solid 3px;
+                        a {
+                            font-weight: 600;
+                            color: #006546;
+                        }
+                    }
+                }
+                position: absolute;
+                float: left;
+                z-index: 1;
+                max-width: 1140px;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.4s ease-out;
+                border-radius: 2px;
+                background-color: #FFFFFF;
+                box-shadow: 0 6px 5px 0 #AEAEAE;
+                margin-left: 1.5rem;
+                cursor: default; //@media screen and (max-width: 770px) {
+                //  float: none;
+                //  display: block;
+                //}
+                @media screen and (min-width: 951px) {
+                    margin-left: 3rem;
+                }
+                .accordion-card__content {
+                    position: relative;
+                    z-index: 2;
+                    padding: 20px;
+                    border-top: #49A564 solid 0;
+                    transition: border-top 0.3s linear;
+                    p {
+                        font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .accordion-card-row {
+        &.usa-grid {
+            max-width: 1140px;
+        }
+    }
+    .accordion-card {
+        padding: 35px 18px;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 11px 20px 1px rgba(0, 0, 0, 0.2);
+        position: relative;
+        margin-bottom: 20px;
+        transition: color 0.4s linear, background-color 0.4s linear, margin-bottom 0.4s ease-out, border 0.4s linear, border-color 0.4s linear;
+        cursor: pointer;
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 22px solid #FFFFFF;
+            position: absolute;
+            bottom: 0;
+            z-index: 3;
+            transition: bottom 0.4s linear, border-color 0.4s linear;
+        }
+        .accordion-card__icon {
+            width: 100%;
+            height: 200px;
+            img {
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            margin-bottom: 42px;
+        }
+        .accordion-card__belt {
+            color: $black;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: -0.34px;
+            line-height: 25px;
+            transition: border 0.4s linear;
+            user-select: none;
+            &:before {
+                position: absolute;
+                bottom: 20px;
+                content: '';
+                z-index: 5;
+                width: 30px;
+                height: 0;
+                border-style: solid;
+                border-color: $lightgreen;
+                border-width: 4px;
+                border-radius: 2px;
+                transform: rotate(90deg);
+            }
+            &:after {
+                //content: '+';
+                //color: $lightgreen;
+                //position: absolute;
+                //bottom: 20px;
+                //font-size: 54px;
+                //font-weight: 600;
+                position: absolute;
+                bottom: 20px;
+                content: '';
+                z-index: 5;
+                width: 30px;
+                height: 0;
+                border-style: solid;
+                border-color: $lightgreen;
+                border-width: 4px;
+                border-radius: 2px;
+            }
+        }
+        .accordion-card__bellows {
+            color: #212121;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: -0.34px;
+            line-height: 25px;
+        }
+        &.pre-active {
+            background-color: $lightgreen;
+            &:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 22px solid transparent;
+                border-right: 22px solid transparent;
+                border-top: 22px solid $lightgreen;
+                position: absolute;
+                bottom: -18px;
+                z-index: 3;
+            }
+            .accordion-card__belt {
+                color: #fff;
+            }
+        }
+        &.active {
+            //transition: margin-bottom 0s linear;
+            background-color: $lightgreen;
+            &:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 22px solid transparent;
+                border-right: 22px solid transparent;
+                border-top: 22px solid $lightgreen;
+                position: absolute;
+                bottom: -18px;
+                z-index: 3;
+            }
+            .accordion-card__belt {
+                color: #FFFFFF;
+                &:before {
+                    display: none;
+                }
+                &:after {
+                    content: '';
+                    z-index: 5;
+                    width: 30px;
+                    height: 0;
+                    border-style: solid;
+                    border-color: #FFFFFF;
+                    border-width: 4px;
+                    border-radius: 2px;
+                }
+            }
+        }
+        &.last-active {
+            //transition: margin-bottom 0.4s linear;
+        }
+        &.usa-width-one-third {
+            height: 170px;
+            @media screen and (max-width: 1100px) {
+                height: 170px;
+            }
+            @media screen and (max-width: 900px) {
+                height: 190px;
+            }
+            @media screen and (max-width: 750px) {
+                height: 210px;
+            }
+            @media screen and (max-width: 599px) {
+                float: none;
+                display: block;
+                width: 100%;
+                margin-right: 0;
+                margin-top: 20px;
+                height: 115px;
+                &.active {
+                    //margin-bottom: 0;
+                }
+            }
+            @media screen and (max-width: 480px) {
+                height: 135px;
+                &.active {
+                    //margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &.connect {
+        .background-image-header {
+            background-position-y: 20%;
+            background-image: url(../../../../modules/custom/farmers_landing_pages/images/connect-short.jpg);
+        }
+    }
+    &.conserve {
+        .background-image-header {
+            background-image: url(../../../../modules/custom/farmers_landing_pages/images/conserve-short.jpg);
+        }
+    }
+    &.fund {
+        .background-image-header {
+            background-image: url(../../../../modules/custom/farmers_landing_pages/images/fund-short.jpg);
+        }
+    }
+    &.manage {
+        .background-image-header {
+            background-image: url(../../../../modules/custom/farmers_landing_pages/images/manage-short.jpg);
+        }
+    }
+    &.recover {
+        .background-image-header {
+            background-image: url(../../../../modules/custom/farmers_landing_pages/images/recover-short.jpg);
+        }
+    }
+    .service-wrap {
+        margin: 0 1rem;
+    }
+    #sign-up-links {
+        a {
+            color: #49A564;
+            font-size: 19px;
+        }
+    }
+    #left {
+        a {
+            color: #49A564;
+            font-size: 19px;
+        }
+    }
+}
+
+//.accordion-details {
+//  display: none;
+//  &.active {
+//    display: block;
+//  }
+//}

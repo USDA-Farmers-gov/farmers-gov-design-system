@@ -1,0 +1,228 @@
+.whip-landing {
+  ul {
+    margin-left: 3rem;
+    li {
+      padding-left: 1rem;
+    }
+  } 
+  img.right-arrow-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.4rem;
+    margin-bottom: -0.7rem;    
+  } 
+  .title-wrap {
+    background-image: url(../sass/farmers/images/whip-landing.png);
+    background-size: cover;
+    padding-top: 5rem;
+    margin-bottom: 3rem;
+    .usa-grid {
+      padding: 4rem 0;
+    }
+    h1 {
+      font-size: 7.3rem;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 7rem;
+      color: #fff;
+      @media screen and (max-width: 559px) {
+        font-size: 4.3rem;
+        line-height: 5rem;
+      }  
+    }
+  }
+  .corners-wrap {
+    position: relative;
+    .corners {
+      .usa-width-one-half {
+        margin: 0;
+      }
+      a {
+        color: $black;
+        text-decoration: none;
+        font-weight: bold;        
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-left: 1.4rem;
+          margin-bottom: -0.7rem;
+          @media screen and (max-width: 559px) {
+            display: none;
+          }       
+        }
+      }
+    }
+    @media screen and (max-width: 559px) {
+      padding: 5rem 6rem;
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  .single-mark {
+    color: $green;
+    font-family: "Merriweather", serif;
+    font-size: 11rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: -12rem;
+    margin-top: 2rem;
+    @media screen and (max-width: 559px) {
+      margin-bottom: -13rem;
+      font-size: 8rem;
+    }
+  }
+  .quote {
+    font-family: $merriweather;
+    font-size: 3.8rem;
+    line-height: 5.5rem;
+    font-weight: 300;
+    padding-top: 7rem;
+    @media screen and (max-width: 559px) {
+      font-size: 2.8rem;
+      line-height: 4.5rem;
+    }
+  }
+  .dash-name {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2.2rem;
+  }
+  .whip-cover {
+    padding-bottom: 3rem;
+    img.right-arrow-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: 1.4rem;
+      margin-bottom: -0.7rem;    
+    }    
+    .cover-icon {
+      padding: 0 0 2rem 2rem;
+      @media screen and (max-width: 559px) {
+        width: 30%;
+        margin: 0 auto;
+        display: block;
+      }      
+      a {
+        color: $black;
+        text-decoration: none;
+        font-weight: bold;        
+      }
+    }
+    span {
+      font-size: 1.9rem;
+    }
+  }
+  a.press-release-link {
+    color: $black;
+    text-decoration: none;
+    font-weight: bold;     
+  }
+  .what-to-bring {
+    padding-top: 3rem;
+    @media screen and (max-width: 559px) {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    } 
+  }
+  .other-assistance {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    ul {
+      a {
+        font-weight: bold;
+        color: $green;
+      }
+    }
+    span {
+      a {
+        color: $black;
+        text-decoration: none;
+        font-weight: bold;         
+      }      
+    }
+  }
+  .stories-wrap {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    h1 {
+      padding: 2rem 0;
+      @media screen and (max-width: 559px) {
+        margin-bottom: 0; 
+      }  
+    }
+    .story {
+      padding-top: 2rem;
+      padding-bottom: 2rem;      
+    }
+    .stories-title {
+      font-weight: bold;
+      padding-bottom: 1rem;
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+    .stories-label {
+      float: left;
+      background-color: #212121;
+      color: #fff;
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      font-size: 1.3rem;
+      margin-top: 1rem;      
+    }
+  }
+  .carousel-section {
+    margin-top: 2rem;
+    h1 {
+      padding: 2rem 0;
+    } 
+    .slick-arrow {
+      background-repeat: no-repeat;
+      width: 4rem;
+      height: 4rem;
+      transition: .3s all;
+      &:before {
+        background: none;
+        content: none;
+      }
+    }
+    .slick-prev {
+      left: -20px;
+      top: 180px;
+      background-image: url(../sass/farmers/images/icon-arrow-left.svg);
+      background-size: 88%;
+      background-position: center center;
+      z-index: 1;
+      &:hover, &:focus {
+        background-image: url(../sass/farmers/images/icon-arrow-left.svg);
+  		  background-size: 88%;
+  		  left: -22px;
+  		  background-repeat: no-repeat;
+  		  background-position: center center;
+      }
+    }
+    .slick-next {
+      right: -21px;
+      background-image: url(../sass/farmers/images/icon-arrow-right.svg);
+      background-size: cover;
+      top: 180px;
+      &:hover, &:focus {
+        background-image: url(../sass/farmers/images/icon-arrow-right.svg);
+        background-size: cover;
+        right: -23px;
+      }
+    }       
+  }
+  .image-carousel {
+    margin-top: 2rem;
+    .slick-slide {
+      padding-left: 1rem;
+    }
+    img {
+      height: 177px;
+      width: auto;
+    }
+  }
+}

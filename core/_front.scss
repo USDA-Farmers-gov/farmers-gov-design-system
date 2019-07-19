@@ -1,0 +1,237 @@
+.path-frontpage {
+    .usa-banner {
+        z-index: 2;
+        position: relative;
+    }
+    .paragraph:nth-child(3) {
+        top: 0rem;
+        position: relative;
+        @media screen and (max-width: 559px) {
+            top: 0px;
+        }
+    }
+    .paragraph:nth-child(4) {
+        top: 0rem;
+        position: relative;
+        @media screen and (max-width: 559px) {
+            margin: 2rem 0;
+            top: 0;
+        }
+    }
+    .paragraph:nth-child(5) {
+        padding: 0;
+        margin-top: 5rem;
+        margin-bottom: 0rem;
+        .usa-grid {
+            padding: 0;
+            padding-bottom: 3rem;
+        }
+    }
+    .paragraph:nth-child(6) {
+        margin-top: 0rem;
+    }
+    .paragraph:nth-child(7) {
+        background-image: none;
+    }
+    .paragraph:nth-child(9) {
+        background-image: url(../img/connect_background.jpg);
+        background-size: cover;
+        margin-top: 3rem;
+        .usa-grid {
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            max-width: 100%;
+            iframe {
+                width: 100%;
+                height: 900px;
+            }
+        }
+    }
+    .double-border {
+        margin: 0 0 0 0;
+    }
+    .field--name-field-upper-content {
+        position: absolute;
+        top: 16rem;
+        width: 100%;
+        @media screen and (max-width: 950px) {
+            top: 7rem;
+        }
+        @media screen and (max-width: 559px) {
+            top: 9rem;
+        }
+    }
+    .farmers-call-to-action {
+        color: #fff;
+        padding: 0 0 0 0;
+        margin-top: 4rem;
+        @media screen and (max-width: 950px) {
+            padding: 9rem 0 22rem;
+        }
+        @media screen and (max-width: 559px) {
+            padding: 5rem 0 22rem;
+        }
+        .farmers-logo-svg {
+            background-image: url(../img/FGOV_Logo_white.svg);
+            height: 13rem;
+            width: 22rem;
+            background-repeat: none;
+            margin: 0 auto 1rem auto;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 8rem;
+            line-height: 10.4rem;
+            text-transform: uppercase;
+            margin: 0;
+            @media screen and (max-width: 559px) {
+                line-height: 7rem;
+                padding: 2rem 0;
+            }
+        }
+        h3 {
+            text-align: center;
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        .btn {
+            display: table;
+            margin: 0 auto;
+            text-decoration: none;
+        }
+        button {
+            display: block;
+            font-family: $source-sans;
+            padding: 1.5rem 2rem;
+        }
+    }
+    .farmers-hero {
+        height: 50rem;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .featured-blocks {
+        margin-top: -18rem;
+        margin-bottom: 5rem;
+        position: relative;
+        z-index: 2;
+        h2 {
+          margin-top: -4px;
+        }
+        p {
+          margin-top: 0;
+        }
+        @media screen and (max-width: 559px) {
+            margin-top: -13rem;
+        }
+        
+        .usa-grid {
+            display: flex;
+            flex-direction: row;
+            @media screen and (max-width: 559px) {
+                flex-direction: column;
+            }
+        }
+
+        .rows {
+          display: flex;
+          flex-direction: row;
+          @media screen and (max-width: 768px) {
+            flex-direction: column;
+          }
+        }
+        
+        .card {
+            padding-top: 70px !important;
+            padding-right: 40px !important;
+            padding-bottom: 25px !important;
+            padding-left: 25px !important;
+            @media screen and (max-width: 768px) {
+                padding-top: 40px !important;
+            }
+            @media screen and (max-width: 559px) {
+                padding-top: 10px !important;
+            }
+        }
+        .usa-width-one-half {
+            min-height: 30.6rem;
+            background: #fff;
+            box-shadow: 0 11px 20px 1px rgba(0, 0, 0, 0.2);
+            padding: .75rem;
+            @media screen and (max-width: 559px) {
+                /*height: 210px;*/
+                margin-bottom: 2rem;
+            }
+        }
+        .one-fourth {
+            display: flex;
+            justify-content: center;
+            align-self: baseline;
+            margin: 0 24px 0 5px;
+            img {
+                max-width: 100px;
+                height: fit-content;
+            }
+            @media screen and (max-width: 768px) {
+                justify-content: left;
+                margin:0;
+            }
+        }
+        @media screen and (max-width: 559px) {
+            >.usa-grid {
+                margin-top: 4rem;
+            }
+            iframe {
+                max-height: 20rem;
+            }
+            .farmers-basic-block {
+              img {
+                max-height: 20rem;
+              }
+            }
+        }
+        @media screen and (max-width: 950px) {
+            >.usa-grid {
+                margin-top: 4rem;
+            }
+        }
+      }
+    }
+    .home-cards {
+        top: -18rem;
+        width: 100%;
+        position: relative;
+        .card {
+            height: 30.6rem;
+            background: #fff;
+            box-shadow: 0 11px 20px 1px rgba(0, 0, 0, 0.2);
+            padding: .75rem;
+            @media screen and (max-width: 559px) {
+                margin-bottom: 2rem;
+            }
+        }
+        .card:nth-of-type(2) {
+            @media screen and (max-width: 559px) {
+                vertical-align: middle;
+                display: table-cell;
+                text-align: center;
+            }
+        }
+    }
+    .forecast-btn {
+        text-decoration: none;
+    } // Find Your Service Center
+    .paragraph--type-content #block-exposedformsite-service-locatorpage-1 #edit-submit-site-service-locator {
+        background-color: $blue;
+        color: #fff;
+    } // User logged in styles
+    .path-frontpage.user-logged-in .field--name-field-upper-content {
+        position: absolute;
+        top: 0rem;
+        width: 100%;
+    }

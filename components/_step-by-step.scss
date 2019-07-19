@@ -1,0 +1,110 @@
+.farmers-step-wrapper {
+  background-color: #FAFAFA;
+  padding: 7rem 0;
+  margin: 7rem 0;
+  h2 {
+    margin-bottom: 7rem;
+  }
+}
+.farmers-step-item {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  .farmers-step-dot {
+    position: absolute;
+    left: 0;
+    top: 33%;
+    width: 25px;
+    height: 25px;
+    display: block;
+    border-radius: 50%;
+    background-color: #54a863;
+    @media screen and (max-width: 747px) {
+      top: 21%;
+    }
+    @media screen and (max-width: 532px) {
+      top: 18%;
+    }
+  }
+  .farmers-step-stem {
+    height: 106%;
+    width: 5px;
+    background: #000;
+    position: absolute;
+    left: 10px;
+    background-color: #54a863;
+  }
+  .farmers-step-content {
+    width: 59%;
+    margin-left: 10rem;
+    padding-top: 2rem;
+    float: left;
+    @media screen and (max-width: 992px) {
+      width: 80%;
+    }    
+    .farmers-step-description {
+      float: left;
+      width: 80%;
+    }
+    p {
+      font-family: "Source Sans Pro", "Arial", sans-serif;
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+    }
+  }
+  .farmers-step-icon {
+    float: left;
+    width: 8rem;
+    margin-right: 3rem;
+    margin-top: 1.4rem;
+  }
+  &:nth-of-type(1) {
+    .farmers-step-dot {
+      top: 34%;
+      @media screen and (max-width: 747px) {
+        top: 22%;
+      }
+      @media screen and (max-width: 532px) {
+        top: 19%;
+      }        
+    }
+    .farmers-step-content {
+      padding-top: 0;
+    }  
+    .farmers-step-stem {
+      height: 60%;
+      top: 46%;
+      @media screen and (max-width: 992px) {
+        height: 65%;
+        top: 40%;
+      }
+      @media screen and (max-width: 747px) {
+        height: 75%;
+        top: 30%;
+      }
+      @media screen and (max-width: 532px) {
+        height: 85%;
+        top: 25%;
+      }         
+    }  
+  }
+  &:last-of-type {
+    .farmers-step-stem {
+      height: 29%;
+      top: 0;
+      @media screen and (max-width: 747px) {
+        height: 21%;
+        top: 0;        
+      }       
+    }
+    .farmers-step-dot {
+      top: 23%;
+      @media screen and (max-width: 747px) {
+        top: 17%;
+      }  
+    }
+  }
+  h3 {
+    margin-top: 0;
+  }
+}

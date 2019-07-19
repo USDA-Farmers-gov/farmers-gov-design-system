@@ -1,0 +1,400 @@
+//Farmers.gov Farmer's Playbook Status Page Styles
+.farmers-playbook.status-page {
+  #background-image-header {
+    background-image: url(../../../../modules/custom/farmers_playbook/images/tomato-vine-hero-small.jpg);
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    z-index: -1;
+    background-position-y: 50%;
+    .farmers-gov-logo.large {
+      position: absolute;
+      margin: auto;
+      bottom: 150px;
+      left: 0;
+      width: 100%;
+      img {
+        display: block;
+        margin: auto;
+        bottom: 100px;
+        max-width: 90%;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      height: 400px;
+    }
+  }
+  &.blog {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/blog-small.jpg);
+    }
+  }
+  &.calendar {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/calendar-small.jpg);
+    }
+  }
+  &.dashboard {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/dashboard-small.jpg);
+    }
+  }
+  &.digital-forms {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/digital-forms-small.jpg);
+    }
+  }
+  &.disaster-assistance-tool {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/disaster-assistance-small.jpg);
+    }
+  }
+  &.farmers-gov-discovery-tool {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/discover-tool-small.jpg);
+    }
+  }
+  &.farm-maps-application {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/farm-maps-application-small.jpg);
+    }
+  }
+  &.make-an-appointment {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/make-appointment-small.jpg);
+    }
+  }
+  &.media-toolkit {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/media-toolkit-small.jpg);
+    }
+  }
+  &.playbook-scorecard {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/pb-scorecard-small.jpg);
+    }
+  }
+  &.receipt-for-service {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/receipt-service-small.jpg);
+    }
+  }
+  &.service-center-locator {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/service-center-locator-small.jpg);
+    }
+  }
+
+  &.playbook-flf {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/farmbill-playbook.jpg);
+    }
+  }
+  &.user-specific-content-views {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/user-specific-content-small.jpg);
+    }
+  }
+  &.playbook-h2a {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/H-2A-Playbook-Image.jpg);
+    }
+  }
+
+  &.website-content {
+    #background-image-header {
+      background-image: url(../../../../modules/custom/farmers_playbook/images/status_backgrounds/web-content-small.jpg);
+    }
+  }
+
+  .primary-region {
+     max-width: 900px;
+     .primary-region__title {
+       padding-left: 40px;
+       margin-bottom: 18px;
+     }
+     .primary-region__content {
+       padding-left: 20px;
+       ul {
+         li {
+           font-size: 18px;
+           line-height: 20px;
+           margin-left: 20px;
+         }
+       }
+     }
+   }
+  .primary-region__ongoing {
+    max-width: 1100px;
+    margin: auto;
+    .primary-region__title {
+      max-width: 900px;
+      padding-left: 110px;
+      margin: auto;
+      position: relative;
+      @media screen and (max-width: 1100px) {
+        padding-left: 120px;
+      }
+      @media screen and (max-width: 450px) {
+        padding-left: 40px;
+      }
+      color: #212121;
+      font-family: "Source Sans Pro";
+      font-size: 34px;
+      font-weight: bold;
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+    .primary-region__content {
+      max-width: 900px;
+      padding-left: 120px;
+      margin: auto;
+      position: relative;
+      @media screen and (max-width: 1100px) {
+        padding-left: 120px;
+      }
+      @media screen and (max-width: 450px) {
+        padding-left: 40px;
+      }
+      color: #212121;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 26px;
+      margin-bottom: 18px;
+    }
+    .subregion.subregion__impact-cards {
+      max-width: 900px;
+      margin: auto;
+      padding-left: 20px;
+      margin-top: 40px;
+      .subregion__title {
+        color: #212121;
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 40px;
+        padding-left: 20px;
+        margin-bottom: 18px;
+      }
+      .subregion__content {
+      }
+    }
+  }
+
+  .subregion {
+    max-width: 900px;
+    .subregion__title {
+      font-size: 34px;
+      padding-left: 20px;
+    }
+    .subregion__content {
+    }
+  }
+  .stat-card-grid {
+    padding-bottom: 10px;
+    padding-left: 40px;
+  }
+
+  .vision-card {
+    max-width: 900px;
+    margin-top: -100px;
+    .vision-card__footer {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.12px;
+      line-height: 20px;
+      position: relative;
+      display: inline-block;
+      .icon {
+        position: absolute;
+        right: -32px;
+        top: -2px;
+      }
+      img {
+        width: 25px;
+      }
+    }
+  }
+  .status-card {
+    position: relative;
+    max-width: 880px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 11px 20px 1px rgba(0, 0, 0, 0.2);
+    padding: 25px 93px 25px 107px;
+    margin-bottom: 37px;
+    margin-right: 10px;
+    @media screen and (max-width: 500px) {
+      padding: 65px 40px 25px 40px;
+    }
+    &.available {
+      padding-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 47px;
+    }
+    .status-card__checkbox {
+      position: absolute;
+      left: 46px;
+      margin-top: auto;
+      margin-bottom: auto;
+      @media screen and (max-width: 500px) {
+        left: inherit;
+        top: 20px;
+      }
+
+      &.checked {
+        height: 36px;
+        width: 36px;
+        border-radius: 2px;
+        background-color: #49A564;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 22px;
+          background-color: #fff;
+          left: 18px;
+          top: 9px;
+          border-radius: 1px;
+          transform: rotate(45deg);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 12px;
+          background-color: #fff;
+          left: 8px;
+          top: 15px;
+          transform: rotate(-45deg);
+        }
+      }
+      &.unchecked {
+        height: 37px;
+        width: 37px;
+        border: 1px solid #AEB0B5;
+        border-radius: 2px;
+        background-color: #F1F1F1;
+      }
+    }
+    .status-card__body {
+      color: #212121;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 18px;
+    }
+    &.available .status-card__body {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    &.in-progress .status-card__body {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 30px;
+    }
+
+    &.in-progress .status-card__footer {
+      position: relative;
+      margin-top: 12px;
+      .status-card__footer-content {
+        color: #212121;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 15px;
+        .status-card__footer-bar {
+          max-width: 80%;
+          width: 500px;
+          height: 10px;
+          background: #F1F1F1;
+          position: absolute;
+          display: inline-block;
+          margin-left: 50px;
+          top: 4px;
+          @media screen and (max-width: 500px) {
+            margin-left: 10px;
+          }
+          .status-card__footer-progress-bar {
+            height: 10px;
+            background: #49A564;
+            position: absolute;
+            display: inline-block;
+          }
+          .status-card__footer-progress-pointer {
+            position: absolute;
+            top: -32px;
+            margin-left: -14px;
+            img {
+              width: 3rem;
+            }
+          }
+          .status-card__footer-progress-text {
+            left: 75%;
+            position: absolute;
+            bottom: -18px;
+            margin-left: -10px;
+          }
+        }
+      }
+    }
+  }
+  .stat-card {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0 11px 20px 1px #D8D8D8;
+    margin-bottom: 15px;
+    &.usa-width-one-half {
+      @media screen and (max-width: 850px) {
+        float: none;
+        display: block;
+        margin-right: 0;
+        width: 100%;
+        max-width: 375px;
+      }
+    }
+
+    .usa-width-one-half {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 47.58542%;
+    }
+
+    .stat-card__title {
+      color: #212121;
+      font-family: "Source Sans Pro";
+      font-size: 110px;
+      font-weight: bold;
+      letter-spacing: -1.13px;
+      line-height: 100px;
+    }
+    &.pageviews .stat-card__content {
+      max-width: 200px;
+      width: 100%;
+      font-weight: 300;
+      font-size: 22px;
+      text-align: left;
+    }
+    .stat-card__footer {
+      font-weight: 600;
+    }
+  }
+
+  .return-to-playbook {
+    max-width: 900px;
+    margin: auto;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    img {
+      transform: rotate(180deg);
+      height: 26px;
+      margin-bottom: -7px;
+      padding-left: 10px;
+    }
+  }
+}

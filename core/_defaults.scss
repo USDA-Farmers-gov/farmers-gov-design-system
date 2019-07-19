@@ -1,0 +1,91 @@
+// Colors
+$blue: #1A6AD3;
+$green: #009346;
+$offwhite: #FBFBFA;
+$black: #212121;
+$dkblue: #094082;
+$dkgreen: #046F43;
+$yellow: #F7BE00;
+$orange: #FF7C42;
+$grey: #D8D8D8;
+$lightgreen: #49A564;
+
+// Treatments
+.card {
+  border-radius: 2px;
+  box-shadow: 0px 3px 14px 0px #D8D8D8;
+}
+
+p {
+  br {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+}
+
+.double-border {
+  margin: 5rem 0;
+  height: 11px;
+  width: 100%;
+  border-top: 2px solid #B7B7B7;
+  border-bottom: 2px solid #B7B7B7;
+}
+
+.empty, .spacer {
+  text-indent: -9999px;
+}
+
+// This fixes the "External Link" text issue on Prod
+.element-invisible {
+  display: none;
+}
+
+// Prevents the page from scrolling while a mobile screen is on top
+body.no-scroll {
+  position: fixed;
+  overflow: hidden;  
+}
+
+.embedded-entity {
+  margin: 0;
+}
+
+.corners-wrap {
+  position: relative;
+}
+.corners {
+  &:after, &:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: absolute;
+  }
+  &:before {
+    background-image: url(../../img/upper_left_notch_green.png);
+    top: 2rem;
+    left: 2rem;
+  }
+  &:after {
+    background-image: url(../../img/lower_right_gold_notch.png);
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+ul {
+  li {
+    font-family: 'Source Sans Pro', sans-serif;
+    p {
+      font-family: 'Source Sans Pro', sans-serif;      
+    }
+  }
+}
+
+*:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 3px;
+  outline-color: #3e94cf
+}
