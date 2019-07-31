@@ -1,0 +1,15 @@
+
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('../../fonts/public-sans/PublicSans-Regular.woff');
+}
+
+
+$public-sans: 'Public Sans';
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $public-sans;
+  color: purple;
+}
