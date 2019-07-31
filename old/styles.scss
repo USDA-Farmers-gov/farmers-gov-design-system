@@ -1,0 +1,107 @@
+// Farmers.gov Design Systems specific styles
+@import 'core/defaults';
+@import 'core/fonts';
+@import 'core/elements';
+
+// Header and Footer
+@import 'core/header';
+@import 'core/footer';
+
+// Mobile Menu
+@import 'mobile/menu';
+
+// Homepage / Front
+@import 'core/front';
+
+// Drupal specific admin styling
+@import 'core/drupal';
+
+// Slick Slider
+@import 'plugins/slick/slick.scss';
+@import 'plugins/slick/slick-theme.scss';
+@import 'plugins/slick/slick-theme-overrides.scss';
+
+// Grid Overlay
+// @import 'plugins/grid-overlay';
+
+// Components / Blocks
+@import 'components/service-locator';
+@import 'components/weather-block';
+@import 'components/success-stories';
+@import 'components/carousel';
+@import 'components/accordion';
+@import 'components/pane-block';
+@import 'components/section';
+@import 'components/step-by-step';
+@import 'components/vertical-tabs';
+@import 'components/callout-block';
+
+// Specific pages
+@import 'pages/blog-post';
+@import 'pages/blog';
+@import 'pages/farmers-playbook';
+@import 'pages/farmers-playbook-status-page';
+@import 'pages/whip-landing';
+@import 'pages/mfp';
+@import 'pages/service-center-page';
+@import 'pages/h2a-program-page';
+@import 'pages/fund-landing-page';
+
+// Content types
+@import 'content-types/program-page';
+@import 'content-types/farmers-landing-pages';
+
+// Ensuring usa-banner does not change styles
+@import 'components/usa-banner';
+
+// Mobile bullets need to be styled without margins.
+
+@import 'components/whip-covered';
+
+
+@mixin mobile-mix($device, $orientation: portrait){
+  @if $device == 'iPhone' {
+    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : $orientation) {
+      @content;
+    }
+  }
+}
+
+body.usa-mobile_nav-active {
+  position: fixed;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.divider-container {
+  max-width:1140px;
+  margin: 35px auto;
+  text-align:center;
+  padding: 0 3rem;
+  @include mobile-mix('iPhone') {
+    margin: 45px auto 35px auto;
+  }
+}
+
+.divider-line {
+  border-bottom: 1px solid #49A564;
+
+  img {
+    width: 1.6em;
+  }
+  span {
+    position:absolute;
+    margin-top: -13px;
+    margin-left: -25px;
+    background:#fff;
+    padding:0 12px;
+  }
+}
+
+.card{
+  .output h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5rem;
+  }
+}
