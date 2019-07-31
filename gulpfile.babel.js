@@ -17,7 +17,6 @@ export function styles(done) {
   return gulp.src('new/styles.scss')
         .pipe(sass())
         .pipe(cleanCSS())
-        // pass in options to the stream
         .pipe(rename({
           basename: 'main',
           suffix: '.min'
@@ -31,6 +30,7 @@ export function watch() {
 }
 
 const build = gulp.series(clean, gulp.parallel(styles));
+
 /*
  * Export a default task
  */
