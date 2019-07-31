@@ -1,0 +1,152 @@
+.farmers-tab-wrap {
+  padding: 5rem 0 3rem 0;
+  background-color: #F7F7F7;
+  margin-bottom: 5rem;
+  .field--name-field-vertical-tab-block-text {
+    padding-bottom: 2rem;
+  }
+}
+
+.farmers-tab-group {
+  margin-bottom: 5rem;
+  .vertical-tab-container {
+    box-shadow: 0px 2px 5px 0px lightgrey;
+    padding: 0;
+    border-top: 5px solid #f7be01;
+    background-color: #fff;
+  }
+  .vertical-tabs {
+    padding-left: 0;
+    overflow: hidden;
+  }
+  .vertical-tab-header-section {
+    padding: 2.5rem 3rem .5rem;
+    h2 {
+      margin: 0;
+      font-size: 27px;
+      line-height: 1em;
+    }
+  }
+}
+
+section.vertical-tabs {
+  zoom: 1;
+  position: relative;
+  height: auto;
+  background: #FBFBFB;
+
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  h4.tab-title {
+    cursor: pointer;
+    border-bottom: 1px solid #EDEDED;
+    border-top: 1px solid #EDEDED;
+    padding: 25px 20px;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+    color: #006546;
+
+    &:focus {
+      outline: 2px solid #3e94cf;
+      margin: .45rem .55rem .45rem .55rem;
+    }
+
+    span.vert-tab-arrow {
+      padding: 0.7em 0.6em;
+      background: url(../../img/arrow-down.svg) no-repeat;
+      background-size: 40%;
+      background-position: center;
+      float: right;
+      transition: transform .15s;
+      transform: rotate(0deg);
+
+      &.active {
+        transform: rotate(-180deg);
+        border: none;
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+      &.active {
+        border-bottom: 1px solid #EDEDED;
+      }
+    }
+
+    &.active {
+      border-left: 3px solid #006546;
+      color: #006546;
+      border-right: 1px solid white;
+      font-weight: 600;
+      background: white;
+      z-index: 2;
+
+      & + .tab-content {
+        border: 1px solid #EDEDED;
+        overflow-y: auto;
+        background: white;
+        height: 600px;
+        z-index: 1;
+        padding-bottom: 7rem;
+      }
+    }
+    @media screen and (min-width: 600px) {
+      position: relative;
+      width: 30.1%;
+      display: block;
+    }
+  }
+
+  .tab-content {
+    zoom: 1;
+    position: relative;
+    height: auto;
+    min-height: 500px;
+    display: none;
+    padding: 3rem 5rem;
+
+    &:after,
+    &:before {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    p {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: 600px) {
+      position: absolute;
+      width: 70%;
+      right: 0;
+      top: 0;
+      padding: 30px;
+      z-index: -1;
+    }
+  }
+  .active {
+    cursor: default;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-right: none;
+
+    @media screen and (min-width: 600px) {
+      background: rgba(0,0,0,0);
+      border-right: 1px solid rgba(0,0,0,0);
+    }
+  }
+}
+
+section.vertical-tabs .active + .tab-content {
+  display: block;
+}

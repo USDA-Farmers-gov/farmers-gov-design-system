@@ -1,0 +1,106 @@
+// Fonts
+$merriweather: 'Merriweather', serif;
+$source-sans: 'Source Sans Pro', sans-serif;
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $source-sans;
+  color: $black;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;    
+}
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;     
+}
+h3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 31px;      
+}
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;     
+}
+
+p {
+  font-family: $merriweather;
+  color: $black;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/*
+p.big-label {
+  font-family: $source-sans;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 52px;   
+}
+p.label-one {
+  font-family: $source-sans;
+  font-size: 15px;
+  font-weight: 700;  
+  line-height: 25px;   
+}
+p.usa-font-lead {
+  font-family: $merriweather;
+  font-size: 20px;   
+  font-weight: 300;
+  line-height: 34px; 
+  max-width: 100%;    
+}
+p.primary-body-text {
+  font-family: $merriweather;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;   
+}
+p.secondary-body-text {
+  font-family: $source-sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;   
+}
+p.block-quote-farmers {
+  font-family: $merriweather;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 37px;   
+}
+*/
+body {
+  font-size: 1.8rem;
+}
+
+blockquote {
+  padding: 5rem 0rem 5rem 5rem;
+  background-color: unset;
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: 34px;  
+  :before {
+    content: "“";
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    font-family: $merriweather;
+    font-weight: bold; 
+    line-height: 34px;   
+  }
+  p {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 34px; 
+    margin: 0;   
+  }
+}

@@ -1,0 +1,22 @@
+//
+//  Variables
+//  _____________________________________________
+
+$grid__columns: 12;
+$grid__gutter:  15px;
+
+$name--X: xs-;
+$name--S: small-;
+$name--M: medium-;
+$name--L: large-;
+$name--XL: xlarge-;
+
+$break--S:  480px;
+$break--M:  768px;
+$break--L:  1140px;
+$break--XL: 1440px;
+
+$screen--S:  $break--S + 1;
+$screen--M:  $break--M + 1;
+$screen--L:  $break--L + 1;
+$screen--XL: $break--XL + 1;

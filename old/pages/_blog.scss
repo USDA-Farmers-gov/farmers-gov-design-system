@@ -1,0 +1,1046 @@
+@import '../core/fonts';
+
+div[class*='ajax-progress'] {
+  display: none;
+}
+
+.blog-teaser .usda-blog-teaser-content .usda-blog-title-section .usda-blog-teaser-footer span.bold {
+    font-weight: 400;
+}
+
+// Blog Page
+.path-connect {
+  position: inherit;
+  margin-top: 0;
+  right: initial;
+  left: 0;
+  #block-farmers-page-title {
+    color: #212121;
+    .title-prefix {
+      margin: 4rem 0 -1.1rem 0;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+    }
+    .page-title {
+      font-size: 4rem;
+      line-height: 5.2rem;
+    }
+  }
+}
+
+.blog-category-carousel {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.view-blog-category-carousel, .view-multi-select-blog-category-carousel {
+  margin-bottom: 4rem !important;
+  .views-row {
+    .field-content {
+      a {
+        text-align: center;
+        display: block;
+      }
+    }
+  }
+  .slick-slide {
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 2rem;
+    width: 200px;
+    cursor: pointer;
+    .category-slide {
+      height: 140px;
+      display: block;
+      padding-top: 2rem;
+      border: 2px solid #ddd;
+      border-radius: 2px;
+      background-color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: #006546;
+      &:hover, &.active {
+        border: 2px solid #0A6447;
+        background-color: #DBEDE0;
+      }
+    }
+    img {
+      margin: 0 auto;
+      width: 72px;
+    }
+  }
+  .slick-arrow {
+    background-color: #fff;
+    &.slick-disabled {
+      display: none !important;
+    }
+  }
+  .slick-next {
+    right: -60px;
+    @media screen and (max-width: 800px) {
+      right: 0;
+      display: none;
+    }
+  }
+  .slick-prev {
+    left: -60px;
+  }
+  .view-footer {
+    a {
+      float: right;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #006546;
+      padding-right: 3rem;
+      background-image: url(../img/circle-arrow.png);
+      background-repeat: no-repeat;
+      background-position: right center;
+      margin-right: -5px;
+      @media screen and (max-width: 1024px) {
+        float: left;
+        text-decoration: none;
+
+      }
+    }
+  }
+}
+.overlay-throbber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(256, 256, 256, 0.75);
+  object {
+    width: 12rem;
+  }
+}
+#views-exposed-form-blog-post-connect-blog {
+  max-width: 100%;
+  .js-form-item {
+    float: left;
+    margin-bottom: 2rem;
+  }
+}
+#post-count {
+  display: none;
+}
+
+
+.blog-author-date {
+  float: left;
+  font-size: 1.5rem;
+  .blog-author {
+    float: left;
+    font-weight: 500;
+  }
+  span {
+    float: left;
+    padding: 0 .5rem;
+    font-weight: bold;
+  }
+  .blog-create-date {
+    float: left;
+    font-weight: 300;
+  }
+}
+
+#blog-hero-carousel {
+  margin-bottom: -3rem;
+  padding-bottom: 8rem;
+  .slick-slide {
+    padding-left: 0;
+    left: 0;
+    position: relative;
+  }
+  .slick-arrow {
+    background-repeat: no-repeat;
+    width: 5.6rem;
+    height: 5.6rem;
+    transition: .3s all;
+    border-radius: 0;
+    @media only screen and (max-width: 650px) {
+      display: none;
+    }
+  }
+  .slick-prev {
+    background-image: url(../img/Full-Width-Carousel-Arrow-Left.svg);
+    background-position: -4px;
+    &:hover {
+      background-position: -7px;
+    }
+  }
+  .slick-next {
+    background-image: url(../img/Full-Width-Carousel-Arrow-Right.svg);
+    background-position: 4px;
+    &:hover {
+      background-position: 7px;
+    }
+  }
+  .blog-hero-carousel-content {
+    background-size: cover;
+    max-height: 50rem;
+    @media only screen and (max-width: 650px) {
+      max-height: 35rem;
+    }
+  }
+  .blog-hero-inner-wrap {
+    color: #fff;
+    padding: 19.38rem 0;
+    position: absolute;
+    width: 100%;
+    height: 50rem;
+    z-index: 2;
+    @media only screen and (max-width: 650px) {
+      padding: 12rem 0;
+      .success-body {
+        display: none;
+      }
+      .blog-author-date {
+        display: none;
+      }
+      h1 {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 31px;
+      }
+      button {
+        float: left;
+        width: inherit;
+      }
+    }
+    .success-body {
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: #216DD0;
+      padding: 1.25rem 2.64rem;
+    }
+  }
+  .blog-hero-gradient {
+    height: 50rem;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(19,19,19,0.47) 48.96%, rgba(33,33,33,0.8) 100%);
+  }
+  h1, h2 {
+    color: #fff;
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  .slick-dots {
+    bottom: 20px;
+    @media only screen and (max-width: 650px) {
+      bottom: 15px;
+    }
+    li {
+      height: auto;
+      width: auto;
+      margin: 0 4px;
+      button {
+        background: #fff;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        padding: 2px;
+        &:before {
+          opacity: 0;
+        }
+      }
+      &.slick-active {
+        button {
+          background: #4DA467;
+        }
+      }
+    }
+  }
+}
+
+ul[data-drupal-views-infinite-scroll-pager] {
+  color: #1A6AD3;
+  border: 1px solid #1A6AD3;
+  border-radius: 5px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 0;
+    width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+    border-color: #094082;
+
+    a {
+      color: #094082;
+    }
+  }
+  .loader {
+    position: absolute;
+    margin: 0 0 0 -7rem;
+    animation: spinme 1s infinite linear;
+  }
+  a {
+    color: #1A6AD3;
+    text-transform: capitalize;
+    &:hover {
+      color: #094082;
+    }
+  }
+  li {
+    display: block;
+  }
+}
+
+@keyframes spinme {
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+.blog-teaser {
+  border-bottom: none;
+  width: 95%;
+  margin: 0 0 5rem 0;
+  padding: 2rem;
+  h3 {
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    padding: 0;
+    box-shadow: 0px 0px 9px 0px #7f7f7f;
+    border-radius: 3px;
+    margin: 0 0 3rem 0;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 20px -4px #777;
+    cursor: pointer;
+  }
+
+  .usda-blog-teaser-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    vertical-align: unset;
+
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .usda-blog-title-section {
+      margin: 0;
+      width: 67%;
+      @media screen and (max-width: 1024px) {
+        width: auto;
+        order: 2;
+        padding: 1.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: #212121;
+      }
+
+      .usda-blog-teaser-footer {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        b {
+          font-weight: inherit;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
+
+        span {
+          font-weight: lighter;
+        }
+      }
+    }
+
+    .usda-blog-teaser-thumbnail {
+      width: 21rem;
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+      @media screen and (max-width: 1024px) {
+        height: auto;
+        width: 100.2%;
+        order: 1;
+      }
+    }
+  }
+}
+
+.usa-layout-docs-main_content {
+  padding: 0;
+}
+
+%sidebar-styles {
+  @media screen and (min-width: 1025px) {
+    position: relative;
+    top: 11.3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .view-content {
+    .views-row {
+      padding: 1rem;
+      border-radius: 5px;
+      background: #f7f7f7;
+      margin: 1rem 0;
+      width: fit-content;
+      &:hover {
+        background-color: #bbb;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+        color: #212121;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.connect-blog-tags {
+  &.secondary_sidebar {
+    @extend %sidebar-styles;
+  }
+}
+.connect-blog-categories {
+  &.secondary_sidebar {
+
+  }
+}
+
+.usa-grid.blog-section {
+  .field.field--name-field-full-width-image {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
+  .full-width {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.full-width-image {
+  padding-top: 4rem;
+  img {
+    width: 100%;
+  }
+}
+
+// Categories blog page
+.connect-blog-categories.view {
+  .secondary_sidebar {
+    @media screen and (max-width: 559px) {
+      visibility: hidden;
+    }
+    top: 0;
+    background: none;
+    // Comment this out to troubleshoot the blog filters
+    #inherent-filters {
+      display: none;
+    }
+    #visible-filters {
+      @media screen and (max-width: 559px) {
+        visibility: hidden;
+        position:absolute;
+      }
+      .term {
+        label {
+          font-size: 1.7rem;
+        }
+      }
+    }
+    .views-exposed-form {
+      fieldset {
+        .fieldset-wrapper {
+          &>div {
+            &>div {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+        }
+      }
+      label {
+        font-size: 1.7rem;
+      }
+      select[data-drupal-selector="edit-tid-3"] {
+        margin-bottom: 4rem;
+      }
+    }
+
+    #sidebar-filter-reset {
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 3rem;
+      float: left;
+      padding-right: 4px;
+      font-size: 1.75rem;
+    }
+  }
+  .view-header {
+    .view-content.slick-slider {
+      margin-bottom: 5rem;
+      @media only screen and (max-width: 650px) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+// Styles specific to blog post
+.page-node-type-blog-post {
+  .usa-hero {
+    min-height: 508px;
+    background-position: center;
+    @media only screen and (max-width: 767px) {
+      height: 20rem;
+      min-height: unset;
+    }
+
+  }
+  .page-title {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .blog-author-date {
+    display: table;
+    margin: 0 auto;
+    float: none;
+    padding: 1.5rem 0 2.5rem;
+    font-size: 1.7rem;
+    .blog-author {
+      float: unset;
+      display: inline-block;
+      font-weight: 500;
+    }
+    span {
+      float: unset;
+      padding: 0 .5rem;
+      font-weight: bold;
+    }
+    .blog-create-date {
+      float: unset;
+      display: inline-block;
+      font-weight: 300;
+    }
+  }
+  .paragraph--type-content {
+    @media screen and (min-width: 600px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .usa-footer-return-to-top {
+    padding: 0;
+  }
+}
+
+// Vertical tab highlighted blog post
+#highlighted-blog-post {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .hightlighted-blog-content {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    font-family: $source-sans;
+    font-size: 18px;
+    p {
+      font-family: $source-sans;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 800px) {
+      p br {
+        display: inherit;
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    section.vertical-tabs {
+      h4.tab-title {
+        width: 42.8%;
+        color: #5A5552;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+          background: url(../../assets/img/tab-arrow-right.svg) no-repeat;
+          background-size: 1.5rem;
+          background-position: center right;
+          background-color: #DBEDE0;
+        }
+        &.active {
+          border-left: 8px solid #006546;
+          background: url(../../assets/img/tab-arrow-right.svg) no-repeat;
+          background-size: 1.5rem;
+          background-position: center right;
+          background-color: #FFFFFF;
+        }
+        .author-date {
+          font-weight: 500;
+          .blog-date {
+            float: left;
+            font-weight: 300;
+          }
+          span {
+            float: left;
+          }
+          .blog-author {
+            float: left;
+          }
+        }
+        .read-story-link {
+          color: #006546;
+          font-weight: bold;
+          margin-top: 2rem;
+          display: block;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .tab-content {
+        width: 57.2%;
+        padding: 0;
+        margin-right: 0;
+        height: 690px;
+        .tab-content-inner-wrap {
+          padding: 1.5rem 2.5rem 2.5rem;
+          h3 {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 559px) {
+    section.vertical-tabs {
+      h4.tab-title {
+        font-weight: bold;
+        color: #212121;
+        display: flex;
+        justify-content: space-between;
+
+        &.active {
+          border-left: 0;
+          border-bottom: 5px solid #006546;
+        }
+        .author-date {
+          display: none;
+        }
+        .read-story-link {
+          color: #006546;
+          font-weight: bold;
+          margin-top: 2rem;
+          display: block;
+        }
+      }
+      .tab-content {
+        padding: 0;
+        &.active {
+          padding-bottom: 3rem;
+          height: auto;
+        }
+        .tab-content-inner-wrap {
+          padding: 1.5rem;
+          h3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .farmers-tab-group {
+    margin-bottom: 0;
+    .vertical-tab-container {
+      border-top: none;
+    }
+  }
+  .hightlighted-blog-footer {
+    text-align: right;
+    margin-top: 3rem;
+    a {
+      color: #006546;
+      font-weight: bold;
+      background: url(../../img/icon-arrow-right.svg) no-repeat;
+      background-position: center right;
+      padding-right: 3rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .read-story-link {
+    margin-top: 1.5rem;
+    display: block;
+    float: left;
+    color: #006546;
+    font-weight: bold;
+    font-size: 1.9rem;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .tax-term {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.blog-tagged-terms {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  a {
+    text-decoration: none;
+    color: #282828;
+    background-color: #F7F7F7;
+    padding: 1.2rem 1.8rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    float: left;
+    margin-right: 1rem;
+    transition: .2s all;
+    &:hover {
+      background-color: #BBBBBB;
+    }
+  }
+}
+
+.side-by-side-image {
+  padding-top: 4rem;
+  .split-image {
+    height: 400px;
+    width: 100%;
+    display: block;
+    background-size: cover;
+  }
+  .right-image {
+    &.usa-width-one-third {
+      .split-image {
+        background-position: right;
+      }
+    }
+    &.usa-width-one-half {
+      .split-image {
+        background-position: left;
+      }
+    }
+  }
+  .left-image {
+    &.usa-width-one-half {
+      .split-image {
+        background-position: left;
+      }
+    }
+    &.usa-width-one-third {
+      .split-image {
+        background-position: left;
+      }
+    }
+  }
+}
+
+.blog-footer-bg {
+  background-repeat: no-repeat;
+}
+
+// Styles for the blog categories page found at /connect/blog/categories
+.connect-blog-categories {
+  .view-filters.secondary_sidebar {
+    background: none;
+    .fieldset-legend {
+      font-size: 2rem;
+      margin-top: 4rem;
+      float: left;
+    }
+  }
+  fieldset {
+    .form-item {
+      width: 100%;
+      display: block;
+      label {
+        margin: 1rem 0;
+      }
+    }
+  }
+  #mobile-filters {
+    display: none;
+    @media screen and (max-width: 559px) {
+      visibility: visible;
+      position: fixed;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      right: -100%;
+      left: 100%;
+      background: #fff;
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .filters-wrap {
+      padding: 2rem;
+      margin-bottom: 100px;
+      h3 {
+        border-bottom: 2px solid #0A6447;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+      }
+      #commodity-filters, #producer-filters {
+        margin-top:12px;
+      }
+    }
+    .usa-accordion-button {
+      background-color: #fff;
+      padding: 2.5rem 0;
+      font-size: 2rem;
+      border-bottom: 2px solid #DDDDDD;
+      &.active {
+        border-bottom: none;
+      }
+      a {
+        text-decoration: none;
+        color: #212121;
+      }
+    }
+    .usa-accordion-button:last-of-type {
+      border-bottom: none;
+    }
+    .usa-accordion-content {
+      padding: 0 1px;
+      border-bottom: 2px solid #DDDDDD;
+      h4 {
+        display: none;
+      }
+      .term {
+        label {
+          margin-top: 0;
+        }
+      }
+      .term:last-of-type {
+        margin-bottom: 3rem;
+      }
+    }
+    #state-filters {
+      padding: 2rem 0 5rem;
+    }
+  }
+  #filters-open {
+    cursor: pointer;
+    background-image: url(../img/filters.png);
+    background-repeat: no-repeat;
+    float: left;
+    width: 80px;
+    text-align: right;
+    font-size: 2rem;
+    display: none;
+    padding-bottom: 2rem;
+    @media screen and (max-width: 559px) {
+      display: block;
+    }
+  }
+  #filters-close {
+    display: none;
+    cursor: pointer;
+    background-image: url(../img/close.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    background-size: cover;
+    margin: 2rem;
+    color: #fff0;
+    @media screen and (max-width: 559px) {
+      display: block;
+    }
+  }
+  #apply-filters {
+    background-color: #216DD0;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    padding: 2rem;
+    width: 100%;
+  }
+  #reset-filters-mobile {
+    a {
+      background-image: none;
+      font-weight: normal;
+      text-decoration: none;
+      margin-top: 0px;
+      float: right;
+      padding-right: 4px;
+      font-size: 2rem;
+    }
+    @media screen and (min-width: 559px) {
+      display: none;
+    }
+  }
+}
+
+// You May Also Like block - Appears at the bottom of each blog post
+.you-may-also-like-block {
+  background-color: #F7F7F7;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .card {
+    background-color: #fff;
+  }
+  a {
+    text-decoration: none;
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+.blog-stories-carousel-outer-wrap {
+  padding: 3rem 0 0;
+  margin-top: 8rem;
+  background-color: #F7F7F7;
+
+  @media screen and (max-width: 559px) {
+    padding: 0.8rem 0 0;
+  }
+
+  .usa-grid {
+    padding-right:0;
+  }
+
+  img {
+    max-width:100%;
+    height:auto;
+    border:0;
+  }
+  #blog-stories-carousel {
+    @media screen and (max-width: 559px) {
+      padding-bottom:2.3rem;
+    }
+
+    .slick-track {
+      padding-bottom: 1rem;
+    }
+
+    .slick-next, .slick-prev {
+      top: 38%;
+    }
+
+    .slick-disabled {
+      display:none !important;
+    }
+
+    .slick-slide {
+      padding-left:3rem;
+      left: -2rem;
+      position: relative;
+      height:100%;
+
+      a, a:visited, a:hover {
+        color:inherit;
+        text-decoration:none;
+      }
+      h3 {
+        line-height:1.2;
+        padding-bottom:42px;
+      }
+      @media screen and (max-width: 559px) {
+        padding-left:0.8rem;
+        left: -6.4rem;
+      }
+    }
+
+    .slick-list {
+      left:-10px;
+    }
+
+    .slick-track {
+      @media screen and (max-width: 559px) {
+        left:1em;
+      }
+    }
+
+    .slick-prev {
+      left:-58px;
+      @media screen and (max-width: 1080px) {
+        display:none;
+      }
+    }
+
+    .slick-next {
+      right:-30px;
+       @media screen and (max-width: 1080px) {
+        display:none !important;
+      }
+    }
+
+    .slick-prev, .slick-next {
+      @media screen and (max-width: 768px) {
+        display:none !important;
+      }
+    }
+    .slick-dots {
+      position:relative;
+      bottom:0;
+      left:-1.5rem;
+    }
+    .author-date {
+      span {
+        font-weight:bold;
+      }
+    }
+  }
+
+  .blog-stories-carousel-inner-wrap {
+    h3 {
+      margin:1rem 0;
+      min-height:60px;
+    }
+  }
+  .blog-stories-item {
+    background-color: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    height:100%;
+  }
+}

@@ -1,0 +1,134 @@
+@media screen and (max-width: 1000px) {
+  .usa-nav {
+    &.is-visible {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .usa-nav-inner {
+      width: 100%;
+      position: relative;
+      transition: .25s ease-in-out;
+      margin: 0 3rem;
+      padding: 0;
+
+      .signin-mobile {
+        order: 3;
+      }
+
+      .usa-nav-close {
+        top: -1.7rem;
+        right: -1.6rem;
+      }
+
+      .usa-search {
+        order: 1;
+        padding: 0 1rem 0 0.25rem;
+        // margin-top: 6rem;
+      }
+
+      .usa-nav-secondary {
+        order: 4;
+      }
+
+      .usa-nav-primary {
+        order: 2;
+        li {
+          border-bottom: 1px solid #49A564;
+          border-top: none;
+
+          &:last-child {
+            border: none;
+          }
+        }
+        button {
+          background-image: url(../img/arrow-right-white.svg);
+          background-size: 0.7rem;
+          background-position: right center;
+          &[aria-controls|=megamenu] span{
+            background-image: none;
+          }
+        }
+
+        // .usa-nav-link {
+        //   padding-left: 0;
+        // }
+      }
+
+      &.mobile-nav-lvl-3, &.mobile-nav-lvl-4 {
+        width: 100%;
+        position: relative;
+        transition: .25s ease-in-out;
+        color: #ffffff;
+
+        &>span {
+          margin: 3.4rem 0 0 0;
+          padding: 1rem 2rem;
+          border-bottom: 1px solid #49A564;
+          background-image: url(../img/arrow-left-white.svg);
+          background-repeat: no-repeat;
+          background-position: left center;
+          cursor: pointer;
+        }
+
+        .usa-nav-submenu {
+          li:first-child {
+            text-transform: uppercase;
+          }
+        }
+
+        .usa-nav-submenu, .usa-nav-submenu-submenu {
+          margin-top: 3rem;
+          display: flex;
+          flex-direction: column;
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            margin-bottom: 2rem;
+
+            a {
+              color: #ffffff;
+              padding-left: 0rem;
+              text-decoration: none;
+              display: flex;
+              align-items: center;
+
+              .has-child-arrow.white-svg {
+                width: .7rem;
+                position: absolute;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .usa-nav {
+    .usa-nav-inner {
+      .usa-nav-primary {
+        .usa-nav-link {
+          padding-left: 3rem;
+        }
+
+        button {
+          background: none;
+        }
+
+        .usa-accordion-button.usa-nav-link[aria-controls|=megamenu] span {
+            background: url(../img/arrow-down-white.svg) no-repeat;
+            background-position: right;
+            background-size: 1rem;
+            font-size: 1.8rem;
+            padding-right: 2.1rem;
+        }
+      }
+    }
+  }
+}

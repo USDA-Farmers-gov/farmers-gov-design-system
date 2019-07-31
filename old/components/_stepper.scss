@@ -1,0 +1,113 @@
+// label {
+//     position:relative;
+//   }
+//
+//   .usa-grid.testing {
+//     @media only screen and (max-width: 599px) {
+//       padding:0;
+//       margin:0;
+//     }
+//   }
+//
+//   .input-row {
+//     display: flex;
+//     flex-direction: row;
+//     padding-bottom:20px;
+//   }
+//
+//   .vertical-line {
+//     position: relative;
+//     z-index:-1;
+//     left: 49%;
+//     height:100%;
+//     border-left:3px solid #bbb;
+//     top: 0;
+//   }
+//
+//   .questions {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+//
+//   .questions .radio-circle {
+//     position:absolute;
+//     float:right;
+//     right:22px;
+//   }
+//
+//   .question-number {
+//     width:9rem;
+//
+//     @media only screen and (max-width: 599px) {
+//       width: 6rem;
+//     }
+//   }
+//
+//   .number-container {
+//     background:#fff;
+//     padding:8px 0 8px 0;
+//     text-align: center;
+//   }
+//
+//   .number {
+//     display:inline-block;
+//     width:40px;
+//     height:40px;
+//     line-height:40px;
+//     border-radius: 50%;
+//     color:#fff;
+//     background: #49A564;
+//     font-size:20px;
+//     font-weight:bold;
+//   }
+//   .question-and-answer {
+//     float:left;
+//     padding-top:6px;
+//     @media only screen and (max-width: 599px) {
+//         width:100%;
+//         padding-left:1rem;
+//     }
+//   }
+//
+//   .question-and-answer h3 {
+//     margin-top:6px;
+//   }
+//
+//   .label-and-input {
+//     @media only screen and (max-width: 599px) {
+//         position:relative;
+//         float: left;
+//         width:100%;
+//     }
+//   }
+//
+//   .stepper_clickable {
+//     border: 2px solid #CCCCCC;
+//     border-radius: 3px;
+//     padding: 2rem;
+//     width: 345px;
+//     height: 182px;
+//     float: left;
+//     margin-right: 2.5rem;
+//     text-align: center;
+//     line-height: 14rem;
+//     font-size: 3rem;
+//     font-weight: 600;
+//     box-shadow: 0 1px 4px 0 #BBBBBB;
+//     @media only screen and (max-width: 599px) {
+//         width:100%;
+//         clear:both;
+//     }
+//   }
+//
+//   .radio-circle {
+//     position: relative;
+//     bottom: 20px;
+//     right: 5px;
+//     width: 30px;
+//     height: 30px;
+//     background-size: 100%;
+//     box-shadow: 0 0 0 3px #49A564;
+//     border: 1px solid #49A564;
+//     border-radius: 50%;
+//   }

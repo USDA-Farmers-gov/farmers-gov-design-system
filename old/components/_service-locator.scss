@@ -1,0 +1,367 @@
+@import '../core/fonts';
+
+// Service Center Page Overrides
+body.path-service-locator {
+  #views-exposed-form-site-service-locator-page-1 {
+    .js-form-item-field-counties-served-target-id {
+      display: inline-block;
+    }
+    #edit-actions {
+      display: inline-block;
+    }
+    [type="submit"] {
+      background-color: $blue;
+    }
+  }
+  header{
+    h1:first-of-type {
+      display: none;
+    }
+  }
+}
+
+.view-service-locator {
+  @media screen and (min-width: 600px) {
+    .usa-form-large {
+      max-width: 100%;
+    }
+  }
+}
+
+// Service Center Block
+.service-wrap {
+  @media screen and (max-width:559px) {
+    padding: 2rem;
+    background-image: none;
+  }
+  header, .view-header {
+    .double-border {
+      margin: 5rem 0 0;
+    }
+    h1 {
+      background-image: url(../img/icon_service_center.svg);
+      background-repeat: no-repeat;
+      background-position: 0rem 5rem;
+      color: $black;
+      margin: 0;
+      padding: 4rem 1rem 3.6rem 10rem;
+    }
+  }
+  input[type=submit] {
+    background-color: $blue;
+  }
+  label {
+    color: $black !important;
+  }
+  .select-wrapper {
+	  @media screen and (max-width:559px) {
+  	  width: 100%;
+	  }
+  }
+  .views-exposed-form {
+    margin-left: 10rem;
+    margin-top: -15px;
+    label {
+      margin: 0;
+    }
+    @media screen and (max-width:855px) {
+      margin-left: 2rem;
+    }
+  }
+  .select-wrapper:nth-child(2) {
+    min-width: 20rem;
+	  select {
+	  	min-width: 20rem !important;
+	  }
+	  @media screen and (max-width:559px) {
+  	  width: 100%;
+	  }
+  }
+  #views-exposed-form-site-service-locator-default > div.js-form-item.form-item.js-form-type-cshs.form-item-field-counties-served-target-id.js-form-item-field-counties-served-target-id.form-no-label > div:nth-child(3) > select {
+    min-width: 20rem;
+  }
+
+  #views-exposed-form-site-service-locator-page-1 > div.js-form-item.form-item.js-form-type-cshs.form-item-field-counties-served-target-id.js-form-item-field-counties-served-target-id > div:nth-child(3) {
+    width: 24%;
+  }
+  #edit-submit-site-service-locator {
+    top: -2px;
+    position: relative;
+  }
+  .double-border {
+    margin: 0 0 0 0;
+  }
+}
+
+// New Service Center Locator (Not produced by Drupal Views)
+#service-center-wrap {
+  &:not(.sw-container) {
+
+  }
+  .select-wrapper {
+    margin-bottom: 4rem;
+    width: 100%;
+    float: left;
+  }
+  .scl-state-wrap, .scl-county-wrap {
+    width: 40rem;
+    display: block;
+    float: left;
+    margin: 0 15px 0 0;      
+    @media screen and (max-width:768px) { 
+      width: 48%;
+    }
+    @media screen and (max-width:768px) {
+      width: 100%;
+    }   
+    select {
+      height: 5rem;
+    } 
+  }
+  .scl-county-wrap {
+    @media screen and (max-width:768px) { 
+      margin: 0;
+    }      
+  }
+  
+  .scl-county {
+    &:disabled {
+      background-color: #F5F5F5;
+      color: #8B8B8B;
+      border: 1px solid #8B8B8B;      
+    }
+  }
+  
+  h1 {
+    background-image: url(../img/Map_icon.svg);
+    background-size: 6rem;
+    padding-left: 8rem;
+    padding-top: 5.5rem; 
+  }
+  .scl-btn-wrap {
+    width: 100%;
+    display: block;
+    float: left;
+    input[type=submit] {
+      width: 12rem;
+      height: 4rem;
+      color: #fff;
+      &:disabled {
+        background-color: #fff;
+        border: 1px solid #BDBDBD;
+        color: #BDBDBD;        
+      } 
+    } 
+  }
+}
+
+#scl-page {
+  margin-bottom: 5rem;
+}
+
+#scl-results-wrap {
+  background-color: #F9F9FA;
+  padding: 2rem 0;
+  display: none;
+  margin-top: 4rem;
+  .double-border {
+    margin: 3rem 0;
+    float: left;
+  }
+  .scl-result-title-wrap {
+    font-family: $merriweather;
+    h2 {
+      font-family: $merriweather;
+      font-weight: 300;
+      margin: 3.5rem auto;  
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+  .scl-results-line {
+    height: 10px;
+    width: 100%;
+    background-color: #F7BE01;
+  }
+  .scl-results-inner-wrap {
+    background-color: #fff;
+    border-left: 2px solid #DCDCDC;
+    border-right: 2px solid #DCDCDC;
+    border-bottom: 2px solid #DCDCDC;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 2rem 2.5rem;
+    float: left;
+    width: 100%;
+    .scl-name {
+      margin-top: 1rem;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .scl-hr {
+      width: 50%;
+      margin: 4rem auto;
+      @media screen and (max-width:768px) {      
+        width: 100%;
+        margin: 2rem auto;
+      }
+      hr {
+        border: 1px solid #9A9A9A;
+      }
+    }
+    .scl-counties-served {
+      width: 50%;
+      float: left;
+      @media screen and (max-width:768px) {
+        width: 100%;        
+      }  
+    }
+    .scl-info {
+      width: 45%;
+      float: left;
+      @media screen and (max-width:1114px) {
+        
+      }
+      @media screen and (max-width:768px) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }        
+    }
+    .scl-phone {
+      font-size: 3rem;
+      font-weight: 400;
+      padding-left: 4rem;
+      background-image: url(../img/Phone.svg);
+      background-repeat: no-repeat;
+      background-position: 0px 1px;
+      padding-left: 4rem;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      @media screen
+      and (min-width: 768px) {
+         a[href*="tel:"] {
+             pointer-events: none;
+             cursor:default;
+             text-decoration: none;
+         }
+      }
+      @media screen
+      and (max-width: 768px) {
+        a {
+          color: #006546;
+        }
+      }       
+    }
+
+    .scl-drive-to {
+      background-image: url(../img/Maps.svg);
+      background-repeat: no-repeat;
+      background-position: 3px 0px;
+      padding-left: 4rem;
+      h3 {
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+      } 
+    }
+    .scl-directions {
+      a {
+        font-size: 1.5rem;
+        font-weight: 700;        
+        color: #006546;
+      }
+    }
+    .scl-city-state-zip {
+      margin: .25rem 0 1rem 0;
+    }
+    .scl-fsa-copy {
+      margin-bottom: 3rem;
+    }
+    .scl-mailing-address {
+      background-image: url(../img/diag.png);
+      background-repeat: repeat;
+      border: 1px solid #ddd;
+      float: right;
+      width: 50%;
+      margin-left: 3rem;     
+      .scl-mail-inner {
+        background-color: #fff;
+        float: left;
+        width: 91.5%;
+        margin: 2.25rem;
+        padding-left: 6rem;
+        padding-bottom: 4rem;
+        padding-top: .25rem;
+        h3 {
+          background-image: url(../img/Mail.svg);
+          background-repeat: no-repeat;
+          background-position: 1px;
+          padding-left: 4rem;
+          font-size: 25px;
+          font-weight: 700;
+          line-height: 31px;          
+        }
+        @media screen and (max-width:768px) {
+          width: 86.5%;
+          padding-left: 3rem;
+          padding-bottom: 2rem;          
+        }
+        @media screen and (max-width:500px) {        
+          padding-left: 2rem;
+        }     
+      }
+      #scl-fsa-mailing, #scl-fsa-mailing-state-zip {
+        padding-left: 4rem;
+      }
+      #scl-nrcs-mailing, #scl-nrcs-mailing-state-zip, #scl-diff-nrcs-mailing, #scl-diff-mailing-state-zip {
+        padding-left: 4rem;
+      }
+      #scl-fsa-mailing-state-zip {
+        margin: .25rem 0 1rem 0;
+      }
+      @media screen and (max-width:768px) {      
+        float: right;
+        width: 100%;
+        margin-left: 2rem;
+      }
+      @media screen and (max-width:500px) {      
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+  #scl-counties-served, #diff-counties-served {
+    li {
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+  }
+
+  &.open {
+    display: block;
+  }
+  
+  .scl-results-footer-text {
+    float: left;
+  }
+}
+
+#scl-results-nrcs {
+  margin-top: 4rem;
+}
+
+#scl-header, #scl-footer {
+  p {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0;    
+  }
+}
+
+#scl-footer {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+}
