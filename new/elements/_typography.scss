@@ -44,6 +44,22 @@
 }
 
 
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../../fonts/merriweather/Latin-Merriweather-Regular.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../../fonts/merriweather/Latin-Merriweather-Light.woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+$merriweather: 'Merriweather';
+
 $public-sans: 'Public Sans';
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,7 +115,7 @@ h6, .headline-6 {
   line-height: 3.4rem;
 }
 
-.body-copy {
+.body-p {
   font-family: $public-sans;
   color: $asphalt;
   font-weight: 400;
@@ -121,4 +137,20 @@ h6, .headline-6 {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.2rem;
+}
+
+.blog-body-p {
+  font-family: $merriweather;
+  color: $asphalt;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+.blog-block-quote {
+  font-family: $merriweather;
+  color: $asphalt;
+  font-weight: 300;
+  font-size: 2.8rem;
+  line-height: 3.4rem;
 }
