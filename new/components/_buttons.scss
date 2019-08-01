@@ -2,37 +2,110 @@
 
 // Primary Buttons
 .btn {
+  background-color: $blue;
+  border: 0;
   border-radius: 4px;
+  box-shadow: 0 1px 4px 0 #BBBBBB;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2.0rem;
+  min-width: 13.4rem;
+  padding: 1.1rem;
+  text-align: center;
+  text-decoration: none;  
+  text-transform: uppercase;
+  width: auto;
 
   &:hover {
-    
+    background-color: $hover;
   }
   &:active {
-    
+    background-color: $active;
   }
   &:focus {
-    
+    background-color: $focus;
+    box-shadow: 0 1px 4px 0 $focus;
+    outline: none !important;    
   }
   &:disabled, &.disabled {
-    
+    background-color: $disabled;
+    cursor: not-allowed;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
-.btn-default {
-  
+.btn.focus-color {
+  background-color: $focus;
+  box-shadow: 0 1px 4px 0 $focus;
+  outline: none !important; 
 }
 
-.btn-sm {
-  
+.sm-btn {
+  min-width: 9.6rem;
+  padding: .6rem;
 }
 
-.btn-lg {
-  
+.lg-btn {
+  min-width: 21.6rem;
+  padding: 1.6rem;
 }
 
 // Secondary Buttons
-.outline {
-  
+.btn.outline {
+  background-color: #ffffff !important;
+  border: 1px solid $blue;
+  color: $blue;
+
+  &:hover {
+    border: 1px solid $hover;
+    color: $hover;
+  }
+  &:active {
+    border: 1px solid $active;
+    color: $active;
+  }
+  &:focus {
+    box-shadow: 0 1px 4px 0 $focus;
+    color: $active;
+    outline: none !important;
+  }
+  &:disabled, &.disabled {
+    border: 1px solid $disabled;
+    box-shadow: none;
+    color: $disabled;
+    cursor: not-allowed;
+    &:focus {
+      outline: none;
+    }
+  }  
 }
 
+.btn.hover-color.outline {
+  border: 1px solid $hover;
+  color: $hover;  
+}
 
+.btn.active-color.outline {
+  border: 1px solid $active;
+  color: $hover;  
+}
+
+.btn.focus-color.outline {
+  border: 1px solid $focus;
+  color: $hover;  
+}
+
+.btn.disabled.outline {
+  border: 1px solid $disabled;
+  box-shadow: none;
+  color: $hover; 
+  cursor: not-allowed;
+  &:focus {
+    outline: none;
+  }   
+}
