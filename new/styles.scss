@@ -1,13 +1,17 @@
 // Farmers Design System 1.0 (not)
 @import 'settings';
 
-// Flexbox Grid
-@import 'grid/styles.scss';
-
 // Colors
 @import 'elements/colors';
+
 // Typography
 @import 'elements/typography';
 
+// Flexbox Grid
+@import 'grid/styles';
+
 // Buttons
 @import 'components/buttons';
+
+// Dividers
+@import 'components/dividers';

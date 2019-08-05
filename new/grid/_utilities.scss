@@ -20,6 +20,7 @@
 ) {
     margin-right: auto;
     margin-left: auto;
+    max-width: $container_width;
     padding-left: ($_gutter / 2);
     padding-right: ($_gutter / 2);
 }

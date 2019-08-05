@@ -1,4 +1,4 @@
-// COLORS //
+// COLORS
 
 // COLORS // Primary Colors
 
@@ -115,25 +115,30 @@ $gray5: $grey5;
 // Visited
 $visited: #4C2C92;
 .visited-color {
-  background-color: $visited;
+  background-color: $visited !important;
 }
 
 // Focus
 $focus: #1B69D3;
 .focus-color {
-  background-color: $focus;
+  background-color: $focus !important;
 }
 
 // Hover
 $hover: #004785;
 .hover-color {
-  background-color: $hover;
+  background-color: $hover !important;
 }
 
 // Active
 $active: #122E51;
 .active-color {
-  background-color: $active;
+  background-color: $active !important;
 }
 
+// Disabled
+$disabled: #BBBBBB;
+.disabled {
+  background-color: $disabled;
+}
 // END COLORS

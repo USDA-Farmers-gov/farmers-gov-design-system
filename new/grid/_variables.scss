@@ -20,3 +20,6 @@ $screen--S:  $break--S + 1;
 $screen--M:  $break--M + 1;
 $screen--L:  $break--L + 1;
 $screen--XL: $break--XL + 1;
+
+// Set the main container with for the grid. This is applied to .container
+$container_width: 1140px;
