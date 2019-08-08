@@ -1,0 +1,35 @@
+// Checkboxes
+[type=checkbox] +label::before {
+  background: $white;
+  border: 2px solid $grey4;
+  border-radius: .2rem;
+  box-shadow: none;
+  content: '\a0';
+  display: inline-block;
+  height: 2.4rem;
+  line-height: 1.8rem;
+  margin-right: .6em;
+  text-indent: .15em;
+  width: 2.4rem;
+}
+
+[type=checkbox]:checked+label::before {
+  background: $heritage;
+  background-image: url(../../img/correct8.svg);
+  border: 2px solid $heritage;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  box-shadow: none;
+}
+
+[type=checkbox]:disabled+label::before {
+  background: $grey1;
+  border: 2px solid $grey3;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+[type=checkbox]:disabled+label {
+  color: $grey3;
+  box-shadow: none;
+}
