@@ -8,12 +8,18 @@ $dkgreen: $heritage;
 .heritage {
   background-color: $heritage;
 }
+.heritage-txt {
+  color: $heritage;
+}
 
 // Sweet Grass
 $sweetgrass: #49A564;
 $ltgreen: $sweetgrass;
 .sweet-grass {
   background-color: $sweetgrass;
+}
+.sweet-grass-txt {
+  color: $sweetgrass;
 }
 
 // Big Sky
@@ -22,6 +28,9 @@ $blue: $bigsky;
 .big-sky {
   background-color: $bigsky;
 }
+.big-sky-txt {
+  color: $bigsky;
+}
 
 // Asphalt
 $black: #212121;
@@ -29,7 +38,17 @@ $asphalt: $black;
 .asphalt {
   background-color: $black;
 }
+.asphalt-txt {
+  color: $black;
+}
 
+$white: #ffffff;
+.white {
+  background-color: $white;
+}
+.white-txt {
+  color: $white;
+}
 // COLORS // Secondary Colors 
 
 // USDA Blue
@@ -38,6 +57,9 @@ $usda-blue: $dkblue;
 .usda-blue {
   background-color: $dkblue;
 }
+.usda-blue-txt {
+  color: $dkblue;
+}
 
 // Dandelion
 $yellow: #F7BE00;
@@ -45,12 +67,18 @@ $dandelion: $yellow;
 .dandelion {
   background-color: $yellow;
 }
+.dandelion-txt {
+  color: $yellow;
+}
 
 // Maple #AE2924
 $red: #AE2924;
 $maple: $red;
 .maple {
   background-color: $red;
+}
+.maple-txt {
+  color: $red;
 }
 
 // COLORS // Low Saturation Colors
