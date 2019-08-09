@@ -2,45 +2,45 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <title>Farmers.gov Design System Test</title>
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style media="screen">
       .container {
         /* width: 114rem; */
       }
       .demo-block {
-        display: flex;
-        justify-content: space-between;
+        /* display: flex;
+        justify-content: space-between; */
         outline: 1px solid blue;
-        margin: 1rem 3rem;
+        /* margin: 1rem 3rem; */
       }
       .box-accordion {
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
         width: 34.6rem;
         /* height: 20rem; */
-        margin: 2rem 2rem;
-        position: relative;
+        margin: 1rem 1rem;
+        /* position: relative; */
         /* min-height: 30rem; */
       }
       .Accordion {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 2rem 3rem;
+        /* justify-content: center; */
       }
       .box-accordion-top {
         min-height: 20rem;
         padding: 2.4rem;
         box-shadow: 0 1px 4px 0 #BBBBBB;
-        background-image: url('./img/plus-alt.svg');
+        background-image: url('./img/accordion-plus.svg');
         background-size: 3.2rem;
         background-repeat: no-repeat;
-        background-position: 2.4rem 19.3rem;
+        background-position: 2.4rem 14.3rem;
         /* outline: 2px solid red; */
       }
       .box-accordion-top[aria-expanded="true"] {
         background-color: #49A564;
-        background-image: url('./img/minus-alt.svg');
+        background-image: url('./img/accordion-minus.svg');
       }
 
       .box-accordion-top[aria-expanded="true"] .headline-3 {
@@ -61,6 +61,17 @@
       }
 
       .Accordion-panel {
+        /* width: 88vw;
+        padding: 3.2rem 2.4rem;
+        outline: 1px solid rebeccapurple;
+        position: relative; */
+        /* width: 70vw; */
+        padding: 3.2rem 2.4rem;
+        position: relative;
+        background: #ffffff;
+        box-shadow: 0 1px 4px 0 #BBBBBB;
+        border-top: .8rem solid #49A564;
+
       }
 
       marquee {
@@ -74,7 +85,7 @@
     </style>
   </head>
   <body>
-    <marquee direction="right" scrolldelay="2"scrollamount="6500" >
+    <!-- <marquee direction="right" scrolldelay="2"scrollamount="750" >
       <svg class="position-relative position-md-absolute right-n8 right-lg-8 top-lg-3" width="240px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 518.6 406.73">
         <g data-name="Layer 2">
           <g id="Layer_5" data-name="Layer 5">
@@ -139,9 +150,9 @@
           </g>
         </g>
       </svg>
-    </marquee>
-    <div class="container">
-      <div class="demo-block">
+    </marquee> -->
+
+      <div class="demo-block container">
         <!-- Accordion Configuration Options
 
         data-allow-toggle
@@ -156,8 +167,8 @@
 
           <div id="accordionGroup" class="Accordion" data-allow-toggle>
         -->
-        <div id="accordionGroup" class="Accordion">
-          <div class="box-accordion">
+        <div id="accordionGroup" class="Accordion row" data-allow-toggle>
+          <div class="box-accordion ">
             <div  class="box-accordion-top Accordion-trigger"
                   tabindex="0"
                   aria-expanded="false"
@@ -175,79 +186,12 @@
                   aria-labelledby="accordion1id"
                   class="Accordion-panel"
                   hidden="">
-                <div>
-                  <!-- Variable content within section, may include any type of markup or interactive widgets. -->
-                  <fieldset>
-                    <p>
-                      <label for="cufc1">
-                        Name
-                        <span aria-hidden="true">
-                          *
-                        </span>
-                        :
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="Name"
-                      id="cufc1"
-                      class="required"
-                      aria-required="true">
-                    </p>
-                    <p>
-                      <label for="cufc2">
-                        Email
-                        <span aria-hidden="true">
-                          *
-                        </span>
-                        :
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="Email"
-                      id="cufc2"
-                      aria-required="true">
-                    </p>
-                    <p>
-                      <label for="cufc3">
-                        Phone:
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="Phone"
-                      id="cufc3">
-                    </p>
-                    <p>
-                      <label for="cufc4">
-                        Extension:
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="Ext"
-                      id="cufc4">
-                    </p>
-                    <p>
-                      <label for="cufc5">
-                        Country:
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="Country"
-                      id="cufc5">
-                    </p>
-                    <p>
-                      <label for="cufc6">
-                        City/Province:
-                      </label>
-                      <input type="text"
-                      value=""
-                      name="City_Province"
-                      id="cufc6">
-                    </p>
-                  </fieldset>
-                </div>
+                <!-- <div> -->
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <!-- </div> -->
             </div>
           </div>
-          <div class="box-accordion">
+          <div class="box-accordion ">
             <div  class="box-accordion-top Accordion-trigger"
                   tabindex="0"
                   aria-expanded="false"
@@ -265,53 +209,12 @@
                   aria-labelledby="accordion2id"
                   class="Accordion-panel"
                   hidden="">
-              <div>
-                <fieldset>
-                  <p>
-                    <label for="b-add1">
-                      Address 1:
-                    </label>
-                    <input type="text"
-                    name="b-add1"
-                    id="b-add1">
-                  </p>
-                  <p>
-                    <label for="b-add2">
-                      Address 2:
-                    </label>
-                    <input type="text"
-                    name="b-add2"
-                    id="b-add2">
-                  </p>
-                  <p>
-                    <label for="b-city">
-                      City:
-                    </label>
-                    <input type="text"
-                    name="b-city"
-                    id="b-city">
-                  </p>
-                  <p>
-                    <label for="b-state">
-                      State:
-                    </label>
-                    <input type="text"
-                    name="b-state"
-                    id="b-state">
-                  </p>
-                  <p>
-                    <label for="b-zip">
-                      Zip Code:
-                    </label>
-                    <input type="text"
-                    name="b-zip"
-                    id="b-zip">
-                  </p>
-                </fieldset>
-              </div>
+                  <div>
+                    LorBilling Addresseiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </div>
             </div>
           </div>
-          <div class="box-accordion">
+          <div class="box-accordion ">
             <div class="box-accordion-top Accordion-trigger"
                   tabindex="0"
                   aria-expanded="false"
@@ -330,54 +233,12 @@
                 class="Accordion-panel"
                 hidden="">
                 <div>
-                  <fieldset>
-                    <p>
-                      <label for="m-add1">
-                        Address 1:
-                      </label>
-                      <input type="text"
-                      name="m-add1"
-                      id="m-add1">
-                    </p>
-                    <p>
-                      <label for="m-add2">
-                        Address 2:
-                      </label>
-                      <input type="text"
-                      name="m-add2"
-                      id="m-add2">
-                    </p>
-                    <p>
-                      <label for="m-city">
-                        City:
-                      </label>
-                      <input type="text"
-                      name="m-city"
-                      id="m-city">
-                    </p>
-                    <p>
-                      <label for="m-state">
-                        State:
-                      </label>
-                      <input type="text"
-                      name="m-state"
-                      id="m-state">
-                    </p>
-                    <p>
-                      <label for="m-zip">
-                        Zip Code:
-                      </label>
-                      <input type="text"
-                      name="m-zip"
-                      id="m-zip">
-                    </p>
-                  </fieldset>
+                  LoreShipping Addresstur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     <script type="text/javascript">
     /*
@@ -389,8 +250,21 @@
 
     'use strict';
 
-    Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
+    function panelWidthFix(accordionBlock, accordionTarget) {
 
+      const wndw = window ? window: {};
+      const targetPanel = accordionTarget.nextSibling.nextElementSibling;
+      const offset =  accordionTarget.parentElement.offsetLeft / accordionBlock.offsetWidth * -100; //+ accordionTarget.offsetLeft;
+      // const offset = wndw.innerWidth - accordionBlock.offsetWidth - (accordionBlock.offsetLeft * 1.85) - accordionTarget.offsetLeft / 10;
+
+      targetPanel.style.marginLeft = 10 + (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px'; //`${offset}%`;
+      targetPanel.style.width = `${accordionBlock.offsetWidth - 15}px`;
+      // console.dir(parseInt(accordionBlock.style.paddingLeft.split('px').join('').split('rem')));
+      console.dir(accordionTarget.parentElement);
+      console.dir(accordionTarget.parentElement.offsetLeft);
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
     // Allow for multiple accordion sections to be expanded at the same time
     var allowMultiple = false;    // we don't want multiple accordion sections to be expanded at the same time
                                   //accordion.hasAttribute('data-allow-multiple');
@@ -403,10 +277,15 @@
     var panels = Array.prototype.slice.call(accordion.querySelectorAll('.Accordion-panel'));
 
 
+    triggers.map( target => {
+      panelWidthFix(accordion, target);
+
+    })
+
     accordion.addEventListener('click', function (event) {
       var target = event.target;
       target.parentElement.parentElement.classList.contains('Accordion-trigger') ? target = target.parentElement.parentElement : '' ; // Kind of a hack
-      console.dir(target)
+
 
       if (target.classList.contains('Accordion-trigger') ) {
         // Check if the current toggle is expanded.
