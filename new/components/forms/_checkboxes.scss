@@ -33,3 +33,15 @@
   color: $grey3;
   box-shadow: none;
 }
+
+// Card Checkboxes
+.checkbox-card {
+  label {
+    min-height: inherit;
+    padding: 20px;
+    margin: 0;
+    &:before {
+      float: right;
+    }   
+  }
+}
