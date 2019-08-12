@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <title>Farmers.gov Design System Test</title>
     <link rel="stylesheet" href="dist/css/main.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <script src="js/smoothscroll-polyfill.js" charset="utf-8"></script>
     <style media="screen">
       .container {
       }
       .demo-block {
         outline: 1px solid blue;
+        font-size: 2rem;
       }
       .box-accordion {
         width: 34.6rem;
@@ -19,15 +19,22 @@
       }
       .Accordion {
       }
+      h3 {
+        margin: 0;
+      }
       .box-accordion-top {
-        min-height: 20rem;
+        min-height: 15.2rem;
         padding: 2.4rem;
         box-shadow: 0 1px 4px 0 #BBBBBB;
         background-image: url('./img/accordion-plus.svg');
         background-size: 3.2rem;
         background-repeat: no-repeat;
-        background-position: 2.4rem 14.3rem;
+        background-position: 2.4rem 14.4rem;
       }
+      .box-accordion-top:hover {
+        cursor: pointer;
+      }
+
       .box-accordion-top[aria-expanded="true"] {
         background-color: #49A564;
         background-image: url('./img/accordion-minus.svg');
@@ -50,6 +57,10 @@
         background: #ffffff;
         box-shadow: 0 1px 4px 0 #BBBBBB;
         border-top: .8rem solid #49A564;
+      }
+
+      .Accordion-panel p {
+        margin: 0;
       }
 
     </style>
@@ -90,9 +101,9 @@
                   aria-labelledby="accordion1id"
                   class="Accordion-panel"
                   hidden="">
-                <!-- <div> -->
+                <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                <!-- </div> -->
+                </p>
             </div>
           </div>
           <div class="box-accordion ">
@@ -113,9 +124,9 @@
                   aria-labelledby="accordion2id"
                   class="Accordion-panel"
                   hidden="">
-                  <div>
+                  <p>
                     LorBilling Addresseiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </div>
+                  </p>
             </div>
           </div>
           <div class="box-accordion ">
@@ -136,9 +147,9 @@
                 aria-labelledby="accordion3id"
                 class="Accordion-panel"
                 hidden="">
-                <div>
+                <p>
                   LoreShipping Addresstur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </div>
+                </p>
             </div>
           </div>
         </div>
@@ -159,7 +170,7 @@
       const offset =  10 + (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px';
 
       targetPanel.style.marginLeft = offset;
-      targetPanel.style.width = `${accordionBlock.offsetWidth - 15}px`;
+      targetPanel.style.width = `${accordionBlock.offsetWidth - 75}px`;
     }
 
     Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
