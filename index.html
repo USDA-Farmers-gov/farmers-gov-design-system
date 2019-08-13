@@ -55,12 +55,30 @@
         padding: 3.2rem 2.4rem;
         position: relative;
         background: #ffffff;
-        box-shadow: 0 1px 4px 0 #BBBBBB;
+        box-shadow: 0px 4px 6px -3px #BBBBBB;
         border-top: .8rem solid #49A564;
       }
 
       .Accordion-panel p {
         margin: 0;
+      }
+      .down-arrow{
+        display: none;
+        visibility: hidden;
+      }
+
+      .box-accordion-top[aria-expanded="true"] .down-arrow {
+        /* outline: 1px solid red; */
+        display: block;
+        visibility: visible;
+        background: #49A564;
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        top: 13.1rem;
+        left: 2rem;
+        transform: rotate(45deg);
+        z-index: 1;
       }
 
     </style>
@@ -95,6 +113,7 @@
                     <span class="Accordion-icon"></span>
                   </span>
               </h3>
+              <div class="down-arrow"></div>
             </div>
             <div  id="sect1"
                   role="region"
@@ -118,6 +137,7 @@
                   <span class="Accordion-icon"></span>
                 </span>
               </h3>
+              <div class="down-arrow"></div>
             </div>
             <div id="sect2"
                   role="region"
@@ -141,6 +161,7 @@
                   <span class="Accordion-icon"></span>
                 </span>
               </h3>
+              <div class="down-arrow"></div>
             </div>
             <div id="sect3"
                 role="region"
@@ -170,7 +191,7 @@
       const offset =  10 + (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px';
 
       targetPanel.style.marginLeft = offset;
-      targetPanel.style.width = `${accordionBlock.offsetWidth - 75}px`;
+      targetPanel.style.width = `${accordionBlock.offsetWidth - 65}px`;
     }
 
     Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
