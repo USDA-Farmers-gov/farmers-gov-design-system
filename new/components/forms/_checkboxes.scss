@@ -1,4 +1,10 @@
 // Checkboxes
+[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  left: -999em;
+}
+
 [type=checkbox] +label::before {
   background: $white;
   border: 2px solid $grey4;
@@ -36,12 +42,35 @@
 
 // Card Checkboxes
 .checkbox-card {
+  min-height: 150px;
+  border: 2px solid $grey3;
   label {
+    display: block;
+    font-weight: bold;
     min-height: inherit;
-    padding: 20px;
+    padding: 10.5rem 2rem 2rem;
     margin: 0;
+    margin-right: 0;
+    cursor: pointer;
     &:before {
+      border: 2px solid $sweetgrass;
       float: right;
+      margin-right: 0;
+      width: 32px;
+      height: 32px;
+      margin-top: -5px;
     }   
+  }
+  [type=checkbox]:checked+label::before {
+    background: $sweetgrass;
+    background-image: url(../../img/correct8.svg);
+    background-size: 30px;
+    border: 2px solid $sweetgrass;
+  }
+  &.checked {
+    border: 2px solid $sweetgrass;
+  }
+  &:hover {
+    border: 2px solid $sweetgrass;    
   }
 }

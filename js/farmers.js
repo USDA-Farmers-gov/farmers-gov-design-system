@@ -1,27 +1,48 @@
 let checkbox_label;
 let for_value;
 let checkbox_name;
+let checkbox_card;
 
-checkbox_label = document.querySelectorAll('.checkbox');
+checkbox_wrap = document.querySelectorAll('.checkbox-wrap');
 checked_labels = document.querySelectorAll('.checkbox:checked');
+checkbox_card = document.querySelectorAll('.checkbox-card label');
+checkbox_card_checked = document.querySelectorAll('.checkbox-card:checked');
 
-for ( var i = 0; i < checkbox_label.length; i++ ) (function(i){ 
-  checkbox_label[i].onclick = function() {
-    for_value = this.getAttribute('for');
+function checkBoxes() {
+  this.classList.toggle('checked');
+  for_value = this.getAttribute('for');
+
+  if(this.classList.contains('checked')) {
     checkbox_name = document.querySelector('input[name="' + for_value + '"]').checked = 'checked';
-    this.setAttribute('checked', 'checked');
+    checkbox_name.toggle('checked');
+  } else {
+    checkbox_name = document.querySelector('input[name="' + for_value + '"]').checked = false;
+    checkbox_name.toggle('checked');    
   }
-  // checkbox_label[i].checked.onclick = function() {
-  //   for_value = this.getAttribute('for');
-  //   checkbox_name = document.querySelector('input[name="' + for_value + '"]').checked = false;    
-  // }
-})(i);
+}
 
-// for ( var x = 0; x < checked_labels.length; x++ ) (function(i){ 
-//   checked_labels[x].onclick = function() {
-//     for_value = this.getAttribute('for');
-//     checkbox_name = document.querySelector('input[name="' + for_value + '"]').checked = false;
-//     checkbox_name.removeAttribute = 'checked'
-//     console.log(checkbox_name);
-//   }
-// })(x);
+for (var i = 0; i < checkbox_wrap.length; i++) {
+  checkbox_wrap[i].addEventListener('click', checkBoxes, false);
+}
+
+function checkCards() {
+  this.classList.toggle('checked');
+  checkbox_card_wrap = this.parentNode;
+
+  if(this.classList.contains('checked')) {
+    checkbox_card_wrap.classList.toggle('checked');
+    checkbox_card_wrap.querySelector('input[type="checkbox"]').setAttribute('checked', 'checked');
+    for_value = this.getAttribute('for');
+    checkbox_name = checkbox_card_wrap.querySelector('input[name="' + for_value + '"]').checked = 'checked';
+  } else {
+    checkbox_card_wrap.classList.toggle('checked');
+    checkbox_card_wrap.querySelector('input[type="checkbox"]').checked = false;
+    for_value = this.getAttribute('for');
+    checkbox_name = checkbox_card_wrap.querySelector('input[name="' + for_value + '"]').checked = false;    
+  }
+}
+
+for (var i = 0; i < checkbox_card.length; i++) {
+  checkbox_card[i].addEventListener('click', checkCards, false);
+}
+
