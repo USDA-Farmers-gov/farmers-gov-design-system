@@ -1,5 +1,4 @@
 .demo-block {
-  outline: 1px solid blue;
   font-size: 2rem;
 }
 .box-accordion {
@@ -11,10 +10,10 @@
   }
 
   .box-accordion-top {
-    min-height: 15.2rem;
+    min-height: 20rem;
     padding: 2.4rem;
     box-shadow: 0 1px 4px 0 #BBBBBB;
-    background-image: url('../../img/box-accordion-plus.svg');
+    background-image: url('../farmers/img/box-accordion-plus.svg');
     background-size: 3.2rem;
     background-repeat: no-repeat;
     background-position: 2.4rem 14.4rem;
@@ -30,7 +29,7 @@
 
     &[aria-expanded="true"] {
       background-color: #49A564;
-      background-image: url('../../img/box-accordion-minus.svg');
+      background-image: url('../farmers/img/box-accordion-minus.svg');
 
       .headline-3 {
         color: #FFFFFF;
@@ -69,6 +68,7 @@
     }
   }
 }
+
 .card-accordion {
   box-shadow: 0 1px 4px 0 #BBBBBB;
   padding: 3.2rem 3.2rem 2.4rem 3.2rem;
@@ -99,10 +99,10 @@
       background-size: 1.2rem;
       background-repeat: no-repeat;
       background-position: right center;
-      background-image: url('../../img/accordion-card-plus.svg');
+      background-image: url('../farmers/img/accordion-card-plus.svg');
     }
     .card-accordion-show-less {
-      background-image: url('../../img/accordion-card-minus.svg');
+      background-image: url('../farmers/img/accordion-card-minus.svg');
     }
   }
 }
