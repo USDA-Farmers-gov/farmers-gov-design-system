@@ -1,0 +1,108 @@
+.demo-block {
+  outline: 1px solid blue;
+  font-size: 2rem;
+}
+.box-accordion {
+  width: 34.6rem;
+  margin: 1rem 1rem;
+
+  h3 {
+    margin: 0;
+  }
+
+  .box-accordion-top {
+    min-height: 15.2rem;
+    padding: 2.4rem;
+    box-shadow: 0 1px 4px 0 #BBBBBB;
+    background-image: url('../../img/box-accordion-plus.svg');
+    background-size: 3.2rem;
+    background-repeat: no-repeat;
+    background-position: 2.4rem 14.4rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .down-arrow{
+      display: none;
+      visibility: hidden;
+    }
+
+    &[aria-expanded="true"] {
+      background-color: #49A564;
+      background-image: url('../../img/box-accordion-minus.svg');
+
+      .headline-3 {
+        color: #FFFFFF;
+      }
+      .down-arrow {
+        display: block;
+        visibility: visible;
+        background: #49A564;
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        top: 13.1rem;
+        left: 2rem;
+        transform: rotate(45deg);
+        z-index: 1;
+      }
+    }
+
+    &.Accordion-trigger.focus {
+      outline-color: -webkit-focus-ring-color;
+      outline-style: auto;
+      outline-width: 3px;
+      outline-offset: 5px;
+    }
+  }
+
+  .Accordion-panel {
+    padding: 3.2rem 2.4rem;
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px -3px #BBBBBB;
+    border-top: .8rem solid #49A564;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+.card-accordion {
+  box-shadow: 0 1px 4px 0 #BBBBBB;
+  padding: 3.2rem 3.2rem 2.4rem 3.2rem;
+  margin: 1rem;
+  min-height: 26rem;
+  overflow: hidden;
+
+  .card-accordion-content {
+    height: 26rem;
+
+    &.show {
+      height: auto;
+    }
+  }
+  .card-accordion-toggle {
+    position: relative;
+    height: 7.2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: -2.4rem;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.95), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1));
+
+    .card-accordion-show-more {
+      color: #006546;
+      font-weight: bold;
+      padding-right: 2rem;
+      background-size: 1.2rem;
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-image: url('../../img/accordion-card-plus.svg');
+    }
+    .card-accordion-show-less {
+      background-image: url('../../img/accordion-card-minus.svg');
+    }
+  }
+}
