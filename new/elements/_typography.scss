@@ -2,57 +2,57 @@
 
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Regular.eot');
-  src: url('../../fonts/public-sans/PublicSans-Regular.eot?#iefix') format('embedded-opentype'),
-       url('../../fonts/public-sans/PublicSans-Regular.woff2') format('woff2'),
-       url('../../fonts/public-sans/PublicSans-Regular.woff') format('woff'),
-       url('../../fonts/public-sans/PublicSans-Regular.woff2') format('woff2'),
-       url('../../fonts/public-sans/PublicSans-Regular.otf') format('opentype'),       
-       url('../../fonts/public-sans/PublicSans-Regular.ttf') format('truetype'),
-       url('../../fonts/public-sans/PublicSans-Regular.svg#public_sansregular') format('svg');  
+  src: url('../farmers/fonts/public-sans/PublicSans-Regular.eot');
+  src: url('../farmers/fonts/public-sans/PublicSans-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.woff2') format('woff2'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.woff') format('woff'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.woff2') format('woff2'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.otf') format('opentype'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.ttf') format('truetype'),
+       url('../farmers/fonts/public-sans/PublicSans-Regular.svg#public_sansregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Regular.woff'),
-  url('../../fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-Regular.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Regular.woff'),
-  url('../../fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-Regular.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Regular.woff'),
-  url('../../fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-Regular.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-Regular.ttf')  format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Bold.woff'),
-  url('../../fonts/public-sans/PublicSans-Bold.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-Bold.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-Bold.ttf')  format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-Italic.woff'),
-  url('../../fonts/public-sans/PublicSans-Italic.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-Italic.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-Italic.ttf')  format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: url('../../fonts/public-sans/PublicSans-BoldItalic.woff'),
-  url('../../fonts/public-sans/PublicSans-BoldItalic.ttf')  format('truetype');
+  src: url('../farmers/fonts/public-sans/PublicSans-BoldItalic.woff'),
+  url('../farmers/fonts/public-sans/PublicSans-BoldItalic.ttf')  format('truetype');
   font-weight: bold;
   font-style: italic;
 }
@@ -60,15 +60,15 @@
 
 @font-face {
   font-family: 'Merriweather';
-  src: url('../../fonts/merriweather/Latin-Merriweather-Regular.woff'),
-  url('../../fonts/merriweather/Latin-Merriweather-Regular.ttf')  format('truetype');
+  src: url('../farmers/fonts/merriweather/Latin-Merriweather-Regular.woff'),
+  url('../farmers/fonts/merriweather/Latin-Merriweather-Regular.ttf')  format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Merriweather';
-  src: url('../../fonts/merriweather/Latin-Merriweather-Light.woff'),
-  url('../../fonts/merriweather/Latin-Merriweather-Light.ttf')  format('truetype');
+  src: url('../farmers/fonts/merriweather/Latin-Merriweather-Light.woff'),
+  url('../farmers/fonts/merriweather/Latin-Merriweather-Light.ttf')  format('truetype');
   font-weight: 300;
   font-style: normal;
 }
@@ -82,6 +82,11 @@ $merriweather: 'Merriweather';
 $public-sans: 'Public Sans';
 .public-sans {
   font-family: $public-sans;
+}
+
+html {
+  font-family: $public-sans;
+  color: $asphalt;
 }
 
 h1, h2, h3, h4, h5, h6 {
