@@ -17,6 +17,9 @@
     background-size: 3.2rem;
     background-repeat: no-repeat;
     background-position: 2.4rem 14.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:hover {
       cursor: pointer;
@@ -41,8 +44,8 @@
         width: 4rem;
         height: 4rem;
         position: relative;
-        top: 13.1rem;
-        left: 2rem;
+        top: 5.2rem;
+        left: 3rem;
         transform: rotate(45deg);
         z-index: 1;
       }
