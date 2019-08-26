@@ -141,16 +141,15 @@
 
       cb_labels.map( el => {
         el.addEventListener('click', evt => {
-          console.dir(evt.target);
-          if (evt.target.checked) {
-            evt.target.parentElement.classList.toggle('checked')
-          } else if (evt.target.classList.contains('checkbox-card-label')) {
-            if (evt.target.children[0].checked) {
-              evt.target.classList.toggle('checked')
-            }
+          let target = evt.target;
+          target.parentElement.classList.contains('checkbox-card-label') ?
+                                           target = target.parentElement : '';
+          if (target.control.checked) {
+            target.classList.toggle('checked')
           }
         })
       })
+
     })
     </script>
   </body>
