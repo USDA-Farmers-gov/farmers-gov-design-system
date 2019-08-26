@@ -59,7 +59,7 @@
       width: 32px;
       height: 32px;
       margin-top: -5px;
-    }   
+    }
   }
   [type=checkbox]:checked+label::before {
     background: $sweetgrass;
@@ -71,6 +71,6 @@
     border: 2px solid $sweetgrass;
   }
   &:hover {
-    border: 2px solid $sweetgrass;    
+    border: 2px solid $sweetgrass;
   }
 }

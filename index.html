@@ -7,8 +7,152 @@
     <link rel="stylesheet" href="dist/css/main.min.css">
     <script src="dist/js/smoothscroll-polyfill.min.js" charset="utf-8"></script>
     <script src="dist/js/farmers.min.js" charset="utf-8"></script>
+    <style media="screen">
+      label.checkbox-label {
+        display: flex;
+        line-height: 2.8rem;
+        font-size: 1.8rem;
+      }
+      label.checkbox-label:before {
+        content: '\a0';
+        width: 2.4rem;
+        height: 2.4rem;
+        border: .2rem solid #707070;
+        border-radius: .2rem;
+        display: flex;
+        margin-right: .8rem;
+      }
+
+      input.checkbox-input:checked + label.checkbox-label:before{
+        background-color: #006546;
+        border: .2rem solid #006546;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./img/correct8.svg");
+      }
+
+      input.checkbox-input {
+        display: none;
+      }
+
+      label.checkbox-card-label {
+        min-height: 11rem;
+        padding: 2rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        background: #FFFFFF;
+        border: .2rem solid #BBBBBB;
+        box-shadow: 0 .1rem .4rem 0 #BBBBBB;
+        border-radius: .2rem;
+        margin: 0 1rem 1rem 1rem;
+      }
+      label.checkbox-card-label:hover {
+        border: .2rem solid #49A564;
+        cursor: pointer;
+      }
+
+      .cb-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        border: .2rem solid #49A564;
+        border-radius: .2rem;
+        display: flex;
+      }
+      input.checkbox-card-input {
+        display: none;
+      }
+      input.checkbox-card-input:checked + .cb-icon {
+        background-color: #49A564;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./img/correct8.svg");
+      }
+      label.checkbox-card-label.checked {
+        border: .2rem solid #49A564;
+      }
+      .row {
+        margin: 1rem 0;
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="medium-2">
+          <div class="checkbox-wrap">
+            <input type="checkbox" id="cb-1" name="example-1" tabindex="-1" class="checkbox-input">
+            <label tabindex="0" for="cb-1" class="checkbox-label">Option 1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p> </p>
+          <hr>
+          <p> </p>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="medium-3">
+          <label tabindex="0" for="checkbox-card-1" class="checkbox-card-label">
+            <input type="checkbox" id="checkbox-card-1" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+            Card Checkbox
+            <span class="cb-icon"></span>
+          </label>
+        </div>
+
+        <div class="medium-3">
+          <label tabindex="0" for="checkbox-card-2" class="checkbox-card-label">
+            <input type="checkbox" id="checkbox-card-2" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+            Card Checkbox
+            <span class="cb-icon"></span>
+          </label>
+        </div>
+
+        <div class="medium-3">
+          <label tabindex="0" for="checkbox-card-3" class="checkbox-card-label">
+            <input type="checkbox" id="checkbox-card-3" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+            Card Checkbox
+            <span class="cb-icon"></span>
+          </label>
+        </div>
+
+        <div class="medium-3">
+          <label tabindex="0" for="checkbox-card-4" class="checkbox-card-label">
+            <input type="checkbox" id="checkbox-card-4" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+            Card Checkbox
+            <span class="cb-icon"></span>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p> </p>
+          <hr>
+          <p> </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p>
+            This Reflective IR Sensor is a simple plastic casing with two elements - an IR LED and an IR phototransistor. You can control the IR LED and turn it on to bounce IR off objects to determine their reflectivity. White & light colored stuff will bounce the light, so  you can detect it. Black & dark colored stuff will absorb the IR light so that it isn't detected. Likewise, if something isn't in the way of the sensor, it won't trigger either.
+            These sensors are handy when you want to detect if something has passed by the sensor, or a very simple hand-detector. Also sometimes these are used as rotary encoder, if the encoder wheel has black and white stripes, the photo sensor is fast enough to tell you the RPM. Most common usage of these sensors is for line following robots, they're so small and easy to solder, you can pack them together very close.
+            This sensor is compact, breadboard friendly and easy to solder to. It even has handy markings on the plastic so you know which side is the LED and which side is the phototransistor output. We don't include any 470Ω -1KΩ resistors for the Infrared LED, or a 10KΩ for the output pullup. But you do get a pack of 5!
+            This works best when detecting a light-colored object approximately 5mm away - 2mm to 10mm worked fairly well but your results may vary with the LED brightness, object shininess, etc.
+          </p>
+          <hr>
+          <p> </p>
+        </div>
+      </div>
 
       <div class="demo-block container">
 
@@ -22,7 +166,6 @@
               <h3>
                   <span class="Accordion-title headline-3">
                     Personal Information
-                    <span class="Accordion-icon"></span>
                   </span>
               </h3>
               <div class="down-arrow"></div>
@@ -46,7 +189,6 @@
               <h3>
                 <span class="Accordion-title headline-3">
                   Billing Address
-                  <span class="Accordion-icon"></span>
                 </span>
               </h3>
               <div class="down-arrow"></div>
@@ -70,7 +212,6 @@
               <h3>
                 <span class="Accordion-title headline-3">
                   Shipping Address
-                  <span class="Accordion-icon"></span>
                 </span>
               </h3>
               <div class="down-arrow"></div>
@@ -109,5 +250,26 @@
         </div>
       </div>
 
+
+    </div>
+
+    <script type="text/javascript">
+    window.addEventListener('load', function(){
+      let cb_labels = [...document.querySelectorAll('label.checkbox-card-label')];
+
+      cb_labels.map( el => {
+        el.addEventListener('click', evt => {
+          console.dir(evt.target);
+          if (evt.target.checked) {
+            evt.target.parentElement.classList.toggle('checked')
+          } else if (evt.target.classList.contains('checkbox-card-label')) {
+            if (evt.target.children[0].checked) {
+              evt.target.classList.toggle('checked')
+            }
+          }
+        })
+      })
+    })
+    </script>
   </body>
 </html>

@@ -38,7 +38,8 @@ export function scripts(done) {
 }
 
 export function styles(done) {
-  return gulp.src('new/styles.scss')
+  // return gulp.src('new/styles.scss')
+  return gulp.src('./styles.scss')
         .pipe(sass())
         .pipe(cleanCSS())
         .pipe(rename({
