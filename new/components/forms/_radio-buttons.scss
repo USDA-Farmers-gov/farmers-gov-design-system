@@ -5,14 +5,20 @@
 }
 
 [type=radio]+label::before {
+  background: #fff;
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px #757575;
+  display: inline-block;
+  content: '\a0';
   height: 1.6rem;
   line-height: 1.6rem;
+  margin-right: .6em;
   width: 1.6rem;
   border-radius: 100%;
 }
 
 [type=radio]:checked+label::before {
-  background-color: #006546;
-  box-shadow: 0 0 0 1px #006546;
+  background-color: $heritage;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px $heritage !important;
+  content: '\a0';
+  outline: none;
 }
