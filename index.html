@@ -44,28 +44,26 @@
         </div>
 
         <div class="medium-3">
-          <label tabindex="0" for="checkbox-card-2" class="checkbox-card-label">
-            <input type="checkbox" id="checkbox-card-2" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
-            Card Checkbox
-            <span class="cb-icon"></span>
+          <label tabindex="0" for="checkbox-card-2" class="checkbox-card-label with-image">
+            <div class="cb-img-card-top">
+              <img src="./img/leaves.svg">
+            </div>
+            <div class="cb-img-card-bottom">
+              <input type="checkbox" id="checkbox-card-2" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+              Card Checkbox w/ Image
+              <span class="cb-icon"></span>
+            </div>
           </label>
         </div>
 
         <div class="medium-3">
-          <label tabindex="0" for="checkbox-card-3" class="checkbox-card-label">
-            <input type="checkbox" id="checkbox-card-3" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
-            Card Checkbox
+          <label tabindex="0" for="checkbox-card-3" class="checkbox-card-label disabled">
+            <input type="checkbox" id="checkbox-card-3" class="checkbox-card-input" title="Card Checkbox" disabled tabindex="-1">
+            Card Checkbox (disabled)
             <span class="cb-icon"></span>
           </label>
         </div>
 
-        <div class="medium-3">
-          <label tabindex="0" for="checkbox-card-4" class="checkbox-card-label">
-            <input type="checkbox" id="checkbox-card-4" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
-            Card Checkbox
-            <span class="cb-icon"></span>
-          </label>
-        </div>
 
       </div>
 
@@ -190,21 +188,6 @@
     </div>
 
     <script type="text/javascript">
-    window.addEventListener('load', function(){
-      let cb_labels = [...document.querySelectorAll('label.checkbox-card-label')];
-
-      cb_labels.map( el => {
-        el.addEventListener('click', evt => {
-          let target = evt.target;
-          target.parentElement.classList.contains('checkbox-card-label') ?
-                                           target = target.parentElement : '';
-          if (target.control.checked) {
-            target.classList.toggle('checked')
-          }
-        })
-      })
-
-    })
     </script>
   </body>
 </html>
