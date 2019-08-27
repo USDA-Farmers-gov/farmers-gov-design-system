@@ -81,23 +81,25 @@ label.checkbox-label {
   display: flex;
   line-height: 2.8rem;
   font-size: 1.8rem;
-}
-label.checkbox-label:before {
-  content: '\a0';
-  width: 2.4rem;
-  height: 2.4rem;
-  border: .2rem solid #707070;
-  border-radius: .2rem;
-  display: flex;
-  margin-right: .8rem;
-}
 
-input.checkbox-input:checked + label.checkbox-label:before{
-  background-color: #006546;
-  border: .2rem solid #006546;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("./img/correct8.svg");
+  &:before {
+    content: '\a0';
+    width: 2.4rem;
+    height: 2.4rem;
+    border: .2rem solid $grey4;
+    border-radius: .2rem;
+    display: flex;
+    margin-right: .8rem;
+
+    input.checkbox-input:checked + &{
+      background-color: $heritage;
+      border: .2rem solid $heritage;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("../../img/correct8.svg");
+    }
+  }
+
 }
 
 input.checkbox-input {
@@ -105,39 +107,73 @@ input.checkbox-input {
 }
 
 label.checkbox-card-label {
-  min-height: 11rem;
+  min-height: 15rem;
   padding: 2rem;
   font-size: 1.6rem;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  background: #FFFFFF;
-  border: .2rem solid #BBBBBB;
-  box-shadow: 0 .1rem .4rem 0 #BBBBBB;
+  background: $white;
+  border: .2rem solid $grey3;
+  box-shadow: 0 .1rem .4rem 0 $grey3;
   border-radius: .2rem;
-}
-label.checkbox-card-label:hover {
-  border: .2rem solid #49A564;
-  cursor: pointer;
+
+  &:hover {
+    border: .2rem solid $sweetgrass;
+    cursor: pointer;
+  }
+  .cb-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    border: .2rem solid $sweetgrass;
+    border-radius: .2rem;
+    display: flex;
+  }
+  &.checked {
+    border: .2rem solid $sweetgrass;
+  }
+  &.disabled {
+    cursor: auto;
+    border: .2rem solid $grey3;
+    .cb-icon {
+      background: $grey1;
+      border: .2rem solid $grey3;
+    }
+  }
+
+  &.with-image {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-width: 14.7rem;
+    }
+    .cb-img-card-top {
+      width: 100%;
+      min-height: 11.4rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cb-img-card-bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
 }
 
-.cb-icon {
-  width: 3.2rem;
-  height: 3.2rem;
-  border: .2rem solid #49A564;
-  border-radius: .2rem;
-  display: flex;
-}
 input.checkbox-card-input {
   display: none;
-}
-input.checkbox-card-input:checked + .cb-icon {
-  background-color: #49A564;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../../img/correct8.svg");
-}
-label.checkbox-card-label.checked {
-  border: .2rem solid #49A564;
+
+  &:checked + .cb-icon {
+    background-color: $sweetgrass;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../img/correct8.svg");
+  }
 }
