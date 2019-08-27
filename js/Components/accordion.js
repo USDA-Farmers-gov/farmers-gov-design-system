@@ -127,7 +127,7 @@ window.addEventListener('load', function(){
     accordion.querySelectorAll('.Accordion-trigger').forEach(function (trigger) {
 
       trigger.addEventListener('focus', function (event) {
-        accordion.classList.add('focus');
+        // accordion.classList.add('focus');
         event.target.classList.add('focus');
       });
 
