@@ -35,7 +35,7 @@
       background-image: url('../farmers/img/box-accordion-minus.svg');
 
       .headline-3 {
-        color: #FFFFFF;
+        color: $white;
       }
       .down-arrow {
         display: block;
@@ -56,13 +56,14 @@
       outline-style: auto;
       outline-width: 3px;
       outline-offset: 5px;
+
     }
   }
 
   .Accordion-panel {
     padding: 3.2rem 2.4rem;
     position: relative;
-    background: #ffffff;
+    background: $white;
     box-shadow: 0px 4px 6px -3px #BBBBBB;
     border-top: .8rem solid #49A564;
 
