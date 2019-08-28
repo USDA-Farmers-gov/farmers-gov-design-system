@@ -15,7 +15,69 @@
     </style>
   </head>
   <body>
+
+
     <div class="container">
+      <div class="row">
+        <div class="medium-2">
+          <input type="radio" class="radio-input" name="group1" id="r1" value="1" tabindex="-1">
+          <label for="r1" class="radio-label">Choice 1</label>
+        </div>
+        <div class="medium-2">
+          <input type="radio" class="radio-input" name="group1" id="r2" value="1" tabindex="-1">
+          <label for="r2" class="radio-label">Choice 2</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p> </p>
+          <hr>
+          <p> </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-3">
+          <label tabindex="0" for="radio-card-1" class="radio-card-label">
+            <div class="radio-card-bottom">
+              <input type="radio" id="radio-card-1" class="radio-card-input" name="radio-example" title="Card Radio" tabindex="-1">
+              Card Radio
+              <span class="radio-icon"></span>
+            </div>
+          </label>
+        </div>
+        <div class="medium-3">
+          <label tabindex="0" for="radio-card-2" class="radio-card-label with-image">
+            <div class="radio-img-card-top">
+              <img src="./img/leaves.svg">
+            </div>
+            <div class="radio-img-card-bottom">
+              <input type="radio" id="radio-card-2" class="radio-card-input" name="radio-example" title="Card Radio" tabindex="-1">
+              Card Radio w/ Image
+              <span class="radio-icon"></span>
+            </div>
+          </label>
+        </div>
+        <div class="medium-3">
+          <label tabindex="0" for="radio-card-3" class="radio-card-label disabled">
+            <div class="radio-card-bottom">
+              <input type="radio" id="radio-card-3" class="radio-card-input" name="radio-example" title="Card Radio" tabindex="-1">
+              Card Radio
+              <span class="radio-icon"></span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p> </p>
+          <hr>
+          <p> </p>
+        </div>
+      </div>
+
       <div class="row">
         <div class="medium-2">
           <div class="checkbox-wrap focus">
@@ -37,9 +99,11 @@
 
         <div class="medium-3">
           <label tabindex="0" for="checkbox-card-1" class="checkbox-card-label">
-            <input type="checkbox" id="checkbox-card-1" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
-            Card Checkbox
-            <span class="cb-icon"></span>
+            <div class="cb-card-bottom">
+              <input type="checkbox" id="checkbox-card-1" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
+              Card Checkbox
+              <span class="cb-icon"></span>
+            </div>
           </label>
         </div>
 
@@ -58,9 +122,11 @@
 
         <div class="medium-3">
           <label tabindex="0" for="checkbox-card-3" class="checkbox-card-label disabled">
-            <input type="checkbox" id="checkbox-card-3" class="checkbox-card-input" title="Card Checkbox" disabled tabindex="-1">
-            Card Checkbox (disabled)
-            <span class="cb-icon"></span>
+            <div class="cb-card-bottom">
+              <input type="checkbox" id="checkbox-card-3" class="checkbox-card-input" title="Card Checkbox" disabled tabindex="-1">
+              Card Checkbox (disabled)
+              <span class="cb-icon"></span>
+            </div>
           </label>
         </div>
 

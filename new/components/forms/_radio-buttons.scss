@@ -1,24 +1,113 @@
-[type=radio] {
-  margin-left: -2rem;
-  opacity: 0;
-  position: absolute;
+label.radio-label {
+  display: flex;
+  line-height: 2.8rem;
+  font-size: 1.8rem;
+
+  &:before {
+    content: '\a0';
+    width: 2rem;
+    height: 2rem;
+    border: .2rem solid $grey4;
+    border-radius: 5rem;
+    display: flex;
+    margin-right: .8rem;
+
+    input.radio-input:checked + &{
+      background-color: $heritage;
+      border: .2rem solid $white;
+      box-shadow: 0 0 0 .2rem $heritage;
+    }
+  }
+
+  input.radio-input:disabled + & {
+    color: $grey3;
+
+    &:before {
+      border: .2rem solid $grey3;
+      background: $grey1;
+    }
+  }
+
 }
 
-[type=radio]+label::before {
-  background: #fff;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #757575;
-  display: inline-block;
-  content: '\a0';
-  height: 1.6rem;
-  line-height: 1.6rem;
-  margin-right: .6em;
-  width: 1.6rem;
-  border-radius: 100%;
+input.radio-input {
+  display: none;
 }
 
-[type=radio]:checked+label::before {
-  background-color: $heritage;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px $heritage !important;
-  content: '\a0';
-  outline: none;
+
+label.radio-card-label {
+  min-height: 15rem;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: $white;
+  border: .2rem solid $grey3;
+  box-shadow: 0 .1rem .4rem 0 $grey3;
+  border-radius: .2rem;
+
+  &:hover {
+    border: .2rem solid $sweetgrass;
+    cursor: pointer;
+  }
+  .radio-card-bottom {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+  .radio-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: .2rem solid $sweetgrass;
+    border-radius: 100%;
+    display: flex;
+  }
+  &.checked {
+    border: .2rem solid $sweetgrass;
+  }
+  &.disabled {
+    cursor: auto;
+    border: .2rem solid $grey3;
+    .radio-icon {
+      background: $grey1;
+      border: .2rem solid $grey3;
+    }
+  }
+
+  &.with-image {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-width: 9.7rem;
+    }
+    .radio-img-card-top {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 2;
+    }
+    .radio-img-card-bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+input.radio-card-input {
+  display: none;
+
+  &:checked + .radio-icon {
+    background-color: $sweetgrass;
+    border: .2rem solid $white;
+    box-shadow: 0 0 0 .2rem $sweetgrass;
+  }
 }
