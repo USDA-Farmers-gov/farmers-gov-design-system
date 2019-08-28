@@ -6,8 +6,8 @@ label.radio-label {
 
   &:before {
     content: '\a0';
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border: .2rem solid $grey4;
     border-radius: 5rem;
     display: flex;
@@ -60,8 +60,8 @@ label.radio-card-label {
     width: 100%;
   }
   .radio-icon {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3.2rem;
+    height: 3.2rem;
     border: .2rem solid $sweetgrass;
     border-radius: 100%;
     display: flex;
@@ -84,7 +84,7 @@ label.radio-card-label {
     align-items: center;
 
     img {
-      max-width: 9.7rem;
+      max-width: 5.8rem;
     }
     .radio-img-card-top {
       width: 100%;
