@@ -1,82 +1,3 @@
-// // Checkboxes
-// [type=checkbox] {
-//   opacity: 0;
-//   position: absolute;
-//   left: -999em;
-// }
-//
-// [type=checkbox] +label::before {
-//   background: $white;
-//   border: 2px solid $grey4;
-//   border-radius: .2rem;
-//   box-shadow: none;
-//   content: '\a0';
-//   display: inline-block;
-//   height: 2.4rem;
-//   line-height: 1.8rem;
-//   margin-right: .6em;
-//   text-indent: .15em;
-//   width: 2.4rem;
-// }
-//
-// [type=checkbox]:checked+label::before {
-//   background: $heritage;
-//   background-image: url(../../img/correct8.svg);
-//   border: 2px solid $heritage;
-//   background-position: 50%;
-//   background-repeat: no-repeat;
-//   box-shadow: none;
-// }
-//
-// [type=checkbox]:disabled+label::before {
-//   background: $grey1;
-//   border: 2px solid $grey3;
-//   box-shadow: none;
-//   cursor: not-allowed;
-// }
-//
-// [type=checkbox]:disabled+label {
-//   color: $grey3;
-//   box-shadow: none;
-// }
-//
-// // Card Checkboxes
-// .checkbox-card {
-//   min-height: 150px;
-//   border: 2px solid $grey3;
-//   label {
-//     display: block;
-//     font-weight: bold;
-//     min-height: inherit;
-//     padding: 10.5rem 2rem 2rem;
-//     margin: 0;
-//     margin-right: 0;
-//     cursor: pointer;
-//     &:before {
-//       border: 2px solid $sweetgrass;
-//       float: right;
-//       margin-right: 0;
-//       width: 32px;
-//       height: 32px;
-//       margin-top: -5px;
-//     }
-//   }
-//   [type=checkbox]:checked+label::before {
-//     background: $sweetgrass;
-//     background-image: url(../../img/correct8.svg);
-//     background-size: 30px;
-//     border: 2px solid $sweetgrass;
-//   }
-//   &.checked {
-//     border: 2px solid $sweetgrass;
-//   }
-//   &:hover {
-//     border: 2px solid $sweetgrass;
-//   }
-// }
-
-
-
 label.checkbox-label {
   display: flex;
   line-height: 2.8rem;
@@ -84,8 +5,8 @@ label.checkbox-label {
 
   &:before {
     content: '\a0';
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     border: .2rem solid $grey4;
     border-radius: .2rem;
     display: flex;
@@ -139,8 +60,8 @@ label.checkbox-card-label {
     width: 100%;
   }
   .cb-icon {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
     border: .2rem solid $sweetgrass;
     border-radius: .2rem;
     display: flex;
