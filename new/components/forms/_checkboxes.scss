@@ -132,6 +132,12 @@ label.checkbox-card-label {
     border: .2rem solid $sweetgrass;
     cursor: pointer;
   }
+  .cb-card-bottom {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
   .cb-icon {
     width: 3.2rem;
     height: 3.2rem;
@@ -157,21 +163,21 @@ label.checkbox-card-label {
     align-items: center;
 
     img {
-      max-width: 14.7rem;
+      max-width: 9.7rem;
     }
     .cb-img-card-top {
       width: 100%;
-      min-height: 11.4rem;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-grow: 2;
     }
     .cb-img-card-bottom {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
     }
   }
 }
