@@ -1,4 +1,11 @@
-.card {
-  border-radius: 2px;
-  box-shadow: 0 3px 14px 0 $grey3;
+.content-card {
+  background: #FFFFFF;
+  box-shadow: 0 .1rem .4rem 0 #BBBBBB;
+  border-radius: .2rem;
+  padding: 2rem;
+
+  &.accent-top {
+    border-top: .6rem solid $heritage;
+    border-radius: .2rem .2rem 0 0;
+  }
 }
