@@ -13,6 +13,10 @@ label.checkbox-label {
     border-radius: .2rem;
     display: flex;
     margin-right: .8rem;
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: .65em;
+    margin-top: 3rem;
 
     input.checkbox-input:checked + &{
       background-color: $heritage;

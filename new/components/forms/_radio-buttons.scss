@@ -12,6 +12,10 @@ label.radio-label {
     border-radius: 5rem;
     display: flex;
     margin-right: .8rem;
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: .65em;
+    margin-top: 3rem;    
 
     input.radio-input:checked + &{
       background-color: $heritage;
