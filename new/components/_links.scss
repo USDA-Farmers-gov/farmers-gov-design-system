@@ -1,0 +1,25 @@
+.text-link {
+  color: $heritage;
+  font-family: 'Public Sans';
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+  text-decoration: underline;
+  background: url(../../img/caret-right.svg) no-repeat;
+  background-position: 8.7rem;
+  background-size: 2rem;
+  padding-right: 2.6rem;
+}
+
+.external-link {
+  color: $heritage;
+  font-family: 'Public Sans';
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+  text-decoration: underline;
+  background: url(../../img/external-link-icon.svg) no-repeat;
+  background-position: right 0.9rem;
+  background-size: 1.2rem;
+  padding-right: 1.6rem;
+}
