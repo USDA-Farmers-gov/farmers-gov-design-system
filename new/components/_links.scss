@@ -1,5 +1,18 @@
+a {
+  color: $heritage;
+  text-decoration: underline;
+  &:focus {
+    outline-width: 0px;
+    outline-offset: 3px;
+    outline-color: $focus;
+    box-shadow: 0px 0px 4px $focus;
+    padding: .5rem;    
+  }
+}
+
 .text-link {
   color: $heritage;
+  cursor: pointer;
   font-family: 'Public Sans';
   font-size: 20px;
   font-weight: bold;
@@ -9,10 +22,12 @@
   background-position: right;
   background-size: 2rem;
   padding-right: 2.6rem;
+  margin-right: 1rem;
 }
 
 .external-link {
   color: $heritage;
+  cursor: pointer;
   font-family: 'Public Sans';
   font-size: 20px;
   font-weight: bold;
@@ -22,4 +37,29 @@
   background-position: right 0.9rem;
   background-size: 1.2rem;
   padding-right: 1.6rem;
+  margin-right: 1rem;
+}
+
+.anchor-link {
+  padding-right: 1.5rem;
+  display: inline-block;
+  margin-right: 1rem;
+  &:before {
+    content: "";
+    cursor: pointer;
+    background: url(../../img/leaves.svg) no-repeat;
+    width: 18px;
+    height: 22px;
+    display: block;
+    float: left;
+    background-position: center center;
+    margin-right: 1rem;    
+  }
+  &:focus {
+    outline-width: 0px;
+    outline-offset: 3px;
+    outline-color: $focus;
+    box-shadow: 0px 0px 4px $focus;
+    padding: .5rem;    
+  }
 }
