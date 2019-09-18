@@ -8,12 +8,73 @@
     <script src="dist/js/smoothscroll-polyfill.min.js" charset="utf-8"></script>
     <script src="dist/js/farmers.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
     <style media="screen">
+      .row {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+      }
 
-      /* .row {
-        margin-top: 1rem;
-      } */
+      .stepper-example-2 {
+        outline: 1px solid aqua;
+      }
 
+      .vertical-step {
+        min-height: 10rem;
+        display: flex;
+        padding-bottom: .8rem;
+      }
+
+      .vertical-step-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .vertical-step-left {
+        /* outline: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .vertical-step-selections {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .vertical-step-selections > div {
+        margin-bottom: 1.4rem;
+      }
+
+      .vertical-step-header {
+        padding-left: 1rem;
+      }
+
+      .vertical-step-header > h2 {
+        margin-top: 0;
+      }
+
+      .vertical-step-left > .step-icon {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        background: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        line-height: 2.6rem;
+      }
+
+      .vertical-step-left:after {
+        content: ' ';
+        background: grey;
+        width: 0.2rem;
+        height: 90%;
+      }
     </style>
   </head>
   <body>
@@ -323,6 +384,21 @@
         </div>
 
       </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p></p>
+          <hr>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="stepper-example medium-12">
+
+        </div>
+
+      </div>
     </div>
 
     <script type="text/javascript">
@@ -336,6 +412,177 @@
       background-size: cover;
       padding: 2rem;`;
       console.log('%cLord Gardner!', stylestring);
+
+
+
+
+      const stepperInit = (rootEl, formName, steps) => {
+        let anch = document.querySelector(rootEl);
+        let $form = document.createElement('form');
+        $form.setAttribute('id', formName);
+        $form.setAttribute('name', formName);
+        $form.addEventListener('submit', (e) => { e.preventDefault() });
+
+        steps.map( step => {
+          makeRow($form, step)
+        })
+
+        anch.appendChild($form);
+      }
+
+
+      const makeRow = ($form, stepObj) => {
+
+        const checkboxNext = () => {
+          let div = document.createElement('div');
+          let btn = document.createElement('button');
+          div.classList.add('next-btn');
+          btn.classList.add('btn');
+          btn.innerText = 'Next';
+          btn.addEventListener('click', stepObj.stepLeave);
+          div.appendChild(btn);
+
+          return div;
+        }
+
+        const rowMarkup = `
+        <div class="vertical-step">
+          <div class="vertical-step-left">
+            <span class="step-icon">${ stepObj.step.icon ? stepObj.step.icon : stepObj.step }</span>
+          </div>
+          <div class="vertical-step-content">
+            <div class="vertical-step-header">
+              <h2>${ stepObj.title }</h2>
+              <p>${ stepObj.subtitle }</p>
+            </div>
+            <div class="vertical-step-selections">
+              ${ makeSelections(stepObj) }
+            </div>
+          </div>
+        </div>
+        `;
+
+
+        $form.innerHTML = $form.innerHTML + rowMarkup;
+        if (stepObj.type == 'checkbox') {
+          $form.querySelector('.vertical-step-content:last-child').appendChild(checkboxNext())
+        }
+        var fdat = new FormData($form);
+        stepObj.stepEnter(fdat);
+      }
+
+      const makeSelections = (stepObj) => {
+        if (stepObj.type == 'checkbox') {
+          const checkboxMarkup = (selection, width = 'medium-3') => {
+            return `
+              <div class="${width}">
+                <label class="checkbox-card-label with-image" for="${selection.name}" tabindex="0">
+                  <div class="cb-img-card-top">
+                    <h2>${selection.text}</h2>
+                  </div>
+                  <div class="cb-img-card-bottom">
+                    <input class="checkbox-card-input" id="${selection.name}" type="checkbox">
+                    <span class="cb-icon"></span>
+                  </div>
+                </label>
+              </div>
+            `;
+          }
+
+          return stepObj.selections.map( item => checkboxMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
+        }
+
+        if (stepObj.type == 'radio') {
+          const radioMarkup = (selection, width = 'medium-3') => {
+            return `
+            <div class="${width}">
+              <label tabindex="0" for="${selection.id}" class="radio-card-label">
+                <div class="radio-card-bottom">
+                  <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="-1">
+                  ${selection.text}
+                  <span class="radio-icon"></span>
+                </div>
+              </label>
+            </div>
+            `;
+          }
+
+          return stepObj.selections.map( item => radioMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
+        }
+      }
+
+      let stepsArray = [
+        {
+          type: 'checkbox',
+          step: 1,
+          title: 'Example question 1',
+          subtitle: 'This is supporting text for the question.',
+          selections: [
+            {
+              text: 'Yes',
+              name: 'cb-ex-yes'
+            },
+            {
+              text: 'No',
+              name: 'cb-ex-no'
+            },
+            {
+              text: 'Maybe So',
+              name: 'cb-ex-maybe'
+            },
+            {
+              text: 'So So',
+              name: 'cb-ex-so-so'
+            }
+          ],
+          stepEnter: (formInfo) => {
+            console.log(formInfo);
+          },
+          stepLeave: (evt) => {
+            let form = evt.path.filter( item => item.nodeName === 'FORM' );
+            console.log(form[0].elements);
+          }
+        },
+        {
+          type: 'radio',
+          step: 2,
+          title: 'Example question 2',
+          subtitle: '',
+          selections: [
+            {
+              text: 'Yes Radio',
+              id: 'radio-ex-yes',
+              name: 'radio-step-example'
+            },
+            {
+              text: 'No Radio',
+              id: 'radio-ex-no',
+              name: 'radio-step-example'
+            },
+            {
+              text: 'Maybe So Radio',
+              id: 'radio-ex-maybe',
+              name: 'radio-step-example'
+            },
+            {
+              text: 'So So Radio',
+              id: 'radio-ex-so-so',
+              name: 'radio-step-example'
+            }
+          ],
+          stepEnter: (formInfo) => {
+            console.log(formInfo);
+          },
+          stepLeave: (evt) => {
+            let form = evt.path.filter( item => item.nodeName === 'FORM' );
+            console.log(form[0].elements);
+          }
+        }
+      ];
+
+      stepperInit('.stepper-example', 'example-form', stepsArray);
+
+
     </script>
   </body>
 </html>
