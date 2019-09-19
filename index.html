@@ -406,110 +406,144 @@
       console.clear();
       const stylestring = `
       font-size: 4rem;
-      font-family: Lobster;
-      text-shadow: 1px 1px 4px aqua;
-      background: url(https://thumbs.gfycat.com/TenderGloriousBluebreastedkookaburra-size_restricted.gif);
-      background-size: cover;
+      font-family: "Lord of the Sith 3D Italic";
+      text-shadow: 1px 1px 4px #007eff;
+      background: url(https://thumbs.gfycat.com/TenderGloriousBluebreastedkookaburra-size_restricted.gif) 143% 0%;
+      background-size: 555rem;
       padding: 2rem;`;
-      console.log('%cLord Gardner!', stylestring);
+      console.log('%cLrd Grdnr!', stylestring);
 
 
+      class Stepper {
 
+        constructor(rootElement, name, stepsArray) {
+          this.sRoot = document.querySelector(rootElement);
+          this.steps = stepsArray.map( step => {
+            return new Step(step);
+          });
+          this.$form = document.createElement('form');
+          this.$form.setAttribute('id', name);
+          this.$form.addEventListener('submit', (e) => { e.preventDefault() })
 
-      const stepperInit = (rootEl, formName, steps) => {
-        let anch = document.querySelector(rootEl);
-        let $form = document.createElement('form');
-        $form.setAttribute('id', formName);
-        $form.setAttribute('name', formName);
-        $form.addEventListener('submit', (e) => { e.preventDefault() });
+          this.render = () => {
+            let temp = document.createElement('div');
 
-        steps.map( step => {
-          makeRow($form, step)
-        })
+            this.steps.map( step => {
+              return step.markup();
+            })
+            .map( markup => {
+              if (!!markup) {
+                console.log(markup);
+                this.$form.appendChild(markup);
+              }
+            })
 
-        anch.appendChild($form);
-      }
+            this.sRoot.innerHTML = '';
+            this.sRoot.appendChild(this.$form);
+            return this.sRoot;
+          }
 
-
-      const makeRow = ($form, stepObj) => {
-
-        const checkboxNext = () => {
-          let div = document.createElement('div');
-          let btn = document.createElement('button');
-          div.classList.add('next-btn');
-          btn.classList.add('btn');
-          btn.innerText = 'Next';
-          btn.addEventListener('click', stepObj.stepLeave);
-          div.appendChild(btn);
-
-          return div;
         }
 
-        const rowMarkup = `
-        <div class="vertical-step">
-          <div class="vertical-step-left">
-            <span class="step-icon">${ stepObj.step.icon ? stepObj.step.icon : stepObj.step }</span>
-          </div>
-          <div class="vertical-step-content">
-            <div class="vertical-step-header">
-              <h2>${ stepObj.title }</h2>
-              <p>${ stepObj.subtitle }</p>
-            </div>
-            <div class="vertical-step-selections">
-              ${ makeSelections(stepObj) }
-            </div>
-          </div>
-        </div>
-        `;
-
-
-        $form.innerHTML = $form.innerHTML + rowMarkup;
-        if (stepObj.type == 'checkbox') {
-          $form.querySelector('.vertical-step-content:last-child').appendChild(checkboxNext())
-        }
-        var fdat = new FormData($form);
-        stepObj.stepEnter(fdat);
       }
 
-      const makeSelections = (stepObj) => {
-        if (stepObj.type == 'checkbox') {
-          const checkboxMarkup = (selection, width = 'medium-3') => {
-            return `
-              <div class="${width}">
-                <label class="checkbox-card-label with-image" for="${selection.name}" tabindex="0">
-                  <div class="cb-img-card-top">
-                    <h2>${selection.text}</h2>
+      class Step {
+
+        constructor(step){
+          this.data = { ...step }
+          this.results = [];
+          this.stepTypes = {
+            'checkbox': {
+              make: (stepObj) => {
+                const checkboxMarkup = (selection, width = 'medium-3') => {
+                  return `
+                    <div class="${width}">
+                      <label class="checkbox-card-label with-image" for="${selection.name}" tabindex="0">
+                        <div class="cb-img-card-top">
+                          <h2>${selection.text}</h2>
+                        </div>
+                        <div class="cb-img-card-bottom">
+                          <input class="checkbox-card-input" id="${selection.name}" type="checkbox">
+                          <span class="cb-icon"></span>
+                        </div>
+                      </label>
+                    </div>
+                  `;
+                }
+
+                return stepObj.selections.map( item => checkboxMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
+              },
+              checkboxNext: (stepObj) => {
+                let div = document.createElement('div');
+                let btn = document.createElement('button');
+                let tmp = document.createElement('span');
+                div.classList.add('next-btn');
+                btn.classList.add('btn');
+                btn.innerText = 'Next';
+                btn.addEventListener('click', stepObj.stepLeave);
+                div.appendChild(btn);
+                tmp.appendChild(div);
+
+                return div;
+              }
+            },
+            'radio': {
+              make: (stepObj) => {
+                const radioMarkup = (selection, width = 'medium-3') => {
+                  return `
+                    <div class="${width}">
+                      <label tabindex="0" for="${selection.id}" class="radio-card-label">
+                        <div class="radio-card-bottom">
+                          <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="-1">
+                          ${selection.text}
+                          <span class="radio-icon"></span>
+                        </div>
+                      </label>
+                    </div>
+                  `;
+                }
+
+                return stepObj.selections.map( item => radioMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
+              }
+            }
+          }
+        }
+
+        markup(){
+          if (!!this.stepTypes[this.data.type]) {
+            let html =  `
+              <div class="vertical-step">
+                <div class="vertical-step-left">
+                  <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
+                </div>
+                <div class="vertical-step-content">
+                  <div class="vertical-step-header">
+                    <h2>${ this.data.title }</h2>
+                    <p>${ this.data.subtitle }</p>
                   </div>
-                  <div class="cb-img-card-bottom">
-                    <input class="checkbox-card-input" id="${selection.name}" type="checkbox">
-                    <span class="cb-icon"></span>
+                  <div class="vertical-step-selections">
+                    ${ this.stepTypes[this.data.type].make(this.data) }
                   </div>
-                </label>
+
+                </div>
               </div>
             `;
-          }
 
-          return stepObj.selections.map( item => checkboxMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
+            let template = document.createElement('template');
+            template.innerHTML = html.trim();
+            if (this.data.type == 'checkbox') {
+              template.content.firstChild.querySelector('.vertical-step-content:last-child')
+                              .appendChild(this.stepTypes[this.data.type].checkboxNext(this.data))
+            }
+            template.content.firstChild.addEventListener('click', this.data.stepLeave);
+            return template.content.firstChild;
+          }
         }
 
-        if (stepObj.type == 'radio') {
-          const radioMarkup = (selection, width = 'medium-3') => {
-            return `
-            <div class="${width}">
-              <label tabindex="0" for="${selection.id}" class="radio-card-label">
-                <div class="radio-card-bottom">
-                  <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="-1">
-                  ${selection.text}
-                  <span class="radio-icon"></span>
-                </div>
-              </label>
-            </div>
-            `;
-          }
-
-          return stepObj.selections.map( item => radioMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
-        }
       }
+
+
+
 
       let stepsArray = [
         {
@@ -580,8 +614,13 @@
         }
       ];
 
-      stepperInit('.stepper-example', 'example-form', stepsArray);
+      // stepperInit('.stepper-example', 'example-form', stepsArray);
 
+      window.onload =  function(){
+        let think = new Stepper('.stepper-example', 'class-stepper', stepsArray);
+        think.render()
+        // console.log(think.render());
+      }
 
     </script>
   </body>
