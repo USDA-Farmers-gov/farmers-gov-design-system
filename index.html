@@ -417,6 +417,7 @@
       class Stepper {
 
         constructor(rootElement, name, stepsArray) {
+
           this.sRoot = document.querySelector(rootElement);
           this.steps = stepsArray.map( step => {
             return new Step(step);
@@ -443,6 +444,10 @@
             return this.sRoot;
           }
 
+        }
+
+        get formData(){
+          return this.$form.elements;
         }
 
       }
@@ -535,7 +540,7 @@
               template.content.firstChild.querySelector('.vertical-step-content:last-child')
                               .appendChild(this.stepTypes[this.data.type].checkboxNext(this.data))
             }
-            template.content.firstChild.addEventListener('click', this.data.stepLeave);
+            template.content.firstChild.addEventListener('click', this.data.stepClick);
             return template.content.firstChild;
           }
         }
@@ -572,7 +577,7 @@
           stepEnter: (formInfo) => {
             console.log(formInfo);
           },
-          stepLeave: (evt) => {
+          stepClick: (evt) => {
             let form = evt.path.filter( item => item.nodeName === 'FORM' );
             console.log(form[0].elements);
           }
@@ -607,9 +612,8 @@
           stepEnter: (formInfo) => {
             console.log(formInfo);
           },
-          stepLeave: (evt) => {
-            let form = evt.path.filter( item => item.nodeName === 'FORM' );
-            console.log(form[0].elements);
+          stepClick: (evt) => {
+
           }
         }
       ];
@@ -619,6 +623,7 @@
       window.onload =  function(){
         let think = new Stepper('.stepper-example', 'class-stepper', stepsArray);
         think.render()
+        console.log(think.formData);
         // console.log(think.render());
       }
 
