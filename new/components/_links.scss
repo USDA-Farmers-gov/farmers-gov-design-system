@@ -1,12 +1,19 @@
 a {
   color: $heritage;
   text-decoration: underline;
+  cursor: pointer;
   &:focus {
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
-    padding: .5rem;    
+    box-shadow: 0px 0px 4px $focus;   
+  }
+  &:hover {
+    text-shadow: 0 0 0.08rem $heritage;
+    -webkit-text-stroke: 1px $heritage;
+  }
+  &:visited {
+    color: $visited;
   }
 }
 
@@ -23,6 +30,14 @@ a {
   background-size: 2rem;
   padding-right: 2.6rem;
   margin-right: 1rem;
+  &:hover {
+    color: $sweetgrass;
+    text-shadow: 0 0 0px #fff0;
+    -webkit-text-stroke: 0 #fff0;
+  }
+  &:visited {
+    color: $visited;
+  }  
 }
 
 .external-link {
@@ -38,6 +53,14 @@ a {
   background-size: 1.2rem;
   padding-right: 1.6rem;
   margin-right: 1rem;
+  &:hover {
+    color: $sweetgrass;
+    text-shadow: 0 0 0px #fff0;
+    -webkit-text-stroke: 0 #fff0;
+  }
+  &:visited {
+    color: $visited;
+  }  
 }
 
 .anchor-link {
@@ -49,17 +72,24 @@ a {
     cursor: pointer;
     background: url(../../img/leaves.svg) no-repeat;
     width: 18px;
-    height: 22px;
+    height: 26px;
     display: block;
     float: left;
     background-position: center center;
-    margin-right: 1rem;    
+    margin-right: 1rem;
   }
   &:focus {
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
-    padding: .5rem;    
+    box-shadow: 0px 0px 4px $focus;   
   }
+  &:hover {
+    color: $sweetgrass;
+    text-shadow: 0 0 0.08rem $heritage;
+    -webkit-text-stroke: 1px $heritage;
+  }
+  &:visited {
+    color: $visited;
+  }    
 }
