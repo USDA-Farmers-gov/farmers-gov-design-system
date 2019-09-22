@@ -464,7 +464,7 @@
         }
 
         get formData(){
-          return this.$form.elements;
+          return [ ...this.$form.elements ].filter( el => el.value );
         }
 
       }
