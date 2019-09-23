@@ -14,6 +14,10 @@ a {
   }
   &:visited, &.visited {
     color: $visited;
+    &:hover, &.hover {
+      text-shadow: 0 0 0.08rem $visited;
+      -webkit-text-stroke: 1px $visited;    
+    }  
   }
 }
 
