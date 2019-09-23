@@ -437,8 +437,9 @@
           })[0]
 
           if (nextRenderedStep) {
-            this.renderedSteps.push(nextRenderedStep)
-            this.renderedSteps = this.renderedSteps.filter( stp => stp.data.step <= nextRenderedStep.data.step)
+            nextRenderedStep.rebuildDomElement();
+            this.renderedSteps.push(nextRenderedStep);
+            this.renderedSteps = this.renderedSteps.filter( stp => stp.data.step <= nextRenderedStep.data.step);
             this.render();
           } else {
             console.log(this);
@@ -566,6 +567,42 @@
 
         stepComplete(thing){
 
+        }
+
+        rebuildDomElement(){
+          if (!!this.stepTypes[this.data.type]) {
+            let html =  `
+            <div class="vertical-step">
+              <div class="vertical-step-left">
+                <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
+              </div>
+              <div class="vertical-step-content">
+                <div class="vertical-step-header">
+                  <h2>${ this.data.title }</h2>
+                  <p>${ this.data.subtitle }</p>
+                </div>
+                <div class="vertical-step-selections">
+                ${ this.stepTypes[this.data.type].make(this.data) }
+                </div>
+              </div>
+            </div>
+            `;
+
+            let template = document.createElement('template');
+            template.innerHTML = html.trim();
+            if (this.data.type == 'checkbox') {
+              template.content.firstChild.querySelector('.vertical-step-content:last-child')
+              .appendChild(this.stepTypes[this.data.type].checkboxNext(this.data))
+            }
+            if (this.data.type == 'select') {
+              let tmp = template.content.firstChild.querySelector('.vertical-step-content:last-child')
+              tmp.querySelector('select').addEventListener('change', this.data.changeHandler)
+            }
+            template.content.firstChild.addEventListener('click', this.data.stepClick);
+            this.domElement = template.content.firstChild;
+            this.domElement.addEventListener('click', this.data.clickHandler)
+            return template.content.firstChild;
+          }
         }
 
         markup(){
