@@ -2,17 +2,17 @@ a {
   color: $heritage;
   text-decoration: underline;
   cursor: pointer;
-  &:focus {
+  &:focus, &.focus {
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
     box-shadow: 0px 0px 4px $focus;   
   }
-  &:hover {
+  &:hover, &.hover {
     text-shadow: 0 0 0.08rem $heritage;
     -webkit-text-stroke: 1px $heritage;
   }
-  &:visited {
+  &:visited, &.visited {
     color: $visited;
   }
 }
@@ -30,12 +30,15 @@ a {
   background-size: 2rem;
   padding-right: 2.6rem;
   margin-right: 1rem;
-  &:hover {
+  &:focus, &.focus {
+    color: $sweetgrass;
+  }
+  &:hover, &.hover {
     color: $sweetgrass;
     text-shadow: 0 0 0px #fff0;
     -webkit-text-stroke: 0 #fff0;
   }
-  &:visited {
+  &:visited, &.visited {
     color: $visited;
   }  
 }
@@ -53,12 +56,15 @@ a {
   background-size: 1.2rem;
   padding-right: 1.6rem;
   margin-right: 1rem;
-  &:hover {
+  &:hover, &.hover {
     color: $sweetgrass;
     text-shadow: 0 0 0px #fff0;
     -webkit-text-stroke: 0 #fff0;
   }
-  &:visited {
+  &:focus, &.focus {
+    color: $sweetgrass;
+  }
+  &:visited, &.visited {
     color: $visited;
   }  
 }
@@ -78,18 +84,19 @@ a {
     background-position: center center;
     margin-right: 1rem;
   }
-  &:focus {
+  &:focus, &.focus {
+    color: $sweetgrass;    
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
     box-shadow: 0px 0px 4px $focus;   
   }
-  &:hover {
+  &:hover, &.hover {
     color: $sweetgrass;
     text-shadow: 0 0 0.08rem $heritage;
     -webkit-text-stroke: 1px $heritage;
   }
-  &:visited {
+  &:visited, &.visited {
     color: $visited;
   }    
 }
