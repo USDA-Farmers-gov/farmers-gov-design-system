@@ -30,6 +30,9 @@
         display: flex;
         flex-direction: column;
       }
+      .vertical-step-content > .next-btn {
+        margin: 2rem 0.8rem;
+      }
 
       .vertical-step-left {
         /* outline: 1px solid red; */
@@ -516,10 +519,12 @@
                 const radioMarkup = (selection, width = 'medium-3') => {
                   return `
                     <div class="${width}">
-                      <label tabindex="0" for="${selection.id}" class="radio-card-label">
-                        <div class="radio-card-bottom">
-                          <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="-1">
-                          ${selection.text}
+                      <label tabindex="0" for="${selection.id}" class="radio-card-label with-image">
+                        <div class="radio-img-card-top">
+                          <h2>${selection.text}</h2>
+                        </div>
+                        <div class="radio-img-card-bottom">
+                          <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="0">
                           <span class="radio-icon"></span>
                         </div>
                       </label>
@@ -672,11 +677,8 @@
                 name: 'cb-ex-maybe'
               }
             ],
-            stepEnter: (formInfo) => {
-              console.log(formInfo);
-            },
-            clickHandler: (thingy) => {
-              if (thingy.target.classList.contains('btn')) {
+            clickHandler: (evt) => {
+              if (evt.target.classList.contains('btn')) {
                 think.nextStep({step: 1});
               }
             },
