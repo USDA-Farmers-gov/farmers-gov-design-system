@@ -117,6 +117,7 @@ window.addEventListener('load', function(){
 
         } else if (key.match(/32|13/)) {
           // 13 = Enter, 32 = Space keyboard operations
+          event.preventDefault();
           target.click();
         }
 
@@ -187,6 +188,7 @@ window.addEventListener('load', function(){
       var target = event.target;
       var key = event.which.toString();
       if (key.match(/32|13/)) {
+        event.preventDefault();
         cardAccordion.click();
       }
     })

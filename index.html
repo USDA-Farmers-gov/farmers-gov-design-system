@@ -8,11 +8,12 @@
     <script src="dist/js/smoothscroll-polyfill.min.js" charset="utf-8"></script>
     <script src="dist/js/farmers.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <style media="screen">
 
-      /* .row {
-        margin-top: 1rem;
-      } */
+    <style media="screen">
+      .row {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+      }
 
     </style>
   </head>
@@ -323,19 +324,195 @@
         </div>
 
       </div>
+
+      <div class="row">
+        <div class="medium-12">
+          <p></p>
+          <hr>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="stepper-example medium-12">
+
+        </div>
+
+      </div>
     </div>
 
     <script type="text/javascript">
     // background: black;
-      console.clear();
+      // console.clear();
       const stylestring = `
       font-size: 4rem;
-      font-family: Lobster;
-      text-shadow: 1px 1px 4px aqua;
-      background: url(https://thumbs.gfycat.com/TenderGloriousBluebreastedkookaburra-size_restricted.gif);
-      background-size: cover;
+      font-family: "Lord of the Sith 3D Italic";
+      text-shadow: 1px 1px 4px #007eff;
+      background: url(https://thumbs.gfycat.com/TenderGloriousBluebreastedkookaburra-size_restricted.gif) 143% 0%;
+      background-size: 555rem;
       padding: 2rem;`;
-      console.log('%cLord Gardner!', stylestring);
+      console.log('%cLrd Grdnr!', stylestring);
+
+
+
+
+      window.onload =  function(){
+
+        let stepsArray = [
+          {
+            type: 'checkbox',
+            step: 1,
+            title: 'Example question 1',
+            subtitle: 'This is supporting text for the question.',
+            selections: [
+              {
+                text: 'Yes',
+                name: 'cb-ex-yes'
+              },
+              {
+                text: 'No',
+                name: 'cb-ex-no'
+              },
+              {
+                text: 'Maybe So',
+                name: 'cb-ex-maybe'
+              }
+            ],
+            clickHandler: (evt) => {
+              if (evt.target.classList.contains('btn')) {
+                think.nextStep({step: 1});
+              }
+            },
+            stepComplete: (thing) => {
+              console.log(thing);
+              console.log('here ');
+            }
+          },
+          {
+            type: 'radio',
+            step: 2,
+            title: 'Example question 2',
+            subtitle: '',
+            selections: [
+              {
+                text: 'Yes Radio',
+                id: 'radio-ex-yes',
+                name: 'radio-step-example'
+              },
+              {
+                text: 'No Radio',
+                id: 'radio-ex-no',
+                name: 'radio-step-example'
+              },
+              {
+                text: 'Maybe So Radio',
+                id: 'radio-ex-maybe',
+                name: 'radio-step-example'
+              }
+            ],
+            clickHandler: (evt) => {
+              if (evt.target.getAttribute('name') == 'radio-step-example') {
+                think.nextStep({step: 2})
+              }
+            },
+            stepClick: (evt) => {
+
+            }
+          },
+          {
+            type: 'radio',
+            step: 3,
+            title: 'Example question 3',
+            subtitle: "I think it's working",
+            selections: [
+              {
+                text: 'Yes Radio',
+                id: 'radio-ex-yes-2',
+                name: 'radio-step-example-2'
+              },
+              {
+                text: 'No Radio',
+                id: 'radio-ex-no-2',
+                name: 'radio-step-example-2'
+              },
+              {
+                text: 'Maybe So Radio',
+                id: 'radio-ex-maybe-2',
+                name: 'radio-step-example-2'
+              }
+            ],
+            clickHandler: (evt) => {
+              if (evt.target.getAttribute('name') == 'radio-step-example-2') {
+                think.nextStep({step: 3})
+              }
+            },
+            stepClick: (evt) => {
+
+            }
+          },
+          {
+            type: 'select',
+            step: 4,
+            title: 'Example question 4',
+            subtitle: "",
+            label_text: 'Dropdown Label',
+            selections: [
+              {
+                id: 'form-select-one',
+                name: 'form-select',
+                options: [
+                  {
+                    value: '1',
+                    text: 'Option 1'
+                  },
+                  {
+                    value: '2',
+                    text: 'Option 2'
+                  },
+                  {
+                    value: '3',
+                    text: 'Option 3'
+                  },
+                  {
+                    value: '4',
+                    text: 'Option 4'
+                  }
+                ]
+              }
+            ],
+            changeHandler: (evt) => {
+              let isAnswred = document.querySelector('#form-select-one').value
+              if (isAnswred) {
+                think.nextStep({step: 4})
+              }
+            },
+            stepClick: (evt) => {
+
+            }
+          },
+          {
+            type: 'final',
+            step: 5,
+            icon: '<img src="./img/Stepper Doc Icon.svg" />',
+            title: 'Last step with a call-to-action',
+            subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+            selections: [
+              {
+                text: 'BUTTON'
+              }
+            ],
+            clickHandler: (evt) => {
+              console.log(evt);
+              console.log(think.formData);
+            }
+          }
+        ];
+
+        let think = new Stepper('.stepper-example', 'class-stepper', stepsArray);
+        think.render()
+        window.ctg = think;
+      }
+
     </script>
   </body>
 </html>

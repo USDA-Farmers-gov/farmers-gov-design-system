@@ -34,11 +34,12 @@ export function scripts(done) {
     .pipe( sourcemaps.write('./') )
     .pipe( gulp.dest( './dist/js') )
   })
-  return Promise.resolve('bingo')
+
+  done();
 }
 
 export function styles(done) {
-  return gulp.src('./styles.scss')
+  return gulp.src('new/styles.scss')
         .pipe(sass())
         .pipe(cleanCSS())
         .pipe(rename({
@@ -53,8 +54,9 @@ export function watch() {
   gulp.watch('js/**/*.js', scripts);
 }
 
-export function build() {
+export function build(done) {
   gulp.series(clean, gulp.parallel(styles, scripts));
+  done();
 };
 /*
  * Export a default task
