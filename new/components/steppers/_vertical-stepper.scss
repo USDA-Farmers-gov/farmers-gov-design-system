@@ -1,0 +1,65 @@
+
+
+.vertical-step {
+  min-height: 10rem;
+  display: flex;
+  padding-bottom: .8rem;
+
+
+  .vertical-step-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.65rem;
+
+    .vertical-step-header {
+      padding-left: 1rem;
+      h2 {
+        margin-top: 0;
+        margin-bottom: .8rem;
+      }
+      p {
+        margin: 0;
+      }
+    }
+
+    .vertical-step-selections {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2.4rem;
+      & > div {
+        margin-bottom: 1.4rem;
+      }
+    }
+
+    .next-btn {
+      margin: 2rem 0.8rem;
+    }
+  }
+
+  .vertical-step-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .step-icon {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      background: $sweetgrass;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      font-size: 2rem;
+      line-height: 2.6rem;
+    }
+  }
+
+  &:not(:last-child) > .vertical-step-left:after {
+    content: ' ';
+    background: $grey3;
+    width: 0.2rem;
+    height: calc(100% - 5rem);
+  }
+}

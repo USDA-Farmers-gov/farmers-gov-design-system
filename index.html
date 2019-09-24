@@ -15,69 +15,6 @@
         margin-bottom: .5rem;
       }
 
-      .stepper-example-2 {
-        outline: 1px solid aqua;
-      }
-
-      .vertical-step {
-        min-height: 10rem;
-        display: flex;
-        padding-bottom: .8rem;
-      }
-
-      .vertical-step-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .vertical-step-content > .next-btn {
-        margin: 2rem 0.8rem;
-      }
-
-      .vertical-step-left {
-        /* outline: 1px solid red; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .vertical-step-selections {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .vertical-step-selections > div {
-        margin-bottom: 1.4rem;
-      }
-
-      .vertical-step-header {
-        padding-left: 1rem;
-      }
-
-      .vertical-step-header > h2 {
-        margin-top: 0;
-      }
-
-      .vertical-step-left > .step-icon {
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
-        background: green;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 2rem;
-        line-height: 2.6rem;
-      }
-
-      .vertical-step-left:after {
-        content: ' ';
-        background: grey;
-        width: 0.2rem;
-        height: calc(100% - 5rem);
-      }
     </style>
   </head>
   <body>
@@ -406,7 +343,7 @@
 
     <script type="text/javascript">
     // background: black;
-      console.clear();
+      // console.clear();
       const stylestring = `
       font-size: 4rem;
       font-family: "Lord of the Sith 3D Italic";
@@ -415,242 +352,6 @@
       background-size: 555rem;
       padding: 2rem;`;
       console.log('%cLrd Grdnr!', stylestring);
-
-
-      class Stepper {
-
-        constructor(rootElement, name, stepsArray) {
-
-          this.sRoot = document.querySelector(rootElement);
-          this.steps = stepsArray.map( step => {
-            return new Step(step, this);
-          });
-          this.$form = document.createElement('form');
-          this.$form.setAttribute('id', name);
-          this.$form.addEventListener('submit', (e) => { e.preventDefault() });
-          this.currentStep = this.steps[0].data.step;
-          this.renderedSteps = [this.steps[0]];
-
-        }
-
-        nextStep(opt){
-          this.currentStep = opt.step +1;
-          let nextRenderedStep = this.steps.filter( step => {
-            return step.data.step == this.currentStep
-          })[0]
-
-          if (nextRenderedStep) {
-            nextRenderedStep.rebuildDomElement();
-            this.renderedSteps.push(nextRenderedStep);
-            this.renderedSteps = this.renderedSteps.filter( stp => stp.data.step <= nextRenderedStep.data.step);
-            this.render();
-          } else {
-            console.log(this);
-          }
-        }
-
-        render() {
-          let temp = document.createElement('div');
-          this.$form.innerHTML = '';
-          this.renderedSteps.map( step => {
-            return step.markup();
-          })
-          .map( markup => {
-            if (!!markup) {
-              this.$form.appendChild(markup);
-            }
-          })
-
-          this.sRoot.innerHTML = '';
-          this.sRoot.appendChild(this.$form);
-          this.sRoot.querySelector('.vertical-step:last-child').scrollIntoView({behavior: "smooth"});
-          return this.sRoot;
-        }
-
-        get formData(){
-          return [ ...this.$form.elements ].filter( el => el.value );
-        }
-
-      }
-
-      class Step {
-
-        constructor(step, stepper){
-          this.data = { ...step }
-          this.results = [];
-          this.domElement = '';
-          this.stepTypes = {
-            'checkbox': {
-              make: (stepObj) => {
-                const checkboxMarkup = (selection, width = 'medium-3') => {
-                  return `
-                    <div class="${width}">
-                      <label class="checkbox-card-label with-image" for="${selection.name}" tabindex="0">
-                        <div class="cb-img-card-top">
-                          <h2>${selection.text}</h2>
-                        </div>
-                        <div class="cb-img-card-bottom">
-                          <input class="checkbox-card-input" id="${selection.name}" type="checkbox">
-                          <span class="cb-icon"></span>
-                        </div>
-                      </label>
-                    </div>
-                  `;
-                }
-
-                return stepObj.selections.map( item => checkboxMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
-              },
-              checkboxNext: (stepObj) => {
-                let div = document.createElement('div');
-                let btn = document.createElement('button');
-                let tmp = document.createElement('span');
-                div.classList.add('next-btn');
-                btn.classList.add('btn');
-                btn.innerText = 'Next';
-                btn.addEventListener('click', this.stepComplete());
-                div.appendChild(btn);
-                tmp.appendChild(div);
-
-                return div;
-              }
-            },
-            'radio': {
-              make: (stepObj) => {
-                const radioMarkup = (selection, width = 'medium-3') => {
-                  return `
-                    <div class="${width}">
-                      <label tabindex="0" for="${selection.id}" class="radio-card-label with-image">
-                        <div class="radio-img-card-top">
-                          <h2>${selection.text}</h2>
-                        </div>
-                        <div class="radio-img-card-bottom">
-                          <input type="radio" id="${selection.id}" class="radio-card-input" name="${selection.name}" title="Card Radio" tabindex="0">
-                          <span class="radio-icon"></span>
-                        </div>
-                      </label>
-                    </div>
-                  `;
-                }
-
-                return stepObj.selections.map( item => radioMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
-              }
-            },
-            'select': {
-              make: (stepObj) => {
-                const selectMarkup = (selection, width = 'medium-3') => {
-                  return `
-                    <div class="${width}">
-                      <select id="${selection.id}" name="${selection.name}">
-                        <option></option>
-                        ${ selection.options.map( opt => {
-                          return '<option value='+opt.value+'>'+ opt.text || opt.value +'</option>'
-                        })}
-                      </select>
-                    </div>
-                  `;
-                }
-
-                return stepObj.selections.map( item => selectMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
-              }
-            },
-            'finish': {
-              make: (stepObj) => {
-                const finishMarkup = (selection, width = 'medium-3') => {
-                  return `
-                    <div class="${width}">
-                      <button class="btn">${selection.text}</button>
-                    </div>
-                  `;
-                }
-
-                return stepObj.selections.map( item => finishMarkup(item, stepObj.selection_width_class) ).join(',').split(',').join('');
-              }
-            }
-          }
-          this.stepper = stepper;
-        }
-
-        stepComplete(thing){
-
-        }
-
-        rebuildDomElement(){
-          if (!!this.stepTypes[this.data.type]) {
-            let html =  `
-            <div class="vertical-step">
-              <div class="vertical-step-left">
-                <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
-              </div>
-              <div class="vertical-step-content">
-                <div class="vertical-step-header">
-                  <h2>${ this.data.title }</h2>
-                  <p>${ this.data.subtitle }</p>
-                </div>
-                <div class="vertical-step-selections">
-                ${ this.stepTypes[this.data.type].make(this.data) }
-                </div>
-              </div>
-            </div>
-            `;
-
-            let template = document.createElement('template');
-            template.innerHTML = html.trim();
-            if (this.data.type == 'checkbox') {
-              template.content.firstChild.querySelector('.vertical-step-content:last-child')
-              .appendChild(this.stepTypes[this.data.type].checkboxNext(this.data))
-            }
-            if (this.data.type == 'select') {
-              let tmp = template.content.firstChild.querySelector('.vertical-step-content:last-child')
-              tmp.querySelector('select').addEventListener('change', this.data.changeHandler)
-            }
-            template.content.firstChild.addEventListener('click', this.data.stepClick);
-            this.domElement = template.content.firstChild;
-            this.domElement.addEventListener('click', this.data.clickHandler)
-            return template.content.firstChild;
-          }
-        }
-
-        markup(){
-          if (this.domElement) {
-            return this.domElement;
-          } else {
-            if (!!this.stepTypes[this.data.type]) {
-              let html =  `
-              <div class="vertical-step">
-                <div class="vertical-step-left">
-                  <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
-                </div>
-                <div class="vertical-step-content">
-                  <div class="vertical-step-header">
-                    <h2>${ this.data.title }</h2>
-                    <p>${ this.data.subtitle }</p>
-                  </div>
-                  <div class="vertical-step-selections">
-                  ${ this.stepTypes[this.data.type].make(this.data) }
-                  </div>
-                </div>
-              </div>
-              `;
-
-              let template = document.createElement('template');
-              template.innerHTML = html.trim();
-              if (this.data.type == 'checkbox') {
-                template.content.firstChild.querySelector('.vertical-step-content:last-child')
-                .appendChild(this.stepTypes[this.data.type].checkboxNext(this.data))
-              }
-              if (this.data.type == 'select') {
-                let tmp = template.content.firstChild.querySelector('.vertical-step-content:last-child')
-                tmp.querySelector('select').addEventListener('change', this.data.changeHandler)
-              }
-              template.content.firstChild.addEventListener('click', this.data.stepClick);
-              this.domElement = template.content.firstChild;
-              this.domElement.addEventListener('click', this.data.clickHandler)
-              return template.content.firstChild;
-            }
-          }
-        }
-
-      }
 
 
 
@@ -753,7 +454,8 @@
             type: 'select',
             step: 4,
             title: 'Example question 4',
-            subtitle: "Select example",
+            subtitle: "",
+            label_text: 'Dropdown Label',
             selections: [
               {
                 id: 'form-select-one',
@@ -789,14 +491,14 @@
             }
           },
           {
-            type: 'finish',
+            type: 'final',
             step: 5,
-            icon: '<img scr="./old/images/citrus.svg" />',
-            title: 'Finish Process',
-            subtitle: '',
+            icon: '<img src="./img/Stepper Doc Icon.svg" />',
+            title: 'Last step with a call-to-action',
+            subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
             selections: [
               {
-                text: 'DONE'
+                text: 'BUTTON'
               }
             ],
             clickHandler: (evt) => {
@@ -805,10 +507,10 @@
             }
           }
         ];
+
         let think = new Stepper('.stepper-example', 'class-stepper', stepsArray);
         think.render()
-        console.log(think);
-
+        window.ctg = think;
       }
 
     </script>
