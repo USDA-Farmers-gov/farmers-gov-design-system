@@ -1,5 +1,3 @@
-
-
 .vertical-step {
   min-height: 10rem;
   display: flex;
@@ -11,6 +9,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 1.65rem;
+    margin-bottom: 6.4rem;
 
     .vertical-step-header {
       padding-left: 1rem;
@@ -29,6 +28,10 @@
       margin-top: 2.4rem;
       & > div {
         margin-bottom: 1.4rem;
+      }
+
+      .cb-img-card-bottom, .radio-img-card-bottom {
+        justify-content: flex-end;
       }
     }
 
@@ -62,4 +65,5 @@
     width: 0.2rem;
     height: calc(100% - 5rem);
   }
+
 }
