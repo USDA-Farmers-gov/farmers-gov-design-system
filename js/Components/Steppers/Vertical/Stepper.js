@@ -46,7 +46,9 @@ export default class Stepper {
 
     this.sRoot.innerHTML = '';
     this.sRoot.appendChild(this.$form);
-    this.sRoot.querySelector('.vertical-step:last-child').scrollIntoView({behavior: "smooth"});
+    if (this.renderedSteps.length > 1) {
+      this.sRoot.querySelector('.vertical-step:last-child').scrollIntoView({behavior: "smooth"});
+    }
     return this.sRoot;
   }
 

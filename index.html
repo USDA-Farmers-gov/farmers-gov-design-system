@@ -382,10 +382,6 @@
               if (evt.target.classList.contains('btn')) {
                 stepr.nextStep({step: 1});
               }
-            },
-            stepComplete: (thing) => {
-              console.log(thing);
-              console.log('here ');
             }
           },
           {
@@ -414,9 +410,6 @@
               if (evt.target.getAttribute('name') == 'radio-step-example') {
                 stepr.nextStep({step: 2})
               }
-            },
-            stepClick: (evt) => {
-
             }
           },
           {
@@ -445,9 +438,6 @@
               if (evt.target.getAttribute('name') == 'radio-step-example-2') {
                 stepr.nextStep({step: 3})
               }
-            },
-            stepClick: (evt) => {
-
             }
           },
           {
@@ -485,9 +475,6 @@
               if (isAnswred) {
                 stepr.nextStep({step: 4})
               }
-            },
-            stepClick: (evt) => {
-
             }
           },
           {
@@ -500,11 +487,7 @@
               {
                 text: 'BUTTON'
               }
-            ],
-            clickHandler: (evt) => {
-              console.log(evt);
-              console.log(stepr.formData);
-            }
+            ]
           }
         ];
 
