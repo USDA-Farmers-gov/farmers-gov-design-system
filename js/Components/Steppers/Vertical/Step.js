@@ -110,7 +110,7 @@ export default class Step {
         <div class="vertical-step-content">
           <div class="vertical-step-header">
             <h2>${ this.data.title }</h2>
-            <p>${ this.data.subtitle }</p>
+            ${ this.data.subtitle ? '<p>'+this.data.subtitle+'</p>': ''}
           </div>
           <div class="vertical-step-selections">
           ${ this.stepTypes[this.data.type].make(this.data) }
