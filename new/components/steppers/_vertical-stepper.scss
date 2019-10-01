@@ -15,7 +15,6 @@
       padding-left: 1rem;
       h2 {
         margin-top: 0;
-        // margin-bottom: .8rem;
       }
       p {
         margin: 0;
@@ -33,6 +32,7 @@
       .cb-img-card-top, .radio-img-card-top {
         & > h2 {
           margin: 0;
+          margin-top: 3rem;
         }
       }
 
