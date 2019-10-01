@@ -103,7 +103,7 @@ export default class Step {
   rebuildDomElement(){
     if (!!this.stepTypes[this.data.type]) {
       let html =  `
-      <div class="vertical-step">
+      <div ${ this.data.type == 'radio' ? 'role="radiogroup"': 'role="group"'} aria-label="step-${this.data.step}" class="vertical-step">
         <div class="vertical-step-left">
           <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
         </div>
@@ -143,7 +143,7 @@ export default class Step {
       if (!!this.stepTypes[this.data.type]) {
 
         let html =  `
-        <div class="vertical-step ${this.data.step == this.stepper.steps.length ? 'last-step': ''}">
+        <div ${ this.data.type == 'radio' ? 'role="radiogroup"': 'role="group"'} aria-label="step-${this.data.step}" class="vertical-step ${this.data.step == this.stepper.steps.length ? 'last-step': ''}">
           <div class="vertical-step-left">
             <span class="step-icon">${ this.data.icon ? this.data.icon : this.data.step }</span>
           </div>
