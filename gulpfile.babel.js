@@ -49,6 +49,13 @@ export function styles(done) {
         .pipe(gulp.dest('dist/css'));
 }
 
+export function assets(done) {
+  gulp.src(['fonts/**/*'])
+      .pipe( gulp.dest('./dist/farmers/fonts') )
+  return gulp.src(['img/**/*'])
+              .pipe( gulp.dest('./dist/farmers/img') )
+}
+
 export function watch() {
   gulp.watch('new/**/*.scss', styles);
   gulp.watch('js/**/*.js', scripts);

@@ -6,7 +6,7 @@ a {
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;   
+    box-shadow: 0px 0px 4px $focus;
   }
   &:hover, &.hover {
     text-shadow: 0 0 0.08rem $heritage;
@@ -16,8 +16,8 @@ a {
     color: $visited;
     &:hover, &.hover {
       text-shadow: 0 0 0.08rem $visited;
-      -webkit-text-stroke: 1px $visited;    
-    }  
+      -webkit-text-stroke: 1px $visited;
+    }
   }
 }
 
@@ -30,7 +30,7 @@ a {
   line-height: 26px;
   text-decoration: underline;
   background: url(../../img/caret-right.svg) no-repeat;
-  background-position: right;
+  background-position: 99% 60%;
   background-size: 2rem;
   padding-right: 2.6rem;
   margin-right: 1rem;
@@ -44,7 +44,7 @@ a {
   }
   &:visited, &.visited {
     color: $visited;
-  }  
+  }
 }
 
 .external-link {
@@ -70,7 +70,7 @@ a {
   }
   &:visited, &.visited {
     color: $visited;
-  }  
+  }
 }
 
 .anchor-link {
@@ -89,11 +89,11 @@ a {
     margin-right: 1rem;
   }
   &:focus, &.focus {
-    color: $sweetgrass;    
+    color: $sweetgrass;
     outline-width: 0px;
     outline-offset: 3px;
     outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;   
+    box-shadow: 0px 0px 4px $focus;
   }
   &:hover, &.hover {
     color: $sweetgrass;
@@ -102,5 +102,5 @@ a {
   }
   &:visited, &.visited {
     color: $visited;
-  }    
+  }
 }
