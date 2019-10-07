@@ -1,0 +1,33 @@
+.icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.caret-right {
+    background-image: url(../img/caret-right.svg);
+  }
+  &.search {
+    background-image: url(../img/search.svg);  
+  }
+  &.chevron-up {
+    background-image: url(../img/chevron-up.svg);
+    transform: rotateX(180deg);  
+  }
+  &.chevron-down {
+    background-image: url(../img/chevron-down.svg);  
+  }
+  &.close {
+    background-image: url(../img/close.svg);  
+  }
+  &.accordion-expand {
+    background-image: url(../img/accordion-expand.svg);  
+  }
+  &.accordion-collapse {
+    background-image: url(../img/accordion-collapse.svg);  
+  }
+  &.popover {
+    background-image: url(../img/popover.svg);  
+  }            
+}
