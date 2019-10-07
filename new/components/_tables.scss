@@ -1,0 +1,144 @@
+// Table Settings
+$table-border-color: $grey3;
+
+$container-width: 100%;
+$container-max-width: 40em;
+
+$table-border-width: 1px;
+$table-border-style: solid;
+$table-margin-bottom: 1.529411765em;
+$table-cell-padding: 2.4rem;
+$table-cell-left-right-padding: 2.4rem;
+$table-cell-top-bottom-padding: 2.4rem;
+$table-cell-text-align: left;
+$table-cell-border-top: $table-border-width $table-border-style $table-border-color;
+$table-header-font-weight: bold;
+$table-header-background-color: $grey2;
+$table-subheader-background-color: $grey1;
+$table-body-border-top: .142857143em $table-border-style $table-border-color;
+$table-condensed-padding: 2.4rem;
+$table-bordered-border: $table-border-width $table-border-style $table-border-color;
+$table-bordered-border-radius: 2px;
+$table-border-left: $table-border-width $table-border-style $table-border-color;
+$table-bordered-child-radius: 2px;
+
+
+/* =============================================================
+    TABLES
+    Table styling.
+ * ============================================================= */
+
+/*  Removes default browser settings
+ *  and evens out inconsistencies. */
+table {
+  width: $container-width;
+  max-width: $container-max-width;
+  margin-bottom: $table-margin-bottom;
+  caption {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+  } 
+  thead {
+    background-color: $table-header-background-color;
+    font-weight: $table-header-font-weight;
+    border-top: none;
+    tr {
+      background-color: $table-header-background-color !important;
+      border-top: none;
+      td {
+        font-weight: $table-header-font-weight; 
+        border-top: none;
+        padding: $table-cell-padding;
+        vertical-align: middle;
+      }
+    }   
+  }
+  th, td {
+    padding-left: $table-cell-left-right-padding;
+    padding-right: $table-cell-left-right-padding;
+    padding-top: $table-cell-top-bottom-padding;
+    padding-bottom: $table-cell-top-bottom-padding;
+    text-align: $table-cell-text-align;
+    border-top: $table-cell-border-top;
+    vertical-align: middle;
+  }
+  th {
+    background-color: $table-subheader-background-color;
+    font-weight: $table-header-font-weight;
+  }
+  tbody + tbody {
+    border-top: $table-body-border-top;
+  }  
+}
+
+/*  Adds border-top between two table-body sections. */
+table tbody + tbody,
+.table tbody + tbody,
+%table tbody + tbody {
+    border-top: $table-body-border-top;
+}
+
+/*  Reduces cell padding */
+.table-condensed th,
+%table-condensed th,
+.table-condensed td,
+%table-condensed td {
+    padding: $table-condensed-padding;
+}
+
+/* Adds borders and border-radius. */
+.table-bordered,
+%table-bordered {
+    border: $table-bordered-border;
+    border-collapse: separate;
+    *border-collapse: collapsed;
+    border-radius: $table-bordered-border-radius;
+}
+
+.table-bordered th + th,
+%table-bordered th + th,
+.table-bordered td + td,
+%table-bordered td + td,
+.table-bordered th + td,
+%table-bordered th + td,
+.table-bordered td + th,
+%table-bordered td + th {
+    border-left: $table-border-left;
+}
+
+.table-bordered thead:first-child tr:first-child th,
+%table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+%table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td,
+%table-bordered tbody:first-child tr:first-child td {
+    border-top: 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:first-child,
+%table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child,
+%table-bordered tbody:first-child tr:first-child td:first-child {
+    border-radius: $table-bordered-child-radius 0 0 0;
+}
+
+.table-bordered thead:first-child tr:first-child th:last-child,
+%table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child,
+%table-bordered tbody:first-child tr:first-child td:last-child {
+    border-radius: 0 $table-bordered-child-radius 0 0;
+}
+
+.table-bordered thead:last-child tr:last-child th:first-child,
+%table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child,
+%table-bordered tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 $table-bordered-child-radius;
+}
+
+.table-bordered thead:last-child tr:last-child th:last-child,
+%table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child,
+%table-bordered tbody:last-child tr:last-child td:last-child {
+    border-radius: 0 0 $table-bordered-child-radius 0;
+}
