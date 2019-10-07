@@ -51,9 +51,9 @@ export function styles(done) {
 
 export function assets(done) {
   gulp.src(['fonts/**/*'])
-      .pipe( gulp.dest('./dist/farmers/fonts') )
+      .pipe( gulp.dest('./dist/assets/fonts') )
   return gulp.src(['img/**/*'])
-              .pipe( gulp.dest('./dist/farmers/img') )
+              .pipe( gulp.dest('./dist/assets/images') )
 }
 
 export function watch() {
@@ -62,7 +62,7 @@ export function watch() {
 }
 
 export function build(done) {
-  gulp.series(clean, gulp.parallel(styles, scripts));
+  (gulp.series(clean, gulp.parallel('styles', 'scripts'))());
   done();
 };
 /*
