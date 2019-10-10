@@ -2,7 +2,6 @@
 $table-border-color: $grey3;
 
 $container-width: 100%;
-$container-max-width: 40em;
 
 $table-border-width: 1px;
 $table-border-style: solid;
@@ -22,18 +21,15 @@ $table-bordered-border-radius: 2px;
 $table-border-left: $table-border-width $table-border-style $table-border-color;
 $table-bordered-child-radius: 2px;
 
-
-/* =============================================================
-    TABLES
-    Table styling.
- * ============================================================= */
-
-/*  Removes default browser settings
- *  and evens out inconsistencies. */
+// Table styling.
+// Removes default browser settings
 table {
   width: $container-width;
-  max-width: $container-max-width;
   margin-bottom: $table-margin-bottom;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: inline-block;
+  max-width: 100%;  
   caption {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
@@ -68,17 +64,17 @@ table {
   }
   tbody + tbody {
     border-top: $table-body-border-top;
-  }  
+  }
 }
 
-/*  Adds border-top between two table-body sections. */
+// Adds border-top between two table-body sections.
 table tbody + tbody,
 .table tbody + tbody,
 %table tbody + tbody {
     border-top: $table-body-border-top;
 }
 
-/*  Reduces cell padding */
+// Reduces cell padding
 .table-condensed th,
 %table-condensed th,
 .table-condensed td,
@@ -86,7 +82,7 @@ table tbody + tbody,
     padding: $table-condensed-padding;
 }
 
-/* Adds borders and border-radius. */
+// Adds borders and border-radius.
 .table-bordered,
 %table-bordered {
     border: $table-bordered-border;
