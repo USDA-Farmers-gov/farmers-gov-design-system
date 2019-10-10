@@ -1,7 +1,7 @@
 .icon {
   width: 4.4rem;
   height: 4.4rem;
-  display: flex;
+  display: inline-flex;
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,5 +29,20 @@
   }
   &.popover {
     background-image: url(../img/popover.svg);  
-  }            
+  }
+  &.info {
+    background-image: url(../img/info.svg);
+  }
+  &.mail {
+    background-image: url(../img/mail.svg);
+  }
+  &.print {
+    background-image: url(../img/print.svg);
+  }
+  &.location {
+    background-image: url(../img/location.svg);
+  }
+  &.phone {
+    background-image: url(../img/phone.svg);
+  }   
 }
