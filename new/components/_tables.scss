@@ -86,8 +86,6 @@ table tbody + tbody,
 .table-bordered,
 %table-bordered {
     border: $table-bordered-border;
-    border-collapse: separate;
-    *border-collapse: collapsed;
     border-radius: $table-bordered-border-radius;
 }
 
