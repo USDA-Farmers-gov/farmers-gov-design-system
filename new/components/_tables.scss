@@ -1,8 +1,6 @@
 // Table Settings
 $table-border-color: $grey3;
 
-$container-width: 100%;
-
 $table-border-width: 1px;
 $table-border-style: solid;
 $table-margin-bottom: 1.529411765em;
@@ -24,7 +22,6 @@ $table-bordered-child-radius: 2px;
 // Table styling.
 // Removes default browser settings
 table {
-  width: $container-width;
   margin-bottom: $table-margin-bottom;
   border-collapse: collapse;
   overflow-x: auto;
