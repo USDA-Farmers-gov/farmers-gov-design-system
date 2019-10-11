@@ -88,22 +88,26 @@
     height: 7.2rem;
     font-size: 2rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     bottom: -2.4rem;
     background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.95), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1));
 
     .card-accordion-show-more {
-      color: #006546;
+      color: $bigsky;
       font-weight: bold;
       padding-right: 2rem;
       background-size: 1.2rem;
       background-repeat: no-repeat;
       background-position: right center;
-      background-image: url('../farmers/img/accordion-card-plus.svg');
+      background-image: url('../farmers/img/accordion-expand-blue.svg');
+      text-decoration: none;
+      path, polygon {
+        fill: $bigsky;
+      }
     }
     .card-accordion-show-less {
-      background-image: url('../farmers/img/accordion-card-minus.svg');
+      background-image: url('../farmers/img/accordion-collapse-blue.svg');
     }
   }
 }
