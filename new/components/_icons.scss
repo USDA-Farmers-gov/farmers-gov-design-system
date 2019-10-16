@@ -46,3 +46,23 @@
     background-image: url(../img/phone.svg);
   }   
 }
+
+.outline-icon {
+  width: 7.7rem;
+  height: 7.7rem;
+  display: inline-flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.farmer {
+    background-image: url(../img/farmer.svg);
+  }
+  &.mfp {
+    background-image: url(../img/mfp.svg);
+  }
+  &.land {
+    background-image: url(../img/land.svg);
+  }
+  &.barn {
+    background-image: url(../img/barn.svg);
+  }   
+}
