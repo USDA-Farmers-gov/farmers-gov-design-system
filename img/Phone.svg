@@ -13,7 +13,7 @@
                     <use xlink:href="#path-1"></use>
                 </mask>
                 <g id="Clip-272"></g>
-                <polygon id="Fill-271" fill="#006546" mask="url(#mask-2)" points="-5 29 30 29 30 -5 -5 -5"></polygon>
+                <polygon id="Fill-271" fill="#000000" mask="url(#mask-2)" points="-5 29 30 29 30 -5 -5 -5"></polygon>
             </g>
         </g>
     </g>
