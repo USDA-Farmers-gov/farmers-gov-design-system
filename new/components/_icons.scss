@@ -21,6 +21,9 @@
   &.close {
     background-image: url(../img/close.svg);  
   }
+  &.external-link {
+    background-image: url(../img/external-link.svg);  
+  }  
   &.accordion-expand {
     background-image: url(../img/accordion-expand.svg);  
   }
@@ -48,8 +51,8 @@
 }
 
 .outline-icon {
-  width: 7.7rem;
-  height: 7.7rem;
+  width: 8rem;
+  height: 8rem;
   display: inline-flex;
   background-position: center;
   background-repeat: no-repeat;
