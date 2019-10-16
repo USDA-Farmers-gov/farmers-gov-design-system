@@ -102,9 +102,6 @@
       background-position: right center;
       background-image: url('../farmers/img/accordion-expand-blue.svg');
       text-decoration: none;
-      path, polygon {
-        fill: $bigsky;
-      }
     }
     .card-accordion-show-less {
       background-image: url('../farmers/img/accordion-collapse-blue.svg');
