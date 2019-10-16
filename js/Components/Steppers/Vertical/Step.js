@@ -7,7 +7,7 @@ export default class Step {
     this.stepTypes = {
       'checkbox': {
         make: (stepObj) => {
-          const checkboxMarkup = (selection, width = 'medium-3') => {
+          const checkboxMarkup = (selection, width = 'medium-4') => {
             return `
               <div class="${width}">
                 <label class="checkbox-card-label with-image" for="${selection.name}" tabindex="0">

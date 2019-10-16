@@ -1,9 +1,13 @@
 *, ::after, ::before {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
+}
+
+body {
+  font-size: 1.7rem;
 }
 
 .focus {
@@ -12,3 +16,4 @@ html {
   outline-width: .3rem;
   outline-offset: .5rem;
 }
+
