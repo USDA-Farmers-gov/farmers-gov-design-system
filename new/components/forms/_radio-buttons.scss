@@ -1,11 +1,11 @@
 label.radio-label {
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   line-height: 1.8rem;
   font-size: 1.8rem;
-  margin-bottom: 1.65em;
-  margin-top: 3rem; 
+  margin-bottom: 0.2rem;
+  margin-top: 1rem; 
 
   &:before {
     content: '\a0';
@@ -13,7 +13,7 @@ label.radio-label {
     height: 2.4rem;
     border: .2rem solid $grey4;
     border-radius: 5rem;
-    display: flex;
+    display: inline-flex;
     margin-right: .8rem;
     font-weight: 400;   
 
