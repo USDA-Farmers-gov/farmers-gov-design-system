@@ -49,13 +49,20 @@ export function styles(done) {
         .pipe(gulp.dest('dist/css'));
 }
 
+export function assets(done) {
+  gulp.src(['fonts/**/*'])
+      .pipe( gulp.dest('./dist/assets/fonts') )
+  return gulp.src(['img/**/*'])
+              .pipe( gulp.dest('./dist/assets/images') )
+}
+
 export function watch() {
   gulp.watch('new/**/*.scss', styles);
   gulp.watch('js/**/*.js', scripts);
 }
 
 export function build(done) {
-  gulp.series(clean, gulp.parallel(styles, scripts));
+  (gulp.series(clean, gulp.parallel('styles', 'scripts'))());
   done();
 };
 /*
