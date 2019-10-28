@@ -2,10 +2,10 @@
 window.addEventListener('load', function(){
   function panelWidthFix(accordionBlock, accordionTarget) {
     const targetPanel = accordionTarget.nextSibling.nextElementSibling;
-    const offset =  10 + (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px';
+    const offset = (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px';
 
     targetPanel.style.marginLeft = offset;
-    targetPanel.style.width = `${accordionBlock.offsetWidth - 65}px`;
+    targetPanel.style.width = `${accordionBlock.offsetWidth - 17}px`;
   }
 
   Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
