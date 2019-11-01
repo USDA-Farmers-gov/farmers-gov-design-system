@@ -1,20 +1,25 @@
+
+
+# Vertical Stepper
+
+The following javascript snippet can be copied and pasted into a javascript file or in a `<script>` tag in an HTML file.
+In order for this example to work you'll need to have an element with an ID of `stepper-root` in your HTML, otherwise you can change the value of the `rootElement` variable to a different **valid css selector** in the _Setup_ section below.
+
 ```javascript
 let stepsArray = [
-  //
-  //   .g8"""bgd `7MMF'  `7MMF'`7MM"""YMM    .g8"""bgd `7MMF' `YMM' `7MM"""Yp,   .g8""8q.`YMM'   `MP' `7MM"""YMM   .M"""bgd
-  // .dP'     `M   MM      MM    MM    `7  .dP'     `M   MM   .M'     MM    Yb .dP'    `YM.VMb.  ,P     MM    `7  ,MI    "Y
-  // dM'       `   MM      MM    MM   d    dM'       `   MM .d"       MM    dP dM'      `MM `MM.M'      MM   d    `MMb.    
-  // MM            MMmmmmmmMM    MMmmMM    MM            MMMMM.       MM"""bg. MM        MM   MMb       MMmmMM      `YMMNq.
-  // MM.           MM      MM    MM   Y  , MM.           MM  VMA      MM    `Y MM.      ,MP ,M'`Mb.     MM   Y  , .     `MM
-  // `Mb.     ,'   MM      MM    MM     ,M `Mb.     ,'   MM   `MM.    MM    ,9 `Mb.    ,dP',P   `MM.    MM     ,M Mb     dM
-  //   `"bmmmd'  .JMML.  .JMML..JMMmmmmMMM   `"bmmmd'  .JMML.   MMb..JMMmmmd9    `"bmmd"'.MM:.  .:MMa..JMMmmmmMMM P"Ybmmd"
-  //
-  //
+//   ______  __    __   _______   ______  __  ___ .______     ______   ___   ___  _______     _______.
+//  /      ||  |  |  | |   ____| /      ||  |/  / |   _  \   /  __  \  \  \ /  / |   ____|   /       |
+// |  ,----'|  |__|  | |  |__   |  ,----'|  '  /  |  |_)  | |  |  |  |  \  V  /  |  |__     |   (----`
+// |  |     |   __   | |   __|  |  |     |    <   |   _  <  |  |  |  |   >   <   |   __|     \   \    
+// |  `----.|  |  |  | |  |____ |  `----.|  .  \  |  |_)  | |  `--'  |  /  .  \  |  |____.----)   |   
+//  \______||__|  |__| |_______| \______||__|\__\ |______/   \______/  /__/ \__\ |_______|_______/    
+
 
   { // This is the format the stepper currently expects for the 'Checkbox' step type.
     type: 'checkbox', // The type of step needed (required)
     step: 1,  // The order of this step (required)
     title: 'Example question 1', // Step title h2 tag
+    selection_width_class: 'medium-4', // Set the width class of selections (default is 'medium-4')
     subtitle: 'This is supporting text for the question.', // Step subtitle p tag
     selections: [ // Array of objects representing checkboxes
       {
@@ -32,16 +37,13 @@ let stepsArray = [
   },
 
 
-
-
   //
-  // `7MM"""Mq.        db      `7MM"""Yb. `7MMF' .g8""8q.    .M"""bgd
-  //   MM   `MM.      ;MM:       MM    `Yb. MM .dP'    `YM. ,MI    "Y
-  //   MM   ,M9      ,V^MM.      MM     `Mb MM dM'      `MM `MMb.    
-  //   MMmmdM9      ,M  `MM      MM      MM MM MM        MM   `YMMNq.
-  //   MM  YM.      AbmmmqMA     MM     ,MP MM MM.      ,MP .     `MM
-  //   MM   `Mb.   A'     VML    MM    ,dP' MM `Mb.    ,dP' Mb     dM
-  // .JMML. .JMM..AMA.   .AMMA..JMMmmmdP' .JMML. `"bmmd"'   P"Ybmmd"
+  // .______          ___       _______   __    ______        _______.
+  // |   _  \        /   \     |       \ |  |  /  __  \      /       |
+  // |  |_)  |      /  ^  \    |  .--.  ||  | |  |  |  |    |   (----`
+  // |      /      /  /_\  \   |  |  |  ||  | |  |  |  |     \   \    
+  // |  |\  \----./  _____  \  |  '--'  ||  | |  `--'  | .----)   |   
+  // | _| `._____/__/     \__\ |_______/ |__|  \______/  |_______/    
   //
 
   { // This is the format the stepper currently expects for the 'Radio' step type.
@@ -49,6 +51,7 @@ let stepsArray = [
     step: 2,  // The order of this step (required)
     title: 'Example question 2',  // Step title h2 tag
     subtitle: '',  // Step subtitle p tag
+    selection_width_class: 'medium-4', // Set the width class of selections (default is 'medium-3')
     selections: [  // Array of objects representing radios
       {
         text: 'Yes Radio', // Label text (required)
@@ -66,19 +69,20 @@ let stepsArray = [
   },
 
 
+//      _______. _______  __       _______   ______ .___________.                                            
+//     /       ||   ____||  |     |   ____| /      ||           |     ___                                    
+//    |   (----`|  |__   |  |     |  |__   |  ,----'`---|  |----`    ( _ )                                   
+//     \   \    |   __|  |  |     |   __|  |  |         |  |         / _ \/\                                 
+// .----)   |   |  |____ |  `----.|  |____ |  `----.    |  |        | (_>  <                                 
+// |_______/    |_______||_______||_______| \______|    |__|         \___/\/                                 
+//
+//  _______  .______        ______   .______    _______   ______   ____    __    ____ .__   __.      _______.
+// |       \ |   _  \      /  __  \  |   _  \  |       \ /  __  \  \   \  /  \  /   / |  \ |  |     /       |
+// |  .--.  ||  |_)  |    |  |  |  | |  |_)  | |  .--.  |  |  |  |  \   \/    \/   /  |   \|  |    |   (----`
+// |  |  |  ||      /     |  |  |  | |   ___/  |  |  |  |  |  |  |   \            /   |  . `  |     \   \    
+// |  '--'  ||  |\  \----.|  `--'  | |  |      |  '--'  |  `--'  |    \    /\    /    |  |\   | .----)   |   
+// |_______/ | _| `._____| \______/  | _|      |_______/ \______/      \__/  \__/     |__| \__| |_______/    
 
-
-  //
-  //                                                                                  AW                                                                                                                  
-  //  .M"""bgd `7MM"""YMM  `7MMF'      `7MM"""YMM    .g8"""bgd MMP""MM""YMM          ,M'     `7MM"""Yb. `7MM"""Mq.   .g8""8q. `7MM"""Mq.`7MM"""Yb.     .g8""8q.`7MMF'     A     `7MF'`7MN.   `7MF'.M"""bgd
-  // ,MI    "Y   MM    `7    MM          MM    `7  .dP'     `M P'   MM   `7          MV        MM    `Yb. MM   `MM..dP'    `YM. MM   `MM. MM    `Yb. .dP'    `YM.`MA     ,MA     ,V    MMN.    M ,MI    "Y
-  // `MMb.       MM   d      MM          MM   d    dM'       `      MM              AW         MM     `Mb MM   ,M9 dM'      `MM MM   ,M9  MM     `Mb dM'      `MM VM:   ,VVM:   ,V     M YMb   M `MMb.    
-  //   `YMMNq.   MMmmMM      MM          MMmmMM    MM               MM             ,M'         MM      MM MMmmdM9  MM        MM MMmmdM9   MM      MM MM        MM  MM.  M' MM.  M'     M  `MN. M   `YMMNq.
-  // .     `MM   MM   Y  ,   MM      ,   MM   Y  , MM.              MM             MV          MM     ,MP MM  YM.  MM.      ,MP MM        MM     ,MP MM.      ,MP  `MM A'  `MM A'      M   `MM.M .     `MM
-  // Mb     dM   MM     ,M   MM     ,M   MM     ,M `Mb.     ,'      MM            AW           MM    ,dP' MM   `Mb.`Mb.    ,dP' MM        MM    ,dP' `Mb.    ,dP'   :MM;    :MM;       M     YMM Mb     dM
-  // P"Ybmmd"  .JMMmmmmMMM .JMMmmmmMMM .JMMmmmmMMM   `"bmmmd'     .JMML.         ,M'         .JMMmmmdP' .JMML. .JMM. `"bmmd"' .JMML.    .JMMmmmdP'     `"bmmd"'      VF      VF      .JML.    YM P"Ybmmd"
-  //                                                                             MV                                                                                                                       
-  //                                                                            AW                                                                                                                        
 
   {  // This is the format the stepper currently expects for the 'Select' step type.
     type: 'select', // The type of step needed (required)
@@ -109,18 +113,14 @@ let stepsArray = [
   },
 
 
-
-
-
-  //
-  // `7MM"""YMM `7MMF'`7MN.   `7MF'     db      `7MMF'           .M"""bgd MMP""MM""YMM `7MM"""YMM  `7MM"""Mq.
-  //   MM    `7   MM    MMN.    M      ;MM:       MM            ,MI    "Y P'   MM   `7   MM    `7    MM   `MM.
-  //   MM   d     MM    M YMb   M     ,V^MM.      MM            `MMb.          MM        MM   d      MM   ,M9
-  //   MM""MM     MM    M  `MN. M    ,M  `MM      MM              `YMMNq.      MM        MMmmMM      MMmmdM9  
-  //   MM   Y     MM    M   `MM.M    AbmmmqMA     MM      ,     .     `MM      MM        MM   Y  ,   MM       
-  //   MM         MM    M     YMM   A'     VML    MM     ,M     Mb     dM      MM        MM     ,M   MM       
-  // .JMML.     .JMML..JML.    YM .AMA.   .AMMA..JMMmmmmMMM     P"Ybmmd"     .JMML.    .JMMmmmmMMM .JMML.     
-  //
+ //
+ //  _______  __  .__   __.      ___       __              _______.___________. _______ .______   
+ // |   ____||  | |  \ |  |     /   \     |  |            /       |           ||   ____||   _  \  
+ // |  |__   |  | |   \|  |    /  ^  \    |  |           |   (----`---|  |----`|  |__   |  |_)  |
+ // |   __|  |  | |  . `  |   /  /_\  \   |  |            \   \       |  |     |   __|  |   ___/  
+ // |  |     |  | |  |\   |  /  _____  \  |  `----.   .----)   |      |  |     |  |____ |  |      
+ // |__|     |__| |__| \__| /__/     \__\ |_______|   |_______/       |__|     |_______|| _|      
+ //
 
   {
     type: 'final',
@@ -134,30 +134,39 @@ let stepsArray = [
       }
     ],
     clickHandler: (evt) => {
-      console.log(stepper.formData);
+      console.log(myStepper.formData);
     }
   }
 ];
 
 
-
-
 //
-//  .M"""bgd MMP""MM""YMM `7MM"""YMM  `7MM"""Mq.`7MM"""Mq.`7MM"""YMM  `7MM"""Mq.      `7MMM.     ,MMF'`7MM"""YMM MMP""MM""YMM `7MMF'  `7MMF' .g8""8q. `7MM"""Yb.    .M"""bgd
-// ,MI    "Y P'   MM   `7   MM    `7    MM   `MM. MM   `MM. MM    `7    MM   `MM.       MMMb    dPMM    MM    `7 P'   MM   `7   MM      MM .dP'    `YM. MM    `Yb. ,MI    "Y
-// `MMb.          MM        MM   d      MM   ,M9  MM   ,M9  MM   d      MM   ,M9        M YM   ,M MM    MM   d        MM        MM      MM dM'      `MM MM     `Mb `MMb.    
-//   `YMMNq.      MM        MMmmMM      MMmmdM9   MMmmdM9   MMmmMM      MMmmdM9         M  Mb  M' MM    MMmmMM        MM        MMmmmmmmMM MM        MM MM      MM   `YMMNq.
-// .     `MM      MM        MM   Y  ,   MM        MM        MM   Y  ,   MM  YM.         M  YM.P'  MM    MM   Y  ,     MM        MM      MM MM.      ,MP MM     ,MP .     `MM
-// Mb     dM      MM        MM     ,M   MM        MM        MM     ,M   MM   `Mb.       M  `YM'   MM    MM     ,M     MM        MM      MM `Mb.    ,dP' MM    ,dP' Mb     dM
-// P"Ybmmd"     .JMML.    .JMMmmmmMMM .JMML.    .JMML.    .JMMmmmmMMM .JMML. .JMM.    .JML. `'  .JMML..JMMmmmmMMM   .JMML.    .JMML.  .JMML. `"bmmd"' .JMMmmmdP'   P"Ybmmd"
+//      _______. _______ .___________. __    __  .______   
+//     /       ||   ____||           ||  |  |  | |   _  \  
+//    |   (----`|  |__   `---|  |----`|  |  |  | |  |_)  |
+//     \   \    |   __|      |  |     |  |  |  | |   ___/  
+// .----)   |   |  |____     |  |     |  `--'  | |  |      
+// |_______/    |_______|    |__|      \______/  | _|      
 //
 
 let rootElement = '#stepper-root'; // The stepper expects a query string, like one that is used with the document.querySelector() function.
 let formName = 'myStepper'; // This will be the name attribute of the form generated by the stepper.
 
 const myStepper = new Stepper(rootElement, formName, stepsArray) // instantiate new Stepper, passing in required arguments.
+
+
+//
+// .___  ___.  _______ .___________. __    __    ______    _______       _______.
+// |   \/   | |   ____||           ||  |  |  |  /  __  \  |       \     /       |
+// |  \  /  | |  |__   `---|  |----`|  |__|  | |  |  |  | |  .--.  |   |   (----`
+// |  |\/|  | |   __|      |  |     |   __   | |  |  |  | |  |  |  |    \   \    
+// |  |  |  | |  |____     |  |     |  |  |  | |  `--'  | |  '--'  |.----)   |   
+// |__|  |__| |_______|    |__|     |__|  |__|  \______/  |_______/ |_______/    
+//
+
 myStepper.render(); // This Stepper method appends the stepper form to the root element provided.
 myStepper.nextStep( {step: 1} ) // This method requires an object with a 'step' key value pair as an argument.
 console.log(myStepper.formData); // The 'formData' property of the stepper is an array of stepper form inputs that have a value.
+console.log(myStepper.formDataJson); // This gets the stepper results as a JSON obj 
 
 ```

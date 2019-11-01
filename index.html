@@ -82,7 +82,7 @@
 
       <div class="row">
         <div class="medium-2">
-          <div class="checkbox-wrap focus">
+          <div class="checkbox-wrap">
             <input type="checkbox" id="cb-1" name="example-1" tabindex="-1" class="checkbox-input">
             <label tabindex="0" for="cb-1" class="checkbox-label">Option 1</label>
           </div>
@@ -388,6 +388,7 @@
             step: 2,
             title: 'Example question 2',
             subtitle: '',
+            selection_width_class: 'medium-4',
             selections: [
               {
                 text: 'Yes Radio',
@@ -418,17 +419,17 @@
             subtitle: "I think it's working",
             selections: [
               {
-                text: 'Yes Radio',
+                text: 'Yes',
                 id: 'radio-ex-yes-2',
                 name: 'radio-step-example-2'
               },
               {
-                text: 'No Radio',
+                text: 'No',
                 id: 'radio-ex-no-2',
                 name: 'radio-step-example-2'
               },
               {
-                text: 'Maybe So Radio',
+                text: 'Maybe So',
                 id: 'radio-ex-maybe-2',
                 name: 'radio-step-example-2'
               }
@@ -479,14 +480,18 @@
           {
             type: 'final',
             step: 5,
-            icon: '<img src="./img/Stepper Doc Icon.svg" />',
+            icon: '<img src="./dist/assets/images/stepper-doc-icon.svg" />',
             title: 'Last step with a call-to-action',
             subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
             selections: [
               {
                 text: 'BUTTON'
               }
-            ]
+            ],
+            clickHandler: (evt) => {
+              console.log(stepr.formData);
+              console.log(JSON.parse(stepr.formDataJson));
+            }
           }
         ];
 

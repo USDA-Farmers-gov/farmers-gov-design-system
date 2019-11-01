@@ -4,6 +4,7 @@ export default class Step {
     this.data = { ...step }
     this.results = [];
     this.domElement = '';
+    this.stepper = stepper;
     this.stepTypes = {
       'checkbox': {
         make: (stepObj) => {
@@ -93,9 +94,9 @@ export default class Step {
         }
       }
     }
-    this.stepper = stepper;
   }
 
+  // TODO: callback for when stepper finishes?
   stepComplete(thing){
 
   }
@@ -129,7 +130,7 @@ export default class Step {
         let tmp = template.content.firstChild.querySelector('.vertical-step-content:last-child')
         tmp.querySelector('select').addEventListener('change', this.data.changeHandler)
       }
-      template.content.firstChild.addEventListener('click', this.data.stepClick);
+
       this.domElement = template.content.firstChild;
       this.domElement.addEventListener('click', this.data.clickHandler)
       return template.content.firstChild;
@@ -169,7 +170,7 @@ export default class Step {
           let tmp = template.content.firstChild.querySelector('.vertical-step-content:last-child')
           tmp.querySelector('select').addEventListener('change', this.data.changeHandler)
         }
-        template.content.firstChild.addEventListener('click', this.data.stepClick);
+
         this.domElement = template.content.firstChild;
         this.domElement.addEventListener('click', this.data.clickHandler)
         return template.content.firstChild;

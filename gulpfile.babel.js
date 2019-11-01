@@ -14,7 +14,7 @@ import source from 'vinyl-source-stream';
 /*
  * For small tasks you can export arrow functions
  */
-export const clean = () => del([ 'assets' ]);
+export const clean = () => del([ 'dist' ]);
 
 /*
  * You can also declare named functions and export them as tasks
@@ -39,7 +39,7 @@ export function scripts(done) {
 }
 
 export function styles(done) {
-  return gulp.src('new/styles.scss')
+  return gulp.src('scss/styles.scss')
         .pipe(sass())
         .pipe(cleanCSS())
         .pipe(rename({
@@ -57,12 +57,12 @@ export function assets(done) {
 }
 
 export function watch() {
-  gulp.watch('new/**/*.scss', styles);
+  gulp.watch('scss/**/*.scss', styles);
   gulp.watch('js/**/*.js', scripts);
 }
 
 export function build(done) {
-  (gulp.series(clean, gulp.parallel('styles', 'scripts'))());
+  (gulp.series(clean, gulp.parallel('styles', 'scripts', 'assets'))());
   done();
 };
 /*
