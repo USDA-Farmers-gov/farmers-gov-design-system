@@ -51,9 +51,9 @@ export function styles(done) {
 
 export function assets(done) {
   gulp.src(['fonts/**/*'])
-      .pipe( gulp.dest('./dist/assets/fonts') )
+      .pipe( gulp.dest('./dist/fonts') )
   return gulp.src(['img/**/*'])
-              .pipe( gulp.dest('./dist/assets/images') )
+              .pipe( gulp.dest('./dist/images') )
 }
 
 export function watch() {
