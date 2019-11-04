@@ -6,48 +6,48 @@
   background-position: center;
   background-repeat: no-repeat;
   &.caret-right {
-    background-image: url(../img/caret-right.svg);
+    background-image: image("caret-right.svg");
   }
   &.search {
-    background-image: url(../img/search.svg);  
+    background-image: image("search.svg");
   }
   &.chevron-up {
-    background-image: url(../img/chevron-up.svg);
-    transform: rotateX(180deg);  
+    background-image: image("chevron-up.svg");
+    transform: rotateX(180deg);
   }
   &.chevron-down {
-    background-image: url(../img/chevron-down.svg);  
+    background-image: image("chevron-down.svg");
   }
   &.close {
-    background-image: url(../img/close.svg);  
+    background-image: image("close.svg");
   }
   &.external-link {
-    background-image: url(../img/external-link.svg);  
-  }  
+    background-image: image("external-link.svg");
+  }
   &.accordion-expand {
-    background-image: url(../img/accordion-expand.svg);  
+    background-image: image("accordion-expand.svg");
   }
   &.accordion-collapse {
-    background-image: url(../img/accordion-collapse.svg);  
+    background-image: image("accordion-collapse.svg");
   }
   &.popover {
-    background-image: url(../img/popover.svg);  
+    background-image: image("popover.svg");
   }
   &.info {
-    background-image: url(../img/info.svg);
+    background-image: image("info.svg");
   }
   &.mail {
-    background-image: url(../img/mail.svg);
+    background-image: image("mail.svg");
   }
   &.print {
-    background-image: url(../img/print.svg);
+    background-image: image("print.svg");
   }
   &.location {
-    background-image: url(../img/location.svg);
+    background-image: image("location.svg");
   }
   &.phone {
-    background-image: url(../img/phone.svg);
-  }   
+    background-image: image("phone.svg");
+  }
 }
 
 .outline-icon {
@@ -57,15 +57,15 @@
   background-position: center;
   background-repeat: no-repeat;
   &.farmer {
-    background-image: url(../img/farmer.svg);
+    background-image: image("farmer.svg");
   }
   &.mfp {
-    background-image: url(../img/mfp.svg);
+    background-image: image("mfp.svg");
   }
   &.land {
-    background-image: url(../img/land.svg);
+    background-image: image("land.svg");
   }
   &.barn {
-    background-image: url(../img/barn.svg);
-  }   
+    background-image: image("barn.svg");
+  }
 }

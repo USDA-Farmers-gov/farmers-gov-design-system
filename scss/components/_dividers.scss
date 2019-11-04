@@ -6,7 +6,7 @@
   height: 10px;
   width: 100%;
   border-top: 2px solid $grey3;
-  border-bottom: 2px solid $grey3; 
+  border-bottom: 2px solid $grey3;
 }
 
 // Primary Divider
@@ -24,13 +24,13 @@
       background-image: none;
       background-color: #fff0;
     }
-  }  
+  }
   &:before {
     border-bottom: 1px solid #49A564;
     content: "";
     height: 1px;
     width: 100%;
-    display: flex;       
+    display: flex;
   }
   &:after {
     content: "";
@@ -38,13 +38,13 @@
     margin-top: -13px;
     margin-left: -25px;
     background-color: #fff;
-    background-image: url(../../img/leaves.svg);
+    background-image: image("leaves.svg");
     background-position: center;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
     padding: 0 14px;
     width: 5rem;
-    height: 2.2rem;   
-  } 
+    height: 2.2rem;
+  }
 }
 
 // Secondary Divider
