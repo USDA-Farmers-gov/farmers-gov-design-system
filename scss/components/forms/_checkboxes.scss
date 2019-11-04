@@ -5,7 +5,7 @@ label.checkbox-label {
   line-height: 1.8rem;
   font-size: 1.8rem;
   margin-bottom: 0.2rem;
-  margin-top: 1rem;  
+  margin-top: 1rem;
 
   &:before {
     box-shadow: 0 0 0 1px #fff;
@@ -23,7 +23,7 @@ label.checkbox-label {
       border: .2rem solid $heritage;
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url("../../img/correct8.svg");
+      background-image: image("correct8.svg");
     }
   }
 
@@ -116,6 +116,6 @@ input.checkbox-card-input {
     background-color: $sweetgrass;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../../img/correct8.svg");
+    background-image: image("correct8.svg");
   }
 }

@@ -2,7 +2,7 @@ select {
   -webkit-appearance: none;
   cursor: pointer;
   background-color: #fff;
-  background-image: url(../img/arrow-down.svg);
+  background-image: image('arrow-down.svg');
   background-position: right 16px center;
   background-repeat: no-repeat;
   background-size: 1.3rem;
@@ -25,7 +25,7 @@ select {
   }
   &:disabled, &.disabled {
     background-color: $grey1;
-    background-image: url(../img/arrow-down-disabled.svg);
+    background-image: image('arrow-down-disabled.svg');
     border: 1px solid $grey3;
     cursor: not-allowed;
     color: $grey3;
