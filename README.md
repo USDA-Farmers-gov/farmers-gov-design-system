@@ -19,8 +19,8 @@ _These gulp tasks put the compiled assets in the `/dist` directory._
 | Task                   | Description                                                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `gulp scripts`         | Transpiles the main a JavaScript file located in `/js/farmers.js`                                                                    |
-| `gulp styles`          | Compiles the main a Sass file located in `/new/styles.scss`                                                                          |
+| `gulp styles`          | Compiles the main a Sass file located in `/scss/styles.scss`                                                                          |
 | `gulp assets`          | Copies files from the `img/` and `fonts/` directories                                                                                |
-| `gulp watch`           | Watches all `.js` files in the `js/` directory and all `.scss` files in the `new/` directory and compiles/transpiles any new changes |
+| `gulp watch`           | Watches all `.js` files in the `js/` directory and all `.scss` files in the `scss/` directory and compiles/transpiles any new changes |
 | `gulp clean`           | Deletes files and directories in the `dist/` directory                                                                               |
 | `gulp` or `gulp build` | Runs `gulp clean`, `gulp styles`, `gulp scripts` and `gulp assets`                                                                   |
