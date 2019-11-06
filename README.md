@@ -1,6 +1,19 @@
 # Farmers.gov Design System setup
 ---
 
+### Basic Setup
+#### 1. Clone the repository into the root directory of your site.
+`git clone https://github.com/USDA-Farmers-gov/Farmers.Gov-Design-System.git`
+
+#### 2. Rename the repo folder to be web friendly.
+`mv Farmers.Gov-Design-System farmers-gov`
+
+#### 3. Include the JS and CSS in the header.
+`<script src="/farmers-gov/dist/farmers.min.js"></script>
+<link rel="stylesheet" media="all" href="/farmers-gov/dist/css/main.min.css" />`
+
+Design system elements and their markup can be found at [https://usda-farmers-gov.github.io/](https://usda-farmers-gov.github.io/)
+
 ### Working with precompiled assets
 
 _In order to use our Gulp tasks to compile the Sass and ES6+ JavaScript files, you'll need to have [Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), and [Gulp](https://gulpjs.com/) installed on your machine._
