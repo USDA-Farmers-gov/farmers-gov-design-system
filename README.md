@@ -3,10 +3,10 @@
 
 ### Basic Setup
 #### 1. Clone the repository into the root directory of your site.
-`git clone https://github.com/USDA-Farmers-gov/Farmers.Gov-Design-System.git`
+`$ git clone https://github.com/USDA-Farmers-gov/Farmers.Gov-Design-System.git`
 
 #### 2. Rename the repo folder to be web friendly.
-`mv Farmers.Gov-Design-System farmers-gov`
+`$ mv Farmers.Gov-Design-System farmers-gov`
 
 #### 3. Include the JS and CSS in the header.
 ```
