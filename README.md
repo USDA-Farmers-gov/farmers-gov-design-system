@@ -24,21 +24,21 @@ These instruction assume you are starting from scratch. If you aready have Gulp 
 
 #### 1. Create a package.json file
 
-`npm init`
+`$ npm init`
 
 #### 2. Install packages
 
-`npm install gulp gulp-sass gulp-clean-css gulp-concat gulp-rename gulp-watch`
+`$ npm install gulp gulp-sass gulp-clean-css gulp-concat gulp-rename gulp-watch`
 
 #### 3. Setup your CSS
 Create **assets/scss/mystyles.scss**. This will include the styles specific to your website. Copy and paste these lines at the top:
 
 ``` 
 /* Set asset path helper variable */
-$asset-base-path: 'farmers' !default;
+$asset-base-path: 'farmers-gov' !default;
 
 /* Farmers.gov Design System */
-@import 'farmers/scss/styles.scss'; 
+@import 'farmers-gov/scss/styles.scss'; 
 ```
 
 #### 4. Setup Gulp file
@@ -70,7 +70,15 @@ gulp.task('default', gulp.series('sass'));
 When run, this script will create **css/styles.min.css**.
 
 #### 5. Compile your CSS
-To build your file once, type `gulp`.  Use `gulp watch` if you want it to update on each save.
+To build your file once type
+
+`$ gulp`
+
+OR 
+
+`$ gulp watch` 
+
+if you want to re-compile on each save.
 
 ---
 
