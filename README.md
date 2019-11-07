@@ -14,7 +14,9 @@
 <link rel="stylesheet" media="all" href="/farmers-gov/dist/css/main.min.css" />
 ```
 
-Design system elements and their markup can be found at [https://usda-farmers-gov.github.io/](https://usda-farmers-gov.github.io/)
+<p class="hide-on-site">
+      Design system elements and their markup can be found at <a href="https://usda-farmers-gov.github.io/">https://usda-farmers-gov.github.io/</a>
+</p>
 
 ---
 
