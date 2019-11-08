@@ -14,11 +14,40 @@
   font-style: normal;
 }
 
+
 @font-face {
   font-family: 'Public Sans';
-  src: font('public-sans/PublicSans-Regular.woff'),
-       font('public-sans/PublicSans-Regular.ttf')  format('truetype');
+  src: font('public-sans/PublicSans-Black.ttf'),
+       font('public-sans/PublicSans-Black.ttf')  format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: font('public-sans/PublicSans-ExtraBold.woff'),
+       font('public-sans/PublicSans-ExtraBold.ttf')  format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: font('public-sans/PublicSans-Bold.woff'),
+       font('public-sans/PublicSans-Bold.ttf')  format('truetype');
   font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: font('public-sans/PublicSans-SemiBold.woff'),
+       font('public-sans/PublicSans-SemiBold.ttf')  format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: font('public-sans/PublicSans-Medium.woff'),
+       font('public-sans/PublicSans-Medium.ttf')  format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -30,16 +59,16 @@
 }
 @font-face {
   font-family: 'Public Sans';
-  src: font('public-sans/PublicSans-Regular.woff'),
-  font('public-sans/PublicSans-Regular.ttf')  format('truetype');
+  src: font('public-sans/PublicSans-Light.woff'),
+  font('public-sans/PublicSans-Light.ttf')  format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Public Sans';
-  src: font('public-sans/PublicSans-Bold.woff'),
-  font('public-sans/PublicSans-Bold.ttf')  format('truetype');
-  font-weight: bold;
+  src: font('public-sans/PublicSans-ExtraLight.woff'),
+  font('public-sans/PublicSans-ExtraLight.ttf')  format('truetype');
+  font-weight: 200;
   font-style: normal;
 }
 @font-face {
