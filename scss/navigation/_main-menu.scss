@@ -17,26 +17,48 @@
     padding-left: 0;
     order: 2;
     width: auto;
+    // Add styles specific to the first link in the menu
     &:first-of-type {
-      margin-left: 0;
       a {
-        padding-left: 0;
       }
     }
     &:first-child {
       border-top: none;
     }
-    .nav-link {
+    a, .nav-link {
       border: none;
       font-size: 1.8rem;
-      font-weight: 700;
       padding: 1.3rem 3rem 1.7rem;
       border-left: none;
       color: #fff;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1.2;
       background-color: inherit;
       display: block;
-    }
+      text-decoration: none;
+      span {
+        padding-bottom: 2px;
+      }
+      &:focus, &.focus {
+        outline-width: 0px;
+        outline-offset: 3px;
+        outline-color: $focus;
+        box-shadow: 0px 0px 4px $focus;
+      }
+      &:hover, &.hover {
+        text-shadow: #fff0 !important;
+        -webkit-text-stroke: #fff0 !important;
+        span {
+          border-bottom: 4px solid #fff;
+        }
+      }
+      &:visited, &.visited {
+        color: #fff;
+        &:hover, &.hover {
+          text-shadow: #fff0 !important;
+          -webkit-text-stroke: #fff0 !important;
+        }
+      }
+    }    
   }
 }
