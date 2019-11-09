@@ -1,0 +1,34 @@
+.callout-button {
+  height: 48px;
+  vertical-align: middle;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 3px 14px 0 #d8d8d8;
+  width: 216px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    display: block;
+    font-weight: Bold;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 1.6rem;
+    color: $asphalt;
+    text-decoration: none;
+    &:hover {
+      text-shadow: 0 0 0.08rem #fff0;
+      -webkit-text-stroke: 1px #fff0;
+    }
+    .arrow {
+      border: solid $asphalt;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      color: $asphalt;
+      margin-left: 1px;
+      vertical-align: middle;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }    
+  }
+}
