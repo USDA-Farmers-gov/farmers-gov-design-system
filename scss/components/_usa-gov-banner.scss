@@ -1,0 +1,119 @@
+// United States Government Affiliate Banner
+// DO NOT CHANGE!!!
+#usa-gov-web-banner, .usa-banner {
+  font-size: 1.3rem;
+  background-color: #f7f7f7;
+  .usa-accordion {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding-left: 0;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .usa-banner-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+  }
+  .usa-banner-header-expanded {
+    border-bottom: none;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    min-height: 0;
+    padding-right: 0;
+  }
+  .usa-banner-inner {
+    p {
+      font-size: 1.2rem;
+      font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+      float: left;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      line-height: 1.5;
+    }
+    img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: .7rem;
+      float: left;
+    }    
+  }
+  .usa-banner-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    -webkit-font-smoothing: auto;
+    padding-top: 2px;
+    padding-left: 8px;
+    color: #006546;
+    display: block;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    line-height: 17px;
+  }
+  .usa-banner-button[aria-expanded=false] {
+    background-image: none;
+    &:after {
+      background-image: url(/themes/farmers_update/assets/img/angle-arrow-down-primary.png);
+      background-image: url(/themes/farmers_update/assets/img/angle-arrow-down-primary.svg);
+      background-size: 100%;
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-left: 0;
+    }
+  }
+  .usa-banner-button[aria-expanded=true] {
+    &:after {
+      background-image: url(/themes/farmers/assets/img/angle-arrow-up-primary.png);
+      background-image: url(/themes/farmers/assets/img/angle-arrow-up-primary.svg);
+      background-size: 100%;
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-left: 0;
+    }
+  }
+  .usa-media_block-img {
+    display: inline-block;
+    float: left;
+    margin-right: 1rem;
+  }
+  .usa-media_block-body {
+    display: table;
+  }
+  .usa-banner-icon {
+    width: 3.8rem;
+  }
+  .usa-banner-content {
+    padding-right: 1.5rem;
+    padding-bottom: 3px;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding-top: 4rem;
+    padding-bottom: 2.3rem;
+    width: 100%;
+  }
+  .usa-width-one-half {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
+}
+
+#gov-banner .medium-6 {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: 15px !important;
+}
