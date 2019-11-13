@@ -28,7 +28,8 @@
       padding: 4px;
       color: $asphalt;
       margin-left: 1px;
-      vertical-align: middle;
+      top: -1px;
+      position: relative;
       transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
     }    
