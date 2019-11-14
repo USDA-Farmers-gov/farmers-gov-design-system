@@ -52,7 +52,7 @@
         <div class="medium-3">
           <label tabindex="0" for="radio-card-2" class="radio-card-label with-image">
             <div class="radio-img-card-top">
-              <img src="./img/leaves.svg">
+              <img src="./dist/images/leaves.svg">
             </div>
             <div class="radio-img-card-bottom">
               <input type="radio" id="radio-card-2" class="radio-card-input" name="radio-example" title="Card Radio" tabindex="-1">
@@ -112,7 +112,7 @@
         <div class="medium-3">
           <label tabindex="0" for="checkbox-card-2" class="checkbox-card-label with-image">
             <div class="cb-img-card-top">
-              <img src="./img/leaves.svg">
+              <img src="./dist/images/leaves.svg">
             </div>
             <div class="cb-img-card-bottom">
               <input type="checkbox" id="checkbox-card-2" class="checkbox-card-input" title="Card Checkbox" tabindex="-1">
@@ -280,7 +280,7 @@
         <div class="medium-4">
           <div class="content-card accent-top">
             <div class="img">
-              <img src="./old/images/icon_service_center.svg" alt="">
+              <img src="./dist/images/icon_service_center.svg" alt="">
             </div>
             <div class="headline">
               <h4>Example Card Headline</h4>
@@ -294,7 +294,7 @@
         <div class="medium-4">
           <div class="content-card">
             <div class="img">
-              <img src="./old/images/icon_service_center.svg" alt="">
+              <img src="./dist/images/icon_service_center.svg" alt="">
             </div>
             <div class="headline">
               <h4>Example Card Headline</h4>
@@ -311,7 +311,7 @@
         <div class="medium-4">
           <div class="resource-card">
             <div class="logo">
-              <img src="./img/usda-symbol.svg" alt="">
+              <img src="./dist/images/usda-symbol.svg" alt="">
             </div>
             <div class="link">
               <a href="#" class="external-link">External Link Headline</a>
@@ -338,6 +338,86 @@
         </div>
 
       </div>
+
+      <div class="container main-navigation">
+        <hr>
+        <h2>Main Navigation</h2>
+        <ul class="primary-nav" role="navigation" aria-label="Primary">
+          <li>
+            <a class="accordion-button nav-link" aria-expanded="false" aria-controls="megamenu-1">
+              Home
+            </a>
+            <ul id="megamenu-1" class="nav-submenu" aria-hidden="true">
+              <li>
+                <a href="/" id="anch_8">
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="/" id="anch_2332">
+                  <span>askdbaksbdkns</span>
+                </a>
+              </li>
+              <li class="has-submenu">
+                <a href="#" id="anch_9">
+                  <span>Blog</span>
+                </a>
+                <ul class="nav-submenu-submenu" style="">
+                  <li>
+                    <a href="/media/blog" id="anch_10">
+                      <span>Agency Reports</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/media/blog" id="anch_11">
+                      <span>Blog</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/fund" class="nav-link" id="anch_23">
+                <span>Fund</span>
+              </a>
+            </li>
+          <li>
+            <a href="/manage" class="nav-link" id="anch_24">
+              <span>Manage</span>
+            </a>
+          </li>
+          <li>
+            <a href="/conserve" class="nav-link" id="anch_25">
+              <span>Conserve</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recover" class="nav-link" id="anch_26">
+              <span>Recover</span>
+            </a>
+          </li>
+          <li>
+            <a href="/connect" class="nav-link" id="anch_27">
+              <span>Connect</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="medium-12">
+          <br>
+          <hr/>
+          <br>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
     </div>
 
     <script type="text/javascript">
@@ -356,6 +436,46 @@
 
 
       window.onload =  function(){
+
+        // $('.nav-submenu > li > a').click(function(e){
+        //   if ($(this).parent().find('.nav-submenu-submenu').length > 0) {
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     $('.nav-submenu-submenu').hide();
+        //     $('.submenu-item-active').removeClass('submenu-item-active');
+        //     $(this).parent().find('.nav-submenu-submenu').toggle();
+        //     $(this).toggleClass('submenu-item-active');
+        //   }
+        // });
+        //
+        // $('.accordion-button.nav-link').click(function(e){
+        //   e.preventDefault();
+        //   e.stopPropagation();
+        //   $('.submenu-item-active').removeClass('submenu-item-active');
+        //   $('.nav-submenu-submenu:visible').hide();
+        // });
+
+        let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
+
+        [...megamenuButtons].map( elm => {
+
+          let submenu = elm.nextElementSibling;
+
+          elm.addEventListener('click', (evt) => {
+            elmExpanded = elm.getAttribute('aria-expanded');
+            submenuHidden = submenu.getAttribute('aria-hidden');
+            elm.classList.toggle('submenu-item-active');
+
+            if (elmExpanded == 'false') {
+              elm.setAttribute('aria-expanded', 'true')
+              submenu.setAttribute('aria-hidden','false')
+            } else {
+              elm.setAttribute('aria-expanded', 'false')
+              submenu.setAttribute('aria-hidden','true')
+            }
+          })
+
+        })
 
         let stepsArray = [
           {
