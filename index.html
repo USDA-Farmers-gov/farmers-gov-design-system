@@ -345,7 +345,10 @@
         <ul class="primary-nav" role="navigation" aria-label="Primary">
           <li>
             <a class="accordion-button nav-link" aria-expanded="false" aria-controls="megamenu-1">
-              Home
+              <span>
+                Home
+                <span class="nav-arrow"></span>
+              </span>
             </a>
             <ul id="megamenu-1" class="nav-submenu" aria-hidden="true">
               <li>
@@ -436,46 +439,6 @@
 
 
       window.onload =  function(){
-
-        // $('.nav-submenu > li > a').click(function(e){
-        //   if ($(this).parent().find('.nav-submenu-submenu').length > 0) {
-        //     e.preventDefault();
-        //     e.stopPropagation();
-        //     $('.nav-submenu-submenu').hide();
-        //     $('.submenu-item-active').removeClass('submenu-item-active');
-        //     $(this).parent().find('.nav-submenu-submenu').toggle();
-        //     $(this).toggleClass('submenu-item-active');
-        //   }
-        // });
-        //
-        // $('.accordion-button.nav-link').click(function(e){
-        //   e.preventDefault();
-        //   e.stopPropagation();
-        //   $('.submenu-item-active').removeClass('submenu-item-active');
-        //   $('.nav-submenu-submenu:visible').hide();
-        // });
-
-        let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
-
-        [...megamenuButtons].map( elm => {
-
-          let submenu = elm.nextElementSibling;
-
-          elm.addEventListener('click', (evt) => {
-            elmExpanded = elm.getAttribute('aria-expanded');
-            submenuHidden = submenu.getAttribute('aria-hidden');
-            elm.classList.toggle('submenu-item-active');
-
-            if (elmExpanded == 'false') {
-              elm.setAttribute('aria-expanded', 'true')
-              submenu.setAttribute('aria-hidden','false')
-            } else {
-              elm.setAttribute('aria-expanded', 'false')
-              submenu.setAttribute('aria-hidden','true')
-            }
-          })
-
-        })
 
         let stepsArray = [
           {
