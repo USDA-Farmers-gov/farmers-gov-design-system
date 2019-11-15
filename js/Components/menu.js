@@ -7,6 +7,7 @@ window.addEventListener('load', function(){
     let submenu = elm.nextElementSibling;
 
     elm.addEventListener('click', (evt) => {
+      evt.preventDefault();
       let elmExpanded = elm.getAttribute('aria-expanded');
       let submenuHidden = submenu.getAttribute('aria-hidden');
       elm.classList.toggle('submenu-item-active');
@@ -28,6 +29,7 @@ window.addEventListener('load', function(){
     let submenu_child = elm.querySelector('.nav-submenu-submenu');
 
     elm.addEventListener('click', (evt) => {
+      evt.preventDefault();
       elm.classList.toggle('submenu-item-active');
     })
   })
