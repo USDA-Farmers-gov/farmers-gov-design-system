@@ -339,15 +339,24 @@
 
       </div>
 
+      <hr>
       <div class="row">
         <div class="medium-12">
-          <button type="button" onclick="makeMobz" class="btn" name="button">Make Mobile</button>
+          <button type="button" class="btn make-menu-button" name="button">Make Mobile</button>
         </div>
       </div>
 
       <div class="container main-navigation">
-        <hr>
         <h2>Main Navigation</h2>
+        <div class="banner">
+          <div class="banner-logo">
+            <img src="./dist/images/usda-symbol.svg" alt="">
+            <div class="logo-text">
+              <span>Farmers.gov</span>
+              <span>U.S. Department of Agriculture</span>
+            </div>
+          </div>
+        </div>
         <ul class="primary-nav" role="navigation" aria-label="Primary">
           <li>
             <a class="accordion-button nav-link" aria-expanded="false" aria-controls="megamenu-1">
@@ -413,7 +422,6 @@
           </li>
         </ul>
       </div>
-
       <br>
       <br>
       <br>
@@ -427,6 +435,10 @@
       <br>
       <br>
       <br>
+    </div>
+    <div class="mobile-primary-nav">
+      <div class="nav-container">
+      </div>
     </div>
 
     <script type="text/javascript">
@@ -445,11 +457,49 @@
 
 
       window.onload =  function(){
-
         let makeMobz = () => {
-          let navBar = document.querySelector('.primary-nav');
-          let navBarClone = navBar.cloneNode(true)
+          let bannerDiv = document.querySelector('.banner');
+          let menuBtn = document.createElement('button');
+          menuBtn.classList.add('mobile-menu-button');
+          menuBtn.innerText = "MENU";
+          bannerDiv.appendChild(menuBtn);
         }
+        makeMobz()
+
+        document.querySelector('.make-menu-button').addEventListener('click', makeMobz)
+
+        document.addEventListener('click', event => {
+          const helper = (element, className) => {
+            if (!!element) {
+              if (element.classList.contains(className)) {
+                return element;
+              } else {
+                return helper(element.parentElement, className);
+              }
+            }
+          }
+
+          if (document.querySelector('.mobile-menu-button') == event.target) {
+            let mobileNav = document.querySelector('.mobile-primary-nav');
+            let navBar = document.querySelector('.primary-nav');
+            let navContainer = document.querySelector('.nav-container');
+            let navBarClone = navBar.cloneNode(true);
+            document.body.classList.toggle('mobile-menu-active');
+            mobileNav.style.display = "flex";
+            navContainer.appendChild(navBarClone);
+
+          }
+          const mobileNavItemClicked = helper(event.target, "nav-container");
+          console.log(mobileNavItemClicked);
+          
+          if (mobileNavItemClicked) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log(event.target);
+          }
+
+
+        })
 
         let stepsArray = [
           {

@@ -262,3 +262,82 @@
     }
   }
 }
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .banner-logo {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 5rem;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      padding-left: .5rem;
+
+      span {
+        font-size: 1.4rem;
+      }
+      span:first-child {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .mobile-menu-button {
+    width: 5rem;
+    height: 5rem;
+    background: #006456;
+    color: white;
+  }
+}
+
+
+.mobile-primary-nav {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  background: #00000094;
+  justify-content: flex-end;
+  overflow: hidden;
+  display: none;
+
+  .nav-container {
+    max-width: 60vw;
+
+    .primary-nav {
+      height: 100%;
+      width: 100%;
+
+      li {
+        width: 100%;
+
+        .accordion-button {
+
+          & > span {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .nav-arrow {
+              background-image: image('arrow-right-white.svg');
+              background-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-active {
+  overflow: hidden;
+}
