@@ -339,6 +339,12 @@
 
       </div>
 
+      <div class="row">
+        <div class="medium-12">
+          <button type="button" onclick="makeMobz" class="btn" name="button">Make Mobile</button>
+        </div>
+      </div>
+
       <div class="container main-navigation">
         <hr>
         <h2>Main Navigation</h2>
@@ -439,6 +445,11 @@
 
 
       window.onload =  function(){
+
+        let makeMobz = () => {
+          let navBar = document.querySelector('.primary-nav');
+          let navBarClone = navBar.cloneNode(true)
+        }
 
         let stepsArray = [
           {
