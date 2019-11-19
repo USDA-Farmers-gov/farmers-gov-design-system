@@ -40,8 +40,11 @@
 #search-field {
   display: inline-flex;
   margin-bottom: 0;
-  position: relative;
-  background-color: $heritage;
+  background-color: #006546;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   form.search {
     margin: 1.5rem 2rem;
   }
@@ -64,7 +67,7 @@
     line-height: 22px;
   }
   [type="submit"] {
-    background-image: url(../farmers/img/search.svg);
+    background-image: url(../dist/images/search.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: $grey1;
@@ -86,6 +89,86 @@
     .usa-sr-only {
       position: absolute;
       left: -999em;
+    }
+  }
+}
+
+.main-header {
+  .skip-nav {
+    background: 0 0;
+    color: $asphalt;
+    left: 0;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    top: -4.2rem;
+    transition: all .2s ease-in-out;
+    z-index: 100;
+  }
+  .header-inner-wrap {
+    position: relative;
+    height: 80px;
+    padding-top: 1.5rem;
+    .callout-button {
+      position: absolute;
+      right: 20px;
+      top: -20px;
+      z-index: 1;
+    }
+    .agency-banner {
+      display: inline-block;
+      margin-left: 2.4rem;
+      a.agency-logo-text {
+        text-decoration: none;
+        color: $asphalt;
+        &:hover {
+          color: $asphalt;
+          text-shadow: 0 0 0;
+        }
+      }
+      img {
+        height: 45px;
+      }
+      .agency-logo {
+        float: left;
+        margin-right: 12px;
+      }
+      .agency-identity {
+        .agency-name {
+          float: left;
+          font-size: 2rem;
+          font-weight: 500;
+        }
+        .tagline {
+          float: left;
+          font-weight: 200;
+          text-transform: uppercase;
+          font-size: 1.35rem;
+          margin-top: 4px;
+        }
+      }
+    }
+    .utility-nav {
+      float: right;
+      display: inline-block;
+      position: relative;
+      width: 500px;
+      .utility-nav-links {
+        margin-top: 2.6rem;
+        margin-right: 1.3rem;
+        float: right;
+      }
+    }
+  }
+}
+
+.primary-nav-wrap {
+  background: $heritage;
+  height: 64px;
+  position: relative;
+  #search-field {
+    right: 20px;
+    form.search {
+      margin: 0;
     }
   }
 }
