@@ -4,8 +4,10 @@
   margin-bottom: 0;
   list-style-type: none;
   padding-left: 0;
-  order: 2;
+  left: 0;
   text-decoration: none;
+  position: absolute;
+  height: 63px;
   li {
     background-color: transparent;
     display: inline-block;
@@ -16,6 +18,7 @@
     padding-left: 0;
     order: 2;
     width: auto;
+    height: 64px;
     // Add styles specific to the first link in the menu
     &:first-of-type {
       a {
@@ -27,7 +30,7 @@
     .nav-link {
       border: none;
       font-size: 1.8rem;
-      padding: 1.3rem 3rem 1.7rem;
+      padding: 1.9rem 3rem 1.7rem;
       border-left: none;
       color: #fff;
       font-weight: 500;
