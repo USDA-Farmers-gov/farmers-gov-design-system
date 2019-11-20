@@ -114,50 +114,54 @@
       top: -20px;
       z-index: 1;
     }
-    .agency-banner {
-      display: inline-block;
-      margin-left: 2.4rem;
-      a.agency-logo-text {
-        text-decoration: none;
-        color: $asphalt;
-        &:hover {
-          color: $asphalt;
-          text-shadow: 0 0 0;
-        }
-      }
-      img {
-        height: 45px;
-      }
-      .agency-logo {
-        float: left;
-        margin-right: 12px;
-      }
-      .agency-identity {
-        .agency-name {
-          float: left;
-          font-size: 2rem;
-          font-weight: 500;
-        }
-        .tagline {
-          float: left;
-          font-weight: 200;
-          text-transform: uppercase;
-          font-size: 1.35rem;
-          margin-top: 4px;
-        }
-      }
+  }
+}
+
+.utility-nav {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 500px;
+  .utility-nav-links {
+    margin-top: 3.2rem;
+    margin-right: 1.3rem;
+    margin-bottom: 0;
+    float: right;
+  }
+}
+
+.agency-banner {
+  display: inline-block;
+  margin-left: 2.4rem;
+  a.agency-logo-text {
+    text-decoration: none;
+    color: $asphalt;
+    &:hover {
+      color: $asphalt;
+      text-shadow: 0 0 0;
     }
-    .utility-nav {
-      float: right;
-      display: inline-block;
-      position: relative;
-      width: 500px;
-      .utility-nav-links {
-        margin-top: 2.6rem;
-        margin-right: 1.3rem;
-        float: right;
-      }
-    }
+  }
+  img {
+    height: 45px;
+  }
+  .agency-logo {
+    float: left;
+    margin-right: 12px;
+  }
+}
+
+.agency-identity {
+  .agency-name {
+    float: left;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .tagline {
+    float: left;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 1.35rem;
+    margin-top: 4px;
   }
 }
 
@@ -167,6 +171,7 @@
   position: relative;
   #search-field {
     right: 20px;
+    height: 34px;
     form.search {
       margin: 0;
     }
