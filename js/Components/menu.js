@@ -13,11 +13,11 @@ window.addEventListener('load', function(){
       elm.classList.toggle('submenu-item-active');
 
       if (elmExpanded == 'false') {
-        elm.setAttribute('aria-expanded', 'true')
-        submenu.setAttribute('aria-hidden','false')
+        elm.setAttribute('aria-expanded', 'true');
+        submenu.setAttribute('aria-hidden','false');
       } else {
-        elm.setAttribute('aria-expanded', 'false')
-        submenu.setAttribute('aria-hidden','true')
+        elm.setAttribute('aria-expanded', 'false');
+        submenu.setAttribute('aria-hidden','true');
       }
     })
 

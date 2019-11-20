@@ -273,6 +273,7 @@
 
     img {
       width: 5rem;
+      height: 5rem;
     }
     .logo-text {
       display: flex;
@@ -291,8 +292,9 @@
   .mobile-menu-button {
     width: 5rem;
     height: 5rem;
-    background: #006456;
+    background: $heritage;
     color: white;
+    padding: 0;
   }
 }
 
@@ -319,6 +321,13 @@
       li {
         width: 100%;
 
+        & > .nav-link:hover {
+          & > span {
+            border: 0;
+            box-shadow: none;
+          }
+        }
+
         .accordion-button {
 
           & > span {
@@ -327,12 +336,35 @@
             align-items: center;
             width: 100%;
 
+            &:hover {
+              border: 0;
+              box-shadow: none;
+            }
+
             .nav-arrow {
               background-image: image('arrow-right-white.svg');
               background-size: 0.8rem;
             }
           }
         }
+      }
+    }
+
+    .mobile-nav-header {
+      background-color: $heritage;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 3rem;
+      color: $white;
+
+      span {
+        width: 2rem;
+        height: 2rem;
+        background-image: image('close-white.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1.8rem;
+        cursor: pointer;
       }
     }
   }

@@ -469,6 +469,7 @@
         document.querySelector('.make-menu-button').addEventListener('click', makeMobz)
 
         document.addEventListener('click', event => {
+
           const helper = (element, className) => {
             if (!!element) {
               if (element.classList.contains(className)) {
@@ -484,18 +485,33 @@
             let navBar = document.querySelector('.primary-nav');
             let navContainer = document.querySelector('.nav-container');
             let navBarClone = navBar.cloneNode(true);
+            let mobileNavHeader = document.createElement('div');
+            let closeSpan = document.createElement('span');
+            mobileNavHeader.classList.add('mobile-nav-header');
+            mobileNavHeader.appendChild(closeSpan);
             document.body.classList.toggle('mobile-menu-active');
             mobileNav.style.display = "flex";
+            navContainer.appendChild(mobileNavHeader);
             navContainer.appendChild(navBarClone);
-
           }
-          const mobileNavItemClicked = helper(event.target, "nav-container");
-          console.log(mobileNavItemClicked);
-          
+
+          const mobileNavContainerClicked = helper(event.target, "nav-container");
+          const mobileNavItemClicked = helper(event.target, "nav-link");
+
           if (mobileNavItemClicked) {
             event.preventDefault();
             event.stopPropagation();
-            console.log(event.target);
+
+            if (mobileNavItemClicked.classList.contains('accordion-button')) {
+              let mobileSubmenu = mobileNavItemClicked.parentElement.querySelector('.nav-submenu').cloneNode(true);
+              let mobileNavContainer = document.querySelector('.nav-container');
+              mobileNavContainer.appendChild(mobileSubmenu);
+            }
+
+          } else if(event.target.classList.contains('mobile-primary-nav')){
+            document.body.classList.toggle('mobile-menu-active');
+            document.querySelector('.mobile-primary-nav').style.display = "none";
+            document.querySelector('.nav-container').innerHTML = "";
           }
 
 
