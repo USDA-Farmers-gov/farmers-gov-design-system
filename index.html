@@ -487,16 +487,26 @@
             let navBarClone = navBar.cloneNode(true);
             let mobileNavHeader = document.createElement('div');
             let closeSpan = document.createElement('span');
+            let backButton = document.createElement('div');
+            let menuSlider = document.createElement('div');
+
+            backButton.innerText = 'Back';
+            menuSlider.classList.add('menus-silder-container');
             mobileNavHeader.classList.add('mobile-nav-header');
             mobileNavHeader.appendChild(closeSpan);
+            mobileNavHeader.appendChild(backButton);
+            backButton.style.display = "none";
             document.body.classList.toggle('mobile-menu-active');
             mobileNav.style.display = "flex";
             navContainer.appendChild(mobileNavHeader);
-            navContainer.appendChild(navBarClone);
+            menuSlider.appendChild(navBarClone);
+            navContainer.appendChild(menuSlider);
           }
 
           const mobileNavContainerClicked = helper(event.target, "nav-container");
           const mobileNavItemClicked = helper(event.target, "nav-link");
+
+          console.dir(event.target);
 
           if (mobileNavItemClicked) {
             event.preventDefault();
@@ -504,11 +514,15 @@
 
             if (mobileNavItemClicked.classList.contains('accordion-button')) {
               let mobileSubmenu = mobileNavItemClicked.parentElement.querySelector('.nav-submenu').cloneNode(true);
-              let mobileNavContainer = document.querySelector('.nav-container');
-              mobileNavContainer.appendChild(mobileSubmenu);
+              let emptyNavDiv = document.createElement('div');
+              let mobileNavContainer = document.querySelector('.menus-silder-container');
+              emptyNavDiv.appendChild(mobileSubmenu);
+              mobileNavContainer.appendChild(emptyNavDiv);
+              mobileNavContainer.classList.toggle('level-2');
+              document.querySelector('.mobile-nav-header > div').style.display = "flex";
             }
 
-          } else if(event.target.classList.contains('mobile-primary-nav')){
+          } else if( event.target.classList.contains('mobile-primary-nav') ){
             document.body.classList.toggle('mobile-menu-active');
             document.querySelector('.mobile-primary-nav').style.display = "none";
             document.querySelector('.nav-container').innerHTML = "";
