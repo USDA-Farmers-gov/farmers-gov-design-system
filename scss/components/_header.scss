@@ -108,11 +108,23 @@
     position: relative;
     height: 80px;
     padding-top: 1.5rem;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+
+      .agency-banner {
+        margin-left: 0;
+        display: flex;
+      }
+    }
+
     .callout-button {
       position: absolute;
       right: 20px;
       top: -20px;
       z-index: 1;
+      background-color: $white;
     }
   }
 }
