@@ -38,13 +38,10 @@
 
 // Search field in header
 #search-field {
-  display: inline-flex;
+  display: flex;
   margin-bottom: 0;
   background-color: #006546;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+
   form.search {
     margin: 1.5rem 2rem;
   }
@@ -180,9 +177,15 @@
   background: $heritage;
   height: 64px;
   position: relative;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   #search-field {
-    right: 20px;
-    height: 34px;
+
     form.search {
       margin: 0;
     }
