@@ -32,7 +32,7 @@
       position: relative;
       transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
-    }    
+    }
   }
 }
 
@@ -118,15 +118,14 @@
 }
 
 .utility-nav {
-  float: right;
-  display: inline-block;
-  position: relative;
-  width: 500px;
+  display: flex;
+
   .utility-nav-links {
     margin-top: 3.2rem;
     margin-right: 1.3rem;
     margin-bottom: 0;
-    float: right;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
