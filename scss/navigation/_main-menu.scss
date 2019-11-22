@@ -333,9 +333,16 @@
         }
       }
 
+      &.level-3 {
+        .primary-nav {
+          margin-left: -150vw;
+        }
+      }
+
       .primary-nav {
         height: 100%;
         width: 75vw;
+        transition: margin .3s;
 
         & ~ div {
           width: 75vw;
@@ -407,7 +414,7 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
-      padding: 1rem 3rem;
+      padding: 3rem 3rem 1rem 3rem;
       color: $white;
 
       span {
