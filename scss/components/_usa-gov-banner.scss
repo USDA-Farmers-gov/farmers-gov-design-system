@@ -17,6 +17,10 @@
     padding-top: 0;
     padding-bottom: 0;
     position: relative;
+
+    & + .container {
+      display: none;
+    }
   }
   .usa-banner-header-expanded {
     border-bottom: none;
@@ -25,6 +29,10 @@
     font-weight: 400;
     min-height: 0;
     padding-right: 0;
+
+    & + .container {
+      display: flex;
+    }
   }
   .usa-banner-inner {
     p {
@@ -40,7 +48,7 @@
       height: 2rem;
       margin-right: .7rem;
       float: left;
-    }    
+    }
   }
   .usa-banner-button {
     background-color: transparent;
