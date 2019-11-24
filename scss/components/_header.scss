@@ -32,19 +32,16 @@
       position: relative;
       transform: rotate(-45deg);
       -webkit-transform: rotate(-45deg);
-    }    
+    }
   }
 }
 
 // Search field in header
 #search-field {
-  display: inline-flex;
+  display: flex;
   margin-bottom: 0;
   background-color: #006546;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+
   form.search {
     margin: 1.5rem 2rem;
   }
@@ -67,7 +64,7 @@
     line-height: 22px;
   }
   [type="submit"] {
-    background-image: url(../dist/images/search.svg);
+    background-image: image('search.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: $grey1;
@@ -108,25 +105,36 @@
     position: relative;
     height: 80px;
     padding-top: 1.5rem;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+
+      .agency-banner {
+        margin-left: 0;
+        display: flex;
+      }
+    }
+
     .callout-button {
       position: absolute;
       right: 20px;
       top: -20px;
       z-index: 1;
+      background-color: $white;
     }
   }
 }
 
 .utility-nav {
-  float: right;
-  display: inline-block;
-  position: relative;
-  width: 500px;
+  display: flex;
+
   .utility-nav-links {
     margin-top: 3.2rem;
     margin-right: 1.3rem;
     margin-bottom: 0;
-    float: right;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -169,9 +177,15 @@
   background: $heritage;
   height: 64px;
   position: relative;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   #search-field {
-    right: 20px;
-    height: 34px;
+
     form.search {
       margin: 0;
     }
