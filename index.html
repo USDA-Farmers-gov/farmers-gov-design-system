@@ -345,81 +345,185 @@
         </div>
       </div>
 
-      <div class="container main-navigation">
+      <div class="container main-navigation main-header">
         <h2>Main Navigation</h2>
-        <div class="banner">
-          <div class="banner-logo">
-            <img src="./dist/images/usda-symbol.svg" alt="">
-            <div class="logo-text">
-              <span>Farmers.gov</span>
-              <span>U.S. Department of Agriculture</span>
+        <header class="main-header" role="banner" aria-label="Page Header">
+          <a href="#main-content" class="skip-nav" role="navigation" aria-label="Skip to Main Content">
+              Skip to main content
+          </a>
+          <!--Skip to Main Content-->
+          <div class="usa-banner" id="usa-gov-web-banner">
+
+            <div class="usa-accordion">
+              <header class="usa-banner-header" aria-label="Official United States Government Website Disclaimer">
+                <div class="usa-banner-inner container">
+                  <img src="./dist/images/flag-favicon-57.png" alt="U.S. flag">
+                  <p>An official website of the United States government</p>
+                  <button class="usa-accordion-button usa-banner-button" aria-expanded="false" aria-controls="gov-banner">
+                    <span class="usa-banner-button-text">Here’s how you know</span>
+                  </button>
+                </div>
+              </header>
+
+              <div class="container">
+                <div class="usa-banner-content row usa-accordion-content" id="gov-banner" aria-hidden="true">
+                  <div class="usa-banner-guidance-gov medium-6">
+                    <img class="usa-banner-icon usa-media_block-img" src=".dist/images/icon-dot-gov.svg" alt="Dot gov">
+                    <div class="usa-media_block-body">
+                      <strong>The .gov means it’s official.</strong>
+                      <br>
+                      <div class="">Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or “location”) bar.</div>
+                    </div>
+                  </div>
+                  <div class="usa-banner-guidance-ssl medium-6">
+                    <img class="usa-banner-icon usa-media_block-img" src="./dist/images/icon-https.svg" alt="SSL">
+                    <div class="usa-media_block-body">
+                      <div class="">This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted &nbsp;— in other words, any information or browsing history that you provide is transmitted securely.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="header-inner-wrap">
+            <div class="">
+              <div class="callout-button">
+                <a href="/sign-in" title="SIGN IN | SIGN UP">
+                  SIGN IN | SIGN UP
+                  <span class="arrow" alt="arrow" tabindex="-1"></span>
+                </a>
+              </div>
+              <div class="agency-banner">
+                <div class="agency-logo">
+                  <a class="agency-logo-text" href="/" title="Home" aria-label="The U.S. Department of Agriculture Farmers Home Page" rel="home">
+                    <span title="Home" rel="home" class="agency-logo">
+                      <img src="./dist/images/usda-symbol.svg" alt="USDA Logo" class="usda-logo-img">
+                    </span>
+                    <div class="agency-identity">
+                      <div class="agency-name">Farmers.gov</div>
+                      <div class="tagline">U.S. Department of Agriculture</div>
+                    </div>
+                  </a>
+                </div>
+                <button type="button" name="button" class="mobile-menu-button">MENU</button>
+              </div>
+              <div class="utility-nav">
+                <ul class="usa-unstyled-list utility-nav-links usa-nav-secondary-links">
+
+
+                  <li>
+                    <a href="/playbook" tabindex="0">
+                      Farmers.gov Playbook
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/farmbill" tabindex="0">
+                      Farm Bill
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.usda.gov" tabindex="0">
+                      USDA.gov
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" tabindex="0">
+                      Contact Us
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <ul class="primary-nav" role="navigation" aria-label="Primary">
-          <li>
-            <a class="accordion-button nav-link" aria-expanded="false" aria-controls="megamenu-1">
-              <span>
-                Home
-                <span class="nav-arrow"></span>
-              </span>
-            </a>
-            <ul id="megamenu-1" class="nav-submenu" aria-hidden="true">
-              <li>
-                <a href="/" id="anch_8">
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="/" id="anch_2332">
-                  <span>askdbaksbdkns</span>
-                </a>
-              </li>
-              <li class="has-submenu">
-                <a href="#" id="anch_9">
-                  <span>Blog</span>
-                </a>
-                <ul class="nav-submenu-submenu" style="">
-                  <li>
-                    <a href="/media/blog" id="anch_10">
-                      <span>Agency Reports</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/media/blog" id="anch_11">
-                      <span>Blog</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="/fund" class="nav-link" id="anch_23">
-                <span>Fund</span>
-              </a>
-            </li>
-          <li>
-            <a href="/manage" class="nav-link" id="anch_24">
-              <span>Manage</span>
-            </a>
-          </li>
-          <li>
-            <a href="/conserve" class="nav-link" id="anch_25">
-              <span>Conserve</span>
-            </a>
-          </li>
-          <li>
-            <a href="/recover" class="nav-link" id="anch_26">
-              <span>Recover</span>
-            </a>
-          </li>
-          <li>
-            <a href="/connect" class="nav-link" id="anch_27">
-              <span>Connect</span>
-            </a>
-          </li>
-        </ul>
+          <nav class="primary-nav-wrap" aria-label="Navigation">
+
+            <div class="container">
+              <ul class="primary-nav usa-accordion" role="navigation" aria-label="Primary">
+                <li>
+                  <a class="accordion-button nav-link" aria-expanded="false" aria-controls="megamenu-1">
+                    <span>
+                      Home
+                      <span class="nav-arrow"></span>
+                    </span>
+                  </a>
+                  <ul id="megamenu-1" class="nav-submenu" aria-hidden="true">
+                    <li>
+                      <a href="/">
+                        <span>Home</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <span>askdbaksbdkns</span>
+                      </a>
+                    </li>
+                    <li class="has-submenu">
+                      <a href="#">
+                        <span>Blog</span>
+                      </a>
+                      <ul class="nav-submenu-submenu" style="">
+                        <li>
+                          <a href="/media/blog">
+                            <span>Agency Reports</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/media/blog">
+                            <span>Blog</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="/fund" class="nav-link">
+                    <span>Fund</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/manage" class="nav-link">
+                    <span>Manage</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/conserve" class="nav-link">
+                    <span>Conserve</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/recover" class="nav-link">
+                    <span>Recover</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/connect" class="nav-link">
+                    <span>Connect</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div id="search-field">
+                <form class="search" action="https://search.farmers.gov/search" data-drupal-form-fields="affiliate,header-search">
+                  <div role="search">
+                    <input name="utf8" type="hidden" value="✓">
+                    <input id="affiliate" name="affiliate" type="hidden" value="farmers.gov">
+                    <label class="usa-sr-only" for="header-search">Search Farmers.gov</label>
+                    <input id="header-search" autocomplete="off" accesskey="i" name="query" type="search" placeholder="Search Farmers.gov" tabindex="0">
+                    <button type="submit" tabindex="0">
+                      <span class="usa-sr-only">Search</span>
+                    </button>
+                    <input name="commit" type="hidden" value="Search">
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+          </nav>
+        </header>
       </div>
       <br>
       <br>
@@ -434,6 +538,7 @@
       <br>
       <br>
       <br>
+
     </div>
     <div class="mobile-primary-nav">
       <div class="nav-container">
@@ -456,14 +561,14 @@
 
 
       window.onload =  function(){
-        let makeMobz = () => {
-          let bannerDiv = document.querySelector('.banner');
-          let menuBtn = document.createElement('button');
-          menuBtn.classList.add('mobile-menu-button');
-          menuBtn.innerText = "MENU";
-          bannerDiv.appendChild(menuBtn);
-        }
-        makeMobz()
+        // let makeMobz = () => {
+        //   let bannerDiv = document.querySelector('.banner');
+        //   let menuBtn = document.createElement('button');
+        //   menuBtn.classList.add('mobile-menu-button');
+        //   menuBtn.innerText = "MENU";
+        //   bannerDiv.appendChild(menuBtn);
+        // }
+        // makeMobz()
 
         let stepsArray = [
           {

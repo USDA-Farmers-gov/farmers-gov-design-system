@@ -5,7 +5,7 @@ label.radio-label {
   line-height: 1.8rem;
   font-size: 1.8rem;
   margin-bottom: 0.2rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 
   &:before {
     content: '\a0';
@@ -15,7 +15,7 @@ label.radio-label {
     border-radius: 5rem;
     display: inline-flex;
     margin-right: .8rem;
-    font-weight: 400;   
+    font-weight: 400;
 
     input.radio-input:checked + &{
       background-color: $heritage;
@@ -89,6 +89,7 @@ label.radio-card-label {
 
     img {
       max-width: 5.8rem;
+      width: 100%;
     }
     .radio-img-card-top {
       width: 100%;
