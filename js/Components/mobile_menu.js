@@ -2,11 +2,6 @@ window.addEventListener('load', function(){
 
   document.addEventListener('click', event => {
 
-    if ( document.body.classList.contains('mobile-menu-active') ) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
     const helper = (element, className) => {
       if (!!element) {
         if (element.classList.contains(className)) {
@@ -16,16 +11,20 @@ window.addEventListener('load', function(){
         }
       }
     }
-
+    // create the mobile menu...
     if (document.querySelector('.mobile-menu-button') == event.target) {
       let mobileNav = document.querySelector('.mobile-primary-nav');
       let navBar = document.querySelector('.primary-nav');
       let navContainer = document.querySelector('.nav-container');
       let navBarClone = navBar.cloneNode(true);
       let mobileNavHeader = document.createElement('div');
+      let mobileNavFooter = document.createElement('div');
       let closeSpan = document.createElement('span');
       let backButton = document.createElement('div');
       let menuSlider = document.createElement('div');
+      let utilityNav = document.querySelector('.header-inner-wrap .utility-nav').cloneNode(true);
+      let calloutBtn = document.querySelector('.header-inner-wrap .callout-button').cloneNode(true);
+      let searchField = document.querySelector('#search-field').cloneNode(true);
 
       backButton.innerText = 'Back';
       backButton.classList.add('mobile-menu-back');
@@ -34,13 +33,19 @@ window.addEventListener('load', function(){
       mobileNavHeader.classList.add('mobile-nav-header');
       mobileNavHeader.appendChild(closeSpan);
       mobileNavHeader.appendChild(backButton);
+      mobileNavHeader.appendChild(searchField);
       backButton.style.display = "none";
       document.body.classList.toggle('mobile-menu-active');
       mobileNav.style.display = "flex";
       navContainer.appendChild(mobileNavHeader);
       menuSlider.appendChild(navBarClone);
       navContainer.appendChild(menuSlider);
+      mobileNavFooter.classList.add('mobile-nav-footer');
+      mobileNavFooter.appendChild(calloutBtn);
+      mobileNavFooter.appendChild(utilityNav);
+      navContainer.appendChild(mobileNavFooter);
     }
+
 
     const mobileNavContainerClicked = helper(event.target, "nav-container");
     const mobileNavItemClicked = helper(event.target, "nav-link");
@@ -49,16 +54,19 @@ window.addEventListener('load', function(){
 
 
     if (mobileNavItemClicked) {
-      event.preventDefault();
-      event.stopPropagation();
 
       if (mobileNavItemClicked.classList.contains('accordion-button')) {
+        event.preventDefault();
+        event.stopPropagation();
+
         let mobileSubmenu = mobileNavItemClicked.parentElement.querySelector('.nav-submenu').cloneNode(true);
         let emptyNavDiv = document.createElement('div');
         emptyNavDiv.appendChild(mobileSubmenu);
         mobileNavContainer.appendChild(emptyNavDiv);
         mobileNavContainer.classList.toggle('level-2');
         document.querySelector('.mobile-nav-header > .mobile-menu-back').style.display = "flex";
+        document.querySelector('.mobile-nav-header > #search-field').style.display = "none";
+        document.querySelector('.mobile-nav-footer').style.display = "none";
       }
 
     }
@@ -70,6 +78,9 @@ window.addEventListener('load', function(){
     }
 
     if ( event.target.classList.contains('mobile-menu-back') ) {
+      event.preventDefault();
+      event.stopPropagation();
+
       let lowestLevel = mobileNavContainer.lastChild;
 
       if (mobileNavContainer.classList.contains('level-3')) {
@@ -77,15 +88,20 @@ window.addEventListener('load', function(){
       } else {
         mobileNavContainer.classList.remove('level-2')
         document.querySelector('.mobile-menu-back').style.display = "none";
+        document.querySelector('.mobile-nav-header > #search-field').style.display = "flex";
+        document.querySelector('.mobile-nav-footer').style.display = "block";
       }
 
       setTimeout( () => {
         mobileNavContainer.removeChild(lowestLevel);
-      }, 300)
+      }, 50)
     }
 
 
     if (submenuHasSubmenu) {
+      event.preventDefault();
+      event.stopPropagation();
+
       let subSubmenu = submenuHasSubmenu.querySelector('.nav-submenu-submenu').cloneNode(true);
       let emptyNavDiv = document.createElement('div');
       emptyNavDiv.appendChild(subSubmenu);
