@@ -83,6 +83,7 @@
   }
   div[role="search"] {
     max-width: 21.6rem;
+    display: flex;
     .usa-sr-only {
       position: absolute;
       left: -999em;
