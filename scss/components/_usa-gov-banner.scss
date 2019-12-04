@@ -70,26 +70,26 @@
   .usa-banner-button[aria-expanded=false] {
     background-image: none;
     &:after {
-      background-image: url(/themes/farmers_update/assets/img/angle-arrow-down-primary.png);
-      background-image: url(/themes/farmers_update/assets/img/angle-arrow-down-primary.svg);
+      background-image: image('angle-arrow-down-primary.png');
+      background-image: image('angle-arrow-down-primary.svg');
       background-size: 100%;
       content: '';
       display: inline-block;
-      height: 1rem;
-      width: 1rem;
-      margin-left: 0;
+      height: .9rem;
+      width: .9rem;
+      margin-left: 0.3rem;
     }
   }
   .usa-banner-button[aria-expanded=true] {
     &:after {
-      background-image: url(/themes/farmers_update/assets/img/angle-arrow-up-primary.png);
-      background-image: url(/themes/farmers_update/assets/img/angle-arrow-up-primary.svg);
+      background-image: image('angle-arrow-up-primary.png');
+      background-image: image('angle-arrow-up-primary.svg');
       background-size: 100%;
       content: '';
       display: inline-block;
-      height: 1rem;
-      width: 1rem;
-      margin-left: 0;
+      height: .9rem;
+      width: .9rem;
+      margin-left: 0.3rem;
     }
   }
   .usa-media_block-img {
@@ -121,7 +121,16 @@
   }
 }
 
-#gov-banner .medium-6 {
-  font-family: 'Source Sans Pro', sans-serif !important;
-  font-size: 15px !important;
+#gov-banner {
+
+    & .medium-6 {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        font-size: 15px !important;
+    }
+    &[aria-hidden='false']{
+        display: flex;
+    }
+    &[aria-hidden='true']{
+        display: none;
+    }
 }
