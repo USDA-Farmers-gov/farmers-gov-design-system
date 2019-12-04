@@ -1,37 +1,47 @@
 window.addEventListener('load', function(){
+    let boolStrMap = { }
 
-  let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
+    let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
+    [...megamenuButtons].map( elm => {
 
-  [...megamenuButtons].map( elm => {
+        let submenu = elm.nextElementSibling;
 
-    let submenu = elm.nextElementSibling;
+        elm.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            let elmExpanded = elm.getAttribute('aria-expanded');
+            let submenuHidden = submenu.getAttribute('aria-hidden');
+            elm.classList.toggle('submenu-item-active');
 
-    elm.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      let elmExpanded = elm.getAttribute('aria-expanded');
-      let submenuHidden = submenu.getAttribute('aria-hidden');
-      elm.classList.toggle('submenu-item-active');
-
-      if (elmExpanded == 'false') {
-        elm.setAttribute('aria-expanded', 'true');
-        submenu.setAttribute('aria-hidden','false');
-      } else {
-        elm.setAttribute('aria-expanded', 'false');
-        submenu.setAttribute('aria-hidden','true');
-      }
+            if (elmExpanded == 'false') {
+                elm.setAttribute('aria-expanded', 'true');
+                submenu.setAttribute('aria-hidden','false');
+            } else {
+                elm.setAttribute('aria-expanded', 'false');
+                submenu.setAttribute('aria-hidden','true');
+            }
+        })
     })
 
-  })
+    let submenuItems = document.querySelectorAll('.nav-submenu > .has-submenu');
+    [...submenuItems].map( elm => {
 
-  let submenuItems = document.querySelectorAll('.nav-submenu > .has-submenu');
-
-  [...submenuItems].map( elm => {
-    let submenu_child = elm.querySelector('.nav-submenu-submenu');
-
-    elm.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      elm.classList.toggle('submenu-item-active');
+        elm.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            elm.classList.toggle('submenu-item-active');
+        })
     })
-  })
+
+    let govBannerButton = document.querySelector('button.usa-accordion-button.usa-banner-button');
+    govBannerButton.addEventListener('click', (evt) => {
+        let ariaVal = govBannerButton.getAttribute('aria-expanded');
+        let container = govBannerButton.parentElement.nextElementSibling;
+        let banner = container.querySelector('#gov-banner');
+        let newVal = ariaVal === 'true' ? 'false': 'true';
+        let hideContainer = newVal === 'false' ? 'true': 'false';
+
+        govBannerButton.setAttribute('aria-expanded', newVal);
+        banner.setAttribute('aria-hidden', hideContainer);
+
+    })
 
 })
