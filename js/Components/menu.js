@@ -27,6 +27,9 @@ window.addEventListener('load', function(){
 
         elm.addEventListener('click', (evt) => {
             evt.preventDefault();
+            [...submenuItems].map( elm2 => {
+                elm2.classList.remove('submenu-item-active');
+            })
             elm.classList.toggle('submenu-item-active');
         })
     })
