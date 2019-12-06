@@ -38,16 +38,14 @@ window.addEventListener('load', function(){
     }
 
     let govBannerButton = document.querySelector('button.usa-accordion-button.usa-banner-button');
-    if(govBannerButton) {
-        govBannerButton.addEventListener('click', (evt) => {
-            let ariaVal = govBannerButton.getAttribute('aria-expanded');
-            let container = govBannerButton.parentElement.nextElementSibling;
-            let banner = container.querySelector('#gov-banner');
-            let newVal = ariaVal === 'true' ? 'false': 'true';
-            let hideContainer = newVal === 'false' ? 'true': 'false';
-
-            govBannerButton.setAttribute('aria-expanded', newVal);
-            banner.setAttribute('aria-hidden', hideContainer);
-        })
+    if (govBannerButton) {
+        govBannerButton.addEventListener('click', function (evt) {
+          var ariaVal = govBannerButton.getAttribute('aria-expanded');
+          var banner = document.querySelector('#usa-gov-web-banner #gov-banner');
+          var newVal = ariaVal === 'true' ? 'false' : 'true';
+          var hideContainer = newVal === 'false' ? 'true' : 'false';
+          govBannerButton.setAttribute('aria-expanded', newVal);
+          banner.setAttribute('aria-hidden', hideContainer);
+        });
     }
 })
