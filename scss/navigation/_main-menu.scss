@@ -19,6 +19,7 @@
     order: 2;
     width: auto;
     height: 64px;
+    text-transform: uppercase;
     // Add styles specific to the first link in the menu
     &:first-of-type {
       a {
@@ -27,14 +28,22 @@
     &:first-child {
       border-top: none;
     }
+    &:not(:first-child) {
+      &:before {
+        position: absolute;
+        top: 1.3rem;
+        content: '';
+        border-left: 1px solid $white;
+        height: 3.5rem;
+      }
+    }
     .nav-link {
       border: none;
       font-size: 1.8rem;
       padding: 1.9rem 3rem 1.7rem;
-      border-left: none;
       color: #fff;
       font-weight: 500;
-      line-height: 1.2;
+      line-height: 1.4;
       background-color: inherit;
       display: block;
       text-decoration: none;
@@ -119,6 +128,7 @@
           padding: 1rem 0;
           display: flex;
           align-items: center;
+          text-transform: none;
 
           &:hover, &.submenu-item-active {
             cursor: pointer;
@@ -273,6 +283,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 3.8rem;
 
   .agency-logo {
     display: flex;
