@@ -41,7 +41,7 @@ window.addEventListener('load', function(){
         govBannerButton.addEventListener('click', (evt) => {
             let ariaVal = govBannerButton.getAttribute('aria-expanded');
             let container = govBannerButton.parentElement.parentElement.nextElementSibling;
-            let banner = container.querySelector('#gov-banner');
+            let banner = container.querySelector('div[id^=gov-banner]');
             let newVal = ariaVal === 'true' ? 'false': 'true';
             let hideContainer = newVal === 'false' ? 'true': 'false';
 
