@@ -36,17 +36,19 @@ window.addEventListener('load', function(){
         })
     }
 
-    let govBannerButton = document.querySelector('button.usa-accordion-button.usa-banner-button');
-    if (govBannerButton) {
-        govBannerButton.addEventListener('click', (evt) => {
-            let ariaVal = govBannerButton.getAttribute('aria-expanded');
-            let container = govBannerButton.parentElement.parentElement.nextElementSibling;
-            let banner = container.querySelector('div[id^=gov-banner]');
-            let newVal = ariaVal === 'true' ? 'false': 'true';
-            let hideContainer = newVal === 'false' ? 'true': 'false';
+    let govBannerButtons = document.querySelectorAll('button.usa-accordion-button.usa-banner-button');
+    if (govBannerButtons) {
+        [...govBannerButtons].map( item => {
+            item.addEventListener('click', (evt) => {
+                let ariaVal = item.getAttribute('aria-expanded');
+                let container = item.parentElement.parentElement.nextElementSibling;
+                let banner = container.querySelector('div[id^=gov-banner]');
+                let newVal = ariaVal === 'true' ? 'false': 'true';
+                let hideContainer = newVal === 'false' ? 'true': 'false';
 
-            govBannerButton.setAttribute('aria-expanded', newVal);
-            banner.setAttribute('aria-hidden', hideContainer);
+                item.setAttribute('aria-expanded', newVal);
+                banner.setAttribute('aria-hidden', hideContainer);
+            })
         })
     }
 })
