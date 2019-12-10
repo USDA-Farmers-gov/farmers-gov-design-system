@@ -1,46 +1,54 @@
-.callout-button {
-  height: 48px;
-  vertical-align: middle;
-  border-radius: 0 0 2px 2px;
-  box-shadow: 0 3px 14px 0 #d8d8d8;
-  width: 216px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  a {
-    display: block;
-    font-weight: Bold;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 1.6rem;
-    color: $asphalt;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-    &:hover {
-      text-shadow: 0 0 0.08rem #fff0;
-      -webkit-text-stroke: 1px #fff0;
+.header-button {
+    float: right;
+    margin-top: -20px;
+    height:48px;
+    vertical-align:middle;
+    border-radius:0 0 2px 2px;
+    background-color: $white;
+    box-shadow:0 3px 14px 0 #d8d8d8;
+    width:216px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.header-button a {
+    display:block;
+    font-weight:Bold;
+    font-size:16px;
+    line-height:20px;
+    padding:1.6rem;
+    color:$asphalt;
+    text-decoration:none;
+    width:100%;
+    text-align:center
+}
+.header-button a:hover {
+    text-shadow:0 0 .08rem #fff0;
+    -webkit-text-stroke:1px #fff0;
+}
+.header-button a .arrow {
+    border:solid $asphalt;
+    border-width:0 2px 2px 0;
+    display:inline-block;
+    padding:4px;
+    color:$asphalt;
+    margin-left:1px;
+    top:-1px;
+    position:relative;
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+}
+@media screen and (max-width: 950px) {
+    .header-button {
+        display: none;
     }
-    .arrow {
-      border: solid $asphalt;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 4px;
-      color: $asphalt;
-      margin-left: 1px;
-      top: -1px;
-      position: relative;
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg);
-    }
-  }
 }
 
 // Search field in header
 #search-field {
   display: flex;
   margin-bottom: 0;
-  background-color: #006546;
+  background-color: $heritage;
 
   form.search {
     margin: 1.5rem 2rem;
@@ -117,10 +125,10 @@
       }
     }
 
-    .callout-button {
+    .header-button {
       position: absolute;
-      right: 20px;
-      top: -20px;
+      right: 7px;
+      top: 0;
       z-index: 1;
       background-color: $white;
     }
@@ -132,7 +140,7 @@
 
   .utility-nav-links {
     margin-top: 3.2rem;
-    margin-right: 1.3rem;
+    margin-right: 0.7rem;
     margin-bottom: 0;
     display: flex;
     justify-content: space-around;
@@ -140,8 +148,7 @@
 }
 
 .agency-banner {
-  display: inline-block;
-  margin-left: 2.4rem;
+
   a.agency-logo-text {
     text-decoration: none;
     color: $asphalt;
