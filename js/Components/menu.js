@@ -19,12 +19,20 @@ window.addEventListener('load', function(){
                 evt.preventDefault();
                 let elmExpanded = elm.getAttribute('aria-expanded');
                 let submenuHidden = submenu.getAttribute('aria-hidden');
-                elm.classList.toggle('submenu-item-active');
 
+                //remove existing submenus
+                let openSubmenus = document.querySelectorAll('.submenu-item-active');
+                [...openSubmenus].map( el => {
+                    el.classList.remove('submenu-item-active')
+                });
+
+                // reveal appropriate submenu
                 if (elmExpanded == 'false') {
+                    elm.classList.add('submenu-item-active');
                     elm.setAttribute('aria-expanded', 'true');
                     submenu.setAttribute('aria-hidden','false');
                 } else {
+                    elm.classList.remove('submenu-item-active');
                     elm.setAttribute('aria-expanded', 'false');
                     submenu.setAttribute('aria-hidden','true');
                 }
