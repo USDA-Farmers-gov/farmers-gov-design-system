@@ -52,8 +52,11 @@ window.addEventListener('load', function(){
 
                 let ariaVal = item.getAttribute('aria-expanded');
                 let banner = helper(item.parentElement, 'usa-accordion').querySelector('div[id^="gov-banner"]');
-                let newVal = ariaVal === 'true' ? 'false': 'true';
-                let hideContainer = newVal === 'false' ? 'true': 'false';
+                let newVal = ariaVal == 'true' ? 'false': 'true';
+                let hideContainer = newVal == 'false' ? 'true': 'false';
+                console.log('ariaVal', ariaVal);
+                console.log('newVal', newVal);
+                console.log('hideC', hideContainer);
 
                 item.setAttribute('aria-expanded', newVal);
                 banner.setAttribute('aria-hidden', hideContainer);
