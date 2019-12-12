@@ -49,14 +49,18 @@ window.addEventListener('load', function(){
     if (govBannerButtons) {
         [...govBannerButtons].map( item => {
             item.addEventListener('click', (evt) => {
+                evt.preventDefault();
+                evt.stopPropagation();
 
                 let ariaVal = item.getAttribute('aria-expanded');
                 let banner = helper(item.parentElement, 'usa-accordion').querySelector('div[id^="gov-banner"]');
                 let newVal = ariaVal == 'true' ? 'false': 'true';
                 let hideContainer = newVal == 'false' ? 'true': 'false';
-                console.log('ariaVal', ariaVal);
-                console.log('newVal', newVal);
-                console.log('hideC', hideContainer);
+
+                helper(item.parentElement, 'usa-accordion')
+                    .querySelector('.usa-banner-header')
+                    .classList
+                    .toggle('usa-banner-header-expanded');
 
                 item.setAttribute('aria-expanded', newVal);
                 banner.setAttribute('aria-hidden', hideContainer);
