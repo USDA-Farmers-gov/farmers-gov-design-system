@@ -164,6 +164,10 @@ window.addEventListener('load', function(){
   let accordion_card_array = [...document.querySelectorAll('.Card-Accordion')];
   let accordion_card_content_links_array = [...document.querySelectorAll('.card-accordion-content a')];
   
+  accordion_card_content_links_array.map(link => {
+    link.setAttribute('tabindex', '-1');
+  });
+  
   accordion_card_array.map( cardAccordion => {
     cardAccordion.addEventListener('click', (evt) => {
       var target = evt.target;
