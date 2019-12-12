@@ -1,4 +1,13 @@
 window.addEventListener('load', function(){
+    const helper = (element, className) => {
+        if (!!element) {
+            if (element.classList.contains(className)) {
+                return element;
+            } else {
+                return helper(element.parentElement, className);
+            }
+        }
+    }
 
     let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
     if(megamenuButtons) {
@@ -42,7 +51,7 @@ window.addEventListener('load', function(){
             item.addEventListener('click', (evt) => {
 
                 let ariaVal = item.getAttribute('aria-expanded');
-                let banner = item.parentElement.parentElement.nextElementSibling.querySelector('div[id^="gov-banner"]');
+                let banner = helper(item.parentElement, 'usa-accordion').querySelector('div[id^="gov-banner"]');
                 let newVal = ariaVal === 'true' ? 'false': 'true';
                 let hideContainer = newVal === 'false' ? 'true': 'false';
 
