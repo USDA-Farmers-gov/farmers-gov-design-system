@@ -23,12 +23,12 @@ window.addEventListener('load', function(){
       let backButton = document.createElement('div');
       let menuSlider = document.createElement('div');
       let utilityNav = document.querySelector('.header-inner-wrap .utility-nav').cloneNode(true);
-      let calloutBtn = document.querySelector('.header-inner-wrap .callout-button').cloneNode(true);
+      let calloutBtn = document.querySelector('.header-inner-wrap .header-button').cloneNode(true);
       let searchField = document.querySelector('#search-field').cloneNode(true);
 
       backButton.innerText = 'Back';
       backButton.classList.add('mobile-menu-back');
-      menuSlider.classList.add('menus-silder-container');
+      menuSlider.classList.add('menus-slider-container');
       closeSpan.classList.add('mobile-menu-close');
       mobileNavHeader.classList.add('mobile-nav-header');
       mobileNavHeader.appendChild(closeSpan);
@@ -49,7 +49,7 @@ window.addEventListener('load', function(){
 
     const mobileNavContainerClicked = helper(event.target, "nav-container");
     const mobileNavItemClicked = helper(event.target, "nav-link");
-    const mobileNavContainer = document.querySelector('.menus-silder-container');
+    const mobileNavContainer = document.querySelector('.menus-slider-container');
     const submenuHasSubmenu = helper(event.target, "has-submenu");
 
 
@@ -89,7 +89,7 @@ window.addEventListener('load', function(){
         mobileNavContainer.classList.remove('level-2')
         document.querySelector('.mobile-menu-back').style.display = "none";
         document.querySelector('.mobile-nav-header > #search-field').style.display = "flex";
-        document.querySelector('.mobile-nav-footer').style.display = "block";
+        document.querySelector('.mobile-nav-footer').style.display = "flex";
       }
 
       setTimeout( () => {
