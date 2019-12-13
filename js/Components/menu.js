@@ -4,24 +4,28 @@ window.addEventListener('load', function(){
     let megamenuButtons = document.querySelectorAll('.accordion-button.nav-link');
     if(megamenuButtons) {
         [...megamenuButtons].map( elm => {
-
-            let submenu = elm.nextElementSibling;
-
-            elm.addEventListener('click', (evt) => {
-                evt.preventDefault();
-                let elmExpanded = elm.getAttribute('aria-expanded');
-                let submenuHidden = submenu.getAttribute('aria-hidden');
-                elm.classList.toggle('submenu-item-active');
-
-                if (elmExpanded == 'false') {
-                    elm.setAttribute('aria-expanded', 'true');
-                    submenu.setAttribute('aria-hidden','false');
-                } else {
-                    elm.setAttribute('aria-expanded', 'false');
-                    submenu.setAttribute('aria-hidden','true');
-                }
-            })
+            elm.addEventListener('click', function(evt) { openSubMenu(evt, elm) }, false);
+            elm.addEventListener('keydown', function(evt) { 
+                if(evt.keyCode === 13) openSubMenu(evt, elm) 
+            }, false);
         })
+
+        var openSubMenu = function(event, elm) {
+            event.preventDefault();
+            let submenu = elm.nextElementSibling;
+            
+            let elmExpanded = elm.getAttribute('aria-expanded');
+            let submenuHidden = submenu.getAttribute('aria-hidden');
+            elm.classList.toggle('submenu-item-active');
+
+            if (elmExpanded == 'false') {
+                elm.setAttribute('aria-expanded', 'true');
+                submenu.setAttribute('aria-hidden','false');
+            } else {
+                elm.setAttribute('aria-expanded', 'false');
+                submenu.setAttribute('aria-hidden','true');
+            }
+        }
     }
 
     let submenuItems = document.querySelectorAll('.nav-submenu > .has-submenu');
