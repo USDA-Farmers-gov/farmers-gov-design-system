@@ -37,6 +37,13 @@ window.addEventListener('load', function(){
                     submenu.setAttribute('aria-hidden','true');
                 }
             })
+
+            elm.addEventListener('keyup', event => {
+                if (event.key == " " || event.key == "Enter") {
+                    event.preventDefault();
+                    elm.click();
+                }
+            })
         })
     }
 
