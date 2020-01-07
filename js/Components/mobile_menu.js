@@ -1,5 +1,8 @@
 window.addEventListener('load', function(){
-    if (is_mobile_device) {
+    let w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+    if (is_mobile_device || w <= 1000) {
         document.addEventListener('click', event => {
 
             const helper = (element, className) => {
