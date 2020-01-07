@@ -38,10 +38,10 @@
     transform:rotate(-45deg);
     -webkit-transform:rotate(-45deg);
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
     .header-button {
         display: none;
-    }    
+    }
 }
 
 // Search field in header
@@ -148,8 +148,7 @@
 }
 
 .agency-banner {
-  display: inline-block;
-  margin-left: 2.4rem;
+
   a.agency-logo-text {
     text-decoration: none;
     color: $asphalt;
