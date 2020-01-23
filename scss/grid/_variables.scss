@@ -3,7 +3,7 @@
 //  _____________________________________________
 
 $grid__columns: 12;
-$grid__gutter:  15px;
+$grid__gutter:  20px;
 
 $name--X: xs-;
 $name--S: small-;
@@ -22,4 +22,4 @@ $screen--L:  $break--L + 1;
 $screen--XL: $break--XL + 1;
 
 // Set the main container with for the grid. This is applied to .container
-$container_width: 1140px;
+$container_width: 1080px;
