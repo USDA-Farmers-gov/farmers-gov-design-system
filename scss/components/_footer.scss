@@ -1,0 +1,89 @@
+footer {
+  .footer-primary-section {
+    background: #f1f1f1;
+    .footer-site-nav {
+      display: flex;
+      height: 8rem;
+      align-items: center;
+      ul {
+        display: flex;
+        padding-left: 0;
+        list-style-type: none;
+        li {
+          font-size: 1.6rem;
+          font-weight: bold;
+          padding-right: 4rem;
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+              text-shadow: none;
+              -webkit-text-stroke: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-links-container {
+    display: flex;
+  }
+  .footer-secondary-section {
+    background:$grey1;
+    padding-top: 2.2rem;
+    ul.footer-links-nav {
+      padding-left: 0;
+      list-style-type: none;
+      column-count: 1;
+
+      @media (min-width: 601px) {
+        column-count: 4;
+      }
+
+      li {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        padding-right: 7rem;
+
+        a {
+          color: #000;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+          }
+        }
+      }
+    }
+  }
+  .footer-tertiary-section {
+    background: $grey1;
+    padding-bottom: 3.5rem;
+
+    .footer-branding {
+      display: flex;
+      .usda-logo {
+        .usda-link {
+          display: flex;
+          color: #000;
+          text-decoration: none;
+          img {
+            width: 6.5rem;
+            height: auto;
+            margin-right: 1rem;
+          }
+          .agency-name {
+            font-size: 2rem;
+            .tagline {
+              font-size: 1.2rem;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
