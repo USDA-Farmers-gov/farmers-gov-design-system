@@ -34,6 +34,7 @@ footer {
     padding-top: 2.2rem;
     ul.footer-links-nav {
       padding-left: 0;
+      margin-top: 0;
       list-style-type: none;
       column-count: 1;
 
@@ -57,9 +58,18 @@ footer {
         }
       }
     }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      img {      
+        width: 18rem;
+        height: auto;
+      }
+    }
   }
   .footer-tertiary-section {
     background: $grey1;
+    padding-top: 1rem;
     padding-bottom: 3.5rem;
 
     .footer-branding {
@@ -69,6 +79,11 @@ footer {
           display: flex;
           color: #000;
           text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+            text-shadow: none;
+            -webkit-text-stroke: inherit;
+          }
           img {
             width: 6.5rem;
             height: auto;
@@ -84,6 +99,31 @@ footer {
         }
       }
     }
+    .footer-social {
+      display: flex;
+      justify-content: space-between;
+      width: 22.4rem;
+    }
   }
+}
+
+.social-link {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+.twitter-link {
+  background: url('../images/social-icons/outline/svg/twitter-outline.svg');
+}
+.facebook-link {
+  background: url('../images/social-icons/outline/svg/facebook-outline.svg');
+}
+.instagram-link {
+  background: url('../images/social-icons/outline/svg/instagram-outline.svg');
+}
+.flickr-link {
+  background: url('../images/social-icons/outline/svg/flickr-outline.svg');
+}
+.youtube-link {
+  background: url('../images/social-icons/outline/svg/youtube-outline.svg');
 }
 
