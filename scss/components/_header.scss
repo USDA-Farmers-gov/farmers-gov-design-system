@@ -154,7 +154,8 @@
     color: $asphalt;
     &:hover {
       color: $asphalt;
-      text-shadow: 0 0 0;
+      text-shadow: none;
+      -webkit-text-stroke: inherit;
     }
   }
   img {
