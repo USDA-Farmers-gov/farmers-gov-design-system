@@ -1,18 +1,48 @@
 footer {
   .footer-primary-section {
     background: #f1f1f1;
+    @media (max-width: 600px) {
+      .medium-12 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
     .footer-site-nav {
       display: flex;
-      height: 8rem;
+      height: auto;
       align-items: center;
+
+      @media (min-width: 601px) {
+        height: 8rem;
+      }
       ul {
         display: flex;
+        flex-direction: column;
         padding-left: 0;
-        list-style-type: none;
+        list-style-type: none;      
+
+        @media (min-width: 601px) {
+          flex-direction: row;
+        }
+        @media (max-width: 600px) {
+          width: 100%;
+          border-top: 1px solid #000;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
         li {
           font-size: 1.6rem;
           font-weight: bold;
           padding-right: 4rem;
+          padding-left: 1rem;
+          @media (max-width: 600px) {
+            display: flex;
+            align-items: center;
+            height: 6.7rem;
+            border-bottom: 1px solid #000;
+            padding-left: 2rem;
+          }
           a {
             color: #000;
             text-decoration: none;
@@ -40,6 +70,10 @@ footer {
 
       @media (min-width: 601px) {
         column-count: 4;
+      }
+
+      @media (max-width: 600px) {
+        padding-left: 2rem;
       }
 
       li {
@@ -74,7 +108,13 @@ footer {
 
     .footer-branding {
       display: flex;
-      .usda-logo {
+
+
+      .usda-logo {      
+        @media (max-width: 600px) {
+          margin: auto;
+          padding-bottom: 2rem;
+        }
         .usda-link {
           display: flex;
           color: #000;
