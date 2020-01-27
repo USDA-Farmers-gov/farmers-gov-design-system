@@ -30,6 +30,9 @@
     background-color: $active;
     color: #ffffff;
   }
+   &:visited {
+    color: #ffffff;
+  }
   &:focus {
     background-color: $focus;
     box-shadow: 0 1px 4px 0 $focus;
