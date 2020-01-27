@@ -108,7 +108,7 @@ footer {
 
     .footer-branding {
       display: flex;
-
+      padding-left: 0;
 
       .usda-logo {      
         @media (max-width: 600px) {
@@ -146,7 +146,6 @@ footer {
     }
   }
 }
-
 .social-link {
   height: 3.2rem;
   width: 3.2rem;
@@ -166,4 +165,3 @@ footer {
 .youtube-link {
   background: url('../images/social-icons/outline/svg/youtube-outline.svg');
 }
-
