@@ -62,32 +62,34 @@ footer {
   .footer-secondary-section {
     background:$grey1;
     padding-top: 2.2rem;
-    ul.footer-links-nav {
-      padding-left: 0;
-      margin-top: 0;
-      list-style-type: none;
-      column-count: 1;
+    .footer-links-nav {
+      ul {
+        padding-left: 0;
+        margin-top: 0;
+        list-style-type: none;
+        column-count: 1;
 
-      @media (min-width: 601px) {
-        column-count: 4;
-      }
+        @media (min-width: 601px) {
+          column-count: 4;
+        }
 
-      @media (max-width: 600px) {
-        padding-left: 2rem;
-      }
+        @media (max-width: 600px) {
+          padding-left: 2rem;
+        }
 
-      li {
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
-        padding-right: 7rem;
+        li {
+          font-size: 1.4rem;
+          margin-bottom: 1.2rem;
+          padding-right: 7rem;
 
-        a {
-          color: #000;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-            text-shadow: none;
-            -webkit-text-stroke: inherit;
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+              text-shadow: none;
+              -webkit-text-stroke: inherit;
+            }
           }
         }
       }
@@ -110,12 +112,12 @@ footer {
       display: flex;
       padding-left: 0;
 
-      .usda-logo {      
+      .agency-logo {      
         @media (max-width: 600px) {
           margin: auto;
           padding-bottom: 2rem;
         }
-        .usda-link {
+        .agency-link {
           display: flex;
           color: #000;
           text-decoration: none;
@@ -151,17 +153,17 @@ footer {
   width: 3.2rem;
 }
 .twitter-link {
-  background: url('../images/social-icons/outline/svg/twitter-outline.svg');
+  background: image('social-icons/outline/svg/twitter-outline.svg');
 }
 .facebook-link {
-  background: url('../images/social-icons/outline/svg/facebook-outline.svg');
+  background: image('social-icons/outline/svg/facebook-outline.svg');
 }
 .instagram-link {
-  background: url('../images/social-icons/outline/svg/instagram-outline.svg');
+  background: image('social-icons/outline/svg/instagram-outline.svg');
 }
 .flickr-link {
-  background: url('../images/social-icons/outline/svg/flickr-outline.svg');
+  background: image('social-icons/outline/svg/flickr-outline.svg');
 }
 .youtube-link {
-  background: url('../images/social-icons/outline/svg/youtube-outline.svg');
+  background: image('social-icons/outline/svg/youtube-outline.svg');
 }
