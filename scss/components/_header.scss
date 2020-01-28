@@ -92,13 +92,8 @@
   div[role="search"] {
     max-width: 21.6rem;
     display: flex;
-    .usa-sr-only {
-      position: absolute;
-      left: -999em;
-    }
   }
 }
-
 .main-header {
   .skip-nav {
     background: 0 0;
@@ -154,7 +149,8 @@
     color: $asphalt;
     &:hover {
       color: $asphalt;
-      text-shadow: 0 0 0;
+      text-shadow: none;
+      -webkit-text-stroke: inherit;
     }
   }
   img {
