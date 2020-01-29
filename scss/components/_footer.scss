@@ -98,7 +98,7 @@ footer {
       display: flex;
       justify-content: center;
       img {      
-        width: 18rem;
+        width: 12rem;
         height: auto;
       }
     }
@@ -127,7 +127,7 @@ footer {
             -webkit-text-stroke: inherit;
           }
           img {
-            width: 6.5rem;
+            width: 4.5rem;
             height: auto;
             margin-right: 1rem;
           }
@@ -151,19 +151,20 @@ footer {
 .social-link {
   height: 3.2rem;
   width: 3.2rem;
+  padding-right: 4.5rem;
 }
 .twitter-link {
-  background: image('social-icons/outline/svg/twitter-outline.svg');
+  background: image('social-icons/outline/svg/twitter-outline.svg') no-repeat;
 }
 .facebook-link {
-  background: image('social-icons/outline/svg/facebook-outline.svg');
+  background: image('social-icons/outline/svg/facebook-outline.svg') no-repeat;
 }
 .instagram-link {
-  background: image('social-icons/outline/svg/instagram-outline.svg');
+  background: image('social-icons/outline/svg/instagram-outline.svg') no-repeat;
 }
 .flickr-link {
-  background: image('social-icons/outline/svg/flickr-outline.svg');
+  background: image('social-icons/outline/svg/flickr-outline.svg') no-repeat;
 }
 .youtube-link {
-  background: image('social-icons/outline/svg/youtube-outline.svg');
+  background: image('social-icons/outline/svg/youtube-outline.svg') no-repeat;
 }
