@@ -112,7 +112,8 @@ footer {
       display: flex;
       padding-left: 0;
 
-      .agency-logo {      
+      .agency-logo {
+        margin-left: 1rem;      
         @media (max-width: 600px) {
           margin: auto;
           padding-bottom: 2rem;
@@ -147,6 +148,14 @@ footer {
       width: 22.4rem;
     }
   }
+}
+.footer-social{
+  position: relative;
+  left: -4rem;
+}
+.footer-logo {
+  position: relative;
+  left: -2rem;
 }
 .social-link {
   height: 3.2rem;
