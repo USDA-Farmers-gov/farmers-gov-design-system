@@ -79,6 +79,7 @@ footer {
 
         li {
           font-size: 1.4rem;
+          line-height: 2.2rem !important;
           margin-bottom: 1.2rem;
           padding-right: 2rem;
 
@@ -159,8 +160,7 @@ footer {
 }
 .social-link {
   height: 3.2rem;
-  width: 3.2rem;
-  padding-right: 4.5rem;
+  min-width: 3.2rem;
 }
 .twitter-link {
   background: image('social-icons/outline/svg/twitter-outline.svg') no-repeat;
