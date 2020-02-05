@@ -26,7 +26,7 @@ footer {
         }
         @media (max-width: 600px) {
           width: 100%;
-          border-top: 1px solid #000;
+          border-top: 1px solid $asphalt;
           margin-top: 0;
           margin-bottom: 0;
         }
@@ -40,11 +40,11 @@ footer {
             display: flex;
             align-items: center;
             height: 6.7rem;
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $asphalt;
             padding-left: 2rem;
           }
           a {
-            color: #000;
+            color: $asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -82,14 +82,19 @@ footer {
           line-height: 2.2rem !important;
           margin-bottom: 1.2rem;
           padding-right: 2rem;
-
+          &:focus-within {
+            box-shadow: 0 0 4px $bigsky;
+          }
           a {
-            color: #000;
+            color: $asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
               text-shadow: none;
               -webkit-text-stroke: inherit;
+            }
+            &:focus {
+              box-shadow: none;
             }
           }
         }
@@ -121,7 +126,7 @@ footer {
         }
         .agency-link {
           display: flex;
-          color: #000;
+          color: $asphalt;
           text-decoration: none;
           &:hover {
             text-decoration: underline;
