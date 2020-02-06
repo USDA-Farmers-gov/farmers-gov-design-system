@@ -26,7 +26,7 @@ footer {
         }
         @media (max-width: 600px) {
           width: 100%;
-          border-top: 1px solid #000;
+          border-top: 1px solid $asphalt;
           margin-top: 0;
           margin-bottom: 0;
         }
@@ -40,11 +40,11 @@ footer {
             display: flex;
             align-items: center;
             height: 6.7rem;
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $asphalt;
             padding-left: 2rem;
           }
           a {
-            color: #000;
+            color: $asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -63,28 +63,29 @@ footer {
     background:$grey1;
     padding-top: 2.2rem;
     .footer-links-nav {
+      display: flex;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
       ul {
+        flex-grow: 1;
+        flex-basis: 0;
         padding-left: 0;
         margin-top: 0;
         list-style-type: none;
-        column-count: 1;
-
-        @media (min-width: 601px) {
-          column-count: 4;
-        }
 
         @media (max-width: 600px) {
           padding-left: 2rem;
         }
 
         li {
-          font-size: 1.4rem;
           line-height: 2.2rem !important;
           margin-bottom: 1.2rem;
-          padding-right: 2rem;
-
+          padding-right: 1.5rem;
           a {
-            color: #000;
+            font-size: 1.4rem;
+            color: $asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -121,7 +122,7 @@ footer {
         }
         .agency-link {
           display: flex;
-          color: #000;
+          color: $asphalt;
           text-decoration: none;
           &:hover {
             text-decoration: underline;
