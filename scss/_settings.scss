@@ -22,6 +22,11 @@ body {
   left: -999em;
 }
 
+.spacer {
+  text-indent: 9999px;
+  color: #fff0;
+}
+
 @media print {
 * {
     -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
