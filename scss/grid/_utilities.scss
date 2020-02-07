@@ -201,3 +201,11 @@
     @include loop-grid-columns($grid__columns, $_class, order);
     @include create-positioning-row($_class);
 }
+
+// Reverse Column Order
+.col-reverse-sm {
+  @media screen and (max-width:76.8em){
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
