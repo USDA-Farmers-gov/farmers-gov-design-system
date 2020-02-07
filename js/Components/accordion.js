@@ -73,7 +73,7 @@ window.addEventListener('load', function(){
       }
 
       let activePanel = panels.filter( el => !el.hasAttribute('hidden'))[0];
-      activePanel ? activePanel.scrollIntoView({behavior: "smooth"}) : '';
+      activePanel ? activePanel.scrollIntoView({behavior: "smooth", block: "center", inline: "center"}) : '';
     });
 
     // Bind keyboard behaviors on the main accordion container
@@ -163,11 +163,11 @@ window.addEventListener('load', function(){
 
   let accordion_card_array = [...document.querySelectorAll('.Card-Accordion')];
   let accordion_card_content_links_array = [...document.querySelectorAll('.card-accordion-content a')];
-  
+
   accordion_card_content_links_array.map(link => {
     link.setAttribute('tabindex', '-1');
   });
-  
+
   accordion_card_array.map( cardAccordion => {
     cardAccordion.addEventListener('click', (evt) => {
       var target = evt.target;
@@ -184,11 +184,11 @@ window.addEventListener('load', function(){
 
         target.querySelector('.card-accordion-content').classList.toggle('show')
         target.querySelector('.card-accordion-toggle > a').classList.toggle('card-accordion-show-less')
-        
+
         if (target.querySelector('.card-accordion-content').classList.contains('show')) {
           for (let i = 0; i < content_links.length; i++) content_links[i].setAttribute('tabindex', '0')
 
-          target.querySelector('.card-accordion-content.show').scrollIntoView({behavior: "smooth"})
+          target.querySelector('.card-accordion-content.show').scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
           target.querySelector('.card-accordion-toggle > a').innerHTML = 'Show Less'
         } else {
           for (let i = 0; i < content_links.length; i++) content_links[i].setAttribute('tabindex', '-1')
