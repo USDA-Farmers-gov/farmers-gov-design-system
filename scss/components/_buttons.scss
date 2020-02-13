@@ -239,8 +239,8 @@
 }
 
 a.btn {
-  &:hover, &visited:hover {
-    text-shadow: none;
-    -webkit-text-stroke: unset;
+  &:hover, &:visited:hover {
+    text-shadow: none !important;
+    -webkit-text-stroke: unset !important;
   }
 }
