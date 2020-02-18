@@ -204,8 +204,8 @@
 
 // Reverse Column Order
 .col-reverse-sm {
-  @media screen and (max-width:76.8em){
+  @media screen and (max-width:$screen--M){
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
   }
 }
