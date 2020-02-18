@@ -237,3 +237,10 @@
     }    
   }  
 }
+
+a.btn {
+  &:hover, &:visited:hover {
+    text-shadow: none !important;
+    -webkit-text-stroke: unset !important;
+  }
+}
