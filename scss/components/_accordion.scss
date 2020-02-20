@@ -1,11 +1,12 @@
+.card-accordion, .box-accordion {
+  h3 {
+    margin: 0;
+  }  
+}
 
 .box-accordion {
   // width: 34.6rem;
   // margin: 1rem 1rem;
-
-  h3 {
-    margin: 0;
-  }
 
   .box-accordion-top {
     min-height: 20rem;
@@ -103,6 +104,12 @@
       background-position: right center;
       background-image: image('accordion-expand-blue.svg');
       text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover, &:visited:hover {
+        text-shadow: 0 0 0.08rem $dkblue !important;
+        -webkit-text-stroke: 1px $dkblue !important;
+      }
     }
     .card-accordion-show-less {
       background-image: image('accordion-collapse-blue.svg');
