@@ -23,7 +23,6 @@ window.addEventListener('load', function(){
     var triggers = [...accordion.querySelectorAll('.Accordion-trigger')];
     var panels = [...accordion.querySelectorAll('.Accordion-panel')];
 
-
     triggers.map( target => {
       panelWidthFix(accordion, target);
     })
@@ -55,6 +54,9 @@ window.addEventListener('load', function(){
         }
 
         if (!isExpanded) {
+          document.querySelectorAll('.box-accordion-top').forEach(accordion => accordion.setAttribute('aria-expanded', false))
+          document.querySelectorAll('.Accordion-panel').forEach(accordion => accordion.setAttribute('hidden', true))
+
           // Set the expanded state on the triggering element
           target.setAttribute('aria-expanded', 'true');
           // target.style.height = accordionTopHeight + 'px'
