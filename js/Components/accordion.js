@@ -5,8 +5,12 @@ window.addEventListener('load', function(){
     const offset = (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *-1 + 'px';
 
     targetPanel.style.marginLeft = offset;
-    targetPanel.style.width = `${accordionBlock.offsetWidth - 17}px`;
+    targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
   }
+
+  Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
+    boxAccordion.style.height = boxAccordion.getBoundingClientRect().height + 'px'
+  })
 
   Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
     // Allow for multiple accordion sections to be expanded at the same time
@@ -32,7 +36,6 @@ window.addEventListener('load', function(){
       target = target.parentElement :
       ''; // Kind of a hack to set target element correctly
 
-
       if (target.classList.contains('Accordion-trigger') ) {
         // Check if the current toggle is expanded.
         var isExpanded = target.getAttribute('aria-expanded') == 'true';
@@ -54,6 +57,8 @@ window.addEventListener('load', function(){
         if (!isExpanded) {
           // Set the expanded state on the triggering element
           target.setAttribute('aria-expanded', 'true');
+          // target.style.height = accordionTopHeight + 'px'
+          
           // Hide the accordion sections, using aria-controls to specify the desired section
           document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
 
