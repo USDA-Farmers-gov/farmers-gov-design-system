@@ -1,0 +1,52 @@
+// Toast and alerts
+.alert-wrapper {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.usa-alert {
+  padding-top: 1.5rem;
+  background-image: none;
+  width: 100%;
+  .usa-alert-body {
+    padding-left: 1rem;
+    a {
+      float: none;
+      color: #006546;
+    }
+    .usa-alert-heading {
+      display: none;
+    }
+    p {
+      margin: 0;
+      font-family: "Source Sans Pro",sans-serif;
+      padding-left: 4rem;
+      padding-right: .5rem;
+      &:empty {
+        display: none;
+      }
+      a {
+        float: none;
+      }
+    }
+  }
+}
+
+.usa-alert-error {
+  background-color: #f9dede;
+  background-image: url(../img/alerts/info-icon.svg);
+  background-size: 2.5rem;
+  background-position: 30px 22px;
+}
+
+.usa-alert-info {
+  background-color: #E2EEFF;
+  &:before {
+    background-color: #1A6AD3;
+  }
+}
+
+.usa-alert-warning, .usa-alert-success, .usa-alert-info {
+  background-image: url(../img/alerts/info-icon.svg);
+  background-size: 2.5rem;
+  background-position: 30px 22px;
+}
