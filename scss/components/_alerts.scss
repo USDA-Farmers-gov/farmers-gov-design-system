@@ -5,6 +5,7 @@
 }
 .usa-alert {
   padding-top: 1.5rem;
+  padding-bottom: 2.25rem;
   background-image: none;
   width: 100%;
   .usa-alert-body {
@@ -21,6 +22,7 @@
       font-family: "Source Sans Pro",sans-serif;
       padding-left: 4rem;
       padding-right: .5rem;
+      padding-top: .75rem;
       &:empty {
         display: none;
       }
