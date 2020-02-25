@@ -8,9 +8,7 @@ window.addEventListener('load', function(){
     targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
   }
 
-  Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
-    boxAccordion.style.height = boxAccordion.getBoundingClientRect().height + 'px'
-  })
+  setBoxAccordionTopHeight()
 
   Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
     // Allow for multiple accordion sections to be expanded at the same time
@@ -59,7 +57,6 @@ window.addEventListener('load', function(){
 
           // Set the expanded state on the triggering element
           target.setAttribute('aria-expanded', 'true');
-          // target.style.height = accordionTopHeight + 'px'
           
           // Hide the accordion sections, using aria-controls to specify the desired section
           document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
@@ -166,6 +163,7 @@ window.addEventListener('load', function(){
         panelWidthFix(accordion, target)
       })
     })
+    setBoxAccordionTopHeight()
   })
 
   let accordion_card_array = [...document.querySelectorAll('.Card-Accordion')];
@@ -213,5 +211,15 @@ window.addEventListener('load', function(){
       }
     })
   })
+  function setBoxAccordionTopHeight() {
+      Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
+        boxAccordion.style.height = '100%'
+        setTimeout(setHeight, 100)
 
+        function setHeight() {
+          let height = boxAccordion.getBoundingClientRect().height
+          boxAccordion.style.height = (window.innerWidth >= 760) ? height + 'px' : null
+        }
+      })
+  }
 })
