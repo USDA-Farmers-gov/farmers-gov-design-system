@@ -57,7 +57,6 @@ window.addEventListener('load', function(){
 
           // Set the expanded state on the triggering element
           target.setAttribute('aria-expanded', 'true');
-          // target.style.height = accordionTopHeight + 'px'
           
           // Hide the accordion sections, using aria-controls to specify the desired section
           document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
@@ -212,11 +211,15 @@ window.addEventListener('load', function(){
       }
     })
   })
-
   function setBoxAccordionTopHeight() {
-    Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
-      boxAccordion.style.height = boxAccordion.getBoundingClientRect().height + 'px'
-    })
-  }
+      Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
+        boxAccordion.style.height = '100%'
+        setTimeout(setHeight, 100)
 
+        function setHeight() {
+          let height = boxAccordion.getBoundingClientRect().height
+          boxAccordion.style.height = (window.innerWidth >= 760) ? height + 'px' : null
+        }
+      })
+  }
 })
