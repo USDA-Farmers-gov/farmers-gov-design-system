@@ -35,7 +35,7 @@
 
 .usa-alert-error {
   background-color: #f9dede;
-  background-image: url(../img/alerts/info-icon.svg);
+  background-image: image('alerts/info-icon.svg');
   background-size: 2.5rem;
   background-position: 30px 22px;
 }
@@ -48,7 +48,7 @@
 }
 
 .usa-alert-warning, .usa-alert-success, .usa-alert-info {
-  background-image: url(../img/alerts/info-icon.svg);
+  background-image: image('alerts/info-icon.svg');
   background-size: 2.5rem;
   background-position: 30px 22px;
 }
