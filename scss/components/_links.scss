@@ -78,6 +78,10 @@ a {
   display: inline-block;
   margin-right: 1rem;
   font-size: 18px;
+  span {
+    display: block;
+    overflow: hidden;
+  }
   &:before {
     content: "";
     cursor: pointer;
