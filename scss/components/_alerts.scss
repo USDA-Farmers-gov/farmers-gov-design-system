@@ -12,6 +12,9 @@
     display: flex;
     width: 100%;
     padding-left: 2rem;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
     a {
       float: none;
       color: $heritage;
@@ -22,7 +25,7 @@
     p {
       margin: 0;
       font-family: "Source Sans Pro",sans-serif;
-      padding-left: 3.7rem;
+      padding-left: 3.1rem;
       padding-right: .5rem;
       padding-top: .75rem;
       &:empty {
@@ -35,6 +38,16 @@
     .usa-alert-text {
       padding-top: 10px;
     }
+    .usa-alert-link {
+      color: $bigsky;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: auto;
+      padding-right: 24px;
+      padding-top: 10px;
+    }
   }
 }
 .usa-alert-error {
@@ -44,14 +57,12 @@
   background-size: 2.5rem;
   background-position: 30px 22px;
 }
-
 .usa-alert-info {
   background-color: #E2EEFF;
   &:before {
     background-color: $bigsky;
   }
 }
-
 .usa-alert-warning {    
   background-color: $softyellow;
   border-left: $yellow 0.8rem solid;
@@ -59,10 +70,11 @@
     color: $bigsky !important;
   }
 }
-
 .usa-alert-warning, .usa-alert-success, .usa-alert-info {
-  background-image: image('alerts/info-icon.svg');
-  background-repeat: no-repeat;
-  background-size: 24px 24px;
-  background-position: 20px 25px;
+  .usa-alert-body {
+    background-image: image('alerts/info-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: 9px 11px;
+  }
 }
