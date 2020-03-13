@@ -59,12 +59,11 @@
   box-shadow: 0 1px 4px 0 #BBBBBB;
   border-radius: 2px;
   border-top: .6rem solid #006546;
-  padding: 3.2rem 2rem;
-
+  padding: 2.6rem 2rem 3.2rem 2rem;
 
   .logo {
     max-width: 8rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1rem;
     img {
       max-width: 100%;
       height: auto;
@@ -97,7 +96,7 @@
 
   .content {
     p {
-      margin: 0;
+      margin: 0.5rem 0 0 0;
     }
   }
   &:hover, &.hover {
