@@ -107,6 +107,11 @@
     cursor: pointer;
     text-transform: uppercase;
     
+    a:hover, a:visited:hover {
+      text-shadow: 0 0 0.08rem $bigsky !important;
+      -webkit-text-stroke: 1px $bigsky !important;
+    }
+    
     .card-accordion-show-more {
       color: $bigsky;
       font-weight: bold;
