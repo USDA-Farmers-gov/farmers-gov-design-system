@@ -74,13 +74,21 @@ a {
   display: inline-block;
   margin-right: 1rem;
   font-size: 18px;
+  white-space: normal;
   span {
     display: block;
     overflow: hidden;
   }
+  a {
+    display: inline-block;
+    white-space: normal;
+    max-width: 91%;
+  }
   &:before {
     content: "";
     cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
     background: image("leaves.svg") no-repeat;
     width: 18px;
     height: 26px;
