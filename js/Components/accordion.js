@@ -215,7 +215,6 @@ window.addEventListener('load', function(){
   }
   function setBoxAccordionTopHeight() {
       Array.prototype.slice.call(document.querySelectorAll('.box-accordion-top')).forEach(function (boxAccordion) {
-        boxAccordion.style.height = '100%'
         setTimeout(setHeight, 100)
 
         function setHeight() {
