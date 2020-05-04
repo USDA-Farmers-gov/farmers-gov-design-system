@@ -31,20 +31,23 @@
     }
   }
   .usa-banner-inner {
-
+    display: flex;
     p {
       font-size: 1.2rem;
       font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-      float: left;
       margin-top: 2px;
       margin-bottom: 2px;
       line-height: 1.5;
+      @media (max-width: $screen--S) {
+        position: relative;
+        top: 0.4rem;
+        line-height: 0.5;
+      }
     }
     img {
-      width: 2rem;
-      height: 2rem;
+      width: 2.4rem;
+      height: 2.4rem;
       margin-right: .7rem;
-      float: left;
     }
   }
   .usa-banner-button {
@@ -57,12 +60,16 @@
     text-align: left;
     -webkit-font-smoothing: auto;
     padding-top: 2px;
-    padding-left: 8px;
+    padding-left: 0.4rem;
     color: #006546;
-    display: block;
+    display: inline-block;
     font-size: 1.2rem;
     text-decoration: underline;
     line-height: 17px;
+    @media (max-width: $screen--S) {
+      padding-left: 0;
+      padding-bottom: 0.5rem;
+    }
   }
   .usa-banner-button[aria-expanded=false] {
     background-image: none;
