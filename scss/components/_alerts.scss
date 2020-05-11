@@ -66,9 +66,6 @@
 .usa-alert-warning {    
   background-color: $softyellow;
   border-left: $yellow 0.8rem solid;
-  a {
-    color: $bigsky !important;
-  }
 }
 .usa-alert-warning, .usa-alert-success, .usa-alert-info {
   .usa-alert-body {
