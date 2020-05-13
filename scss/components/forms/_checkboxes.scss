@@ -72,6 +72,7 @@ label.checkbox-card-label {
     border: .2rem solid $sweetgrass;
     border-radius: .2rem;
     display: flex;
+    margin-left: 1rem;
   }
   &.checked {
     border: .2rem solid $sweetgrass;
@@ -107,9 +108,6 @@ label.checkbox-card-label {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .cb-img-card-name {
-      padding-right: 1rem;
     }
   }
 }
