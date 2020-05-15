@@ -8,6 +8,10 @@ window.addEventListener('load', function(){
     targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
   }
 
+  window.addEventListener('resize', function(){
+    panelWidthFix()
+  })
+
   setBoxAccordionTopHeight()
 
   Array.prototype.slice.call(document.querySelectorAll('.Accordion')).forEach(function (accordion) {
