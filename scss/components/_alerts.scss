@@ -18,6 +18,9 @@
     a {
       float: none;
       color: $heritage;
+      &:hover {
+        color: $sweetgrass;
+      }
     }
     .usa-alert-heading {
       display: none;
@@ -66,9 +69,6 @@
 .usa-alert-warning {    
   background-color: $softyellow;
   border-left: $yellow 0.8rem solid;
-  a {
-    color: $bigsky !important;
-  }
 }
 .usa-alert-warning, .usa-alert-success, .usa-alert-info {
   .usa-alert-body {
