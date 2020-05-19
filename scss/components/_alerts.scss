@@ -18,6 +18,9 @@
     a {
       float: none;
       color: $heritage;
+      &:hover {
+        color: $sweetgrass;
+      }
     }
     .usa-alert-heading {
       display: none;
