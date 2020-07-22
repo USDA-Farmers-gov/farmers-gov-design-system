@@ -1,47 +1,47 @@
 // Farmers Design System 1.0 (...not)
-@import 'settings';
+@import "settings";
 
 // Path-er
-@import 'path-helper';
+@import "path-helper";
 
 // Mixins
-@import 'mixins';
+@import "mixins";
 
 // Colors
-@import 'elements/colors';
+@import "elements/colors";
 
 // Typography
-@import 'elements/typography';
+@import "elements/typography";
 
 // Flexbox Grid
-@import 'grid/styles';
+@import "grid/styles";
 
 // Components
-@import 'components/alerts';
-@import 'components/links';
-@import 'components/tables';
-@import 'components/icons';
-@import 'components/images';
-@import 'components/cards';
-@import 'components/buttons';
-@import 'components/dividers';
-@import 'components/accordion';
-@import 'components/usa-gov-banner';
+@import "components/alerts";
+@import "components/links";
+@import "components/tables";
+@import "components/icons";
+@import "components/images";
+@import "components/cards";
+@import "components/buttons";
+@import "components/dividers";
+@import "components/accordion";
+@import "components/usa-gov-banner";
 
 // Form Elements
-@import 'components/forms/forms';
-@import 'components/forms/checkboxes';
-@import 'components/forms/radio-buttons';
-@import 'components/forms/dropdowns';
+@import "components/forms/forms";
+@import "components/forms/checkboxes";
+@import "components/forms/radio-buttons";
+@import "components/forms/dropdowns";
 
 // Steppers
-@import 'components/steppers/vertical-stepper';
+@import "components/steppers/vertical-stepper";
 
 // Header & Footer
-@import 'components/header';
-@import 'components/footer';
+@import "components/header";
+@import "components/footer";
 
 // Navigation
-@import 'navigation/main-menu';
-@import 'navigation/mobile-menu';
-@import 'navigation/utility';
+@import "navigation/main-menu";
+@import "navigation/mobile-menu";
+@import "navigation/utility";
