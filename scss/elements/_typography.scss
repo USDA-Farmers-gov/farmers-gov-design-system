@@ -95,10 +95,31 @@
   }
   @font-face {
     font-family: 'Merriweather';
+    src: font('merriweather/Latin-Merriweather-Bold.woff'),
+    font('merriweather/Latin-Merriweather-Bold.ttf')  format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Merriweather';
+    src: font('merriweather/Latin-Merriweather-BoldItalic.woff'),
+    font('merriweather/Latin-Merriweather-BoldItalic.ttf')  format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Merriweather';
     src: font('merriweather/Latin-Merriweather-Light.woff'),
     font('merriweather/Latin-Merriweather-Light.ttf')  format('truetype');
     font-weight: 300;
     font-style: normal;
+  }
+  @font-face {
+    font-family: 'Merriweather';
+    src: font('merriweather/Latin-Merriweather-LightItalic.woff'),
+    font('merriweather/Latin-Merriweather-LightItalic.ttf')  format('truetype');
+    font-weight: 300;
+    font-style: italic;
   }
 }
 

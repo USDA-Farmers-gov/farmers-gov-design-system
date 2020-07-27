@@ -1,33 +1,33 @@
 // Toast and alerts
 .alert-wrapper {
-  padding-top: 2.5rem;
+  padding-top: 0;
   padding-bottom: 2.5rem;
 }
 .usa-alert {
+  margin-top: 0;
   padding-top: 1.5rem;
   padding-bottom: 2.25rem;
   background-image: none;
   width: 100%;
   .usa-alert-body {
-    display: flex;
     width: 100%;
-    padding-left: 2rem;
+    padding-left: 0;
     @media (max-width: 600px) {
       flex-direction: column;
     }
     a {
       float: none;
       color: $heritage;
-    }
-    .usa-alert-heading {
-      display: none;
+      &:hover {
+        color: $sweetgrass;
+      }
     }
     p {
       margin: 0;
-      font-family: "Source Sans Pro",sans-serif;
-      padding-left: 3.1rem;
+      font-family: "Public Sans",sans-serif;
+      padding-left: 0;
       padding-right: .5rem;
-      padding-top: .75rem;
+      padding-top: 0;
       &:empty {
         display: none;
       }
@@ -37,19 +37,17 @@
     }
     .usa-alert-text {
       padding-top: 10px;
-    }
-    .usa-alert-link {
-      color: $bigsky;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 16px;
-      margin-left: auto;
-      padding-right: 24px;
-      padding-top: 10px;
+      padding-left: 5rem;
     }
   }
 }
+.usa-alert-success {
+  background-color: $softgreen;
+  &:before {
+    background-color: $heritage;
+  }
+}
+/*
 .usa-alert-error {
   background-color: #f9dede;
   background-image: image('alerts/info-icon.svg');
@@ -57,6 +55,7 @@
   background-size: 2.5rem;
   background-position: 30px 22px;
 }
+*/
 .usa-alert-info {
   background-color: #E2EEFF;
   &:before {
@@ -65,9 +64,8 @@
 }
 .usa-alert-warning {    
   background-color: $softyellow;
-  border-left: $yellow 0.8rem solid;
 }
-.usa-alert-warning, .usa-alert-success, .usa-alert-info {
+.usa-alert-warning, .usa-alert-success, .usa-alert-info, .usa-alert-error {
   .usa-alert-body {
     background-image: image('alerts/info-icon.svg');
     background-repeat: no-repeat;
