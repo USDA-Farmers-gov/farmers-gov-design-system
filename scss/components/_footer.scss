@@ -19,7 +19,8 @@ footer {
         display: flex;
         flex-direction: column;
         padding-left: 0;
-        list-style-type: none;      
+        margin-top: 17px;
+        list-style-type: none;
 
         @media (min-width: 601px) {
           flex-direction: row;
@@ -60,23 +61,26 @@ footer {
     display: flex;
   }
   .footer-secondary-section {
-    background:$grey1;
+    background: $grey1;
     padding-top: 2.2rem;
     .footer-links-nav {
       display: flex;
 
       @media (max-width: 600px) {
         flex-direction: column;
+        ul {
+          padding-left: 0;
+        }
       }
       ul {
+        padding-left: 0;
         flex-grow: 1;
         flex-basis: 0;
-        padding-left: 0;
         margin-top: 0;
         list-style-type: none;
 
         @media (max-width: 600px) {
-          padding-left: 2rem;
+          padding-left: 1rem;
         }
 
         li {
@@ -99,7 +103,7 @@ footer {
     .footer-logo {
       display: flex;
       justify-content: center;
-      img {      
+      img {
         width: 12rem;
         height: auto;
       }
@@ -115,10 +119,9 @@ footer {
       padding-left: 0;
 
       .agency-logo {
-        margin-left: 1rem;      
-        @media (max-width: 600px) {
-          margin: auto;
-          padding-bottom: 2rem;
+        margin-left: 0;
+        @media (max-width: 768px) {
+          padding: 3rem 1rem;
         }
         .agency-link {
           display: flex;
@@ -156,17 +159,17 @@ footer {
   min-width: 3.2rem;
 }
 .twitter-link {
-  background: image('social-icons/outline/svg/twitter-outline.svg') no-repeat;
+  background: image("social-icons/outline/svg/twitter-outline.svg") no-repeat;
 }
 .facebook-link {
-  background: image('social-icons/outline/svg/facebook-outline.svg') no-repeat;
+  background: image("social-icons/outline/svg/facebook-outline.svg") no-repeat;
 }
 .instagram-link {
-  background: image('social-icons/outline/svg/instagram-outline.svg') no-repeat;
+  background: image("social-icons/outline/svg/instagram-outline.svg") no-repeat;
 }
 .flickr-link {
-  background: image('social-icons/outline/svg/flickr-outline.svg') no-repeat;
+  background: image("social-icons/outline/svg/flickr-outline.svg") no-repeat;
 }
 .youtube-link {
-  background: image('social-icons/outline/svg/youtube-outline.svg') no-repeat;
+  background: image("social-icons/outline/svg/youtube-outline.svg") no-repeat;
 }
