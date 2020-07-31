@@ -1,13 +1,15 @@
 window.addEventListener("load", function () {
   function panelWidthFix(accordionBlock, accordionTarget) {
-    const targetPanel = accordionTarget.nextSibling.nextElementSibling;
-    const offset =
-      (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *
-        -1 +
-      "px";
+    if (!!accordionTarget) {
+      const targetPanel = accordionTarget.nextSibling.nextElementSibling;
+      const offset =
+        (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *
+          -1 +
+        "px";
 
-    targetPanel.style.marginLeft = offset;
-    targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
+      targetPanel.style.marginLeft = offset;
+      targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
+    }
   }
 
   window.addEventListener("resize", function () {
