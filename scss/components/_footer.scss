@@ -1,4 +1,19 @@
 footer {
+  @media (max-width: 1080px) {
+    .footer-primary-section,
+    .footer-secondary-section {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .footer-tertiary-section {
+        .container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
   .footer-primary-section {
     background: #f1f1f1;
     @media (max-width: 600px) {
@@ -73,6 +88,9 @@ footer {
           // accomadate for the spacing between the last row of the primary link to the logo
           margin-bottom: 24px;
         }
+        li {
+          padding-left: 2rem;
+        }
       }
       ul {
         padding-left: 0;
@@ -80,7 +98,6 @@ footer {
         flex-basis: 0;
         margin-top: 0;
         list-style-type: none;
-
         li {
           line-height: 2.2rem !important;
           margin-bottom: 1.2rem;
