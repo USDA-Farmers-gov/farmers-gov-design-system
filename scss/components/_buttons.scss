@@ -1,11 +1,12 @@
 // BUTTONS
 
 // Primary Buttons
-.btn, input.btn {
+.btn,
+input.btn {
   background-color: $blue;
   border: 0;
   border-radius: 4px;
-  box-shadow: 0 1px 4px 0 #BBBBBB;
+  box-shadow: 0 1px 4px 0 #bbbbbb;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
@@ -13,14 +14,18 @@
   font-size: 1.6rem;
   font-weight: bold;
   height: inherit;
-  line-height: 2.0rem;
+  line-height: 2rem;
   margin: 0;
   min-width: 13.4rem;
   padding: 1.1rem;
   text-align: center;
-  text-decoration: none;  
+  text-decoration: none;
   text-transform: uppercase;
   width: auto;
+
+  @media (max-width: $screen--S) {
+    width: 100%;
+  }
 
   &:hover {
     background-color: $hover;
@@ -30,16 +35,17 @@
     background-color: $active;
     color: #ffffff;
   }
-   &:visited {
+  &:visited {
     color: #ffffff;
   }
   &:focus {
     background-color: $focus;
     box-shadow: 0 1px 4px 0 $focus;
     color: #ffffff;
-    outline: none !important;    
+    outline: none !important;
   }
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: $disabled;
     box-shadow: none;
     color: #ffffff;
@@ -52,28 +58,28 @@
     background-color: $hover;
     box-shadow: 0 1px 4px 0 $hover;
     color: #ffffff;
-    outline: none !important; 
-  }  
+    outline: none !important;
+  }
   &.active-color {
     background-color: $active;
     box-shadow: 0 1px 4px 0 $active;
     color: #ffffff;
-    outline: none !important; 
-  }  
+    outline: none !important;
+  }
   &.focus-color {
     background-color: $focus;
     box-shadow: 0 1px 4px 0 $focus;
     color: #ffffff;
-    outline: none !important; 
+    outline: none !important;
   }
   &.sm-btn {
     min-width: 9.6rem;
-    padding: .6rem;
+    padding: 0.6rem;
   }
   &.lg-btn {
     min-width: 21.6rem;
     padding: 1.6rem;
-  }    
+  }
 }
 
 // Secondary Buttons
@@ -95,7 +101,8 @@
     color: $focus;
     outline: none !important;
   }
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     border: 1px solid $disabled;
     box-shadow: none;
     color: $disabled;
@@ -107,12 +114,12 @@
   &.outline-hover-color {
     background-color: #fff !important;
     border: 1px solid $hover !important;
-    color: $hover !important;     
+    color: $hover !important;
   }
   &.outline-active-color {
     background-color: #fff !important;
     border: 1px solid $active !important;
-    color: $hover !important;     
+    color: $hover !important;
   }
   &.outline-focus-color {
     background-color: #fff !important;
@@ -122,21 +129,21 @@
   &.disabled {
     border: 1px solid $disabled;
     box-shadow: none;
-    color: $disabled; 
+    color: $disabled;
     cursor: not-allowed;
     &:focus {
       outline: none;
-    }    
+    }
   }
 }
 
 // Tertiary Buttons
 .btn.tertiary {
-  background-color: #fff0!important;
+  background-color: #fff0 !important;
   border: none;
   box-shadow: none;
   color: $blue;
-  padding: .5rem 1.1rem;
+  padding: 0.5rem 1.1rem;
   min-width: auto;
 
   &:hover {
@@ -153,7 +160,8 @@
     color: $focus;
     outline: none !important;
   }
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     border: none;
     box-shadow: none;
     color: $disabled;
@@ -164,31 +172,31 @@
   }
   &.hover-color {
     border: none;
-    color: $hover;      
+    color: $hover;
   }
   &.active-color {
     border: none;
-    color: $active;     
+    color: $active;
   }
   &.focus-color {
     border: none;
     box-shadow: 0 1px 4px 0 $focus;
-    color: $focus;    
+    color: $focus;
   }
   &.disabled {
     border: none;
     box-shadow: none;
-    color: $disabled; 
+    color: $disabled;
     cursor: not-allowed;
     &:focus {
       outline: none;
-    }    
+    }
   }
 }
 
 // Feedback Buttons
 .btn.feedback {
-  background-color: #fff0!important;
+  background-color: #fff0 !important;
   border: 2px solid $blue;
   border-radius: 50%;
   color: $blue;
@@ -209,7 +217,8 @@
     color: $focus;
     outline: none !important;
   }
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     border: 2px solid $disabled;
     box-shadow: none;
     color: $disabled;
@@ -220,29 +229,30 @@
   }
   &.hover-color {
     border: 2px solid $hover;
-    color: $hover;      
+    color: $hover;
   }
   &.active-color {
     border: 2px solid $active;
-    color: $hover;     
+    color: $hover;
   }
   &.focus-color {
     border: 2px solid $focus;
-    color: $hover;    
+    color: $hover;
   }
   &.disabled {
     border: 2px solid $disabled;
     box-shadow: none;
-    color: $disabled; 
+    color: $disabled;
     cursor: not-allowed;
     &:focus {
       outline: none;
-    }    
-  }  
+    }
+  }
 }
 
 a.btn {
-  &:hover, &:visited:hover {
+  &:hover,
+  &:visited:hover {
     text-shadow: none !important;
     -webkit-text-stroke: unset !important;
   }
