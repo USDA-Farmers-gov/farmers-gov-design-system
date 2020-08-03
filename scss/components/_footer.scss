@@ -2,7 +2,8 @@ footer {
   .footer-primary-section {
     background: #f1f1f1;
     @media (max-width: 600px) {
-      .medium-12 {
+      .medium-12,
+      > container {
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
@@ -31,12 +32,13 @@ footer {
           font-weight: bold;
           padding-right: 4rem;
           padding-left: 0;
-          border-bottom: 1px solid $grey3;
+
           @media (max-width: 600px) {
             display: flex;
             align-items: center;
             height: 6.7rem;
             padding-left: 2rem;
+            border-bottom: 1px solid $grey3;
           }
           a {
             color: $asphalt;
