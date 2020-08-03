@@ -11,7 +11,6 @@ footer {
       display: flex;
       height: auto;
       align-items: center;
-
       @media (min-width: 601px) {
         height: 8rem;
       }
@@ -21,13 +20,9 @@ footer {
         padding-left: 0;
         margin-top: 17px;
         list-style-type: none;
-
-        @media (min-width: 601px) {
-          flex-direction: row;
-        }
         @media (max-width: 600px) {
+          flex-direction: row;
           width: 100%;
-          border-top: 1px solid $asphalt;
           margin-top: 0;
           margin-bottom: 0;
         }
@@ -37,11 +32,11 @@ footer {
           font-weight: bold;
           padding-right: 4rem;
           padding-left: 0;
+          border-bottom: 1px solid $grey3;
           @media (max-width: 600px) {
             display: flex;
             align-items: center;
             height: 6.7rem;
-            border-bottom: 1px solid $asphalt;
             padding-left: 2rem;
           }
           a {
