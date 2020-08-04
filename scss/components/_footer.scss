@@ -8,6 +8,11 @@ footer {
       }
     }
   }
+  .footer-primary-section,
+  .footer-links-nav ul,
+  .footer-tertiary-section {
+    padding-left: 2rem;
+  }
   .footer-primary-section {
     background: #f1f1f1;
     @media (max-width: 600px) {
@@ -82,6 +87,9 @@ footer {
         }
         li {
           padding-left: 2rem;
+          @media (max-width: $screen--S) {
+            padding-left: 0;
+          }
         }
       }
       ul {
