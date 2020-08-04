@@ -39,7 +39,7 @@ footer {
           font-size: 1.6rem;
           font-weight: bold;
           padding-right: 4rem;
-          padding-left: 0;
+          padding-left: 2rem;
           margin-bottom: 0;
           @media (max-width: 600px) {
             display: flex;
@@ -47,6 +47,7 @@ footer {
             height: 6.7rem;
             border-bottom: 1px solid $grey3;
             padding-right: 0;
+            padding-left: 2rem;
           }
           a {
             color: $asphalt;
@@ -75,13 +76,13 @@ footer {
         ul {
           padding-left: 1rem;
           margin-bottom: 0;
+          li {
+            padding-left: 0;
+          }
         }
         ul:last-of-type {
           // accomadate for the spacing between the last row of the primary link to the logo
           margin-bottom: 24px;
-        }
-        li {
-          padding-left: 2rem;
         }
       }
       ul {
