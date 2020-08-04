@@ -1,47 +1,48 @@
 footer {
+  @media (max-width: $screen--L) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
   .footer-primary-section {
     background: #f1f1f1;
-    @media (max-width: 600px) {
-      .medium-12 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    @media (max-width: $screen--M) {
+      .medium-12,
+      > .container {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
     .footer-site-nav {
       display: flex;
-      height: auto;
       align-items: center;
-
-      @media (min-width: 601px) {
-        height: 8rem;
+      height: 8rem;
+      @media (max-width: $screen--M) {
+        height: auto;
       }
       ul {
         display: flex;
-        flex-direction: column;
         padding-left: 0;
         margin-top: 17px;
         list-style-type: none;
-
-        @media (min-width: 601px) {
-          flex-direction: row;
-        }
-        @media (max-width: 600px) {
+        @media (max-width: $screen--M) {
+          flex-direction: column;
           width: 100%;
-          border-top: 1px solid $asphalt;
           margin-top: 0;
           margin-bottom: 0;
         }
-
         li {
           font-size: 1.6rem;
           font-weight: bold;
           padding-right: 4rem;
-          padding-left: 0;
-          @media (max-width: 600px) {
+          margin-bottom: 0;
+          @media (max-width: $screen--M) {
             display: flex;
             align-items: center;
             height: 6.7rem;
-            border-bottom: 1px solid $asphalt;
+            border-bottom: 1px solid $grey3;
+            padding-right: 0;
             padding-left: 2rem;
           }
           a {
@@ -65,11 +66,15 @@ footer {
     padding-top: 2.2rem;
     .footer-links-nav {
       display: flex;
-
-      @media (max-width: 600px) {
+      @media (max-width: $screen--S) {
         flex-direction: column;
         ul {
-          padding-left: 0;
+          padding-left: 1rem;
+          margin-bottom: 0;
+        }
+        ul:last-of-type {
+          // accomadate for the spacing between the last row of the primary link to the logo
+          margin-bottom: 24px;
         }
       }
       ul {
@@ -78,15 +83,10 @@ footer {
         flex-basis: 0;
         margin-top: 0;
         list-style-type: none;
-
-        @media (max-width: 600px) {
-          padding-left: 1rem;
-        }
-
         li {
           line-height: 2.2rem !important;
           margin-bottom: 1.2rem;
-          padding-right: 1.5rem;
+          padding-right: 24px;
           a {
             font-size: 1.4rem;
             color: $asphalt;
@@ -113,7 +113,10 @@ footer {
     background: $grey1;
     padding-top: 1rem;
     padding-bottom: 3.5rem;
-
+    > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .footer-branding {
       display: flex;
       padding-left: 0;
@@ -121,7 +124,7 @@ footer {
       .agency-logo {
         margin-left: 0;
         @media (max-width: 768px) {
-          padding: 3rem 1rem;
+          padding: 3rem 0;
         }
         .agency-link {
           display: flex;
