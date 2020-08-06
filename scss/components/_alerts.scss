@@ -18,9 +18,9 @@
     a {
       float: none;
       color: $heritage;
-//       &:hover {
-//         color: $sweetgrass;
-//       }
+      //       &:hover {
+      //         color: $sweetgrass;
+      //       }
     }
     p {
       margin: 0;
@@ -70,6 +70,10 @@
 .usa-alert-success {
   background-color: #dbede0;
   border-left: 1rem solid $sweetgrass;
+}
+.usa-alert-error {
+  background-color: #f9dede;
+  border-left: 1rem solid #e31c3d;
 }
 .usa-alert-warning,
 .usa-alert-success,
