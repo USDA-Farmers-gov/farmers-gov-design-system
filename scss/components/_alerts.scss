@@ -41,12 +41,12 @@
     }
   }
 }
-.usa-alert-success {
-  background-color: $softgreen;
-  &:before {
-    background-color: $heritage;
-  }
-}
+// .usa-alert-success {
+//   background-color: $softgreen;
+//   &:before {
+//     background-color: $heritage;
+//   }
+// }
 /*
 .usa-alert-error {
   background-color: #f9dede;
@@ -58,6 +58,7 @@
 */
 .usa-alert-info {
   background-color: #e2eeff;
+  border-left: 1rem solid $bigsky;
   &:before {
     background-color: $bigsky;
   }
