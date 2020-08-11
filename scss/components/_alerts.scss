@@ -19,9 +19,9 @@
     a {
       float: none;
       color: $heritage;
-      &:hover {
-        color: $sweetgrass;
-      }
+      //       &:hover {
+      //         color: $sweetgrass;
+      //       }
     }
     p {
       margin: 0;
@@ -65,22 +65,17 @@
 }
 .usa-alert-warning {
   background-color: $softyellow;
-  &::before {
-    background-color: #fdb81e;
-  }
+  border-left: 1rem solid #fdb81e;
+}
+
+.usa-alert-success {
+  background-color: #dbede0;
+  border-left: 1rem solid $sweetgrass;
 }
 .usa-alert-warning,
 .usa-alert-success,
 .usa-alert-info,
 .usa-alert-error {
-  &::before {
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1rem;
-  }
   .usa-alert-body {
     background-image: image("alerts/info-icon.svg");
     background-repeat: no-repeat;
