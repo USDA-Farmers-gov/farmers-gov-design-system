@@ -18,9 +18,6 @@
     a {
       float: none;
       color: $heritage;
-//       &:hover {
-//         color: $sweetgrass;
-//       }
     }
     p {
       margin: 0;
@@ -41,23 +38,9 @@
     }
   }
 }
-.usa-alert-success {
-  background-color: $softgreen;
-  &:before {
-    background-color: $heritage;
-  }
-}
-/*
-.usa-alert-error {
-  background-color: #f9dede;
-  background-image: image('alerts/info-icon.svg');
-  background-repeat: no-repeat;
-  background-size: 2.5rem;
-  background-position: 30px 22px;
-}
-*/
 .usa-alert-info {
   background-color: #e2eeff;
+  border-left: 1rem solid $bigsky;
   &:before {
     background-color: $bigsky;
   }
@@ -70,6 +53,10 @@
 .usa-alert-success {
   background-color: #dbede0;
   border-left: 1rem solid $sweetgrass;
+}
+.usa-alert-error {
+  background-color: #f9dede;
+  border-left: 1rem solid #e31c3d;
 }
 .usa-alert-warning,
 .usa-alert-success,
