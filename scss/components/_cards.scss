@@ -2,6 +2,10 @@
   border-radius: 2px;
   box-shadow: 0 3px 14px 0 #d8d8d8;
   background: #fff;
+  &:focus {
+    border: 0;
+    outline: 2px solid $focus;
+  }
 }
 
 .content-card {
