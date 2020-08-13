@@ -76,6 +76,7 @@
 }
 
 .card-accordion {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: #ffffff;
@@ -83,7 +84,10 @@
   padding: 3.2rem 3.2rem 2.4rem 3.2rem;
   overflow: hidden;
   width: 100%;
-  height: 11.5rem;
+  height: 24.5rem;
+  &.show {
+    height: auto;
+  }
   .card-accordion-content {
     h1,
     h2,
@@ -93,19 +97,17 @@
     h6 {
       margin: 0 !important;
     }
-    &.show {
-      height: auto;
-    }
   }
   .card-accordion-toggle {
     position: absolute;
+    left: 0;
     height: 7.2rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
     justify-content: center;
     align-items: center;
     text-align: center;
     bottom: 0;
-    width: 94%;
+    width: 100%;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),

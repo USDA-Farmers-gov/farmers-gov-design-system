@@ -230,14 +230,16 @@ window.addEventListener("load", function () {
         ".card-accordion-content a"
       );
 
-      target.querySelector(".card-accordion-content").classList.toggle("show");
+      target
+        .querySelector(".Card-Accordion .card-accordion")
+        .classList.toggle("show");
       target
         .querySelector(".card-accordion-toggle > a")
         .classList.toggle("card-accordion-show-less");
 
       if (
         target
-          .querySelector(".card-accordion-content")
+          .querySelector(".Card-Accordion .card-accordion")
           .classList.contains("show")
       ) {
         for (let i = 0; i < content_links.length; i++)
