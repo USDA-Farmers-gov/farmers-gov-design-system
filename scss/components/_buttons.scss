@@ -145,6 +145,10 @@ input.btn {
   color: $blue;
   padding: 0.5rem 1.1rem;
   min-width: auto;
+  @media (max-width: $screen--S) {
+    padding-left: 0;
+    width: auto;
+  }
 
   &:hover {
     border: none;

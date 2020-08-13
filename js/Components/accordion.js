@@ -245,7 +245,7 @@ window.addEventListener("load", function () {
         for (let i = 0; i < content_links.length; i++)
           content_links[i].setAttribute("tabindex", "0");
 
-        target.querySelector(".card-accordion-content.show").scrollIntoView({
+        target.querySelector(".card-accordion.show").scrollIntoView({
           behavior: "smooth",
           block: "center",
           inline: "center",
