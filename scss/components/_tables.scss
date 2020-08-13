@@ -36,7 +36,7 @@ table {
     font-weight: $table-header-font-weight;
     border-top: none;
     tr {
-      background-color: $table-header-background-color !important;
+      background-color: $table-header-background-color;
       border-top: none;
       td {
         font-weight: $table-header-font-weight; 
