@@ -129,7 +129,7 @@ input.btn {
   &.disabled {
     border: 1px solid $disabled;
     box-shadow: none;
-    color: $disabled;
+    color: $white;
     cursor: not-allowed;
     &:focus {
       outline: none;
