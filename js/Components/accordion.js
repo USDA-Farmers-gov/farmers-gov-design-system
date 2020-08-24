@@ -100,6 +100,7 @@ window.addEventListener("load", function () {
         }
 
         let activePanel = panels.filter((el) => !el.hasAttribute("hidden"))[0];
+
         activePanel
           ? activePanel.scrollIntoView({
               behavior: "smooth",
@@ -247,8 +248,6 @@ window.addEventListener("load", function () {
 
         target.querySelector(".card-accordion.show").scrollIntoView({
           behavior: "smooth",
-          block: "center",
-          inline: "center",
         });
         target.querySelector(".card-accordion-toggle > a").innerHTML =
           "Show Less";
@@ -257,6 +256,10 @@ window.addEventListener("load", function () {
           content_links[i].setAttribute("tabindex", "-1");
         target.querySelector(".card-accordion-toggle > a").innerHTML =
           "Show More";
+
+        target.scrollIntoView({
+          behavior: "smooth",
+        });
       }
     }
   }
