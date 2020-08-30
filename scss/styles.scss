@@ -5,7 +5,7 @@
 @import "path-helper";
 
 // Mixins
-@import "mixins";
+@import "mixins/mixins";
 
 // Colors
 @import "elements/colors";
@@ -16,6 +16,9 @@
 
 // Flexbox Grid
 @import "grid/styles";
+
+// Mixins
+@import "mixins/mixins";
 
 // Components
 @import "components/alerts";
@@ -46,3 +49,6 @@
 @import "navigation/main-menu";
 @import "navigation/mobile-menu";
 @import "navigation/utility";
+
+// Utilties
+@import "utilities/utilities";

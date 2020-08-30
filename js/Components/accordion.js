@@ -100,7 +100,6 @@ window.addEventListener("load", function () {
         }
 
         let activePanel = panels.filter((el) => !el.hasAttribute("hidden"))[0];
-
         activePanel
           ? activePanel.scrollIntoView({
               behavior: "smooth",
@@ -246,7 +245,7 @@ window.addEventListener("load", function () {
         for (let i = 0; i < content_links.length; i++)
           content_links[i].setAttribute("tabindex", "0");
 
-        target.querySelector(".card-accordion.show").scrollIntoView({
+        target.scrollIntoView({
           behavior: "smooth",
         });
         target.querySelector(".card-accordion-toggle > a").innerHTML =
@@ -256,7 +255,6 @@ window.addEventListener("load", function () {
           content_links[i].setAttribute("tabindex", "-1");
         target.querySelector(".card-accordion-toggle > a").innerHTML =
           "Show More";
-
         target.scrollIntoView({
           behavior: "smooth",
         });
