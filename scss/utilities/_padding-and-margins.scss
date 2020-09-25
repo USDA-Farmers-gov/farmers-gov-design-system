@@ -8,54 +8,54 @@ $step: 0.25;
 
 // padding
 @each $integer in $spacingIntegers {
-  $remValue: calc-width($integer, $step) + "rem";
+  $spacingValue: calc-width($integer, $step) + "rem";
 
   .p-#{$integer} {
-    padding: #{$remValue};
+    padding: #{$spacingValue};
   }
   .pt-#{$integer} {
-    padding-top: #{$remValue};
+    padding-top: #{$spacingValue};
   }
   .pb-#{$integer} {
-    padding-bottom: #{$remValue};
+    padding-bottom: #{$spacingValue};
   }
   .pl-#{$integer} {
-    padding-left: #{$remValue};
+    padding-left: #{$spacingValue};
   }
   .pr-#{$integer} {
-    padding-right: #{$remValue};
+    padding-right: #{$spacingValue};
   }
   .px-#{$integer} {
-    padding-left: #{$remValue};
-    padding-right: #{$remValue};
+    padding-left: #{$spacingValue};
+    padding-right: #{$spacingValue};
   }
   .py-#{$integer} {
-    padding-top: #{$remValue};
-    padding-bottom: #{$remValue};
+    padding-top: #{$spacingValue};
+    padding-bottom: #{$spacingValue};
   }
 
   //margins
   .m-#{$integer} {
-    margin: #{$remValue};
+    margin: #{$spacingValue};
   }
   .mt-#{$integer} {
-    margin-top: #{$remValue};
+    margin-top: #{$spacingValue};
   }
   .mb-#{$integer} {
-    margin-bottom: #{$remValue};
+    margin-bottom: #{$spacingValue};
   }
   .ml-#{$integer} {
-    margin-left: #{$remValue};
+    margin-left: #{$spacingValue};
   }
   .mr-#{$integer} {
-    margin-right: #{$remValue};
+    margin-right: #{$spacingValue};
   }
   .mx-#{$integer} {
-    margin-left: #{$remValue};
-    margin-right: #{$remValue};
+    margin-left: #{$spacingValue};
+    margin-right: #{$spacingValue};
   }
   .my-#{$integer} {
-    margin-top: #{$remValue};
-    margin-bottom: #{$remValue};
+    margin-top: #{$spacingValue};
+    margin-bottom: #{$spacingValue};
   }
 }
