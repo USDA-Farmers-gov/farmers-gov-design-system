@@ -2,3 +2,9 @@
   text-shadow: 0 0 0.08rem $heritage;
   -webkit-text-stroke: 1px $heritage;
 }
+
+@mixin hover-pointer-only {
+  cursor: pointer;
+  text-shadow: none;
+  -webkit-text-stroke: unset;
+}
