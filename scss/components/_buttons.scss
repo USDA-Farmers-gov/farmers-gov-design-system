@@ -206,6 +206,7 @@ input.btn {
   border: 2px solid $blue;
   border-radius: 50%;
   color: $blue;
+  width: 6.4rem;
   min-width: 6.4rem;
   min-height: 6.4rem;
 
@@ -218,6 +219,7 @@ input.btn {
     padding: 0 0.5rem !important;
     position: relative;
     display: flex;
+    flex: auto 0 0;
     margin: 0.2rem 1rem 0 0;
 
     &:before,

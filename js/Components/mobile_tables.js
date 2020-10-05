@@ -3,9 +3,11 @@ window.addEventListener("load", function () {
   window.onresize = function () {
     convertTablesForPhones();
   };
-
   function convertTablesForPhones() {
     const tables = document.querySelectorAll("table");
+    const existingMobileTables = document.querySelectorAll(".table-mobile");
+    if (existingMobileTables)
+      existingMobileTables.forEach((table) => table.remove());
 
     if (!!tables) {
       tables.forEach(function (table) {
@@ -20,7 +22,7 @@ window.addEventListener("load", function () {
         );
 
         // convert table if it is simple
-        if (simpleTable) {
+        if (simpleTable && table.querySelector("td")) {
           let mobileTable = "";
           const tableId = `table-${Math.floor(Math.random() * 1000)}`;
           !!table.classList
@@ -32,8 +34,8 @@ window.addEventListener("load", function () {
             const dataCells = row.querySelectorAll("td");
 
             dataCells.forEach(function (cell, index) {
-              mobileTable += `<div class="table-mobile-header"> ${headers[index].textContent} </div>
-               <div class="table-mobile-content"> ${cell.textContent} </div>`;
+              mobileTable += `<div class="table-mobile-header"> ${headers[index].innerHTML} </div>
+               <div class="table-mobile-content"> ${cell.innerHTML} </div>`;
             });
             if (index > 0 && index < dataRows.length - 1)
               mobileTable += "<div class='table-mobile-divider'></div>";

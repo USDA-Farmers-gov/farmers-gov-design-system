@@ -12,6 +12,8 @@
   .usa-alert-body {
     width: 100%;
     padding-left: 0;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
     @media (max-width: 600px) {
       flex-direction: column;
     }
@@ -42,8 +44,6 @@
       h6 {
         margin-top: 0;
       }
-      font-size: 1.8rem;
-      line-height: 2.8rem;
     }
   }
 }
