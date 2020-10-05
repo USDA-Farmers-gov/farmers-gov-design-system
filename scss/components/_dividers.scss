@@ -14,8 +14,8 @@
   border-bottom: none !important;
   max-width: 100%;
   margin: 35px auto;
-  text-align:center;
-  @include mobile-mix('iPhone') {
+  text-align: center;
+  @include mobile-mix("iPhone") {
     margin: 45px auto 35px auto;
   }
   // Line without leaves image
@@ -26,7 +26,7 @@
     }
   }
   &:before {
-    border-bottom: 1px solid #49A564;
+    border-bottom: 1px solid #49a564;
     content: "";
     height: 1px;
     width: 100%;
@@ -50,6 +50,12 @@
 // Secondary Divider
 .divider-dot {
   border-bottom: 1px dotted #bbb;
+  margin: 35px auto;
+  width: 100%;
+}
+
+.divider-solid {
+  border-bottom: 1px solid #bbb;
   margin: 35px auto;
   width: 100%;
 }
