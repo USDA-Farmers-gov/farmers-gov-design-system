@@ -99,6 +99,9 @@ footer {
           }
         }
       }
+      &.single-column {
+        flex-direction: column;
+      }
     }
     .footer-logo {
       display: flex;
