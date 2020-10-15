@@ -64,6 +64,16 @@ footer {
   .footer-secondary-section {
     background: $grey1;
     padding-top: 24px;
+    &.footer-widget {
+      @media (max-width: $screen--S) {
+        flex-direction: column;
+      }
+    }
+    &.footer-widget .row {
+      @media (max-width: $screen--S) {
+        flex-direction: column;
+      }
+    }
     .footer-links-nav {
       display: flex;
       @media (max-width: $screen--S) {
@@ -73,7 +83,6 @@ footer {
           margin-bottom: 0;
         }
         ul:last-of-type {
-          // accomadate for the spacing between the last row of the primary link to the logo
           margin-bottom: 24px;
         }
       }
@@ -99,10 +108,14 @@ footer {
           }
         }
       }
+      &.single-column {
+        flex-direction: column;
+      }
     }
     .footer-logo {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       img {
         width: 12rem;
         height: auto;
@@ -113,10 +126,13 @@ footer {
     background: $grey1;
     padding-top: 1rem;
     padding-bottom: 3.5rem;
-    > .container {
-      padding-left: 0;
-      padding-right: 0;
-    }
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
     .footer-branding {
       display: flex;
       padding-left: 0;

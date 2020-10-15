@@ -2,9 +2,9 @@
 /// should not include trailing slash
 /// @access public
 /// @type String
-$asset-base-path: '../' !default;
-$image-dir-name: 'images' !default;
-$font-dir-name: 'fonts' !default;
+$asset-base-path: "../" !default;
+$image-dir-name: "images" !default;
+$font-dir-name: "fonts" !default;
 
 /// Asset URL builder
 /// @access private
@@ -12,7 +12,7 @@ $font-dir-name: 'fonts' !default;
 /// @param {String} $file - Asset file name, including extension
 /// @return {URL} - A `url()` function leading to the asset
 @function asset($type, $file) {
-  @return url($asset-base-path + '/' + $type + '/' + $file);
+  @return url($asset-base-path + "/" + $type + "/" + $file);
 }
 
 /// Image asset helper
