@@ -116,6 +116,13 @@ footer {
     background: $grey1;
     padding-top: 1rem;
     padding-bottom: 3.5rem;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
     > .container {
       padding-left: 0;
       padding-right: 0;
