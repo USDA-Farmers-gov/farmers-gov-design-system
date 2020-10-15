@@ -64,6 +64,16 @@ footer {
   .footer-secondary-section {
     background: $grey1;
     padding-top: 24px;
+    &.footer-widget {
+      @media (max-width: $screen--S) {
+        flex-direction: column;
+      }
+    }
+    &.footer-widget .row {
+      @media (max-width: $screen--S) {
+        flex-direction: column;
+      }
+    }
     .footer-links-nav {
       display: flex;
       @media (max-width: $screen--S) {
@@ -122,10 +132,6 @@ footer {
     position: relative;
     right: 50%;
     width: 100vw;
-    > .container {
-      padding-left: 0;
-      padding-right: 0;
-    }
     .footer-branding {
       display: flex;
       padding-left: 0;
