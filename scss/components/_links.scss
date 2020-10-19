@@ -33,11 +33,18 @@ a {
   font-weight: bold;
   line-height: 26px;
   text-decoration: underline;
-  background: image("caret-right.svg") no-repeat;
-  background-position: 99.5% 0.4rem;
-  background-size: 2rem;
-  padding-right: 2.5rem;
-  margin-right: 1rem;
+  &:after {
+    display: inline-block;
+    position: relative;
+    right: 1.5rem;
+    content: "\00A0";
+    height: 4rem;
+    width: 4rem;
+    background: image("caret-right.svg") no-repeat 99.5% 0.4rem;
+    background-size: 2rem;
+  }
+  // padding-right: 2.5rem;
+  // margin-right: 1rem;
   &:focus,
   &.focus {
     color: $sweetgrass;
