@@ -72,6 +72,7 @@ label.checkbox-card-label {
     border: .2rem solid $sweetgrass;
     border-radius: .2rem;
     display: flex;
+    flex: 0 0 auto;
     margin-left: 1rem;
   }
   &.checked {

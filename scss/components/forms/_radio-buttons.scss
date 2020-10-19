@@ -73,6 +73,7 @@ label.radio-card-label {
     border: 0.2rem solid $sweetgrass;
     border-radius: 100%;
     display: flex;
+    flex: 0 0 auto;
   }
   &.checked {
     border: 0.2rem solid $sweetgrass;
