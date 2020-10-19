@@ -19,6 +19,10 @@
     max-width: $container_width;
     padding-left: ($_gutter / 2);
     padding-right: ($_gutter / 2);
+    @media (max-width: $screen--S) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 //  Creates a wrapper for a series of columns
