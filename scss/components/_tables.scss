@@ -26,6 +26,7 @@ $table-bordered-child-radius: 2px;
 // Table styling.
 // Removes default browser settings
 table {
+  font-size: 1.8rem;
   margin-bottom: $table-margin-bottom;
   border-collapse: collapse;
   overflow-x: auto;
