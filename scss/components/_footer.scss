@@ -10,8 +10,8 @@ footer {
     @media (max-width: $screen--M) {
       .medium-12,
       > .container {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
     .footer-site-nav {
