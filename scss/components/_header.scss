@@ -119,6 +119,9 @@
     height: 80px;
     padding-top: 1.5rem;
 
+    @media (max-width: $screen--S) {
+      height: auto;
+    }
     & > div {
       display: flex;
       justify-content: space-between;

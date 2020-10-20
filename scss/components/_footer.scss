@@ -60,6 +60,10 @@ footer {
   }
   .footer-links-container {
     display: flex;
+    @media (max-width: $screen--S) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
   }
   .footer-secondary-section {
     background: $grey1;
@@ -133,6 +137,10 @@ footer {
     position: relative;
     right: 50%;
     width: 100vw;
+    @media (max-width: $screen--S) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
     .footer-branding {
       display: flex;
       padding-left: 0;
