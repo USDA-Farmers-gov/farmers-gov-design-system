@@ -208,7 +208,7 @@
     flex-direction: column;
     .header-inner-wrap {
       width: 100%;
-      @media (max-width: $screen--S) {
+      @media (max-width: $screen--M) {
         padding-top: 0;
         padding-right: 0;
       }

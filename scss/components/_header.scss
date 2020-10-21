@@ -119,7 +119,7 @@
     height: 80px;
     padding-top: 1.5rem;
 
-    @media (max-width: $screen--S) {
+    @media (max-width: $screen--M) {
       height: auto;
     }
     & > div {
