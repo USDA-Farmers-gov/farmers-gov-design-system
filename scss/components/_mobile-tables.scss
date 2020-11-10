@@ -1,0 +1,18 @@
+.table-mobile {
+  padding: 2rem;
+  display: none;
+  @media (max-width: $screen--S) {
+    display: block;
+  }
+  .table-mobile-header {
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+  .table-mobile-content {
+    padding-bottom: 4rem;
+  }
+  .table-mobile-divider {
+    border: 1px $gray3 solid;
+    margin-bottom: 3rem;
+  }
+}

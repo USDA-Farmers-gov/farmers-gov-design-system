@@ -3,6 +3,7 @@ window.addEventListener("load", function () {
   window.onresize = function () {
     convertTablesForPhones();
   };
+
   function convertTablesForPhones() {
     const tables = document.querySelectorAll("table");
     const existingMobileTables = document.querySelectorAll(".table-mobile");
@@ -11,6 +12,8 @@ window.addEventListener("load", function () {
 
     if (!!tables) {
       tables.forEach(function (table) {
+        if (table.classList.contains("mobile-static-column")) return;
+
         const headers = table.querySelectorAll("thead th");
         const dataRows = table.querySelectorAll("tr");
         const headersInData = table.querySelectorAll("tbody th");
