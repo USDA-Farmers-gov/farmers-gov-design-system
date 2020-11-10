@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
 
     if (!!tables) {
       tables.forEach(function (table) {
+        console.log(table);
         if (table.classList.contains("mobile-static-column")) return;
 
         const headers = table.querySelectorAll("thead th");
