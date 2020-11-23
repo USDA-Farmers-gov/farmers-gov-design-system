@@ -1,4 +1,11 @@
+window.addEventListener("render-accordions", function () {
+  setupAccordions();
+});
 window.addEventListener("load", function () {
+  setupAccordions();
+});
+
+function setupAccordions() {
   function panelWidthFix(accordionBlock, accordionTarget) {
     if (!!accordionTarget) {
       const targetPanel = accordionTarget.nextSibling.nextElementSibling;
@@ -275,4 +282,4 @@ window.addEventListener("load", function () {
         }
       });
   }
-});
+}
