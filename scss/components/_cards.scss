@@ -134,8 +134,17 @@ a.subcategory-card-block {
   display: block;
   padding-left: 20px;
   position: relative;
-  height: 140px;
+  min-height: 140px;
   margin-bottom: 10px;
+  @media screen and (max-width: 37.5em) {
+    min-height: 165px;
+  }
+  @media screen and (min-width: 770px) {
+    min-height: 165px;
+  } 
+  @media screen and (min-width: 991px) {
+    min-height: 140px;
+  } 
 }
 .subcategory-card-block:hover {
   background-color: #dbede0;
@@ -159,7 +168,10 @@ a.subcategory-card-block {
   line-height: 28px;
 }
 .subcategory-block-inner {
-  width: 80%;
+  width: 100%;
+  @media screen and (max-width: 37.5em) {
+    width: 80%;
+  }
 }
 a.subcategory-card-block .arrow {
   border: solid #212121;
