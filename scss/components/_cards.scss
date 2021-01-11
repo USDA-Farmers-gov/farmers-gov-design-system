@@ -125,32 +125,35 @@
     box-shadow: 0 4px 16px 0 #bbbbbb;
   }
 }
+.subcategory-card-grid {
+  padding-bottom: 24px;
+  .subcategory.row {
+    margin-right: 0px;
 
+  }
+  .subcategory-row {
+    margin-bottom: 20px;
+  }
+}
 .subcategory-card-block {
   box-shadow: 0 1px 4px 0 #BBBBBB;
   text-decoration: none;
   color: #212121;
   border: 1px solid #d8d8d8;
   display: block;
-  padding-left: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
   position: relative;
-  min-height: 140px;
-  margin-bottom: 10px;
-  @media screen and (max-width: 37.5em) {
-    min-height: 165px;
-  }
-  @media screen and (min-width: 770px) {
-    min-height: 165px;
-  } 
-  @media screen and (min-width: 991px) {
-    min-height: 140px;
-  } 
+  height: 100%;
 }
 a.subcategory-card-block:hover {
   background-color: #dbede0;
   outline: 2px solid #006546 ;
   text-shadow: unset;
   -webkit-text-stroke: unset;
+}
+a.subcategory-card-block:visited {
+  color: #212121;
 }
 .subcategory-block-inner h3 {
   color: #212121;
@@ -160,7 +163,7 @@ a.subcategory-card-block:hover {
   letter-spacing: 0;
   line-height: 26px;
 }
-.field--name-field-subcat-card-text  {
+.subcategory-block-text {
   color: #212121;
   font-family: "Public Sans";
   font-size: 18px;
@@ -169,8 +172,9 @@ a.subcategory-card-block:hover {
 }
 .subcategory-block-inner {
   width: 100%;
+  padding-bottom: 24px;
   @media screen and (max-width: 37.5em) {
-    width: 80%;
+    width: 90%;
   }
 }
 .subcategory-card-block .arrow {
@@ -188,7 +192,7 @@ a.subcategory-card-block:hover {
   -webkit-transform: rotate(-45deg);
   position: absolute;
   right: 35px;
-  top: 81px;
+  top: 40%;
   display: none;
   @media screen and (max-width: 37.5em) {
    display: block;
