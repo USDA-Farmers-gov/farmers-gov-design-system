@@ -126,10 +126,9 @@
   }
 }
 .subcategory-card-grid {
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   .subcategory.row {
     margin-right: 0px;
-
   }
   .subcategory-row {
     margin-bottom: 20px;
@@ -145,7 +144,11 @@
   padding-right: 24px;
   position: relative;
   height: 100%;
-}
+  @media screen and (max-width: 37.5em) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ }
 a.subcategory-card-block:hover, 
 a.subcategory-card-block:focus {
   background-color: #dbede0;
@@ -175,7 +178,8 @@ a.subcategory-card-block:visited {
   width: 100%;
   padding-bottom: 24px;
   @media screen and (max-width: 37.5em) {
-    width: 90%;
+    padding-bottom: 20px;
+    width: 85%;
   }
 }
 .subcategory-card-block .arrow {
@@ -188,11 +192,10 @@ a.subcategory-card-block:visited {
   display: inline-block;
   padding: 6px;
   color: #212121;
-  margin-left: 1px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   position: absolute;
-  right: 35px;
+  right: 26px;
   top: 40%;
   display: none;
   @media screen and (max-width: 37.5em) {
