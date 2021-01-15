@@ -1,7 +1,7 @@
 .mobile-primary-nav {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   z-index: 9999;
   left: 0;
   top: 0;
@@ -13,7 +13,7 @@
   .nav-container {
     max-width: 75vw;
     width: 75vw;
-    height: 100vh;
+    height: 100%;
     background: $heritage;
     display: flex;
     align-items: center;
@@ -198,6 +198,8 @@
 .mobile-menu-active {
   overflow: hidden;
   position: fixed;
+  touch-action: none;
+  top: 0;
   margin: 0;
   padding: 0;
 }
