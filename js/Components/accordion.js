@@ -1,17 +1,11 @@
+window.addEventListener("render-accordions", function () {
+  processAccordions();
+});
 window.addEventListener("load", function () {
-  function panelWidthFix(accordionBlock, accordionTarget) {
-    if (!!accordionTarget) {
-      const targetPanel = accordionTarget.nextSibling.nextElementSibling;
-      const offset =
-        (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *
-          -1 +
-        "px";
+  processAccordions();
+});
 
-      targetPanel.style.marginLeft = offset;
-      targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
-    }
-  }
-
+function processAccordions() {
   window.addEventListener("resize", function () {
     panelWidthFix();
   });
@@ -212,67 +206,78 @@ window.addEventListener("load", function () {
       }
     });
   });
+}
+function toggleAccordion(evt, cardAccordion) {
+  evt.preventDefault();
+  var target = evt.target;
+  target.parentElement.parentElement.parentElement.classList.contains(
+    "Card-Accordion"
+  )
+    ? (target = target.parentElement.parentElement.parentElement)
+    : target.parentElement.parentElement.classList.contains("Card-Accordion")
+    ? (target = target.parentElement.parentElement)
+    : target.parentElement.classList.contains("Card-Accordion")
+    ? (target = target.parentElement)
+    : "";
 
-  function toggleAccordion(evt, cardAccordion) {
-    evt.preventDefault();
-    var target = evt.target;
-    target.parentElement.parentElement.parentElement.classList.contains(
-      "Card-Accordion"
-    )
-      ? (target = target.parentElement.parentElement.parentElement)
-      : target.parentElement.parentElement.classList.contains("Card-Accordion")
-      ? (target = target.parentElement.parentElement)
-      : target.parentElement.classList.contains("Card-Accordion")
-      ? (target = target.parentElement)
-      : "";
+  if (target.querySelector(".card-accordion-content")) {
+    let content_links = cardAccordion.querySelectorAll(
+      ".card-accordion-content a"
+    );
 
-    if (target.querySelector(".card-accordion-content")) {
-      let content_links = cardAccordion.querySelectorAll(
-        ".card-accordion-content a"
-      );
+    target
+      .querySelector(".Card-Accordion .card-accordion")
+      .classList.toggle("show");
+    target
+      .querySelector(".card-accordion-toggle > a")
+      .classList.toggle("card-accordion-show-less");
 
+    if (
       target
         .querySelector(".Card-Accordion .card-accordion")
-        .classList.toggle("show");
-      target
-        .querySelector(".card-accordion-toggle > a")
-        .classList.toggle("card-accordion-show-less");
+        .classList.contains("show")
+    ) {
+      for (let i = 0; i < content_links.length; i++)
+        content_links[i].setAttribute("tabindex", "0");
 
-      if (
-        target
-          .querySelector(".Card-Accordion .card-accordion")
-          .classList.contains("show")
-      ) {
-        for (let i = 0; i < content_links.length; i++)
-          content_links[i].setAttribute("tabindex", "0");
-
-        target.scrollIntoView({
-          behavior: "smooth",
-        });
-        target.querySelector(".card-accordion-toggle > a").innerHTML =
-          "Show Less";
-      } else {
-        for (let i = 0; i < content_links.length; i++)
-          content_links[i].setAttribute("tabindex", "-1");
-        target.querySelector(".card-accordion-toggle > a").innerHTML =
-          "Show More";
-        target.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+      target.querySelector(".card-accordion-toggle > a").innerHTML =
+        "Show Less";
+    } else {
+      for (let i = 0; i < content_links.length; i++)
+        content_links[i].setAttribute("tabindex", "-1");
+      target.querySelector(".card-accordion-toggle > a").innerHTML =
+        "Show More";
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   }
-  function setBoxAccordionTopHeight() {
-    Array.prototype.slice
-      .call(document.querySelectorAll(".box-accordion-top"))
-      .forEach(function (boxAccordion) {
-        setTimeout(setHeight, 100);
+}
+function panelWidthFix(accordionBlock, accordionTarget) {
+  if (!!accordionTarget) {
+    const targetPanel = accordionTarget.nextSibling.nextElementSibling;
+    const offset =
+      (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *
+        -1 +
+      "px";
 
-        function setHeight() {
-          let height = boxAccordion.getBoundingClientRect().height;
-          boxAccordion.style.height =
-            window.innerWidth >= 760 ? height + "px" : null;
-        }
-      });
+    targetPanel.style.marginLeft = offset;
+    targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
   }
-});
+}
+function setBoxAccordionTopHeight() {
+  Array.prototype.slice
+    .call(document.querySelectorAll(".box-accordion-top"))
+    .forEach(function (boxAccordion) {
+      setTimeout(setHeight, 100);
+
+      function setHeight() {
+        let height = boxAccordion.getBoundingClientRect().height;
+        boxAccordion.style.height =
+          window.innerWidth >= 760 ? height + "px" : null;
+      }
+    });
+}
