@@ -1,50 +1,74 @@
-.table-mobile {
-  padding: 2rem;
-  display: none;
-  @media (max-width: $screen--S) {
+@mixin cell-border {
+  border-color: $grey3;
+  border-style: solid;
+}
+@media (max-width: $screen--S) {
+  table {
+    display: none;
+  }
+  .show-on-mobile {
     display: block;
   }
-  .table-mobile-header {
-    font-weight: 700;
-    padding-bottom: 1rem;
+  .simple-table {
+    display: block;
+    width: 100%;
+    @include cell-border;
+    border-width: 0 0 4px 0;
+    tbody {
+      display: block;
+      width: 100%;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+      th {
+        display: none;
+      }
+      td {
+        &:first-of-type {
+          @include cell-border;
+          border-width: 4px 1px 1px 1px;
+          background: #efefef;
+          padding-bottom: 2rem;
+        }
+        &:before {
+          content: attr(data-th);
+          display: block;
+          font-weight: 700;
+          padding: 1rem 0;
+        }
+      }
+    }
   }
-  .table-mobile-content {
-    padding-bottom: 4rem;
-  }
-  .table-mobile-divider {
-    border: 1px $gray3 solid;
-    margin-bottom: 3rem;
-  }
-}
 
-@media screen and (max-width: $screen--S) {
-  .table-container {
-    overflow: scroll;
-  }
-  .mobile-static-column tr > th:first-child {
-    background: #ededed;
-  }
-  .mobile-static-column tr > td:first-child {
-    background: #fff;
-  }
-  .mobile-static-column tr > th:first-child,
-  .mobile-static-column tr > td:first-child {
-    position: -webkit-sticky;
-    position: sticky;
-    box-shadow: 2px 16px 16px 2px #bbb;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    max-width: 16rem;
-    word-wrap: break-word;
-  }
-  .mobile-static-column tr > th:first-child {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    max-width: 16rem;
-    word-wrap: break-word;
+  .mobile-static-column {
+    display: block;
+
+    tr > th:first-child {
+      background: #ededed;
+    }
+    tr > td:first-child {
+      background: #fff;
+    }
+    tr > th:first-child,
+    tr > td:first-child {
+      position: -webkit-sticky;
+      position: sticky;
+      box-shadow: 2px 16px 16px 2px #bbb;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      max-width: 16rem;
+      word-wrap: break-word;
+    }
+    tr > th:first-child {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      max-width: 16rem;
+      word-wrap: break-word;
+    }
   }
 }

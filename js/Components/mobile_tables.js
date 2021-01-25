@@ -1,88 +1,79 @@
 window.addEventListener("load", function () {
-  convertTablesForPhones();
-  window.onresize = function () {
-    convertTablesForPhones();
-  };
+  processMobileTables();
+});
 
-  function convertTablesForPhones() {
-    const tables = document.querySelectorAll("table");
-    const existingMobileTables = document.querySelectorAll(".table-mobile");
-    if (existingMobileTables)
-      existingMobileTables.forEach((table) => table.remove());
+window.addEventListener("resize", function () {
+  processMobileTables();
+});
 
-    if (!!tables) {
-      tables.forEach(function (table) {
-        if (table.classList.contains("mobile-static-column")) return;
-
-        const headers = table.querySelectorAll("thead th");
-        const dataRows = table.querySelectorAll("tr");
-        const headersInData = table.querySelectorAll("tbody th");
-        const simpleTable = checkIfSimpleTable(
-          table,
-          headers,
-          dataRows,
-          headersInData
-        );
-
-        // convert table if it is simple
-        if (simpleTable && table.querySelector("td")) {
-          let mobileTable = "";
-          const tableId = `table-${Math.floor(Math.random() * 1000)}`;
-          !!table.classList
-            ? table.classList.add(tableId)
-            : table.setAttribute("class", tableId);
-
-          mobileTable += `<div id="table-mobile-${tableId}" class="card table-mobile">`;
-          dataRows.forEach(function (row, index) {
-            const dataCells = row.querySelectorAll("td");
-
-            dataCells.forEach(function (cell, index) {
-              mobileTable += `<div class="table-mobile-header"> ${headers[index].innerHTML} </div>
-               <div class="table-mobile-content"> ${cell.innerHTML} </div>`;
-            });
-            if (index > 0 && index < dataRows.length - 1)
-              mobileTable += "<div class='table-mobile-divider'></div>";
-          });
-          mobileTable += "</div>";
-          table.outerHTML = table.outerHTML + mobileTable;
-
-          window
-            .getComputedStyle(
-              document.getElementById("table-mobile-" + tableId)
-            )
-            .getPropertyValue("display") === "block"
-            ? document
-                .querySelector(`.${tableId}`)
-                .classList.add("hide-from-sr")
-            : document
-                .querySelector(`.${tableId}`)
-                .classList.remove("hide-from-sr");
-        }
-      });
-    }
+function processMobileTables() {
+  const tables = document.querySelectorAll("table");
+  if (!!tables) {
+    tables.forEach((table) => {
+      const headers = table.querySelectorAll("thead th");
+      const dataRows = table.querySelectorAll("tr");
+      const headersInData = table.querySelectorAll("tbody th");
+      const simpleTable = checkIfSimpleTable(
+        table,
+        headers,
+        dataRows,
+        headersInData
+      );
+      if (table.classList.contains("mobile-static-column")) {
+        table.classList.add("show-on-mobile");
+        return;
+      }
+      if (!simpleTable) table.classList.add("show-on-mobile");
+      if (!!simpleTable) setupTableForMobile(table);
+    });
   }
+}
 
-  function checkIfSimpleTable(table, headers, dataRows, headersInData) {
-    let integer = 0;
+function setupTableForMobile(table) {
+  table.classList.add("simple-table");
+  const rows = table.querySelectorAll("tr");
+  let headerData = [];
 
-    if (headersInData.length) integer++;
-    if (!!table && table.classList.contains("ui-datepicker-calendar"))
+  if (!!rows) {
+    rows.forEach((row) => {
+      const headerCells = row.querySelectorAll("th");
+      const tableCells = row.querySelectorAll("td");
+
+      if (!!headerCells.length) {
+        headerData = [];
+
+        headerCells.forEach((th) => {
+          headerData.push(th.textContent.trim());
+        });
+      }
+      if (!!tableCells) {
+        tableCells.forEach((td, idx) => {
+          td.setAttribute("data-th", headerData[idx]);
+        });
+      }
+    });
+  }
+}
+
+function checkIfSimpleTable(table, headers, dataRows, headersInData) {
+  let integer = 0;
+
+  if (headersInData.length) integer++;
+  if (!!table && table.classList.contains("ui-datepicker-calendar")) integer++;
+
+  headers.forEach(function (header) {
+    if (header.hasAttribute("colspan") || header.hasAttribute("rowspan"))
+      integer++;
+  });
+
+  dataRows.forEach(function (dataRows) {
+    const dataCells = dataRows.querySelectorAll("td");
+    if (dataRows.hasAttribute("colspan") || dataRows.hasAttribute("rowspan"))
       integer++;
 
-    headers.forEach(function (header) {
-      if (header.hasAttribute("colspan") || header.hasAttribute("rowspan"))
-        integer++;
+    dataCells.forEach(function (td) {
+      if (td.hasAttribute("colspan") || td.hasAttribute("rowspan")) integer++;
     });
-
-    dataRows.forEach(function (dataRows) {
-      const dataCells = dataRows.querySelectorAll("td");
-      if (dataRows.hasAttribute("colspan") || dataRows.hasAttribute("rowspan"))
-        integer++;
-
-      dataCells.forEach(function (td) {
-        if (td.hasAttribute("colspan") || td.hasAttribute("rowspan")) integer++;
-      });
-    });
-    return integer === 0 ? true : false;
-  }
-});
+  });
+  return integer === 0 ? true : false;
+}
