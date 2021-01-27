@@ -65,7 +65,7 @@ table {
   td,
   th {
     border: $table-cell-border-top;
-    vertical-align: middle;
+    vertical-align: text-top;
   }
   tbody + tbody {
     border-top: $table-body-border-top;
