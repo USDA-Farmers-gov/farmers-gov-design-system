@@ -23,7 +23,10 @@ function processMobileTables() {
         table.classList.add("show-on-mobile");
         return;
       }
-      if (!simpleTable) table.classList.add("show-on-mobile");
+      if (!simpleTable) {
+        table.classList.add("show-on-mobile");
+        table.classList.add("complex-table");
+      }
       if (!!simpleTable) setupTableForMobile(table);
     });
   }

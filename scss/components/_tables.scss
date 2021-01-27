@@ -71,6 +71,9 @@ table {
     border-top: $table-body-border-top;
   }
   tbody {
+    tr:nth-child(even) {
+      background-color: #f7f7f7;
+    }
     th {
       background-color: $table-subheader-background-color;
     }
@@ -158,4 +161,8 @@ table tbody + tbody,
 .table-bordered tbody:last-child tr:last-child td:last-child,
 %table-bordered tbody:last-child tr:last-child td:last-child {
   border-radius: 0 0 $table-bordered-child-radius 0;
+}
+
+.complex-table td {
+  background: $white;
 }
