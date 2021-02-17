@@ -1,3 +1,5 @@
+@import "./table-vars";
+
 @mixin cell-border {
   border-color: $grey3;
   border-style: solid;
@@ -23,6 +25,10 @@
       display: flex;
       flex-direction: column;
       background-color: $white !important;
+      th:not(:last-child),
+      td:not(:last-child) {
+        border-right: $table-cell-border-top;
+      }
       th {
         display: none;
       }
@@ -43,42 +49,50 @@
     }
   }
 
-  .complex-table td {
-    background: $white;
-    display: table-cell;
-    min-width: 65vw;
+  .complex-table {
+    // @include always-show-vertical-scrollbar;
+    td {
+      background: $white;
+      display: table-cell;
+      min-width: 65vw;
+    }
   }
 
   .mobile-static-column {
-    td {
-      display: table-cell;
-      min-width: 75vw;
-    }
-    tr > td:first-child {
-      background: #fff;
-    }
-    tr > th:first-child,
-    tr > td:first-child {
-      display: table-cell;
-      position: -webkit-sticky;
-      position: sticky;
-      box-shadow: 2px 16px 16px 2px #bbb;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      min-width: 15rem;
-      max-width: 16rem;
-      word-wrap: break-word;
-    }
-    tr > th:first-child {
-      display: table-cell;
-      background: #ededed;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      word-wrap: break-word;
+    @media (max-width: $screen--S) {
+      -webkit-overflow-scrolling: touch;
+      td {
+        display: table-cell;
+        min-width: 75vw;
+      }
+      tr:nth-child(odd) > td {
+        background: $white;
+      }
+      tr:nth-child(even) > td {
+        background: $grey2;
+      }
+      tr > th:first-child,
+      tr > td:first-child {
+        display: table-cell;
+        position: -webkit-sticky;
+        position: sticky;
+        box-shadow: 2px 16px 16px 2px $grey3;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        min-width: 16rem;
+        word-wrap: break-word;
+      }
+      tr > th:first-child {
+        display: table-cell;
+        background: $grey2;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        word-wrap: break-word;
+      }
     }
   }
 }

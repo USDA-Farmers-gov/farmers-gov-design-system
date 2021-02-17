@@ -1,34 +1,11 @@
-// Table Settings
-$table-border-color: $grey3;
-
-$table-border-width: 1px;
-$table-border-style: solid;
-$table-margin-bottom: 1.529411765em;
-$table-cell-padding: 24px;
-$table-cell-padding-left-right: 24px;
-$table-cell-padding-top-bottom: 14px;
-$table-cell-left-right-padding: 2.4rem;
-$table-cell-top-bottom-padding: 2.4rem;
-$table-cell-text-align: left;
-$table-cell-border-top: $table-border-width $table-border-style
-  $table-border-color;
-$table-header-font-weight: bold;
-$table-header-background-color: $grey2;
-$table-subheader-background-color: $grey1;
-$table-body-border-top: 0.1rem $table-border-style $table-border-color;
-$table-condensed-padding: 2.4rem;
-$table-bordered-border: $table-border-width $table-border-style
-  $table-border-color;
-$table-bordered-border-radius: 2px;
-$table-border-left: $table-border-width $table-border-style $table-border-color;
-$table-bordered-child-radius: 2px;
-
+@import "./table-vars";
 // Table styling.
 // Removes default browser settings
 table {
   font-size: 1.8rem;
   margin-bottom: $table-margin-bottom;
-  border-collapse: collapse;
+  border-collapse: separate;
+
   overflow-x: auto;
   display: inline-block;
   max-width: 100%;
@@ -37,6 +14,17 @@ table {
   caption {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
+  }
+  tr:first-child {
+    th {
+      border-top: $table-cell-border-top;
+    }
+  }
+  tr:last-child {
+    th,
+    td {
+      border-bottom: $table-cell-border-top;
+    }
   }
   thead {
     background-color: $table-header-background-color;
@@ -52,20 +40,30 @@ table {
       }
     }
   }
+  thead:not(:first-child) th {
+    border-top: none;
+  }
   th,
   td {
     padding: $table-cell-padding-top-bottom $table-cell-padding-left-right;
     text-align: $table-cell-text-align;
-    border-top: $table-cell-border-top;
+    border-left: $table-cell-border-top;
+    border-bottom: $table-cell-border-top;
     vertical-align: top;
+    &:first-child {
+      border-left: $table-cell-border-top;
+    }
   }
   th {
     font-weight: $table-header-font-weight;
   }
   td,
   th {
-    border: $table-cell-border-top;
     vertical-align: text-top;
+  }
+  td:last-child,
+  th:last-child {
+    border-right: $table-cell-border-top;
   }
   tbody + tbody {
     border-top: $table-body-border-top;
@@ -73,6 +71,9 @@ table {
   tbody {
     tr:nth-child(even) {
       background-color: #f7f7f7;
+    }
+    th:first-child {
+      border-top: none;
     }
     th {
       background-color: $table-subheader-background-color;
