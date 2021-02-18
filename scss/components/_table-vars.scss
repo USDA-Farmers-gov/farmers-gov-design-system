@@ -1,0 +1,24 @@
+// Table Settings
+$table-border-color: $grey3;
+
+$table-border-width: 1px;
+$table-border-style: solid;
+$table-margin-bottom: 1.529411765em;
+$table-cell-padding: 24px;
+$table-cell-padding-left-right: 24px;
+$table-cell-padding-top-bottom: 14px;
+$table-cell-left-right-padding: 2.4rem;
+$table-cell-top-bottom-padding: 2.4rem;
+$table-cell-text-align: left;
+$table-cell-border-top: $table-border-width $table-border-style
+  $table-border-color;
+$table-header-font-weight: bold;
+$table-header-background-color: $grey2;
+$table-subheader-background-color: $grey1;
+$table-body-border-top: 0.1rem $table-border-style $table-border-color;
+$table-condensed-padding: 2.4rem;
+$table-bordered-border: $table-border-width $table-border-style
+  $table-border-color;
+$table-bordered-border-radius: 2px;
+$table-border-left: $table-border-width $table-border-style $table-border-color;
+$table-bordered-child-radius: 2px;

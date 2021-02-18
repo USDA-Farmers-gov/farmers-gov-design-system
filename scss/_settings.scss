@@ -45,3 +45,6 @@ button {
     color-adjust: exact !important; /*Firefox*/
   }
 }
+.hide-from-sr {
+  display: none !important;
+}
