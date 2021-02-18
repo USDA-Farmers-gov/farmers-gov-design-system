@@ -50,7 +50,6 @@
   }
 
   .complex-table {
-    // @include always-show-vertical-scrollbar;
     td {
       background: $white;
       display: table-cell;
@@ -61,6 +60,7 @@
   .mobile-static-column {
     @media (max-width: $screen--S) {
       -webkit-overflow-scrolling: touch;
+
       td {
         display: table-cell;
         min-width: 75vw;
