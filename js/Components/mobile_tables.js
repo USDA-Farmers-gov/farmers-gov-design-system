@@ -28,6 +28,11 @@ function processMobileTables() {
         table.classList.add("complex-table");
       }
       if (!!simpleTable) setupTableForMobile(table);
+
+      setTimeout(function () {
+        if (!table.classList.contains("show-on-mobile"))
+          table.classList.add("show-on-mobile");
+      }, 2000);
     });
   }
 }

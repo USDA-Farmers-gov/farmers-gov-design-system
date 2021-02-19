@@ -50,6 +50,7 @@
   }
 
   .complex-table {
+    display: block;
     td {
       background: $white;
       display: table-cell;
@@ -58,6 +59,7 @@
   }
 
   .mobile-static-column {
+    display: block;
     @media (max-width: $screen--S) {
       -webkit-overflow-scrolling: touch;
 
