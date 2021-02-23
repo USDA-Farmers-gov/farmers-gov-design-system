@@ -12,7 +12,7 @@
   .show-on-mobile {
     display: block;
   }
-  .simple-table {
+  .simple-table:not(.table-minimal) {
     display: block;
     width: 100%;
     @include cell-border;
@@ -33,11 +33,17 @@
         display: none;
       }
       td {
+        border-bottom: none !important;
+        padding-bottom: 0;
+        &:first-of-type,
+        &:last-of-type {
+          padding-bottom: 2rem;
+        }
         &:first-of-type {
           @include cell-border;
+          border-bottom: 1px $grey3 solid !important;
           border-width: 4px 1px 1px 1px;
-          background: #efefef;
-          padding-bottom: 2rem;
+          background: $grey2;
         }
         &:before {
           content: attr(data-th);
@@ -58,20 +64,22 @@
     }
   }
 
-  .mobile-static-column {
+  table.mobile-static-column {
     display: block;
+
     @media (max-width: $screen--S) {
+      table-layout: fixed;
       -webkit-overflow-scrolling: touch;
 
       td {
-        display: table-cell;
+        // display: table-cell;
         min-width: 75vw;
       }
       tr:nth-child(odd) > td {
         background: $white;
       }
       tr:nth-child(even) > td {
-        background: $grey2;
+        background: $grey1;
       }
       tr > th:first-child,
       tr > td:first-child {
@@ -83,6 +91,7 @@
         left: 0;
         z-index: 100;
         min-width: 16rem;
+        max-width: 16rem;
         word-wrap: break-word;
       }
       tr > th:first-child {
