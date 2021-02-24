@@ -173,9 +173,11 @@ table tbody + tbody,
 .table-minimal {
   display: block !important;
   border-bottom: 1px solid #bbb;
+  border-collapse: collapse;
   tbody {
     tr {
-      border-top: 1px solid #bbb;
+      display: table-row;
+      border-top: 1px solid #bbb !important;
       background: $white !important;
       @media (max-width: $screen--S) {
         display: flex;
@@ -187,6 +189,7 @@ table tbody + tbody,
         border: none;
         line-height: 28px;
         background: $white !important;
+
         @media (max-width: $screen--S) {
           width: 100% !important;
           padding-top: 3rem !important;
