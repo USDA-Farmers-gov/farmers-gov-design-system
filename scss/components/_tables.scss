@@ -4,8 +4,8 @@
 table {
   font-size: 1.8rem;
   margin-bottom: $table-margin-bottom;
-  border-collapse: separate;
-
+  border-collapse: collapse;
+  border-top: $table-cell-border-top;
   overflow-x: auto;
   display: inline-block;
   max-width: 100%;
@@ -15,11 +15,11 @@ table {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
   }
-  tr:first-child {
-    th {
-      border-top: $table-cell-border-top;
-    }
-  }
+  // tr:first-child {
+  //   th {
+  //     border-top: $table-cell-border-top;
+  //   }
+  // }
   tr:last-child {
     th,
     td {

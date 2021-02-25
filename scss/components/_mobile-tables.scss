@@ -66,6 +66,7 @@
 
   table.mobile-static-column {
     display: block;
+    border-collapse: separate;
 
     @media (max-width: $screen--S) {
       table-layout: fixed;
