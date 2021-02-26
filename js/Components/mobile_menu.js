@@ -22,6 +22,7 @@ window.addEventListener('load', function(){
                 let navBarClone = navBar.cloneNode(true);
                 let mobileNavHeader = document.createElement('div');
                 let mobileNavFooter = document.createElement('div');
+                let mobileMobileMenuSearch = document.createElement('div');
                 let closeSpan = document.createElement('span');
                 let backButton = document.createElement('div');
                 let menuSlider = document.createElement('div');
@@ -29,14 +30,36 @@ window.addEventListener('load', function(){
                 let calloutBtn = document.querySelector('.header-inner-wrap .header-button').cloneNode(true);
                 let searchField = document.querySelector('#search-field').cloneNode(true);
 
+                   // start 508 fixes
+                searchField.id = "search-field-mobile";  // start 508 fixes
+               
+                var searchFieldOuter = searchField.outerHTML;
+      
+                searchFieldOuter = searchFieldOuter.replaceAll(
+                    "affiliatename",
+                    "affiliatename-mobile"
+                );
+                 searchFieldOuter = searchFieldOuter.replaceAll(
+                   "header-search",
+                    "header-search-mobile"
+                );
+                searchFieldOuter = searchFieldOuter.replaceAll(
+                   "Site Search",
+                   "Mobile Site Search"
+                );  
+               
                 backButton.innerText = 'Back';
                 backButton.classList.add('mobile-menu-back');
                 menuSlider.classList.add('menus-slider-container');
                 closeSpan.classList.add('mobile-menu-close');
+                mobileMobileMenuSearch.classList.add("mm-search");
                 mobileNavHeader.classList.add('mobile-nav-header');
                 mobileNavHeader.appendChild(closeSpan);
                 mobileNavHeader.appendChild(backButton);
-                mobileNavHeader.appendChild(searchField);
+                mobileNavHeader.appendChild(mobileMobileMenuSearch)
+                //mobileNavHeader.appendChild(searchField);
+                if (searchField)
+                    mobileNavHeader.querySelector(".mm-search").innerHTML = searchFieldOuter;
                 backButton.style.display = "none";
                 document.body.classList.toggle('mobile-menu-active');
                 mobileNav.style.display = "flex";
@@ -47,6 +70,8 @@ window.addEventListener('load', function(){
                 mobileNavFooter.appendChild(calloutBtn);
                 mobileNavFooter.appendChild(utilityNav);
                 navContainer.appendChild(mobileNavFooter);
+
+            
             }
 
 
