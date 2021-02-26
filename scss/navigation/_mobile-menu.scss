@@ -150,7 +150,9 @@
         background-size: 1.8rem;
         cursor: pointer;
       }
-
+      div.mm-search {
+        width:100%;
+      }
       div.mobile-menu-back {
         width: 100%;
         background-image: image("arrow-left-white.svg");
