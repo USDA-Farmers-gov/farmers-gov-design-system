@@ -45,7 +45,8 @@
 }
 
 // Search field in header
-#search-field {
+#search-field,
+#search-field-mobile {
   display: flex;
   margin-bottom: 0;
   background-color: $heritage;
@@ -199,7 +200,8 @@
     height: 100%;
   }
 
-  #search-field {
+  #search-field, 
+  #search-field-mobile {
     form.search {
       margin: 0;
     }
