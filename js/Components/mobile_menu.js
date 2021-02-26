@@ -39,14 +39,19 @@ window.addEventListener('load', function(){
                     "affiliatename",
                     "affiliatename-mobile"
                 );
-                 searchFieldOuter = searchFieldOuter.replaceAll(
-                   "header-search",
+                searchFieldOuter = searchFieldOuter.replaceAll(
+                    "header-search",
                     "header-search-mobile"
                 );
                 searchFieldOuter = searchFieldOuter.replaceAll(
-                   "Site Search",
-                   "Mobile Site Search"
+                    "affiliatename",
+                    "affiliatename-mobile"
                 );  
+                searchFieldOuter = searchFieldOuter.replaceAll(
+                    "Site Search",
+                    "Mobile Site Search"
+                );  
+
                
                 backButton.innerText = 'Back';
                 backButton.classList.add('mobile-menu-back');
@@ -71,6 +76,13 @@ window.addEventListener('load', function(){
                 mobileNavFooter.appendChild(utilityNav);
                 navContainer.appendChild(mobileNavFooter);
 
+                var navBarCloneOuter = navBarClone.outerHTML;
+                navBarCloneOuter = navBarCloneOuter.replaceAll(
+                    "Primary",
+                    "Mobile Menu"
+                );
+                if (navBarClone)
+                    menuSlider.querySelector(".primary-nav").outerHTML = navBarCloneOuter;
             
             }
 
