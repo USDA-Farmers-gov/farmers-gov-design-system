@@ -26,6 +26,11 @@
 
 .show-complex-mobile-table {
   @include complex-table-mobile;
+  width: fit-content;
+  td {
+    max-width: 60px;
+    min-width: 60px;
+  }
 }
 
 .show-mobile-static-column {
