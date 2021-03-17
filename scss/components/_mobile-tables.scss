@@ -35,4 +35,5 @@
 
 .show-mobile-static-column {
   @include mobile-static-column;
+  @include mobile-static-col-styles;
 }
