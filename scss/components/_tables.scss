@@ -9,7 +9,7 @@ table {
   overflow-x: auto;
   display: inline-block;
   max-width: 100%;
-  // per design specs FG-3241
+  width: fit-content;
   border-radius: $table-bordered-border-radius;
   caption {
     position: absolute !important;
