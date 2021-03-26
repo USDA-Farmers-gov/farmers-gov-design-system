@@ -50,7 +50,14 @@
   display: flex;
   margin-bottom: 0;
   background-color: $heritage;
-
+  label.usa-sr-only {
+    background-color: $heritage !important;
+    color: #FFF !important;
+  }
+  span.usa-sr-only {
+    background-color: $heritage !important;
+    color: #FFF !important;
+  }
   form.search {
     margin: 1.5rem 2rem;
   }
