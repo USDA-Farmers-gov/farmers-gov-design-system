@@ -200,7 +200,7 @@ function processAccordions() {
     });
 
     cardAccordion.addEventListener("keydown", (evt) => {
-      if (evt.keyCode.match(/32|13/)) {
+      if (evt.keyCode.toString().match(/32|13/)) {
         evt.preventDefault();
         toggleAccordion(evt, cardAccordion);
       }
@@ -237,6 +237,10 @@ function toggleAccordion(evt, cardAccordion) {
         .querySelector(".Card-Accordion .card-accordion")
         .classList.contains("show")
     ) {
+      const focusedElement = document.querySelector(".Card-Accordion :focus");
+      if (focusedElement) focusedElement.blur();
+      target.focus();
+
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "0");
 
@@ -250,6 +254,7 @@ function toggleAccordion(evt, cardAccordion) {
         content_links[i].setAttribute("tabindex", "-1");
       target.querySelector(".card-accordion-toggle > a").innerHTML =
         "Show More";
+      toggleLink.focus();
       target.scrollIntoView({
         behavior: "smooth",
       });
