@@ -252,9 +252,13 @@ function toggleAccordion(evt, cardAccordion) {
     } else {
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "-1");
-      target.querySelector(".card-accordion-toggle > a").innerHTML =
-        "Show More";
-      toggleLink.focus();
+
+      const toggleLink = target.querySelector(".card-accordion-toggle > a");
+      if (toggleLink) {
+        toggleLink.innerHTML = "Show More";
+        toggleLink.focus();
+      }
+
       target.scrollIntoView({
         behavior: "smooth",
       });
