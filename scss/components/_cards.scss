@@ -125,24 +125,23 @@
     box-shadow: 0 4px 16px 0 #bbbbbb;
   }
 }
+
 .subcategory-card-grid {
   padding-bottom: 2.0rem;
   .subcategory.row {
-    margin-right: 0px;
+    //margin-right: 0px;
   }
   .medium-4.subcategory-row {
-    padding-left: 0px
+    padding-left: 0px;
   }
   .medium-8.subcategory-row {
-   @media screen and (max-width: 37.5em) {
-    padding-left: 0px;
-    padding-right: 0px; 
-   }
+    padding-right: 0px !important;
+    @media screen and (max-width: 37.5em) {
+      padding-left: 0px !important;
+      padding-right: 0px !important; 
+    }
   }
 }
-
-
-
 
 
 .subcategory-card-block {
