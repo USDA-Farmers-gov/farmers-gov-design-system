@@ -125,11 +125,12 @@
     box-shadow: 0 4px 16px 0 #bbbbbb;
   }
 }
-
-
-.subcategory-card-grid {
-  padding-bottom: 2.0rem;
+.with-border {
   border-bottom: 1px solid #EDEDED;
+}
+.subcategory-card-grid {
+
+  padding-bottom: 2.0rem;
   .subcategory.row {
     margin-left: 0 !important;
     margin-right: 0 !important;
