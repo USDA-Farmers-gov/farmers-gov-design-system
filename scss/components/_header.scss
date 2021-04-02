@@ -50,7 +50,14 @@
   display: flex;
   margin-bottom: 0;
   background-color: $heritage;
-
+  label.usa-sr-only {
+    background-color: $heritage !important;
+    color: #FFF !important;
+  }
+  span.usa-sr-only {
+    background-color: $heritage !important;
+    color: #FFF !important;
+  }
   form.search {
     margin: 1.5rem 2rem;
   }
@@ -178,6 +185,10 @@
     float: left;
     font-size: 2rem;
     font-weight: 500;
+    @media (max-width: $screen--S) {
+      margin-top: -0.5rem;
+      font-size: 1.6rem;
+    }
   }
   .tagline {
     float: left;
@@ -185,6 +196,9 @@
     text-transform: uppercase;
     font-size: 1.35rem;
     margin-top: 4px;
+    @media (max-width: $screen--S) {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -200,7 +214,7 @@
     height: 100%;
   }
 
-  #search-field, 
+  #search-field,
   #search-field-mobile {
     form.search {
       margin: 0;

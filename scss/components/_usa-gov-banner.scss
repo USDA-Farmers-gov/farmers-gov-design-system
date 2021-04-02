@@ -1,6 +1,7 @@
 // United States Government Affiliate Banner
 // DO NOT CHANGE!!!
-#usa-gov-web-banner, .usa-banner {
+#usa-gov-web-banner,
+.usa-banner {
   font-size: 1.3rem;
   background-color: #f7f7f7;
   .usa-accordion {
@@ -32,9 +33,13 @@
   }
   .usa-banner-inner {
     display: flex;
+    .usa-banner-text {
+      width: 100vw;
+    }
     p {
       font-size: 1.2rem;
-      font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial,
+        sans-serif;
       margin-top: 2px;
       margin-bottom: 2px;
       line-height: 1.5;
@@ -47,7 +52,7 @@
     img {
       width: 2.4rem;
       height: 2.4rem;
-      margin-right: .7rem;
+      margin-right: 0.7rem;
     }
   }
   .usa-banner-button {
@@ -71,28 +76,28 @@
       padding-bottom: 0.5rem;
     }
   }
-  .usa-banner-button[aria-expanded=false] {
+  .usa-banner-button[aria-expanded="false"] {
     background-image: none;
     &:after {
-      background-image: image('angle-arrow-down-primary.png');
-      background-image: image('angle-arrow-down-primary.svg');
+      background-image: image("angle-arrow-down-primary.png");
+      background-image: image("angle-arrow-down-primary.svg");
       background-size: 100%;
-      content: '';
+      content: "";
       display: inline-block;
-      height: .9rem;
-      width: .9rem;
+      height: 0.9rem;
+      width: 0.9rem;
       margin-left: 0.3rem;
     }
   }
-  .usa-banner-button[aria-expanded=true] {
+  .usa-banner-button[aria-expanded="true"] {
     &:after {
-      background-image: image('angle-arrow-up-primary.png');
-      background-image: image('angle-arrow-up-primary.svg');
+      background-image: image("angle-arrow-up-primary.png");
+      background-image: image("angle-arrow-up-primary.svg");
       background-size: 100%;
-      content: '';
+      content: "";
       display: inline-block;
-      height: .9rem;
-      width: .9rem;
+      height: 0.9rem;
+      width: 0.9rem;
       margin-left: 0.3rem;
     }
   }
@@ -127,16 +132,15 @@
   }
 }
 
-div[id^=gov-banner] {
-
-    & .medium-6 {
-        font-family: 'Source Sans Pro', sans-serif !important;
-        font-size: 15px !important;
-    }
-    &[aria-hidden='false']{
-        display: flex;
-    }
-    &[aria-hidden='true']{
-        display: none;
-    }
+div[id^="gov-banner"] {
+  & .medium-6 {
+    font-family: "Source Sans Pro", sans-serif !important;
+    font-size: 15px !important;
+  }
+  &[aria-hidden="false"] {
+    display: flex;
+  }
+  &[aria-hidden="true"] {
+    display: none;
+  }
 }
