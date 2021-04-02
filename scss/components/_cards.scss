@@ -137,7 +137,7 @@
   border-bottom: none;
 }
 .subcategory-card-grid {
-  padding-bottom: 2.0rem;
+  padding-bottom: 5.0rem;
   .subcategory.row {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -186,6 +186,7 @@ a.subcategory-card-block:focus {
   line-height: 2.8rem;
   text-decoration: underline;
   display: inline;
+  font-weight: 600;
 }
 .subcategory-block-text {
   color: #212121;
