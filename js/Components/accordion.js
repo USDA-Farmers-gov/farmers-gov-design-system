@@ -195,16 +195,20 @@ function processAccordions() {
   });
 
   accordion_card_array.map((cardAccordion) => {
-    cardAccordion.addEventListener("click", (evt) => {
-      toggleAccordion(evt, cardAccordion);
-    });
-
-    cardAccordion.addEventListener("keydown", (evt) => {
-      if (evt.keyCode.toString().match(/32|13/)) {
-        evt.preventDefault();
+    cardAccordion
+      .querySelector(".card-accordion-toggle a")
+      .addEventListener("click", (evt) => {
         toggleAccordion(evt, cardAccordion);
-      }
-    });
+      });
+
+    cardAccordion
+      .querySelector(".card-accordion-toggle a")
+      .addEventListener("keydown", (evt) => {
+        if (evt.keyCode.toString().match(/32|13/)) {
+          evt.preventDefault();
+          toggleAccordion(evt, cardAccordion);
+        }
+      });
   });
 }
 function toggleAccordion(evt, cardAccordion) {
