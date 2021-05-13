@@ -196,13 +196,13 @@ function processAccordions() {
 
   accordion_card_array.map((cardAccordion) => {
     cardAccordion
-      .querySelector(".card-accordion-toggle a")
+      .querySelector(".card-accordion-toggle")
       .addEventListener("click", (evt) => {
         toggleAccordion(evt, cardAccordion);
       });
 
     cardAccordion
-      .querySelector(".card-accordion-toggle a")
+      .querySelector(".card-accordion-toggle")
       .addEventListener("keydown", (evt) => {
         if (evt.keyCode.toString().match(/32|13/)) {
           evt.preventDefault();
