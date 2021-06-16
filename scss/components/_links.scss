@@ -1,19 +1,30 @@
+@mixin text-link-psuedo {
+  &:visited,
+  &.visited {
+    color: $visited;
+    &:hover,
+    &.hover {
+      color: $dkblue;
+      text-shadow: 0 0 0px $dkblue;
+      -webkit-text-stroke: 0 $dkblue;
+    }
+  }
+  &:hover,
+  &.hover {
+    color: $sweetgrass;
+    text-shadow: 0 0 0px #fff0;
+    -webkit-text-stroke: 0 #fff0;
+  }
+  &:focus,
+  &.focus {
+    color: $sweetgrass;
+  }
+}
+
 a {
   color: $heritage;
   text-decoration: underline;
   cursor: pointer;
-  &:focus,
-  &.focus {
-    outline-width: 0px;
-    outline-offset: 3px;
-    outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
-  }
-  &:hover,
-  &.hover {
-    text-shadow: 0 0 0.08rem $heritage;
-    -webkit-text-stroke: 1px $heritage;
-  }
   &:visited,
   &.visited {
     color: $visited;
@@ -22,6 +33,18 @@ a {
       text-shadow: 0 0 0.08rem $visited;
       -webkit-text-stroke: 1px $visited;
     }
+  }
+  &:hover,
+  &.hover {
+    text-shadow: 0 0 0.08rem $heritage;
+    -webkit-text-stroke: 1px $heritage;
+  }
+  &:focus,
+  &.focus {
+    outline-width: 0px;
+    outline-offset: 3px;
+    outline-color: $focus;
+    box-shadow: 0px 0px 4px $focus;
   }
 }
 
@@ -46,21 +69,7 @@ a {
     background: image("caret-right.svg") no-repeat 99.5% 0.4rem;
     background-size: 2rem;
   }
-
-  &:focus,
-  &.focus {
-    color: $sweetgrass;
-  }
-  &:hover,
-  &.hover {
-    color: $sweetgrass;
-    text-shadow: 0 0 0px #fff0;
-    -webkit-text-stroke: 0 #fff0;
-  }
-  &:visited,
-  &.visited {
-    color: $visited;
-  }
+  @include text-link-psuedo;
 }
 
 .external-link {
@@ -80,21 +89,7 @@ a {
     background-position: right 0.9rem;
     background-size: 1.2rem;
   }
-
-  &:hover,
-  &.hover {
-    color: $sweetgrass;
-    text-shadow: 0 0 0px #fff0;
-    -webkit-text-stroke: 0 #fff0;
-  }
-  &:focus,
-  &.focus {
-    color: $sweetgrass;
-  }
-  &:visited,
-  &.visited {
-    color: $visited;
-  }
+  @include text-link-psuedo;
 }
 
 .anchor-link {
@@ -126,13 +121,9 @@ a {
     background-position: center center;
     margin-right: 1rem;
   }
-  &:focus,
-  &.focus {
-    color: $sweetgrass;
-    outline-width: 0px;
-    outline-offset: 3px;
-    outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
+  &:visited,
+  &.visited {
+    color: $visited;
   }
   &:hover,
   &.hover {
@@ -140,8 +131,12 @@ a {
     text-shadow: 0 0 0.08rem $heritage;
     -webkit-text-stroke: 1px $heritage;
   }
-  &:visited,
-  &.visited {
-    color: $visited;
+  &:focus,
+  &.focus {
+    color: $sweetgrass;
+    outline-width: 0px;
+    outline-offset: 3px;
+    outline-color: $focus;
+    box-shadow: 0px 0px 4px $focus;
   }
 }
