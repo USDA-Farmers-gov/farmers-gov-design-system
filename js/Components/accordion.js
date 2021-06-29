@@ -11,7 +11,7 @@ function processAccordions() {
   });
 
   setBoxAccordionTopHeight();
-
+  youTubeKeyboardAccessibility();
   Array.prototype.slice
     .call(document.querySelectorAll(".Accordion"))
     .forEach(function (accordion) {
@@ -247,7 +247,6 @@ function toggleAccordion(evt, cardAccordion) {
 
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "0");
-
       target.scrollIntoView({
         behavior: "smooth",
       });
@@ -267,6 +266,7 @@ function toggleAccordion(evt, cardAccordion) {
         behavior: "smooth",
       });
     }
+    youTubeKeyboardAccessibility();
   }
 }
 function panelWidthFix(accordionBlock, accordionTarget) {
@@ -293,4 +293,19 @@ function setBoxAccordionTopHeight() {
           window.innerWidth >= 760 ? height + "px" : null;
       }
     });
+}
+
+function youTubeKeyboardAccessibility(open) {
+  const accordions = document.querySelectorAll(".card-accordion");
+  if (!!accordions) {
+    accordions.forEach((accordion) => {
+      const youTubeIframe = accordion.querySelector(
+        "iframe[data-src*='youtube.com']"
+      );
+      if (!!youTubeIframe) {
+        let tabIndexValue = accordion.classList.contains("show") ? "0" : "-1";
+        youTubeIframe.tabIndex = tabIndexValue;
+      }
+    });
+  }
 }
