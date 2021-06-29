@@ -11,7 +11,7 @@ function processAccordions() {
   });
 
   setBoxAccordionTopHeight();
-
+  youTubeKeyboardAccessibility();
   Array.prototype.slice
     .call(document.querySelectorAll(".Accordion"))
     .forEach(function (accordion) {
@@ -201,14 +201,35 @@ function processAccordions() {
         toggleAccordion(evt, cardAccordion);
       });
 
+    cardAccordion.addEventListener("keydown", (evt) => {
+      if (
+        evt.target.classList.contains("container") &&
+        evt.target.classList.contains("Card-Accordion")
+      ) {
+        cardAccordion.tabIndex = "-1";
+      }
+    });
+
     cardAccordion
       .querySelector(".card-accordion-toggle")
       .addEventListener("keydown", (evt) => {
         if (evt.keyCode.toString().match(/32|13/)) {
           evt.preventDefault();
+          cardAccordion.tabIndex = "0";
+          cardAccordion.focus();
           toggleAccordion(evt, cardAccordion);
         }
       });
+  });
+  document.body.addEventListener("click", (evt) => {
+    const tabbedAccordions = document.querySelectorAll(
+      ".Card-Accordion[tabindex='0']"
+    );
+    if (!!tabbedAccordions) {
+      tabbedAccordions.forEach((accordion) => {
+        accordion.removeAttribute("tabindex");
+      });
+    }
   });
 }
 function toggleAccordion(evt, cardAccordion) {
@@ -243,11 +264,9 @@ function toggleAccordion(evt, cardAccordion) {
     ) {
       const focusedElement = document.querySelector(".Card-Accordion :focus");
       if (focusedElement) focusedElement.blur();
-      target.focus();
 
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "0");
-
       target.scrollIntoView({
         behavior: "smooth",
       });
@@ -267,6 +286,7 @@ function toggleAccordion(evt, cardAccordion) {
         behavior: "smooth",
       });
     }
+    youTubeKeyboardAccessibility();
   }
 }
 function panelWidthFix(accordionBlock, accordionTarget) {
@@ -293,4 +313,19 @@ function setBoxAccordionTopHeight() {
           window.innerWidth >= 760 ? height + "px" : null;
       }
     });
+}
+
+function youTubeKeyboardAccessibility(open) {
+  const accordions = document.querySelectorAll(".card-accordion");
+  if (!!accordions) {
+    accordions.forEach((accordion) => {
+      const youTubeIframe = accordion.querySelector(
+        "iframe[data-src*='youtube.com']"
+      );
+      if (!!youTubeIframe) {
+        let tabIndexValue = accordion.classList.contains("show") ? "0" : "-1";
+        youTubeIframe.tabIndex = tabIndexValue;
+      }
+    });
+  }
 }
