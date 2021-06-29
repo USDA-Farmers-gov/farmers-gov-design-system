@@ -201,14 +201,35 @@ function processAccordions() {
         toggleAccordion(evt, cardAccordion);
       });
 
+    cardAccordion.addEventListener("keydown", (evt) => {
+      if (
+        evt.target.classList.contains("container") &&
+        evt.target.classList.contains("Card-Accordion")
+      ) {
+        cardAccordion.tabIndex = "-1";
+      }
+    });
+
     cardAccordion
       .querySelector(".card-accordion-toggle")
       .addEventListener("keydown", (evt) => {
         if (evt.keyCode.toString().match(/32|13/)) {
           evt.preventDefault();
+          cardAccordion.tabIndex = "0";
+          cardAccordion.focus();
           toggleAccordion(evt, cardAccordion);
         }
       });
+  });
+  document.body.addEventListener("click", (evt) => {
+    const tabbedAccordions = document.querySelectorAll(
+      ".Card-Accordion[tabindex='0']"
+    );
+    if (!!tabbedAccordions) {
+      tabbedAccordions.forEach((accordion) => {
+        accordion.removeAttribute("tabindex");
+      });
+    }
   });
 }
 function toggleAccordion(evt, cardAccordion) {
@@ -243,7 +264,6 @@ function toggleAccordion(evt, cardAccordion) {
     ) {
       const focusedElement = document.querySelector(".Card-Accordion :focus");
       if (focusedElement) focusedElement.blur();
-      target.focus();
 
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "0");
