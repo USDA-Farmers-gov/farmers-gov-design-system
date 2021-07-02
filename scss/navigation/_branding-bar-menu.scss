@@ -1,0 +1,16 @@
+#nav-branding-bar {
+  display: flex;
+  padding-top: 3px;
+  padding-left: 11px;
+  margin-left: auto;
+  background-image: image("globe.svg");
+  background-position: left 7px;
+  background-size: 11px;
+  background-repeat: no-repeat;
+  @media (max-width: $screen--S) {
+    display: none;
+  }
+  a {
+    padding: 0 6px;
+  }
+}
