@@ -1,16 +1,26 @@
-#nav-branding-bar {
-  display: flex;
-  padding-top: 3px;
-  padding-left: 11px;
+.usa-banner-text #nav-branding-bar {
   margin-left: auto;
-  background-image: image("globe.svg");
-  background-position: left 7px;
-  background-size: 11px;
-  background-repeat: no-repeat;
-  @media (max-width: $screen--S) {
-    display: none;
-  }
-  a {
-    padding: 0 6px;
+  margin-top: 4px;
+  ul {
+    display: flex;
+    padding-left: 11px;
+    margin-left: auto;
+    margin-bottom: 0;
+    background-image: image("globe.svg");
+    background-position: left 1px;
+    background-size: 11px;
+    background-repeat: no-repeat;
+    li {
+      list-style-type: none;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-bottom: 0;
+      @media (max-width: $screen--S) {
+        display: none;
+      }
+      a {
+        padding: 0 6px;
+      }
+    }
   }
 }

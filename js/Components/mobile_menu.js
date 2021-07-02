@@ -24,6 +24,9 @@ window.addEventListener("load", function () {
                 let navBar = document.querySelector(".primary-nav");
                 let navContainer = document.querySelector(".nav-container");
                 let navBarClone = navBar.cloneNode(true);
+                let navBrandingBar = document
+                    .getElementById("nav-branding-bar")
+                    .cloneNode(true);
                 let mobileNavHeader = document.createElement("div");
                 let mobileNavFooter = document.createElement("div");
                 let mobileMobileMenuSearch = document.createElement("div");
@@ -88,6 +91,8 @@ window.addEventListener("load", function () {
                 navContainer.appendChild(menuSlider);
                 mobileNavFooter.classList.add("mobile-nav-footer");
                 mobileNavFooter.appendChild(calloutBtn);
+                if (!!navBrandingBar)
+                    mobileNavFooter.appendChild(navBrandingBar);
                 mobileNavFooter.appendChild(utilityNav);
                 navContainer.appendChild(mobileNavFooter);
 
