@@ -19,14 +19,20 @@ window.addEventListener("load", function () {
                 const defaultCalloutBtn = document.querySelector(
                     ".header-inner-wrap .header-button"
                 );
+                const brandingBarMenuElement = document.getElementById(
+                    "nav-branding-bar"
+                );
+                const utilNavBtn = document.querySelector(
+                    ".header-inner-wrap .utility-nav-buttons"
+                );
 
                 let mobileNav = document.querySelector(".mobile-primary-nav");
                 let navBar = document.querySelector(".primary-nav");
                 let navContainer = document.querySelector(".nav-container");
                 let navBarClone = navBar.cloneNode(true);
-                let navBrandingBar = document
-                    .getElementById("nav-branding-bar")
-                    .cloneNode(true);
+                let navBrandingBar = !!brandingBarMenuElement
+                    ? brandingBarMenuElement.cloneNode(true)
+                    : null;
                 let mobileNavHeader = document.createElement("div");
                 let mobileNavFooter = document.createElement("div");
                 let mobileMobileMenuSearch = document.createElement("div");
@@ -38,11 +44,10 @@ window.addEventListener("load", function () {
                     .cloneNode(true);
                 let calloutBtn = defaultCalloutBtn
                     ? defaultCalloutBtn.cloneNode(true)
-                    : document
-                          .querySelector(
-                              ".header-inner-wrap .utility-nav-buttons"
-                          )
-                          .cloneNode(true);
+                    : "";
+                if ((!calloutBtn || calloutBtn === "") && !!utilNavBtn)
+                    calloutBtn = utilNavBtn.cloneNode(true);
+
                 let searchField = document
                     .querySelector("#search-field")
                     .cloneNode(true);
@@ -90,7 +95,7 @@ window.addEventListener("load", function () {
                 menuSlider.appendChild(navBarClone);
                 navContainer.appendChild(menuSlider);
                 mobileNavFooter.classList.add("mobile-nav-footer");
-                mobileNavFooter.appendChild(calloutBtn);
+                if (!!calloutBtn) mobileNavFooter.appendChild(calloutBtn);
                 if (!!navBrandingBar)
                     mobileNavFooter.appendChild(navBrandingBar);
                 mobileNavFooter.appendChild(utilityNav);
