@@ -34,7 +34,11 @@
   .usa-banner-inner {
     display: flex;
     .usa-banner-text {
+      display: flex;
       width: 100vw;
+      @media (max-width: $screen--S) {
+        flex-direction: column;
+      }
     }
     p {
       font-size: 1.2rem;
