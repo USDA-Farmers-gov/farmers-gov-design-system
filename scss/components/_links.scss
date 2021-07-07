@@ -140,3 +140,11 @@ a {
     box-shadow: 0px 0px 4px $focus;
   }
 }
+
+.grey-1 {
+  @include grey-bg-link-hover;
+  p,
+  span {
+    @include grey-bg-link-hover;
+  }
+}

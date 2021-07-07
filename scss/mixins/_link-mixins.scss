@@ -28,3 +28,11 @@
     }
   }
 }
+
+@mixin grey-bg-link-hover {
+  > a:hover {
+    color: $dkblue;
+    text-shadow: 0 0 0.08rem $dkblue;
+    -webkit-text-stroke: 1px $dkblue;
+  }
+}
