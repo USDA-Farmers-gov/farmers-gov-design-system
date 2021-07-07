@@ -1,6 +1,9 @@
 .usa-banner-text #nav-branding-bar {
   margin-left: auto;
   margin-top: 4px;
+  @media (max-width: 1000px) {
+    display: none;
+  }
   ul {
     display: flex;
     padding-left: 11px;
@@ -11,9 +14,6 @@
       font-size: 1.2rem;
       line-height: 1.4rem;
       margin-bottom: 0;
-      @media (max-width: $screen--S) {
-        display: none;
-      }
       a {
         padding: 0 6px;
       }

@@ -193,6 +193,10 @@
       flex-direction: column;
       justify-content: flex-end;
       flex: 0.8;
+      .utility-nav a {
+        background: none;
+        padding-left: 0;
+      }
     }
   }
 }
