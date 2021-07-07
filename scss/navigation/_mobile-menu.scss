@@ -261,6 +261,8 @@
     }
     .utility-nav-buttons {
       width: fit-content;
+      width: intrinsic;
+      width: -moz-max-content;
       zoom: 1;
       a {
         background: #fff;
