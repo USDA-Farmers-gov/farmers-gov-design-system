@@ -4,6 +4,7 @@
   @media (max-width: 1000px) {
     display: none;
   }
+
   ul {
     display: flex;
     padding-left: 11px;
@@ -17,6 +18,7 @@
       a {
         padding: 0 6px;
       }
+      @include grey-bg-link-hover;
     }
   }
   .icon-globe {
