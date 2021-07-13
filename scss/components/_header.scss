@@ -1,6 +1,10 @@
 .header-button {
-  float: right;
-  margin-top: -20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  // float: right;
+  // margin-left: auto;
+  // margin-top: -20px;
   height: 48px;
   vertical-align: middle;
   border-radius: 0 0 2px 2px;
@@ -155,8 +159,9 @@
 
   .utility-nav-links {
     margin-top: 3.2rem;
-    margin-right: 0.7rem;
+    margin-right: 0;
     margin-bottom: 0;
+    padding-right: 0 !important;
     display: flex;
     justify-content: space-around;
   }
