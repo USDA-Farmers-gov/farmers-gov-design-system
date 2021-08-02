@@ -20,3 +20,6 @@ ul.links-horizontal-bar {
     margin-left: 0.3rem;
   }
 }
+.grey-1 ul.links-horizontal-bar li {
+  @include grey-bg-link-hover;
+}
