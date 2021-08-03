@@ -19,11 +19,23 @@ function processMobileTables() {
         dataRows,
         headersInData
       );
-      if (table.classList.contains("mobile-static-column")) {
-        table.classList.add("show-on-mobile");
+      if (
+        table.classList.contains("mobile-static-column") &&
+        !table.closest(".mobile-static-column-container")
+      ) {
+        const tableStaticCol = table.cloneNode(true);
+        const newDiv = document.createElement("div");
+
+        tableStaticCol.classList.add("show-on-mobile");
+
+        newDiv.classList.add("mobile-static-column-container");
+        newDiv.appendChild(tableStaticCol);
+
+        table.after(newDiv);
+        table.remove();
         return;
       }
-      if (!simpleTable) {
+      if (!simpleTable && !table.classList.contains("mobile-static-column")) {
         table.classList.add("show-on-mobile");
         table.classList.add("complex-table");
       }
@@ -83,5 +95,6 @@ function checkIfSimpleTable(table, headers, dataRows, headersInData) {
       if (td.hasAttribute("colspan") || td.hasAttribute("rowspan")) integer++;
     });
   });
+
   return integer === 0 ? true : false;
 }
