@@ -15,9 +15,7 @@
     @include complex-table-mobile;
   }
 
-  table.mobile-static-column {
-    @include mobile-static-column;
-  }
+  @include mobile-static-column;
 }
 
 .show-simple-mobile-table {
@@ -35,5 +33,4 @@
 
 .show-mobile-static-column {
   @include mobile-static-column;
-  @include mobile-static-col-styles;
 }
