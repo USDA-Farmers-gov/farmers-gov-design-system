@@ -49,7 +49,19 @@
     background-image: image("Phone.svg");
   }
 }
-
+.header-icon {
+  display: flex;
+  &.globe:before {
+    content: "";
+    display: inline-block;
+    padding-right: 3.5rem;
+    width: 2.4rem;
+    height: 2.6rem;
+    background-image: image("globe.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0.2rem;
+  }
+}
 .outline-icon {
   width: 8rem;
   height: 8rem;

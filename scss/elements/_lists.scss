@@ -6,3 +6,20 @@ ol {
     margin-bottom: 0.5em;
   }
 }
+ul.links-horizontal-bar {
+  list-style-type: none;
+  li {
+    display: inline-block;
+    margin-left: 0.3rem;
+  }
+  li:first-child {
+    margin-left: 0;
+  }
+  li:not(:last-child):after {
+    content: "|";
+    margin-left: 0.3rem;
+  }
+}
+.grey-1 ul.links-horizontal-bar li {
+  @include grey-bg-link-hover;
+}
