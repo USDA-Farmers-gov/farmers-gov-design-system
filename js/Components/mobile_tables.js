@@ -51,6 +51,7 @@ function processMobileTables() {
 }
 
 function setupTableForMobile(table) {
+  if (table.classList.contains("mobile-static-column")) return;
   table.classList.add("simple-table");
   const rows = table.querySelectorAll("tr");
   let headerData = [];
