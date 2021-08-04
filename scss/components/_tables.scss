@@ -71,7 +71,7 @@ table {
     border-top: $table-body-border-top;
   }
   tbody {
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
       background-color: #f7f7f7;
     }
     th:first-child {

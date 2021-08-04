@@ -73,11 +73,15 @@
         z-index: 1;
         box-shadow: 8px 2px 10px -2px $grey3;
       }
-      tr:nth-child(even) td {
-        background-color: $white;
+      tr th {
+        background-color: $grey2;
       }
-      tr:nth-child(odd) td {
+      tr:nth-child(even) td {
         background-color: $grey1;
+      }
+
+      tr:nth-child(odd) td {
+        background-color: $white;
       }
       thead tr th {
         position: sticky;
