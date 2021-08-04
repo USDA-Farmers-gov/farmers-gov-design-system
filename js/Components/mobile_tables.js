@@ -35,7 +35,8 @@ function processMobileTables() {
         table.remove();
         return;
       }
-      if (!simpleTable && !table.classList.contains("mobile-static-column")) {
+      if (!simpleTable) {
+        if (table.classList.contains("mobile-static-column")) return;
         table.classList.add("show-on-mobile");
         table.classList.add("complex-table");
       }
@@ -77,8 +78,9 @@ function setupTableForMobile(table) {
 
 function checkIfSimpleTable(table, headers, dataRows, headersInData) {
   let integer = 0;
+  // console.log(headersInData);
+  // if (headersInData.length) integer++;
 
-  if (headersInData.length) integer++;
   if (!!table && table.classList.contains("ui-datepicker-calendar")) integer++;
 
   headers.forEach(function (header) {
@@ -86,15 +88,12 @@ function checkIfSimpleTable(table, headers, dataRows, headersInData) {
       integer++;
   });
 
-  dataRows.forEach(function (dataRows) {
-    const dataCells = dataRows.querySelectorAll("td");
-    if (dataRows.hasAttribute("colspan") || dataRows.hasAttribute("rowspan"))
-      integer++;
+  dataRows.forEach(function (row) {
+    const dataCells = row.querySelectorAll("td");
 
     dataCells.forEach(function (td) {
       if (td.hasAttribute("colspan") || td.hasAttribute("rowspan")) integer++;
     });
   });
-
   return integer === 0 ? true : false;
 }
