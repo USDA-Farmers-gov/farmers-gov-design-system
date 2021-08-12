@@ -90,11 +90,20 @@ function checkIfSimpleTable(table, headers, dataRows, headersInData) {
   });
 
   dataRows.forEach(function (row) {
+    const dataHeaders = row.querySelectorAll("th");
     const dataCells = row.querySelectorAll("td");
 
-    dataCells.forEach(function (td) {
-      if (td.hasAttribute("colspan") || td.hasAttribute("rowspan")) integer++;
-    });
+    if (checkForColAndRowSpan(dataHeaders)) integer++;
+    if (checkForColAndRowSpan(dataCells)) integer++;
   });
   return integer === 0 ? true : false;
+}
+
+function checkForColAndRowSpan(elements) {
+  let integer = 0;
+  elements.forEach(function (element) {
+    if (element.hasAttribute("colspan") || element.hasAttribute("rowspan"))
+      integer++;
+  });
+  return !!integer ? true : false;
 }
