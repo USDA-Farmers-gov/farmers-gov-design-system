@@ -1,0 +1,198 @@
+// Modified version of file from TB Mega Menu module
+.tb-megamenu:before,
+.tb-megamenu:after {
+  content: "";
+  display: table;
+  line-height: 0;
+}
+.tb-megamenu:after {
+  clear: both;
+}
+.tb-megamenu .nav {
+  margin: 0;
+}
+.tb-megamenu .nav > li {
+  margin-left: 0;
+}
+
+.tb-megamenu .btn-navbar {
+  display: none;
+  padding: 10px;
+  margin: 0;
+}
+
+// .tb-megamenu .dropdown-menu li > a,
+// .tb-megamenu .dropdown-menu li > span.tb-megamenu-no-link {
+//   border-bottom: 0;
+//   border-top: 1px solid #eee;
+//   padding: 5px 20px;
+//   text-shadow: none;
+// }
+.tb-megamenu .dropdown-menu li:first-child > a,
+.tb-megamenu .dropdown-menu li:first-child > span.tb-megamenu-no-link {
+  border-top: 0;
+}
+.tb-megamenu .mega-nav > li:first-child > a,
+.tb-megamenu .dropdown-menu .mega-nav > li:first-child > a,
+.tb-megamenu .mega-nav > li:first-child > span.tb-megamenu-no-link,
+.tb-megamenu
+  .dropdown-menu
+  .mega-nav
+  > li:first-child
+  > span.tb-megamenu-no-link {
+  margin-top: 0;
+  padding-top: 0;
+}
+.tb-megamenu .nav > li > .dropdown-menu:before {
+  display: none;
+}
+.tb-megamenu .nav > li > .dropdown-menu:after {
+  display: none;
+}
+
+.tb-megamenu .dropdown-menu .disabled > a:hover,
+.tb-megamenu .dropdown-menu .disabled > span.tb-megamenu-no-link:hover {
+  background-color: transparent;
+}
+
+// .tb-megamenu .mega-inner {
+//   padding: 10px;
+// }
+// .tb-megamenu .mega-nav > li a,
+// .tb-megamenu .dropdown-menu .mega-nav > li a,
+// .tb-megamenu .mega-nav > li span.tb-megamenu-no-link,
+// .tb-megamenu .dropdown-menu .mega-nav > li span.tb-megamenu-no-link {
+//   padding: 5px 0;
+// }
+.tb-megamenu .mega-nav .dropdown-submenu > a::after,
+.tb-megamenu .mega-nav .dropdown-submenu > span.tb-megamenu-no-link::after {
+  margin-right: 0;
+}
+.tb-megamenu .tb-block .block-title {
+  font-size: 12px;
+  color: #333;
+  display: block;
+  line-height: 20px;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+.tb-megamenu .tb-block ul,
+.tb-megamenu .tb-block .nav {
+  margin: 0;
+}
+.tb-megamenu .tb-block ul li,
+.tb-megamenu .tb-block .nav li {
+  background: none;
+  list-style: disc;
+  display: list-item;
+  float: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.tb-megamenu .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.tb-megamenu .dropdown-menu .disabled > a:hover,
+.tb-megamenu .dropdown-menu .disabled > span.tb-megamenu-no-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  cursor: default;
+}
+.tb-megamenu .open {
+  *z-index: 1000;
+}
+
+.tb-megamenu .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.tb-megamenu .dropup .dropdown-menu,
+.tb-megamenu .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+.tb-megamenu .dropdown-submenu {
+  position: relative;
+}
+.tb-megamenu .touch .dropdown-submenu:hover > .dropdown-menu {
+  display: none;
+}
+.tb-megamenu .dropup .dropdown-submenu > .dropdown-menu {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: -2px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.tb-megamenu .dropdown-submenu.pull-left {
+  float: none;
+}
+.tb-megamenu .dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+.tb-megamenu .dropdown .dropdown-menu .nav-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tb-megamenu .row .span50,
+.tb-megamenu .row-fluid .span50 {
+  width: 50%;
+}
+.tb-megamenu .row .span33,
+.tb-megamenu .row-fluid .span33 {
+  width: 33.3333%;
+}
+.tb-megamenu .row .span25,
+.tb-megamenu .row-fluid .span25 {
+  width: 25%;
+}
+.tb-megamenu .row .span20,
+.tb-megamenu .row-fluid .span20 {
+  width: 20%;
+}
+.tb-megamenu .row .span16,
+.tb-megamenu .row-fluid .span16 {
+  width: 16.6666%;
+}
+.tb-megamenu .hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.tb-megamenu .block-view-demo .views-field-field-image {
+}
+
+.tb-megamenu .block-view-demo .views-field-field-image img {
+  border: 1px solid #333;
+  margin: 0 20px 0 0;
+  max-width: none !important;
+  padding: 4px;
+  width: auto;
+}
+
+.tb-megamenu .block-view-demo .item-list ul li {
+  border-bottom: 1px solid #333;
+  margin: 0;
+  min-height: 60px;
+  padding: 10px 0;
+}
+
+.tb-megamenu .block-view-demo .item-list ul li.views-row-first {
+  padding-top: 0;
+}
+
+.tb-megamenu .block-view-demo a {
+  padding: 0 !important;
+}

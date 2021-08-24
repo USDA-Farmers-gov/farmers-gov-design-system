@@ -1,0 +1,56 @@
+li.level-1.no-sidemenu {
+  .mm-landing-page-banner,
+  .mm-card-grid {
+    width: 112.5rem;
+    left: -1px;
+    @media (max-width: $screen--L) {
+      width: $nav-panel-mobile-width;
+      left: 2rem !important;
+    }
+  }
+
+  @media (max-width: $screen--L) {
+    .mega-dropdown-inner {
+      position: relative;
+      background: none !important;
+      left: -1px;
+    }
+    // .mm-card-grid {
+    //   width: 93vw;
+    // }
+  }
+  .tb-megamenu-submenu.dropdown-menu.nav-child {
+    position: relative;
+    top: 6.4rem;
+    .mm-card-grid {
+      background: #fff;
+    }
+  }
+
+  .mega-dropdown-inner {
+    background: #fff;
+    padding-top: 0;
+    margin-left: 0;
+  }
+
+  .mm-card-grid {
+    position: relative;
+    left: -2px;
+    .mm-grid-blocks {
+      padding-left: 2rem;
+      .subcategory {
+        grid-template-columns: repeat(3, 33%);
+        @media (max-width: $screen--M) {
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+  .mm-grid-featured {
+    margin-top: -5px;
+    div.field__item > div > a {
+      position: relative;
+      padding-top: 1px;
+    }
+  }
+}

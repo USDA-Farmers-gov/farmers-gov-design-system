@@ -1,0 +1,83 @@
+.mm-grid-featured {
+  width: 34.8rem;
+  background-color: #efefef;
+  padding: 3rem;
+
+  .block-block-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .paragraph--type-mm-featured-section,
+  .field--name-field-featured-section,
+  .field--name-field-featured-section .field__item {
+    height: 100%;
+  }
+  .paragraph--type-mm-featured-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .mm-featured-header {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .field--name-field-f {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  .tb-megamenu .tb-block {
+    margin-bottom: 0;
+  }
+  .field--name-field-featured-image {
+    img {
+      flex: 0 0 auto;
+      width: 28.4rem;
+      height: 14.4rem;
+      object-fit: cover;
+    }
+  }
+  a,
+  .nav-mega-menu-featured-links a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    &:hover {
+      @include underline-hover;
+    }
+  }
+  ul.nav-mega-menu-featured-links {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+
+    li {
+      list-style-type: none;
+      display: flex;
+      text-transform: initial;
+      line-height: 2rem;
+      a {
+        background: none !important;
+        color: $heritage;
+        border-bottom: none;
+        font-size: 1.4rem !important;
+        text-decoration: none;
+      }
+      &:before {
+        content: "\A";
+        flex: 0 0 auto;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: $asphalt;
+        display: inline-block;
+        margin: 0.8rem 1rem 0 0;
+      }
+    }
+  }
+}

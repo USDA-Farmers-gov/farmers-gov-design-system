@@ -28,11 +28,32 @@
     }
   }
 }
-
 @mixin grey-bg-link-hover {
   > a:hover {
     color: $dkblue;
     text-shadow: 0 0 0.08rem $dkblue;
     -webkit-text-stroke: 1px $dkblue;
   }
+}
+@mixin underline-hover {
+  text-shadow: none;
+  -webkit-text-stroke: unset;
+  text-decoration: underline;
+}
+
+@mixin no-hover-color {
+  text-shadow: none !important;
+  -webkit-text-stroke: unset !important;
+}
+@mixin arrow-right {
+  content: "";
+  float: right;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  border: solid $asphalt;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
