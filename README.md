@@ -8,7 +8,7 @@
 #### 2. Rename the repo folder to be web friendly
 `$ mv Farmers.Gov-Design-System farmers-gov`
 
-#### 3. Include the JS and CSS in the header (JS tag may need to go before closing </body> tag)
+#### 3. Include the JS and CSS in the header (JS may need to go before closing body tag)
 ```
 <script src="/farmers-gov/dist/js/farmers.min.js"></script>
 <link rel="stylesheet" media="all" href="/farmers-gov/dist/css/main.min.css" />
