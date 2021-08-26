@@ -10,7 +10,7 @@
 
 #### 3. Include the JS and CSS in the header
 ```
-<script src="/farmers-gov/dist/farmers.min.js"></script>
+<script src="/farmers-gov/dist/js/farmers.min.js"></script>
 <link rel="stylesheet" media="all" href="/farmers-gov/dist/css/main.min.css" />
 ```
 
