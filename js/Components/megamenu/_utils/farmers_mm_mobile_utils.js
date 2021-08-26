@@ -1,4 +1,4 @@
-import * as general_utils from "../../_utils/general_utils";
+import * as general_utils from "../../../_utils/general_utils";
 import * as mm_mobile_helpers from "./farmers_mm_mobile_helpers";
 
 export function processMobileSections() {

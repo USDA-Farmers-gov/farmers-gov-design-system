@@ -202,7 +202,6 @@ export function setSubMenuDimensions() {
       submenu.style.left = "initial";
       const subMenuCoords = element.getBoundingClientRect();
       let offset = subMenuCoords.x - primaryNavCoords.x + 20;
-      // if (element.classList.contains("no-sidemenu")) offset = offset + 1.5;
 
       submenu.style.left = `-${offset}px`;
     }

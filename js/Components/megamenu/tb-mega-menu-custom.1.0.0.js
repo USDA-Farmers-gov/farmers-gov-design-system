@@ -2,6 +2,7 @@
 
 import * as mm_utils from "./_utils/farmers_mm_utils";
 import * as mm_accessibility from "./_utils/accessibility/farmers_mm_accessibility";
+import * as mm_mobile from "./farmers_mm_mobile.js";
 
 export const megamenu = function () {
   if (document.querySelector(".tb-megamenu")) {
@@ -22,5 +23,6 @@ export const megamenu = function () {
   }
 };
 
-// initiate megamenu
+// initiate megamenus
 megamenu();
+mm_mobile.megamenu_mobile();

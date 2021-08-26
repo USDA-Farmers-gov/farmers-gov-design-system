@@ -321,9 +321,3 @@ $close-button-height: 5.5rem;
 .mm-link-category + .mm-featured-links {
   padding-top: 1.5rem !important;
 }
-
-// using design system styles
-// (need to change class for mega menu functionality)
-.mm-mobile-primary-nav {
-  @extend .mobile-primary-nav;
-}
