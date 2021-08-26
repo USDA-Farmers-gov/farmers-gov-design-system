@@ -204,9 +204,6 @@ function setUpUtilityNav(megaMenuMobile) {
     : null;
   const brandingBarMenu = document.getElementById("nav-branding-bar");
 
-  if (!!brandingBarMenu)
-    brandingBarMenu.querySelector("ul").classList.add("mm-branding-bar-menu");
-
   if (utilityNav) {
     const utilNavMarkup = !!brandingBarMenu
       ? `${brandingBarMenu.innerHTML} ${utilityNav.innerHTML}`
