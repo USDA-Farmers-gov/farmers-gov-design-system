@@ -1,0 +1,528 @@
+// Modified version of file from TB Mega Menu module
+.tb-megamenu .clearfix {
+  *zoom: 1;
+}
+.tb-megamenu .clearfix:before,
+.tb-megamenu .clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.tb-megamenu .clearfix:after {
+  clear: both;
+}
+.tb-megamenu .mega-inner:before,
+.tb-megamenu .mega-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.tb-megamenu .mega-inner:after {
+  clear: both;
+}
+.tb-megamenu .row-fluid + .row-fluid {
+  padding-top: 10px;
+}
+.tb-megamenu .mega > .mega-dropdown-menu {
+  min-width: 200px;
+  display: none;
+}
+.tb-megamenu .mega-group {
+  *zoom: 1;
+}
+.tb-megamenu .mega-group:before,
+.tb-megamenu .mega-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.tb-megamenu .mega-group:after {
+  clear: both;
+}
+.tb-megamenu .mega-nav .mega-group > .mega-group-title,
+.tb-megamenu .dropdown-menu .mega-nav .mega-group > .mega-group-title,
+.tb-megamenu .dropdown-menu .active .mega-nav .mega-group > .mega-group-title {
+  background: inherit;
+  font-weight: bold;
+  padding: 0 0 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tb-megamenu .mega-group-ct {
+  margin: 0;
+  padding: 0;
+  *zoom: 1;
+}
+.tb-megamenu .mega-group-ct:before,
+.tb-megamenu .mega-group-ct:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.tb-megamenu .mega-group-ct:after {
+  clear: both;
+}
+.tb-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+  padding: 0;
+}
+.tb-megamenu .mega-nav,
+.tb-megamenu .dropdown-menu .mega-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tb-megamenu .mega-nav > li,
+.tb-megamenu .dropdown-menu .mega-nav > li {
+  display: block;
+  float: none;
+  list-style: none;
+  margin-left: 0;
+}
+.tb-megamenu .mega-nav > li a,
+.tb-megamenu .dropdown-menu .mega-nav > li a,
+.tb-megamenu .mega-nav > li span.tb-megamenu-no-link,
+.tb-megamenu .dropdown-menu .mega-nav > li span.tb-megamenu-no-link {
+  white-space: normal;
+}
+.tb-megamenu .mega-group > .mega-nav,
+.tb-megamenu .dropdown-menu .mega-group > .mega-nav {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.tb-megamenu .mega-nav .dropdown-submenu > a::after,
+.tb-megamenu .mega-nav .dropdown-submenu > span.tb-megamenu-no-link::after {
+  margin-right: 5px;
+}
+.tb-megamenu .tb-block .block-title {
+  margin-bottom: 0;
+}
+.tb-megamenu .tb-block .block-ct {
+  margin: 0;
+  padding: 0;
+}
+.tb-megamenu .nav [class^="fa-"],
+.tb-megamenu .nav [class*=" fa-"] {
+  margin-right: 5px;
+}
+
+.tb-megamenu .nav {
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.tb-megamenu .nav > .pull-right {
+  float: right;
+}
+
+.tb-megamenu .dropup,
+.tb-megamenu .dropdown {
+  position: relative;
+}
+.tb-megamenu .dropdown-toggle {
+  *margin-bottom: -3px;
+}
+.tb-megamenu .dropdown-toggle:active,
+.tb-megamenu .open .dropdown-toggle {
+  outline: 0;
+}
+.tb-megamenu .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+.tb-megamenu .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.tb-megamenu .dropdown-menu .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 8px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+}
+.tb-megamenu .dropdown-menu .disabled > a:hover,
+.tb-megamenu .dropdown-menu .disabled > span.tb-megamenu-no-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+  cursor: default;
+}
+.tb-megamenu .open {
+  *z-index: 1000;
+}
+.tb-megamenu .open > .dropdown-menu {
+  display: block;
+}
+.tb-megamenu .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.tb-megamenu .dropup .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+.tb-megamenu .dropdown-submenu {
+  position: relative;
+}
+.tb-megamenu .dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  // margin-top: -6px;
+  margin-left: -1px;
+}
+.tb-megamenu .dropdown-submenu > a:after,
+.tb-megamenu .dropdown-submenu > span.tb-megamenu-no-link:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.tb-megamenu .dropdown .dropdown-menu .nav-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tb-megamenu .mega-align-left > .dropdown-menu {
+  left: 0;
+}
+.tb-megamenu .mega-align-right > .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.tb-megamenu .mega-align-center > .dropdown-menu {
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+.tb-megamenu .dropdown-submenu.mega-align-left > .dropdown-menu {
+  left: 100%;
+}
+.tb-megamenu .dropdown-submenu.mega-align-right > .dropdown-menu {
+  left: auto;
+  right: 100%;
+}
+.tb-megamenu .mega-align-justify {
+  position: static;
+}
+.tb-megamenu .mega-align-justify > .dropdown-menu {
+  left: 0;
+  margin-left: 0;
+  top: auto;
+}
+.tb-megamenu .mega-align-justify > .dropdown-menu.span12 {
+  width: 100%;
+}
+.tb-megamenu .mega-caption {
+  display: block;
+  white-space: nowrap;
+}
+.tb-megamenu .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.tb-megamenu .fade.in {
+  opacity: 1;
+}
+.tb-megamenu .collapse {
+  position: relative;
+  height: 0;
+  overflow: visible;
+  -webkit-transition: height 0.35s ease;
+  -moz-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+.tb-megamenu .collapse.in {
+  height: auto;
+}
+.tb-megamenu .close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+.tb-megamenu button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.tb-megamenu .btn:first-child {
+  *margin-left: 0;
+}
+.tb-megamenu .btn:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+.tb-megamenu .btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.tb-megamenu .btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tb-megamenu .btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+.tb-megamenu button.btn,
+.tb-megamenu input[type="submit"].btn {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+.tb-megamenu button.btn::-moz-focus-inner,
+.tb-megamenu input[type="submit"].btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.tb-megamenu .btn-group {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  *margin-left: 0.3em;
+}
+.tb-megamenu .btn-group:first-child {
+  *margin-left: 0;
+}
+.tb-megamenu .btn-group + .btn-group {
+  margin-left: 5px;
+}
+.tb-megamenu .btn-group > .btn {
+  position: relative;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.tb-megamenu .btn-group > .btn + .btn {
+  margin-left: -1px;
+}
+.tb-megamenu .btn-group > .btn,
+.tb-megamenu .btn-group > .dropdown-menu {
+  font-size: 13px;
+}
+.tb-megamenu .btn-group > .btn.first,
+.tb-megamenu .btn-group > .btn:first-child {
+  margin-left: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+.tb-megamenu .btn-group > .btn.last,
+.tb-megamenu .btn-group > .btn:last-child,
+.tb-megamenu .btn-group > .dropdown-toggle {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+}
+.tb-megamenu .btn-group > .btn.large:first-child {
+  margin-left: 0;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+}
+.tb-megamenu .btn-group > .btn.large:last-child,
+.tb-megamenu .btn-group > .large.dropdown-toggle {
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+}
+.tb-megamenu .btn-group > .btn:hover,
+.tb-megamenu .btn-group > .btn:focus,
+.tb-megamenu .btn-group > .btn:active,
+.tb-megamenu .btn-group > .btn.active {
+  z-index: 2;
+}
+.tb-megamenu .btn-group .dropdown-toggle:active,
+.tb-megamenu .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+#tb-megamenu-admin fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.tb-megamenu label,
+.tb-megamenu input,
+.tb-megamenu button,
+.tb-megamenu select,
+.tb-megamenu textarea {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+}
+.tb-megamenu input,
+.tb-megamenu button,
+.tb-megamenu select,
+.tb-megamenu textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.tb-megamenu label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tb-megamenu input,
+.tb-megamenu textarea {
+  width: 170px;
+}
+.tb-megamenu textarea {
+  height: auto;
+}
+
+.tb-megamenu input[type="radio"],
+.tb-megamenu input[type="checkbox"] {
+  margin: 4px 0 0;
+  *margin-top: 0;
+  margin-top: 1px \9;
+  line-height: normal;
+  cursor: pointer;
+}
+.tb-megamenu input[type="file"],
+.tb-megamenu input[type="image"],
+.tb-megamenu input[type="submit"],
+.tb-megamenu input[type="reset"],
+.tb-megamenu input[type="button"],
+.tb-megamenu input[type="radio"],
+.tb-megamenu input[type="checkbox"] {
+  width: auto;
+}
+.tb-megamenu select,
+.tb-megamenu input[type="file"] {
+  height: 30px;
+  *margin-top: 4px;
+  line-height: 30px;
+}
+.tb-megamenu select[multiple],
+.tb-megamenu select[size] {
+  height: auto;
+}
+.tb-megamenu select:focus,
+.tb-megamenu input[type="file"]:focus,
+.tb-megamenu input[type="radio"]:focus,
+.tb-megamenu input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.tb-megamenu span.tb-megamenu-no-link:hover {
+  cursor: default;
+}
+.tb-megamenu span.tb-megamenu-no-link.tb-megamenu-no-submenu:hover {
+  color: inherit !important;
+}
+.tb-megamenu .btn-subhead {
+  display: none;
+}
+@media (min-width: 481px) {
+  .tb-megamenu #filter-bar {
+    height: 29px;
+  }
+}
+@media (max-width: 480px) {
+  .table th:nth-of-type(n + 5),
+  .table th:nth-of-type(3),
+  .table th:nth-of-type(2),
+  .table td:nth-of-type(n + 5),
+  .table td:nth-of-type(2),
+  .table td:nth-of-type(3) {
+    white-space: normal;
+  }
+  .tb-megamenu .pagination a {
+    padding: 5px;
+  }
+  .tb-megamenu .btn-group.divider,
+  .tb-megamenu .header .row-fluid .span3,
+  .tb-megamenu .header .row-fluid .span7,
+  .tb-megamenu .subhead-collapse {
+    display: none;
+  }
+  .tb-megamenu .btn {
+    font-size: 11px;
+    padding: 1px 4px 2px 4px;
+  }
+  .tb-megamenu .navbar .btn {
+    margin: 0;
+  }
+  .tb-megamenu .btn-subhead {
+    display: block;
+    margin: 10px 0;
+  }
+  .tb-megamenu .chzn-container,
+  .tb-megamenu .chzn-container .chzn-results,
+  .tb-megamenu .chzn-container-single .chzn-drop,
+  .tb-megamenu .btn-toolbar > .btn-group,
+  .tb-megamenu .btn-toolbar > .btn-group > .btn {
+    width: 99% !important;
+  }
+  .tb-megamenu .login .chzn-single {
+    width: 222px !important;
+  }
+  .tb-megamenu .login .chzn-container,
+  .tb-megamenu .login .chzn-drop {
+    width: 230px !important;
+  }
+}
+@media (max-width: 738px) {
+  .tb-megamenu .navbar .brand {
+    margin-top: 2px;
+  }
+  .tb-megamenu .navbar .btn-navbar {
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+  .tb-megamenu .nav-collapse.collapse.in {
+    height: auto !important;
+  }
+  .tb-megamenu .nav-collapse .nav,
+  .tb-megamenu .navbar .nav-collapse .nav.pull-right {
+    margin: 0;
+  }
+  .tb-megamenu .nav-collapse .dropdown-menu {
+    margin: 0;
+  }
+}

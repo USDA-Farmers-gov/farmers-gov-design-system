@@ -7,6 +7,7 @@ html,
 body {
   width: auto !important;
   overflow-x: hidden !important;
+  margin: 0;
 }
 
 html {
@@ -21,7 +22,20 @@ button {
   border-color: transparent;
   border-width: inherit;
 }
-
+.usa-overlay {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  // top: 168px;
+  background-color: rgba(33, 33, 33, 0.6);
+  z-index: 50;
+  main {
+    pointer-events: none;
+  }
+}
 .focus {
   outline-color: -webkit-focus-ring-color;
   outline-style: auto;
