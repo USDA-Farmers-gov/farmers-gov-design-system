@@ -6,6 +6,7 @@
 html,
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
@@ -14,7 +15,6 @@ html {
 
 body {
   font-size: 1.7rem;
-  overflow-x: hidden;
 }
 
 button {
