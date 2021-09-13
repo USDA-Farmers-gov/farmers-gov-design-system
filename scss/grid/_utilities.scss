@@ -10,6 +10,10 @@
     // Inner gutter via padding
     padding-left: ($_gutter / 2);
     padding-right: ($_gutter / 2);
+    @media (max-width: $screen--M) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 //  Centered container element
@@ -35,6 +39,10 @@
     margin-right: 0;
     margin-left: ($_gutter / -2);
     margin-right: ($_gutter / -2);
+    @media (max-width: $screen--M) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 //  Generate extra small columns
