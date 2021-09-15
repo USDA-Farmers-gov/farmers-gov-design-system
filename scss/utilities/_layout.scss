@@ -1,0 +1,10 @@
+.flex-column-reverse-mobile {
+  @media (max-width: $screen--S) {
+    flex-direction: column-reverse;
+  }
+}
+.flex-row-reverse-mobile {
+  @media (max-width: $screen--S) {
+    flex-direction: row-reverse;
+  }
+}
