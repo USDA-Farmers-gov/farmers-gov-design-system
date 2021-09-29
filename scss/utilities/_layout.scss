@@ -1,10 +1,34 @@
-.flex-column-reverse-mobile {
-  @media (max-width: $screen--S) {
-    flex-direction: column-reverse;
+.flex-column-reverse-mobile-l {
+  @media (max-width: $screen--L) {
+    flex-direction: column-reverse !important;
   }
 }
-.flex-row-reverse-mobile {
+.flex-column-reverse-mobile-m {
+  @media (max-width: $screen--M) {
+    flex-direction: column-reverse !important;
+  }
+}
+.flex-column-reverse-mobile,
+.flex-column-reverse-mobile-s {
   @media (max-width: $screen--S) {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse !important;
+  }
+}
+.flex-row-reverse-mobile,
+.flex-row-reverse-mobile-l {
+  @media (max-width: $screen--L) {
+    flex-direction: row-reverse !important;
+  }
+}
+.flex-row-reverse-mobile,
+.flex-row-reverse-mobile-m {
+  @media (max-width: $screen--M) {
+    flex-direction: row-reverse !important;
+  }
+}
+.flex-row-reverse-mobile,
+.flex-row-reverse-mobile-s {
+  @media (max-width: $screen--S) {
+    flex-direction: row-reverse !important;
   }
 }
