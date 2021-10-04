@@ -49,6 +49,9 @@
     &:hover {
       @include underline-hover;
     }
+    &:visited {
+      color: $heritage !important;
+    }
   }
   ul.nav-mega-menu-featured-links {
     list-style-type: none;
