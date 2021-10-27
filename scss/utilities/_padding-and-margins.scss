@@ -58,4 +58,29 @@ $step: 0.25;
     margin-top: #{$spacingValue};
     margin-bottom: #{$spacingValue};
   }
+
+  //negative margins
+  .minus-m-#{$integer} {
+    margin: -#{$spacingValue};
+  }
+  .minus-mt-#{$integer} {
+    margin-top: -#{$spacingValue};
+  }
+  .minus-mb-#{$integer} {
+    margin-bottom: -#{$spacingValue};
+  }
+  .minus-ml-#{$integer} {
+    margin-left: -#{$spacingValue};
+  }
+  .minus-mr-#{$integer} {
+    margin-right: -#{$spacingValue};
+  }
+  .minus-mx-#{$integer} {
+    margin-left: -#{$spacingValue};
+    margin-right: -#{$spacingValue};
+  }
+  .minus-my-#{$integer} {
+    margin-top: -#{$spacingValue};
+    margin-bottom: -#{$spacingValue};
+  }
 }
