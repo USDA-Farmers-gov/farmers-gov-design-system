@@ -129,7 +129,7 @@ export const megamenu_mobile = function () {
         : "";
 
       link.text = general_utils.decodeHTMLEntities(linkText);
-      link.href = `#${general_utils.webFriendlyName(linkText)}`;
+      link.href = `#mm-mobile-menu-${general_utils.webFriendlyName(linkText)}`;
       link.classList.add("mm-mobile-top-nav");
       link.setAttribute("aria-label", "Jump to " + linkText);
 

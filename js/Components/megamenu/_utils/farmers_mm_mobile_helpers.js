@@ -3,7 +3,9 @@ import * as general_utils from "../../../_utils/general_utils";
 export function setupFirstLevelTab(firstLevel, categoryName, linksContainer) {
   const sectionHeader = firstLevel.querySelector("a:first-of-type");
   const categoryHeader = document.createElement("div");
-  categoryHeader.id = general_utils.webFriendlyName(categoryName);
+  categoryHeader.id = `mm-mobile-menu-${general_utils.webFriendlyName(
+    categoryName
+  )}`;
   categoryHeader.classList.add("mm-mobile-nav-category");
 
   // append main category header
@@ -96,7 +98,9 @@ export function setupLandingPageLink(firstLevel, linksContainer) {
 
 export function setupLandingPageLinkNoSubmenu(firstLevel, categoryName) {
   const mobileCategoryElement = document.querySelector(
-    `.mm-links-container #${general_utils.webFriendlyName(categoryName)}`
+    `.mm-links-container #mm-mobile-menu-${general_utils.webFriendlyName(
+      categoryName
+    )}`
   );
 
   let pageLinkContainer = document.createElement("div");
