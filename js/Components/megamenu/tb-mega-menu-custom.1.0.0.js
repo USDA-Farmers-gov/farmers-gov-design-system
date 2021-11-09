@@ -1,5 +1,5 @@
 // Compatible with TB Mega Menu Versions:
-// 1.0.0-beta2-rc1 through 1.4
+// 1.0.0-beta2-rc1 through 1.6
 
 import * as mm_utils from "./_utils/farmers_mm_utils";
 import * as mm_accessibility from "./_utils/accessibility/farmers_mm_accessibility";
