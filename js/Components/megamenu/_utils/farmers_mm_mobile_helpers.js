@@ -44,7 +44,6 @@ export function createGridLinksContainer(links) {
   linkList.classList.add("mm-category-links");
 
   links.forEach((link) => {
-    console.log(link.querySelector("span:first-of-type").innerHTML);
     let newLink = document.createElement("a");
     newLink.href = link.href;
     newLink.text = general_utils.decodeHTMLEntities(
