@@ -51,8 +51,7 @@ export default {
       return !this.data.button;
     },
     resetStepper() {
-      this.$parent.results = [];
-      this.$parent.setBlankSteps();
+      this.$parent.resetStepper();
     },
   },
 };

@@ -4,10 +4,9 @@
     <p>{{ data.stepper_description }}</p>
     <hr />
     <div
-      v-if="stepIsVisible(index) || index === 0"
-      v-for="(step, index) in data.questions"
+      v-for="(step, stepIndex) in data.questions"
+      v-if="stepIsVisible(stepIndex) || stepIndex === 0"
     >
-      STEP {{ index + 1 }}
       <h3>
         {{ step.question }}
       </h3>
@@ -21,8 +20,8 @@
           class="radio-input"
           :name="webFriendlyName(step.question)"
           :value="option.value"
-          :checked="optionIsChecked(option.value, index)"
-          @click="processAnswer(option, index)"
+          :checked="optionIsChecked(option.value, stepIndex)"
+          @click="processAnswer(option, stepIndex)"
         />
         <label
           :for="createFormElementId(step.question, option.value)"
@@ -32,9 +31,9 @@
         </label>
       </span>
       <Result
-        v-if="getResult(index) && getResult(index).result"
-        :data="getResult(index).result"
-      ></Result>
+        v-if="getResult(stepIndex) && getResult(stepIndex).result"
+        :data="getResult(stepIndex).result"
+      />
     </div>
   </div>
 </template>
@@ -56,53 +55,60 @@ export default {
     Result: Result,
   },
   mounted() {
-    this.setBlankSteps();
+    this.resetStepper();
   },
   methods: {
-    setBlankSteps() {
-      this.visibleSteps = [{ step: 0, answer: "" }];
+    resetStepper() {
+      this.visibleSteps = [{ stepIndex: 0, answer: "" }];
+      this.results = [];
     },
-    processAnswer(option, index) {
-      this.setAnswer(index, option.value);
+    processAnswer(option, stepIndex) {
+      if (!!option.value) this.setAnswer(stepIndex, option.value);
 
       if (!!option.go_to) {
+        const option_index = this.visibleSteps.filter(
+          (row) => row.stepIndex === stepIndex
+        );
+        if (!!option_index && stepIndex === option_index)
+          this.visibleSteps.splice(stepIndex, 1);
+
         this.results = [];
         this.setAnswer(option.go_to - 1);
-
-        const option_index = this.visibleSteps.filter(
-          (row) => row.step === index
-        );
-        if (!!option_index && index === option_index)
-          this.visibleSteps.splice(index, 1);
       }
 
       if (!!option.result) {
         const results_index = this.results.findIndex(
-          (row) => row.index === index
+          (row) => row.stepIndex === stepIndex
         );
 
         if (results_index !== -1) this.results.splice(results_index, 1);
-        this.results.push({ index: index, result: option.result });
+        this.results.push({ stepIndex: stepIndex, result: option.result });
       }
     },
-    stepIsVisible(index) {
-      return this.visibleSteps.filter((row) => row.step === index).length
+    stepIsVisible(stepIndex) {
+      return this.visibleSteps.filter((row) => row.stepIndex === stepIndex)
+        .length
         ? true
         : false;
     },
-    optionIsChecked(value, index) {
+    optionIsChecked(value, stepIndex) {
       return this.visibleSteps.filter(
-        (row) => row.step === index && row.answer === value
-      ).length
+        (row) => row.stepIndex === stepIndex && row.answer === value
+      ).length > 0
         ? true
         : false;
     },
-    setAnswer(step, answer) {
-      this.visibleSteps.push({ step: step, answer: answer });
+    setAnswer(index, value) {
+      const existing_index = this.visibleSteps.findIndex(
+        (row) => row.stepIndex === index
+      );
+
+      if (!!existing_index) this.visibleSteps.splice(existing_index, 1);
+      this.visibleSteps.push({ stepIndex: index, answer: value });
     },
     getResult(index) {
       return !!this.results
-        ? this.results.filter((row) => row.index === index)[0]
+        ? this.results.filter((row) => row.stepIndex === index)[0]
         : [];
     },
   },

@@ -10,14 +10,8 @@ import cleanCSS from "gulp-clean-css";
 import source from "vinyl-source-stream";
 const webpackStream = require("webpack-stream");
 
-/*
- * For small tasks you can export arrow functions
- */
 export const clean = () => del(["dist"]);
 
-/*
- * You can also declare named functions and export them as tasks
- */
 export function scripts(done) {
   ["farmers.js", "smoothscroll-polyfill.js"].map((entry) => {
     return browserify({
@@ -35,7 +29,7 @@ export function scripts(done) {
   done();
 }
 
-export function styles(done) {
+export function styles() {
   return gulp
     .src("./scss/styles.scss")
     .pipe(sass().on("error", sass.logError))
@@ -49,16 +43,14 @@ export function styles(done) {
     .pipe(gulp.dest("dist/css"));
 }
 
-export function webpack(done) {
-  gulp
+export function webpack() {
+  return gulp
     .src("./js/stepper/farmers-stepper.js")
     .pipe(webpackStream(require("./webpack.config.js")))
     .pipe(gulp.dest("./dist/js"));
-
-  done();
 }
 
-export function assets(done) {
+export function assets() {
   gulp.src(["./fonts/**/*"]).pipe(gulp.dest("./dist/fonts"));
   return gulp.src(["./img/**/*"]).pipe(gulp.dest("./dist/images"));
 }
@@ -73,7 +65,5 @@ export function build(done) {
   gulp.series(clean, gulp.parallel("styles", "scripts", "webpack", "assets"))();
   done();
 }
-/*
- * Export a default task
- */
+
 export default build;

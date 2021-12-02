@@ -1,8 +1,9 @@
+const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const path = require("path");
+const CleanTerminalPlugin = require("clean-terminal-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -18,7 +19,6 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  plugins: [new VueLoaderPlugin({ extractComments: false })],
   module: {
     rules: [
       {
@@ -57,4 +57,8 @@ module.exports = {
       }),
     ],
   },
+  plugins: [
+    new VueLoaderPlugin({ extractComments: false }),
+    new CleanTerminalPlugin({ beforeCompile: true }),
+  ],
 };
