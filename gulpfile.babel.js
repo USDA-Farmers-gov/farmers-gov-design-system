@@ -7,9 +7,9 @@ import rename from "gulp-rename";
 import buffer from "vinyl-buffer";
 import browserify from "browserify";
 import cleanCSS from "gulp-clean-css";
-import sourcemaps from "gulp-sourcemaps";
 import source from "vinyl-source-stream";
-const webpack = require("webpack-stream");
+const webpackStream = require("webpack-stream");
+
 /*
  * For small tasks you can export arrow functions
  */
@@ -28,23 +28,9 @@ export function scripts(done) {
       .pipe(source(entry))
       .pipe(rename({ extname: ".min.js" }))
       .pipe(buffer())
-      .pipe(sourcemaps.init({ loadmaps: true }))
       .pipe(uglify())
-      .pipe(sourcemaps.write("./maps"))
       .pipe(gulp.dest("./dist/js"));
   });
-
-  done();
-}
-
-export function vue(done) {
-  gulp
-    .src("./js/stepper/farmers-stepper.js")
-    // .pipe(sourcemaps.init())
-    .pipe(webpack(require("./webpack.config.js")))
-    // .pipe(rename({ extname: ".min.js" }))
-    // .pipe(sourcemaps.write("./maps"))
-    .pipe(gulp.dest("./dist/js"));
 
   done();
 }
@@ -60,8 +46,16 @@ export function styles(done) {
         suffix: ".min",
       })
     )
-    .pipe(sourcemaps.write("./maps"))
     .pipe(gulp.dest("dist/css"));
+}
+
+export function webpack(done) {
+  gulp
+    .src("./js/stepper/farmers-stepper.js")
+    .pipe(webpackStream(require("./webpack.config.js")))
+    .pipe(gulp.dest("./dist/js"));
+
+  done();
 }
 
 export function assets(done) {
@@ -72,10 +66,11 @@ export function assets(done) {
 export function watch() {
   gulp.watch("./scss/**/*.scss", styles);
   gulp.watch("./js/**/*.js", scripts);
+  gulp.watch(["./js/stepper/*.js", "./js/stepper/**/*.vue"], webpack);
 }
 
 export function build(done) {
-  gulp.series(clean, gulp.parallel("styles", "scripts", "vue", "assets"))();
+  gulp.series(clean, gulp.parallel("styles", "scripts", "webpack", "assets"))();
   done();
 }
 /*

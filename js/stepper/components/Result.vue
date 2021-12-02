@@ -13,7 +13,9 @@
             <Button :data="data.button"></Button>
           </div>
           <div class="medium-8">
-            <a href="#" class="btn tertiary">Start Over</a>
+            <a href="#" class="btn tertiary" @click="resetStepper">
+              Start Over
+            </a>
           </div>
         </div>
       </div>
@@ -22,7 +24,14 @@
       <div v-if="name === 'markup'" v-html="data.markup"></div>
     </div>
     <!-- START OVER -->
-    <a v-if="showStartOver()" href="#" class="btn tertiary">Start Over</a>
+    <a
+      v-if="showStartOver()"
+      href="#"
+      class="btn tertiary"
+      @click="resetStepper"
+    >
+      Start Over
+    </a>
   </div>
 </template>
 
@@ -40,6 +49,10 @@ export default {
   methods: {
     showStartOver() {
       return !this.data.button;
+    },
+    resetStepper() {
+      this.$parent.results = [];
+      this.$parent.setBlankSteps();
     },
   },
 };

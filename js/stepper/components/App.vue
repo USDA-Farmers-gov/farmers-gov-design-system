@@ -3,7 +3,11 @@
     <h2>{{ data.stepper_header }}</h2>
     <p>{{ data.stepper_description }}</p>
     <hr />
-    <div v-if="stepIsVisible(index)" v-for="(step, index) in data.questions">
+    <div
+      v-if="stepIsVisible(index) || index === 0"
+      v-for="(step, index) in data.questions"
+    >
+      STEP {{ index + 1 }}
       <h3>
         {{ step.question }}
       </h3>
@@ -27,7 +31,10 @@
           {{ option.value }}
         </label>
       </span>
-      <Result v-if="getResult(index)" :data="getResult(index).result"></Result>
+      <Result
+        v-if="getResult(index) && getResult(index).result"
+        :data="getResult(index).result"
+      ></Result>
     </div>
   </div>
 </template>
@@ -40,7 +47,7 @@ export default {
   props: ["data"],
   data() {
     return {
-      visibleSteps: [{ step: 1, answer: "" }],
+      visibleSteps: [],
       selected: [],
       results: [],
     };
@@ -48,41 +55,44 @@ export default {
   components: {
     Result: Result,
   },
+  mounted() {
+    this.setBlankSteps();
+  },
   methods: {
+    setBlankSteps() {
+      this.visibleSteps = [{ step: 0, answer: "" }];
+    },
     processAnswer(option, index) {
+      this.setAnswer(index, option.value);
+
       if (!!option.go_to) {
         this.results = [];
+        this.setAnswer(option.go_to - 1);
 
         const option_index = this.visibleSteps.filter(
-          (row) => row.step === index + 1
+          (row) => row.step === index
         );
-        if (!!option_index && index + 1 === option_index) {
+        if (!!option_index && index === option_index)
           this.visibleSteps.splice(index, 1);
-          this.setAnswer(option.go_to, option.text);
-        } else {
-          this.setAnswer(option.go_to);
-        }
       }
+
       if (!!option.result) {
         const results_index = this.results.findIndex(
           (row) => row.index === index
         );
 
-        if (results_index !== -1) {
-          this.results.splice(results_index, 1);
-          console.log(this.results);
-        }
+        if (results_index !== -1) this.results.splice(results_index, 1);
         this.results.push({ index: index, result: option.result });
       }
     },
     stepIsVisible(index) {
-      return this.visibleSteps.filter((row) => row.step === index + 1).length
+      return this.visibleSteps.filter((row) => row.step === index).length
         ? true
         : false;
     },
     optionIsChecked(value, index) {
       return this.visibleSteps.filter(
-        (row) => row.step === index + 1 && row.answer === value
+        (row) => row.step === index && row.answer === value
       ).length
         ? true
         : false;
