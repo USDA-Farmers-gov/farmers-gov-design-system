@@ -13,7 +13,7 @@
       <p v-if="step.description">
         {{ step.description }}
       </p>
-      <span v-for="option in step.options">
+      <div v-for="option in step.options">
         <input
           type="radio"
           :id="createFormElementId(step.question, option.value)"
@@ -29,7 +29,7 @@
         >
           {{ option.value }}
         </label>
-      </span>
+      </div>
       <Result
         v-if="getResult(stepIndex) && getResult(stepIndex).result"
         :data="getResult(stepIndex).result"
@@ -80,8 +80,8 @@ export default {
         const results_index = this.results.findIndex(
           (row) => row.stepIndex === stepIndex
         );
-
         if (results_index !== -1) this.results.splice(results_index, 1);
+
         this.results.push({ stepIndex: stepIndex, result: option.result });
       }
     },
@@ -92,18 +92,20 @@ export default {
         : false;
     },
     optionIsChecked(value, stepIndex) {
-      return this.visibleSteps.filter(
+      const answerCheck = this.visibleSteps.findIndex(
         (row) => row.stepIndex === stepIndex && row.answer === value
-      ).length > 0
-        ? true
-        : false;
+      );
+
+      return answerCheck > -1 ? true : false;
     },
     setAnswer(index, value) {
       const existing_index = this.visibleSteps.findIndex(
         (row) => row.stepIndex === index
       );
 
-      if (!!existing_index) this.visibleSteps.splice(existing_index, 1);
+      if (!!existing_index && existing_index > -1)
+        this.visibleSteps.splice(existing_index, 1);
+
       this.visibleSteps.push({ stepIndex: index, answer: value });
     },
     getResult(index) {
