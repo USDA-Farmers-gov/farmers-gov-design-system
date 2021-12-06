@@ -1,76 +1,47 @@
-.vertical-step {
-  min-height: 10rem;
-  display: flex;
-  // padding-bottom: .8rem;
-
-
-  .vertical-step-content {
-    width: 100%;
+.question-number {
+  .number-container {
+    background: #fff;
+    padding: 8px 0 8px 0;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    margin-left: 1.65rem;
-    margin-bottom: 6.4rem;
-
-    .vertical-step-header {
-      padding-left: 1rem;
-      h2 {
-        margin-top: 0;
-      }
-      p {
-        margin: 0;
-      }
-    }
-
-    .vertical-step-selections {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 2.4rem;
-      & > div {
-        // margin-bottom: 1.4rem;
-      }
-
-      .cb-img-card-top, .radio-img-card-top {
-        & > h2 {
-          margin: 0;
-          margin-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 6.5rem;
+  }
+}
+.number {
+  display: block !important;
+  z-index: 100 !important;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  background: $sweetgrass;
+  font-size: 20px;
+  font-weight: bold;
+}
+.input-row {
+  display: flex;
+  flex-direction: row;
+  &.answered {
+    .question-number {
+      position: relative;
+      &:after {
+        position: absolute;
+        height: 91%;
+        content: "\00a0";
+        width: 0.3rem;
+        background: $grey3;
+        left: 3.1rem;
+        top: 5.5rem;
+        @media (max-width: $screen--M) {
+          height: 95%;
         }
       }
-
-      .cb-img-card-bottom, .radio-img-card-bottom {
-        justify-content: flex-end;
-      }
     }
-
-    .next-btn {
-      margin: 2rem 0.8rem;
+    &:before {
+      background: none;
     }
   }
-
-  .vertical-step-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    .step-icon {
-      height: 4rem;
-      width: 4rem;
-      border-radius: 50%;
-      background: $sweetgrass;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $white;
-      font-size: 2rem;
-      line-height: 2.6rem;
-    }
-  }
-
-  &:not(:last-child) > .vertical-step-left:after {
-    content: ' ';
-    background: $grey3;
-    width: 0.2rem;
-    height: calc(100% - 5.7rem);
-    margin-bottom: .8rem;
-  }
-
 }

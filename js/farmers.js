@@ -4,9 +4,6 @@ import "./Components/radio_buttons.js";
 import "./Components/menu.js";
 import "./Components/mobile_tables.js";
 import "./Components/megamenu/tb-mega-menu-custom.1.0.0.js";
-import Stepper from "./Components/Steppers/Vertical/Stepper.js";
-
-window.Stepper = Stepper;
 
 window.is_iPad = navigator.userAgent.match(/iPad/i) != null;
 
