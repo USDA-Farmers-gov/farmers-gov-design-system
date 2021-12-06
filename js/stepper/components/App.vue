@@ -63,6 +63,11 @@ export default {
       this.results = [];
     },
     processAnswer(option, stepIndex) {
+      // remove questions if their index is higher than the one currently selected.
+      this.visibleSteps = this.visibleSteps.filter(
+        (row) => row.stepIndex <= stepIndex
+      );
+
       if (!!option.value) this.setAnswer(stepIndex, option.value);
 
       if (!!option.go_to) {
@@ -80,8 +85,8 @@ export default {
         const results_index = this.results.findIndex(
           (row) => row.stepIndex === stepIndex
         );
-        if (results_index !== -1) this.results.splice(results_index, 1);
 
+        if (results_index !== -1) this.results.splice(results_index, 1);
         this.results.push({ stepIndex: stepIndex, result: option.result });
       }
     },
