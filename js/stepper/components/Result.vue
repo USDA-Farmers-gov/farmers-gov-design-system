@@ -25,7 +25,7 @@
     <a
       v-if="showStartOver()"
       href="#"
-      class="btn tertiary"
+      class="btn tertiary no-padding-left"
       @click="resetStepper"
     >
       Start Over
