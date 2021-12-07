@@ -9,7 +9,7 @@
         v-for="(step, stepIndex) in data.questions"
         v-if="stepIsVisible(stepIndex) || stepIndex === 0"
       >
-        <div class="question-number">
+        <div class="question-number mr-2">
           <div class="number-container">
             <div class="number">{{ stepNumber(stepIndex) }}</div>
           </div>
