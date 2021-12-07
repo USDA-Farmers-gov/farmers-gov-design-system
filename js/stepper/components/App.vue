@@ -1,10 +1,11 @@
 <template>
-  <div class="row simple-stepper" :lang="data.lang_code">
+  <div class="row simple-stepper pb-12" :lang="data.lang_code">
     <div class="medium-12">
       <h2>{{ data.stepper_header }}</h2>
       <p>{{ data.stepper_description }}</p>
       <hr />
       <div
+        :id="`${stepperId}-${stepIndex}`"
         :class="rowClasses(step, stepIndex)"
         v-for="(step, stepIndex) in data.questions"
         v-if="stepIsVisible(stepIndex) || stepIndex === 0"
@@ -56,6 +57,7 @@ export default {
   props: ["data"],
   data() {
     return {
+      stepperId: this.data.element_id,
       visibleSteps: [],
       selected: [],
       results: [],
@@ -84,6 +86,9 @@ export default {
       this.visibleSteps = [{ stepIndex: 0 }];
       this.results = [];
     },
+    scrollToFirstStep() {
+      this.scrollToStep(0);
+    },
     stepIsVisible(stepIndex) {
       return this.visibleSteps.filter((row) => row.stepIndex === stepIndex)
         .length;
@@ -102,8 +107,15 @@ export default {
       );
       this.results = [];
 
-      if (!!option.value) this.setAnswer(stepIndex, option.value);
-      if (!!option.go_to) this.setAnswer(option.go_to - 1);
+      if (!!option.value) {
+        this.setAnswer(stepIndex, option.value);
+        this.scrollToStep(stepIndex + 1);
+      }
+      if (!!option.go_to) {
+        let nextStep = option.go_to - 1;
+        this.setAnswer(nextStep);
+        this.scrollToStep(nextStep);
+      }
       if (!!option.result) {
         this.results = this.results.filter(
           (row) => row.stepIndex !== stepIndex
@@ -122,6 +134,12 @@ export default {
       return !!this.results
         ? this.results.filter((row) => row.stepIndex === index)[0]
         : [];
+    },
+    scrollToStep(index) {
+      setTimeout(() => {
+        const element = document.getElementById(`${this.stepperId}-${index}`);
+        if (!!element) element.scrollIntoView({ behavior: "smooth" });
+      }, 200);
     },
   },
 };

@@ -11,7 +11,7 @@
         <div class="row">
           <div class="medium-12">
             <Button :data="data.button"></Button>
-            <a href="#" class="btn tertiary ml-4" @click="resetStepper">
+            <a class="btn tertiary ml-4" @click="goBacktoStart" tabindex="0">
               Start Over
             </a>
           </div>
@@ -24,9 +24,9 @@
     <!-- START OVER -->
     <a
       v-if="showStartOver()"
-      href="#"
       class="btn tertiary no-padding-left"
-      @click="resetStepper"
+      @click="goBacktoStart"
+      tabindex="0"
     >
       Start Over
     </a>
@@ -48,8 +48,9 @@ export default {
     showStartOver() {
       return !this.data.button;
     },
-    resetStepper() {
+    goBacktoStart() {
       this.$parent.resetStepper();
+      this.$parent.scrollToFirstStep();
     },
   },
 };
