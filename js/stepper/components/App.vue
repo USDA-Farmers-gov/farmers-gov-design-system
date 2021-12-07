@@ -109,7 +109,7 @@ export default {
 
       if (!!option.value) {
         this.setAnswer(stepIndex, option.value);
-        this.scrollToStep(stepIndex + 1);
+        if (!option.go_to) this.scrollToStep(stepIndex + 1);
       }
       if (!!option.go_to) {
         let nextStep = option.go_to - 1;
