@@ -78,3 +78,27 @@
     background-position: 9px 11px;
   }
 }
+.usa-alert {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  &.usa-alert-warning {
+    border-left: 1rem solid #fdb81e;
+  }
+}
+
+.field-content {
+  .usa-alert {
+    padding-left: 6rem;
+    background-image: url("/themes/farmers_update/img/alerts/info-icon.svg");
+    background-size: 2.4rem 2.4rem;
+    background-repeat: no-repeat;
+    background-position: 2rem 3.6rem;
+    .usa-alert-body {
+      background-image: none;
+      background-size: 0 0;
+      .usa-alert-text {
+        padding-left: 0;
+      }
+    }
+  }
+}

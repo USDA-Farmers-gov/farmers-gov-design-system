@@ -9,11 +9,9 @@
       <!-- BUTTON/START OVER LINK -->
       <div v-if="name === 'button'">
         <div class="row">
-          <div class="medium-4">
+          <div class="medium-12">
             <Button :data="data.button"></Button>
-          </div>
-          <div class="medium-8">
-            <a href="#" class="btn tertiary" @click="resetStepper">
+            <a href="#" class="btn tertiary ml-4" @click="resetStepper">
               Start Over
             </a>
           </div>

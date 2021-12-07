@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :lang="data.lang_code">
+  <div class="row simple-stepper" :lang="data.lang_code">
     <div class="medium-12">
       <h2>{{ data.stepper_header }}</h2>
       <p>{{ data.stepper_description }}</p>
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="question-and-answer">
-          <h3>
+          <h3 class="question mt-6">
             {{ step.question }}
           </h3>
           <p v-if="step.description">
