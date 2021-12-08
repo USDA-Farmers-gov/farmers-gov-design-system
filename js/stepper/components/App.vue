@@ -25,15 +25,17 @@
           <div v-for="option in step.options">
             <input
               type="radio"
-              :id="createFormElementId(step.question, option.value)"
+              :id="formOptionId(step.question, option.value)"
               class="radio-input"
-              :name="`${stepperId}-${webFriendlyName(step.question)}`"
+              :name="`${stepperId}-${stepIndex}-${webFriendlyName(
+                step.question
+              )}-${webFriendlyName(option.value)}`"
               :value="option.value"
               :checked="optionIsChecked(option.value, stepIndex)"
               @click="processAnswer(option, stepIndex)"
             />
             <label
-              :for="createFormElementId(step.question, option.value)"
+              :for="formOptionId(step.question, option.value)"
               class="radio-label"
             >
               {{ option.value }}
@@ -135,10 +137,19 @@ export default {
         ? this.results.filter((row) => row.stepIndex === index)[0]
         : [];
     },
+    formOptionId(question, value) {
+      return this.createFormElementId(
+        `${this.webFriendlyName(question).substring(
+          0,
+          30
+        )}-${this.webFriendlyName(value)}`
+      );
+    },
     scrollToStep(index) {
       setTimeout(() => {
         const element = document.getElementById(`${this.stepperId}-${index}`);
         if (!!element) element.scrollIntoView({ behavior: "smooth" });
+        if (!element) console.error("Scroll element not found!");
       }, 200);
     },
   },
