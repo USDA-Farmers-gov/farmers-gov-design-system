@@ -5,10 +5,10 @@
       <p>{{ data.stepper_description }}</p>
       <hr />
       <div
-        :id="`${stepperId}-${stepIndex}`"
-        :class="rowClasses(step, stepIndex)"
         v-for="(step, stepIndex) in data.questions"
         v-if="stepIsVisible(stepIndex) || stepIndex === 0"
+        :id="`${stepperId}-${stepIndex}`"
+        :class="elementClasses('input-row', answeredClass(step, stepIndex))"
       >
         <div class="question-number mr-2">
           <div class="number-container">
@@ -22,24 +22,15 @@
           <p v-if="step.description">
             {{ step.description }}
           </p>
-          <div v-for="option in step.options">
-            <input
-              type="radio"
+          <div v-if="step.type === 'radio'" v-for="option in step.options">
+            <RadioButton
+              :stepIndex="stepIndex"
               :id="formOptionId(step.question, option.value)"
-              class="radio-input"
-              :name="`${stepperId}-${stepIndex}-${webFriendlyName(
-                step.question
-              )}-${webFriendlyName(option.value)}`"
+              :name="formOptionName(step, option)"
               :value="option.value"
+              :option="option"
               :checked="optionIsChecked(option.value, stepIndex)"
-              @click="processAnswer(option, stepIndex)"
             />
-            <label
-              :for="formOptionId(step.question, option.value)"
-              class="radio-label"
-            >
-              {{ option.value }}
-            </label>
           </div>
           <Result
             v-if="getResult(stepIndex) && getResult(stepIndex).result"
@@ -53,6 +44,7 @@
 
 <script>
 import Result from "./Result.vue";
+import RadioButton from "./form/RadioButton.vue";
 
 export default {
   name: "App",
@@ -67,18 +59,12 @@ export default {
   },
   components: {
     Result: Result,
+    RadioButton: RadioButton,
   },
   mounted() {
     this.resetStepper();
   },
   methods: {
-    rowClasses(step, stepIndex) {
-      let classes = ["input-row"];
-      if (!!this.visibleSteps.filter((row) => row.stepIndex > stepIndex).length)
-        classes.push("answered");
-
-      return classes.join(" ");
-    },
     stepNumber(stepIndex) {
       return (
         this.visibleSteps.findIndex((row) => row.stepIndex === stepIndex) + 1
@@ -144,6 +130,16 @@ export default {
           30
         )}-${this.webFriendlyName(value)}`
       );
+    },
+    formOptionName(step, option) {
+      return `${this.stepperId}-${this.stepIndex}-${this.webFriendlyName(
+        step.question
+      )}-${this.webFriendlyName(option.value)}`;
+    },
+    answeredClass(step, stepIndex) {
+      return this.visibleSteps.filter((row) => row.stepIndex > stepIndex).length
+        ? "answered"
+        : "";
     },
     scrollToStep(index) {
       setTimeout(() => {

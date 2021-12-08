@@ -9,6 +9,11 @@ export function initialize(Vue) {
       createFormElementId(value) {
         return `${this.data.element_id}-${value}`;
       },
+      elementClasses(constant, dynamic) {
+        let classes = [constant];
+        if (!!dynamic) classes.push(dynamic);
+        return classes.join(" ");
+      },
     },
   });
 }
