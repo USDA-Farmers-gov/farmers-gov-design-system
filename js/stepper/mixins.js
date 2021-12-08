@@ -7,10 +7,13 @@ export function initialize(Vue) {
         return text.toLowerCase();
       },
       createFormElementId(question, answer) {
-        return `${this.webFriendlyName(question).substring(
-          0,
-          30
-        )}-${this.webFriendlyName(answer)}`;
+        const stepperId = this.data.element_id;
+        const questionWebFriendlyName = this.webFriendlyName(
+          question
+        ).substring(0, 30);
+        const answerWebFriendlyName = this.webFriendlyName(answer);
+
+        return `${stepperId}-${questionWebFriendlyName}-${answerWebFriendlyName}`;
       },
     },
   });

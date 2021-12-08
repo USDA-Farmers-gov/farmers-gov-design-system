@@ -27,7 +27,7 @@
               type="radio"
               :id="createFormElementId(step.question, option.value)"
               class="radio-input"
-              :name="webFriendlyName(step.question)"
+              :name="`${stepperId}-${webFriendlyName(step.question)}`"
               :value="option.value"
               :checked="optionIsChecked(option.value, stepIndex)"
               @click="processAnswer(option, stepIndex)"
