@@ -29,8 +29,8 @@ export function scripts(done) {
   done();
 }
 
-export function styles() {
-  return gulp
+export function styles(done) {
+  gulp
     .src("./scss/styles.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS())
@@ -41,18 +41,25 @@ export function styles() {
       })
     )
     .pipe(gulp.dest("dist/css"));
+  done();
 }
 
-export function webpack() {
-  return gulp
+export function webpack(done) {
+  gulp
     .src("./js/stepper/farmers-stepper.js")
     .pipe(webpackStream(require("./webpack.config.js")))
+    .on("error", function (err) {
+      console.error("WEBPACK ERROR", err);
+      this.emit("end");
+    })
     .pipe(gulp.dest("./dist/js"));
+  done();
 }
 
-export function assets() {
+export function assets(done) {
   gulp.src(["./fonts/**/*"]).pipe(gulp.dest("./dist/fonts"));
-  return gulp.src(["./img/**/*"]).pipe(gulp.dest("./dist/images"));
+  gulp.src(["./img/**/*"]).pipe(gulp.dest("./dist/images"));
+  done();
 }
 
 export function watch() {
