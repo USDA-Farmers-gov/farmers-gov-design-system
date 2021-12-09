@@ -78,3 +78,10 @@
     background-position: 9px 11px;
   }
 }
+.usa-alert {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  &.usa-alert-warning {
+    border-left: 1rem solid #fdb81e;
+  }
+}

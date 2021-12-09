@@ -23,6 +23,14 @@ input.btn {
   text-transform: uppercase;
   width: auto;
 
+  &.no-padding-right {
+    padding-right: 0 !important;
+  }
+
+  &.no-padding-left {
+    padding-left: 0 !important;
+  }
+
   @media (max-width: $screen--S) {
     width: 100%;
   }
