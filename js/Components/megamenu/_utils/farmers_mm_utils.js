@@ -62,13 +62,20 @@ export function setupFirstLevelLinks() {
 
     processSubmenuBanner(item);
     const link = item.querySelector("a");
+    const activeLinkClass = "mm-active";
 
-    if (link) {
-      if (
-        link.getAttribute("data-label").split("/")[1] ===
-        window.location.pathname.split("/")[1]
-      )
-        link.classList.add("mm-active");
+    if (
+      link.getAttribute("data-label") === "/" &&
+      window.location.pathname === "/"
+    )
+      link.classList.add(activeLinkClass);
+
+    if (link.getAttribute("data-label") !== "/") {
+      const dataLabelLength = link.getAttribute("data-label").length;
+      const anchorLink = window.location.pathname.substring(0, dataLabelLength);
+
+      if (anchorLink === link.getAttribute("data-label"))
+        link.classList.add(activeLinkClass);
 
       if (!link.classList.contains("page-link")) {
         if (!item.querySelector(".sidemenu")) item.classList.add("no-sidemenu");
