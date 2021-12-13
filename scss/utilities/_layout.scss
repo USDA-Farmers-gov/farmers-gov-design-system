@@ -1,3 +1,28 @@
+// Flex
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+  @media (max-width: $screen--M) {
+    flex-direction: column;
+  }
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+  @media (max-width: $screen--M) {
+    flex-direction: column-reverse;
+  }
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex-no-resize {
+  flex: 0 0 auto;
+}
 .flex-column-reverse-mobile-l {
   @media (max-width: $screen--L) {
     flex-direction: column-reverse !important;
@@ -30,5 +55,13 @@
 .flex-row-reverse-mobile-s {
   @media (max-width: $screen--S) {
     flex-direction: row-reverse !important;
+  }
+}
+
+// Lists
+ol,
+ul {
+  &.no-bullets {
+    list-style-type: none;
   }
 }

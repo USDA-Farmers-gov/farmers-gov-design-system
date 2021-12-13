@@ -48,6 +48,9 @@
   &.phone {
     background-image: image("Phone.svg");
   }
+  &.globe {
+    background-image: image("globe.svg");
+  }
 }
 .header-icon {
   display: flex;
