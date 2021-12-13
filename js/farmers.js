@@ -1,9 +1,9 @@
-import "./Components/accordion.js";
-import "./Components/checkbox.js";
-import "./Components/radio_buttons.js";
-import "./Components/menu.js";
-import "./Components/mobile_tables.js";
-import "./Components/megamenu/tb-mega-menu-custom.1.0.0.js";
+import "./Components/accordion";
+import "./Components/checkbox";
+import "./Components/radio_buttons";
+import "./Components/menu";
+import "./Components/mobile_tables";
+import "./Components/megamenu/tb-mega-menu-custom.1.0.0";
 
 window.is_iPad = navigator.userAgent.match(/iPad/i) != null;
 

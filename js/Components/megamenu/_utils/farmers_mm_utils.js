@@ -56,21 +56,24 @@ export function setupFirstLevelLinks() {
   const firstLevelSelector = ".tb-megamenu-item.level-1";
   const firstLevelOpenSelector = `${firstLevelSelector}.open`;
   const firstLevel = document.querySelectorAll(firstLevelSelector);
+  const languages = require("../../../constants").languages;
+  const langHomePages = languages.map((row) =>
+    row.lang === "en" ? "/" : `/${row.lang}`
+  );
 
   firstLevel.forEach((item) => {
     setPanelMinHeight(item);
-
     processSubmenuBanner(item);
     const link = item.querySelector("a");
     const activeLinkClass = "mm-active";
 
     if (
-      link.getAttribute("data-label") === "/" &&
-      window.location.pathname === "/"
+      langHomePages.includes(link.getAttribute("data-label")) &&
+      langHomePages.includes(window.location.pathname)
     )
       link.classList.add(activeLinkClass);
 
-    if (link.getAttribute("data-label") !== "/") {
+    if (!langHomePages.includes(link.getAttribute("data-label"))) {
       const dataLabelLength = link.getAttribute("data-label").length;
       const anchorLink = window.location.pathname.substring(0, dataLabelLength);
 
