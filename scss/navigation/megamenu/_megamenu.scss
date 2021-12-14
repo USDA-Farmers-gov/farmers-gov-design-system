@@ -280,7 +280,7 @@ body {
         align-items: center;
         margin: 0 1.2rem;
         @media screen and (max-width: $screen--L) {
-          text-align: center;
+          // text-align: center;
         }
         top: -$nav-link-top-spacing;
         .mm-top-level-title {
