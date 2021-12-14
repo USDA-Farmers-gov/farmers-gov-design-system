@@ -278,7 +278,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 1.6rem;
+        margin: 0 1.2rem;
+        @media screen and (max-width: $screen--L) {
+          text-align: center;
+        }
         top: -$nav-link-top-spacing;
         .mm-top-level-title {
           padding-top: 0.3rem;
