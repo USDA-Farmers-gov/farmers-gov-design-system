@@ -39,7 +39,8 @@ button {
   outline-offset: 0.5rem;
 }
 
-.usa-sr-only {
+.usa-sr-only,
+.sr-only {
   position: absolute;
   left: -999em;
 }
