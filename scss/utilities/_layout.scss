@@ -1,61 +1,70 @@
-// Flex
-.flex {
-  display: flex;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
-.flex-column {
-  flex-direction: column;
-}
-.flex-column-reverse {
-  flex-direction: column-reverse;
-}
-.flex-no-resize {
-  flex: 0 0 auto;
-}
-.flex-column-reverse-mobile-l {
-  @media (max-width: $screen--L) {
-    flex-direction: column-reverse !important;
-  }
-}
-.flex-column-reverse-mobile-m {
-  @media (max-width: $screen--M) {
-    flex-direction: column-reverse !important;
-  }
-}
-.flex-column-reverse-mobile,
-.flex-column-reverse-mobile-s {
-  @media (max-width: $screen--S) {
-    flex-direction: column-reverse !important;
-  }
-}
-.flex-row-reverse-mobile,
-.flex-row-reverse-mobile-l {
-  @media (max-width: $screen--L) {
-    flex-direction: row-reverse !important;
-  }
-}
-.flex-row-reverse-mobile,
-.flex-row-reverse-mobile-m {
-  @media (max-width: $screen--M) {
-    flex-direction: row-reverse !important;
-  }
-}
-.flex-row-reverse-mobile,
-.flex-row-reverse-mobile-s {
-  @media (max-width: $screen--S) {
-    flex-direction: row-reverse !important;
-  }
-}
+@import "flex";
+$textAlign: left, right, center, justify;
+$positions: static, fixed, absolute, relative, sticky;
 
-// Lists
+@each $position in $positions {
+  .#{$position} {
+    position: #{$position};
+  }
+}
 ol,
 ul {
   &.no-bullets {
     list-style-type: none;
   }
+}
+.align-right {
+  margin-left: auto;
+}
+.align-left {
+  margin-right: auto;
+}
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-clip {
+  overflow: clip;
+}
+.overflow-visible {
+  overflow: visible;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.overflow-x-clip {
+  overflow-x: clip;
+}
+.overflow-y-clip {
+  overflow-y: clip;
+}
+.overflow-x-visible {
+  overflow-x: visible;
+}
+.overflow-y-visible {
+  overflow-y: visible;
+}
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
 }

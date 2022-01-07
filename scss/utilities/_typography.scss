@@ -1,0 +1,55 @@
+$textAlign: left, right, center, justify;
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.normal-case {
+  text-transform: none;
+}
+@each $align in $textAlign {
+  .text-#{$align} {
+    text-align: #{$align};
+  }
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+.text-underline {
+  text-decoration-line: underline;
+}
+.text-no-underline {
+  text-decoration-line: none;
+}
+.text-overline {
+  text-decoration-line: overline;
+}
+.text-line-through {
+  text-decoration-line: line-through;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+.word-break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.word-break-mid-word {
+  overflow-wrap: break-word;
+}
