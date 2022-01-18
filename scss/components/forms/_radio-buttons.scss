@@ -114,8 +114,8 @@ label.radio-card-label {
 }
 
 input.radio-card-input {
-  display: none;
-
+  height: 0;
+  width: 0;
   &:checked + .radio-icon {
     background-color: $sweetgrass;
     border: 0.2rem solid $white;
