@@ -1,0 +1,14 @@
+label.radio-button-label,
+label.checkbox-label {
+  width: fit-content;
+  margin-right: 1.25rem;
+  &:focus-within {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0.3rem;
+    outline-offset: 0.5rem;
+  }
+}
+
+@include radio-button-input(2.4rem, $grey4, $heritage);
+@include checkbox-input(2.4rem, $grey4, $heritage);
