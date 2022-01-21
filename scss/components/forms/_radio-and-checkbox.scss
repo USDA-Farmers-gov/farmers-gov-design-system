@@ -2,6 +2,9 @@ label.radio-button-label,
 label.checkbox-label {
   width: fit-content;
   margin-right: 1.25rem;
+  span {
+    margin-top: 0.1rem;
+  }
   &:focus-within {
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
