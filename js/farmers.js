@@ -1,6 +1,4 @@
 import "./Components/accordion";
-import "./Components/checkbox";
-import "./Components/radio_buttons";
 import "./Components/menu";
 import "./Components/mobile_tables";
 import "./Components/megamenu/tb-mega-menu-custom.1.0.0";
