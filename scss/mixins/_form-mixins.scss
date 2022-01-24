@@ -19,8 +19,8 @@
   }
 }
 
-@mixin checkbox-input($dimension, $input-border-color, $checked-color) {
-  .checkbox-input {
+@mixin checkbox-v2-input($dimension, $input-border-color, $checked-color) {
+  .checkbox-v2-input {
     border-radius: initial;
     flex: 0 0 auto;
     width: $dimension;
