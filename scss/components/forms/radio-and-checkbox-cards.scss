@@ -91,8 +91,8 @@
     margin-right: 0;
   }
 
-  @include checkbox-input(3.2rem, $sweetgrass, $sweetgrass);
-  .checkbox-input {
+  @include checkbox-v2-input(3.2rem, $sweetgrass, $sweetgrass);
+  .checkbox-v2-input {
     margin-right: 0;
   }
 }

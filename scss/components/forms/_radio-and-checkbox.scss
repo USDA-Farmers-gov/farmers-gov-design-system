@@ -14,4 +14,4 @@ label.checkbox-label {
 }
 
 @include radio-button-input(2.4rem, $grey4, $heritage);
-@include checkbox-input(2.4rem, $grey4, $heritage);
+@include checkbox-v2-input(2.4rem, $grey4, $heritage);
