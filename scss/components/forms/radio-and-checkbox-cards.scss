@@ -45,9 +45,12 @@
 
   &.xl {
     flex-direction: column;
-    max-width: 31rem;
+    max-width: unset;
+    width: 31rem;
     height: 18rem;
     padding: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
 
     .radio-button-card-text {
       display: flex;
@@ -69,7 +72,11 @@
     }
     .radio-button-input {
       position: absolute;
-      bottom: 20;
+      right: 20px;
+      bottom: 20px;
+      &:focus {
+        outline: none;
+      }
     }
   }
   &.image {
