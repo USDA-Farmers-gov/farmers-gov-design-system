@@ -21,12 +21,6 @@
     border: 0.2rem solid $sweetgrass;
     cursor: pointer;
   }
-  &:focus {
-    outline-color: #3e94cf;
-    outline-style: auto;
-    outline-width: 0.3rem;
-    outline-offset: 0.5rem;
-  }
 
   .radio-button-card-bottom,
   .checkbox-card-bottom {
@@ -74,9 +68,6 @@
       position: absolute;
       right: 20px;
       bottom: 20px;
-      &:focus {
-        outline: none;
-      }
     }
   }
   &.image {
@@ -87,7 +78,7 @@
     border: 0.2rem solid $sweetgrass;
   }
   &:focus-within {
-    outline-color: -webkit-focus-ring-color;
+    outline-color: #3e94cf;
     outline-style: auto;
     outline-width: 0.3rem;
     outline-offset: 0.5rem;

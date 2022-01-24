@@ -15,6 +15,11 @@
       background-color: $checked-color;
       border: 0.2rem solid $white;
       box-shadow: 0 0 0 0.2rem $checked-color;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
@@ -37,6 +42,11 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-image: image("correct8.svg");
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }
