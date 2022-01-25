@@ -24,8 +24,8 @@
   }
 }
 
-@mixin checkbox-v2-input($dimension, $input-border-color, $checked-color) {
-  .checkbox-v2-input {
+@mixin cb-input($dimension, $input-border-color, $checked-color) {
+  .cb-input {
     border-radius: initial;
     flex: 0 0 auto;
     width: $dimension;
@@ -49,4 +49,11 @@
       outline: none;
     }
   }
+}
+
+@mixin form-focus-outline() {
+  outline-color: #3e94cf;
+  outline-style: auto;
+  outline-width: 0.3rem;
+  outline-offset: 0.5rem;
 }

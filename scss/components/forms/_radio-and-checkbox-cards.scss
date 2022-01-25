@@ -1,5 +1,5 @@
 .radio-button-card,
-.checkbox-card {
+.cb-card {
   display: flex;
   position: relative;
   max-width: 24rem;
@@ -23,7 +23,7 @@
   }
 
   .radio-button-card-bottom,
-  .checkbox-card-bottom {
+  .cb-card-bottom {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -89,8 +89,8 @@
     margin-right: 0;
   }
 
-  @include checkbox-v2-input(3.2rem, $sweetgrass, $sweetgrass);
-  .checkbox-v2-input {
+  @include cb-input(3.2rem, $sweetgrass, $sweetgrass);
+  .cb-input {
     margin-right: 0;
   }
 }
