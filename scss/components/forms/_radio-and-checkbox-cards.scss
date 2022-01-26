@@ -16,6 +16,10 @@
   border-radius: 0.2rem;
   appearance: none;
   -webkit-appearance: none;
+  @media (max-width: $screen--S) {
+    max-width: 100%;
+    width: 100%;
+  }
 
   &:hover {
     border: 0.2rem solid $sweetgrass;
