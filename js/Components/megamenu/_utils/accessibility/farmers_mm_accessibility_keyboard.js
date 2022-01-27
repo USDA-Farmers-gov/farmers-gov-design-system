@@ -2,7 +2,7 @@
 // anything else for accessiblity should go in farmers_mm_accessibility.js
 
 import * as mm_utils from "../farmers_mm_utils";
-import * as general_utils from "../../../../_utils/general_utils";
+import * as general_utils from "../../../../_utils/_general_utils";
 
 const plainLinkHoverClass = "sidemenu-hover-plain";
 const topLevelLinks = document.querySelectorAll(

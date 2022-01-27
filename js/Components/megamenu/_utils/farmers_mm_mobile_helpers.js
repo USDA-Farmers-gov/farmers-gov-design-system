@@ -1,4 +1,4 @@
-import * as general_utils from "../../../_utils/general_utils";
+import * as general_utils from "../../../_utils/_general_utils";
 
 export function setupFirstLevelTab(firstLevel, categoryName, linksContainer) {
   const sectionHeader = firstLevel.querySelector("a:first-of-type");
