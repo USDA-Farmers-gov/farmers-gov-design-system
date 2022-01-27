@@ -1,5 +1,5 @@
 import * as mm_mobile_utils from "./_utils/farmers_mm_mobile_utils";
-import * as general_utils from "../../_utils/_general_utils";
+import * as general_utils from "../../_utils/general_utils";
 
 export const megamenu_mobile = function () {
   mm_mobile_utils.processMobileSections();
