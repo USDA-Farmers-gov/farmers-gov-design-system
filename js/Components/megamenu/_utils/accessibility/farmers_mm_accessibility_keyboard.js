@@ -58,11 +58,10 @@ export function homeEnd(event) {
 
 export function topLevelArrows(direction) {
   const focusedLink = document.querySelector(".tb-megamenu .level-1 a:focus");
-  const linkTitle = focusedLink.querySelector(".mm-top-level-title");
 
-  if (focusedLink) {
+  if (!!focusedLink) {
     const linkTitle = focusedLink.querySelector(".mm-top-level-title");
-    if (linkTitle) {
+    if (!!linkTitle) {
       const index = firstLevelArray.indexOf(
         document.querySelector(`li[data-label="${linkTitle.textContent}"]`)
       );

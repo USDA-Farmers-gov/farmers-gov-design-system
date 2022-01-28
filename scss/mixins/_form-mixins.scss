@@ -1,0 +1,59 @@
+@mixin radio-button-input($dimension, $input-border-color, $checked-color) {
+  .radio-button-input {
+    flex: 0 0 auto;
+    width: $dimension;
+    height: $dimension;
+    margin: 0.2rem 0.75rem 0.3rem 0;
+    border: 0.2rem solid $input-border-color;
+    background-color: $white;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:checked,
+    &.checked {
+      background-color: $checked-color;
+      border: 0.2rem solid $white;
+      box-shadow: 0 0 0 0.2rem $checked-color;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin cb-input($dimension, $input-border-color, $checked-color) {
+  .cb-input {
+    border-radius: initial;
+    flex: 0 0 auto;
+    width: $dimension;
+    height: $dimension;
+    margin: 0.2rem 0.75rem 0.3rem 0;
+    border: 0.2rem solid $input-border-color;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:checked,
+    &.checked {
+      background-color: $checked-color;
+      border: 0.2rem solid $checked-color;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: image("correct8.svg");
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin form-focus-outline() {
+  outline-color: #3e94cf;
+  outline-style: auto;
+  outline-width: 0.3rem;
+  outline-offset: 0.5rem;
+}
