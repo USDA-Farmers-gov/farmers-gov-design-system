@@ -104,7 +104,8 @@
 
   @include cb-input(3.2rem, $sweetgrass, $sweetgrass);
   .cb-input {
-    margin-right: 0;
+    margin-right: -0.1rem;
+    margin-bottom: 0.1rem;
   }
 }
 .input-card-image {
