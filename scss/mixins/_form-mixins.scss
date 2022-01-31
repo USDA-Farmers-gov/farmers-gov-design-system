@@ -21,6 +21,16 @@
     &:focus {
       outline: none;
     }
+
+    &:disabled,
+    &.disabled {
+      cursor: auto;
+      border: 0.2rem solid $grey3;
+      background: #f7f7f7;
+      &:hover {
+        cursor: auto;
+      }
+    }
   }
 }
 
@@ -47,6 +57,15 @@
     }
     &:focus {
       outline: none;
+    }
+    &:disabled,
+    &.disabled {
+      cursor: auto;
+      border: 0.2rem solid $grey3;
+      background: #f7f7f7;
+      &:hover {
+        cursor: auto;
+      }
     }
   }
 }

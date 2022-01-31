@@ -10,6 +10,13 @@ label.cb-label {
   &:focus-within {
     @include form-focus-outline;
   }
+  &.disabled {
+    color: $grey3;
+    background-color: unset !important;
+    &:hover {
+      cursor: auto;
+    }
+  }
 }
 
 @include radio-button-input(2.4rem, $grey4, $heritage);
