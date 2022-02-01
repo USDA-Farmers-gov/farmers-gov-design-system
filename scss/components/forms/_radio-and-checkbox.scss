@@ -7,6 +7,9 @@ label.cb-label {
   span {
     margin-top: 0.1rem;
   }
+  &:hover {
+    cursor: pointer;
+  }
   &:focus-within {
     @include form-focus-outline;
   }
