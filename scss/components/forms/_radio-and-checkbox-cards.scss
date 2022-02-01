@@ -59,6 +59,10 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
 
+    @media (max-width: $screen--S) {
+      width: 100%;
+    }
+
     .radio-button-card-text {
       display: flex;
       position: relative;
