@@ -19,7 +19,7 @@
           <h3 class="question mt-6">
             {{ step.question }}
           </h3>
-          <div v-if="step.description" v-html="step.description" />
+          <div v-html="step.description" />
 
           <fieldset class="m-0 p-0 no-border" v-if="step.type === 'radio'">
             <legend class="sr-only">{{ step.question }}</legend>
