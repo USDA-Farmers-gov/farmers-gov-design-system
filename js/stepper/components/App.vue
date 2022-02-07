@@ -28,7 +28,7 @@
               :key="index"
               :stepIndex="stepIndex"
               :id="formOptionId(step.question, option.value)"
-              :name="formOptionName(step, option)"
+              :name="formOptionName(stepIndex, option)"
               :value="option.value"
               :text="option.text"
               :option="option"
@@ -134,10 +134,8 @@ export default {
         )}-${this.webFriendlyName(value)}`
       );
     },
-    formOptionName(step, option) {
-      return `${this.stepperId}-${this.stepIndex}-${this.webFriendlyName(
-        step.question
-      )}`;
+    formOptionName(stepIndex) {
+      return `${this.stepperId}-${stepIndex + 1}`;
     },
     answeredClass(step, stepIndex) {
       return this.visibleSteps.filter((row) => row.stepIndex > stepIndex).length
