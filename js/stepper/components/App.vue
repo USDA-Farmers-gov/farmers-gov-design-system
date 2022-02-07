@@ -19,15 +19,16 @@
           <h3 class="question mt-6">
             {{ step.question }}
           </h3>
-          <p v-if="step.description">
-            {{ step.description }}
-          </p>
+
+          <div v-html="step.description" />
+
           <div v-if="step.type === 'radio'" v-for="option in step.options">
             <RadioButton
               :stepIndex="stepIndex"
               :id="formOptionId(step.question, option.value)"
               :name="formOptionName(step, option)"
               :value="option.value"
+              :text="option.text"
               :option="option"
               :checked="optionIsChecked(option.value, stepIndex)"
             />

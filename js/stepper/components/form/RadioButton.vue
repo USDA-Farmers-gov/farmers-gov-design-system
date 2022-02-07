@@ -10,7 +10,7 @@
       @click="$parent.processAnswer(option, stepIndex)"
     />
     <label :for="id" class="radio-label">
-      {{ value }}
+      {{ text }}
     </label>
   </Fragment>
 </template>
@@ -18,7 +18,7 @@
 import { Fragment } from "vue-fragment";
 export default {
   name: "RadioButton",
-  props: ["stepIndex", "id", "option", "name", "value", "checked"],
+  props: ["stepIndex", "id", "option", "name", "value", "text", "checked"],
   components: {
     Fragment: Fragment,
   },

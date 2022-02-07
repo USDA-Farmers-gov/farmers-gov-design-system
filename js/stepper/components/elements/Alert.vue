@@ -7,9 +7,7 @@
             {{ data.header }}
             {{ data.type }}
           </h2>
-          <p>
-            {{ data.content }}
-          </p>
+          <div v-html="data.content" />
         </div>
       </div>
     </div>
@@ -23,10 +21,12 @@ export default {
     setAlertClasses() {
       let classes = "usa-alert";
 
-      if (this.data.type === "warning")
-        classes = `${classes} usa-alert-warning`;
       if (this.data.type === "success")
         classes = `${classes} usa-alert-success`;
+      if (this.data.type === "info") classes = `${classes} usa-alert-info`;
+      if (this.data.type === "error") classes = `${classes} usa-alert-error`;
+      if (this.data.type === "warning")
+        classes = `${classes} usa-alert-warning`;
 
       return classes;
     },
