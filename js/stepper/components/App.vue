@@ -1,8 +1,8 @@
 <template>
   <div class="row simple-stepper pb-12" :lang="data.lang_code">
     <div class="medium-12">
-      <h2>{{ data.stepper_header }}</h2>
-      <p>{{ data.stepper_description }}</p>
+      <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
+      <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
       <hr />
       <div
         v-for="(step, stepIndex) in data.questions"
@@ -20,7 +20,7 @@
             {{ step.question }}
           </h3>
 
-          <div v-html="step.description" />
+          <div v-if="step.description" v-html="step.description" />
 
           <div v-if="step.type === 'radio'" v-for="option in step.options">
             <RadioButton
