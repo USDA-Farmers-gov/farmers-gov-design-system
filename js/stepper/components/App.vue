@@ -19,11 +19,13 @@
           <h3 class="question mt-6">
             {{ step.question }}
           </h3>
-
           <div v-if="step.description" v-html="step.description" />
 
-          <div v-if="step.type === 'radio'" v-for="option in step.options">
+          <fieldset class="m-0 p-0 no-border" v-if="step.type === 'radio'">
+            <legend class="sr-only">{{ step.question }}</legend>
             <RadioButton
+              v-for="(option, index) in step.options"
+              :key="index"
               :stepIndex="stepIndex"
               :id="formOptionId(step.question, option.value)"
               :name="formOptionName(step, option)"
@@ -32,7 +34,7 @@
               :option="option"
               :checked="optionIsChecked(option.value, stepIndex)"
             />
-          </div>
+          </fieldset>
           <Result
             v-if="getResult(stepIndex) && getResult(stepIndex).result"
             :data="getResult(stepIndex).result"
@@ -135,7 +137,7 @@ export default {
     formOptionName(step, option) {
       return `${this.stepperId}-${this.stepIndex}-${this.webFriendlyName(
         step.question
-      )}-${this.webFriendlyName(option.value)}`;
+      )}`;
     },
     answeredClass(step, stepIndex) {
       return this.visibleSteps.filter((row) => row.stepIndex > stepIndex).length

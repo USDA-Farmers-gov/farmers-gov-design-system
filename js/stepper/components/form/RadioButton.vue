@@ -1,16 +1,15 @@
 <template>
   <Fragment>
-    <input
-      type="radio"
-      :id="id"
-      class="radio-input"
-      :name="name"
-      :value="value"
-      :checked="checked"
-      @click="$parent.processAnswer(option, stepIndex)"
-    />
-    <label :for="id" class="radio-label">
-      {{ text }}
+    <label class="radio-button-label flex">
+      <input
+        type="radio"
+        class="radio-button-input"
+        :name="name"
+        :value="value"
+        :checked="checked"
+        @click="$parent.processAnswer(option, stepIndex)"
+      />
+      <span>{{ text }}</span>
     </label>
   </Fragment>
 </template>
