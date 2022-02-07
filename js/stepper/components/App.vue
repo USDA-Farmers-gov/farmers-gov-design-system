@@ -143,11 +143,13 @@ export default {
         : "";
     },
     scrollToStep(index) {
-      setTimeout(() => {
-        const element = document.getElementById(`${this.stepperId}-${index}`);
-        if (!!element) element.scrollIntoView({ behavior: "smooth" });
-        if (!element) console.error("Scroll element not found!");
-      }, 200);
+      if (index !== this.data.questions.length) {
+        setTimeout(() => {
+          const element = document.getElementById(`${this.stepperId}-${index}`);
+          if (!!element) element.scrollIntoView({ behavior: "smooth" });
+          if (!element) console.error("Scroll element not found!");
+        }, 200);
+      }
     },
   },
 };
