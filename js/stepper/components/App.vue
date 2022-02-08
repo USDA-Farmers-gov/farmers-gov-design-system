@@ -1,5 +1,10 @@
 <template>
-  <div class="row simple-stepper pb-12" :lang="data.lang_code">
+  <div
+    :id="`${stepperId}`"
+    class="row simple-stepper pb-12"
+    :lang="data.lang_code"
+    ref="thisStepper"
+  >
     <div class="medium-12">
       <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
       <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
@@ -7,7 +12,6 @@
       <div
         v-for="(step, stepIndex) in data.questions"
         v-if="stepIsVisible(stepIndex) || stepIndex === 0"
-        :id="`${stepperId}-${stepIndex}`"
         :class="elementClasses('input-row', answeredClass(step, stepIndex))"
       >
         <div class="question-number mr-2">
@@ -21,7 +25,11 @@
           </h3>
           <div v-html="step.description" />
 
-          <fieldset class="m-0 p-0 no-border" v-if="step.type === 'radio'">
+          <fieldset
+            class="m-0 p-0 no-border"
+            v-if="step.type === 'radio'"
+            @click="showPrintLink()"
+          >
             <legend class="sr-only">{{ step.question }}</legend>
             <RadioButton
               v-for="(option, index) in step.options"
@@ -41,7 +49,21 @@
           />
         </div>
       </div>
+      <a href="#" class="btn outline print-btn mt-6" @click="printStepper">
+        Print Results
+      </a>
     </div>
+    <iframe
+      aria-hidden="true"
+      title="print_frame"
+      name="print_frame"
+      width="0"
+      height="0"
+      frameborder="0"
+      src="about:blank"
+      tabindex="-1"
+      style="visibility: hidden"
+    />
   </div>
 </template>
 
@@ -58,6 +80,7 @@ export default {
       visibleSteps: [],
       selected: [],
       results: [],
+      printLink: false,
     };
   },
   components: {
@@ -126,6 +149,16 @@ export default {
         ? this.results.filter((row) => row.stepIndex === index)[0]
         : [];
     },
+    showPrintLink() {
+      if (
+        this.visibleSteps.length ===
+        this.visibleSteps.filter((row) => row.answer).length
+      ) {
+        this.printLink = true;
+      } else {
+        this.printLink = false;
+      }
+    },
     formOptionId(question, value) {
       return this.createFormElementId(
         `${this.webFriendlyName(question).substring(
@@ -147,9 +180,21 @@ export default {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
-          if (!element) console.error("Scroll element not found!");
+          // if (!element) console.error("Scroll element not found!");
         }, 200);
       }
+    },
+    printStepper() {
+      window.frames["print_frame"].document.head.innerHTML =
+        '<link href="farmers-gov-design-system/dist/css/main.min.css" rel="stylesheet" type="text/css"><link href="farmers-gov-design-system/dist/css/print.min.css" rel="stylesheet" type="text/css">';
+      window.frames["print_frame"].document.body.innerHTML =
+        this.$refs.thisStepper.innerHTML;
+
+      setTimeout(this.printWindow, 250);
+    },
+    printWindow() {
+      window.frames["print_frame"].window.focus();
+      window.frames["print_frame"].window.print();
     },
   },
 };

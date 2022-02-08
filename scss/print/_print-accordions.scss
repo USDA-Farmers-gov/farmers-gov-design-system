@@ -1,0 +1,67 @@
+.Accordion {
+  [class*="medium-"] {
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .box-accordion {
+    width: 100%;
+  }
+}
+.Accordion-panel,
+.card-accordion,
+.Card-Accordion,
+.card-accordion-content {
+  display: block;
+  width: 100% !important;
+  height: fit-content !important;
+  height: -moz-fit-content !important;
+  margin-left: 0 !important;
+}
+#print-footer-container {
+  display: block;
+  margin-top: 2rem;
+  overflow: hidden;
+  #print-footer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    width: 100%;
+    padding-top: 1rem;
+    .print-footer-text {
+      padding-right: 3rem;
+      width: 100%;
+      .print-footer-notice {
+        padding-bottom: 1rem;
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .print-footer-image {
+      position: relative;
+      width: 10rem;
+      flex-shrink: 0;
+      img {
+        position: absolute;
+        bottom: 0;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .print-footer-equal-oppurtunity {
+      display: flex;
+      padding-top: 0.6rem;
+      border-top: 1px solid #bbb;
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+      }
+      .print-footer-date {
+        margin-left: auto;
+      }
+    }
+  }
+}

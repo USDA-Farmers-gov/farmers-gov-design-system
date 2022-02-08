@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+.background-image {
+  min-height: 200px !important;
+  width: 1080px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+* {
+  break-after: auto;
+}
+.card {
+  break-after: auto;
+  margin-bottom: 3rem;
+}
+#print-header {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $asphalt;
+  .agency-identity {
+    display: flex;
+    flex-direction: column;
+  }
+}
