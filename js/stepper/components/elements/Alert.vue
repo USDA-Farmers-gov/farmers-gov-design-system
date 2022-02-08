@@ -5,7 +5,6 @@
         <div class="usa-alert-text">
           <h2 class="usa-alert-heading headline-4">
             {{ data.header }}
-            {{ data.type }}
           </h2>
           <div v-html="data.content" />
         </div>
