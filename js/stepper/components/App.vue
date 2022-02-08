@@ -147,7 +147,7 @@ export default {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
-          if (!element) console.error("Scroll element not found!");
+          // if (!element) console.error("Scroll element not found!");
         }, 200);
       }
     },
