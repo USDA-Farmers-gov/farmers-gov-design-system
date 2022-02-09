@@ -49,7 +49,11 @@
           />
         </div>
       </div>
-      <a href="#" class="btn outline print-btn mt-6" @click="printStepper">
+      <a
+        v-if="printLink"
+        class="btn outline print-btn mt-6"
+        @click="printStepper"
+      >
         Print Results
       </a>
     </div>
@@ -60,7 +64,6 @@
       width="0"
       height="0"
       frameborder="0"
-      src="about:blank"
       tabindex="-1"
       style="visibility: hidden"
     />
@@ -185,10 +188,11 @@ export default {
       }
     },
     printStepper() {
-      window.frames["print_frame"].document.head.innerHTML =
-        '<link href="farmers-gov-design-system/dist/css/main.min.css" rel="stylesheet" type="text/css"><link href="farmers-gov-design-system/dist/css/print.min.css" rel="stylesheet" type="text/css">';
+      window.frames[
+        "print_frame"
+      ].document.head.innerHTML = `<link href="farmers-gov-design-system/dist/css/main.min.css" rel="stylesheet" type="text/css">`;
       window.frames["print_frame"].document.body.innerHTML =
-        this.$refs.thisStepper.innerHTML;
+        this.$refs.thisStepper.outerHTML;
 
       setTimeout(this.printWindow, 250);
     },

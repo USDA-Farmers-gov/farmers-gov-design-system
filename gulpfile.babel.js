@@ -31,7 +31,7 @@ export function scripts(done) {
 
 export function styles(done) {
   gulp
-    .src(["./scss/main.scss", "./scss/print.scss"])
+    .src("./scss/main.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS())
     .pipe(

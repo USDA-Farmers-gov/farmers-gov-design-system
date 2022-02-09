@@ -1,12 +1,11 @@
 <template>
   <Fragment>
-    <label class="radio-button-label flex">
+    <label :class="labelClasses()">
       <input
         type="radio"
         class="radio-button-input"
         :name="name"
         :value="value"
-        :checked="checked"
         @click="$parent.processAnswer(option, stepIndex)"
       />
       <span>{{ text }}</span>
@@ -20,6 +19,13 @@ export default {
   props: ["stepIndex", "id", "option", "name", "value", "text", "checked"],
   components: {
     Fragment: Fragment,
+  },
+  methods: {
+    labelClasses() {
+      let classes = "radio-button-label flex";
+      if (this.checked) classes = `${classes} checked`;
+      return classes;
+    },
   },
 };
 </script>
