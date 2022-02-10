@@ -97,7 +97,7 @@ export default {
 
     let cssMarkup = "";
 
-    if (!!!!this.options && !!this.options.print) {
+    if (!!this.options && !!this.options.print) {
       const cssFiles = this.options.print.printCssFiles;
       cssFiles.forEach((file) => {
         cssMarkup = `${cssMarkup}<link href="${file}" rel="stylesheet" type="text/css">`;
