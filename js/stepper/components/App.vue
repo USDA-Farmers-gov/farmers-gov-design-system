@@ -95,15 +95,17 @@ export default {
   mounted() {
     this.resetStepper();
 
-    let cssMarkup = "";
+    let cssMarkup = [];
 
     if (!!this.options && !!this.options.print) {
       const cssFiles = this.options.print.printCssFiles;
       cssFiles.forEach((file) => {
-        cssMarkup = `${cssMarkup}<link href="${file}" rel="stylesheet" type="text/css">`;
+        cssMarkup.push(
+          `<link href="${file}" rel="stylesheet" type="text/css">`
+        );
       });
     }
-    this.printCss = cssMarkup;
+    this.printCss = cssMarkup.join("\r\n");
   },
   methods: {
     stepNumber(stepIndex) {
