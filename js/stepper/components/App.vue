@@ -12,6 +12,7 @@
       <div
         v-for="(step, stepIndex) in data.questions"
         v-if="stepIsVisible(stepIndex) || stepIndex === 0"
+        :id="`${stepperId}-${stepIndex}`"
         :class="elementClasses('input-row', answeredClass(step, stepIndex))"
       >
         <div class="question-number mr-2">
@@ -24,7 +25,6 @@
             {{ step.question }}
           </h3>
           <div v-html="step.description" />
-
           <fieldset
             class="m-0 p-0 no-border"
             v-if="step.type === 'radio'"
@@ -57,6 +57,7 @@
         Print Results
       </a>
     </div>
+
     <iframe
       aria-hidden="true"
       title="print_frame"
@@ -65,8 +66,8 @@
       height="0"
       frameborder="0"
       tabindex="-1"
-      style="visibility: hidden"
-    />
+      :srcdoc="printCss"
+    ></iframe>
   </div>
 </template>
 
@@ -76,7 +77,7 @@ import RadioButton from "./form/RadioButton.vue";
 
 export default {
   name: "App",
-  props: ["data"],
+  props: ["data", "options"],
   data() {
     return {
       stepperId: this.data.element_id,
@@ -84,6 +85,7 @@ export default {
       selected: [],
       results: [],
       printLink: false,
+      printCss: "",
     };
   },
   components: {
@@ -92,6 +94,16 @@ export default {
   },
   mounted() {
     this.resetStepper();
+
+    let cssMarkup = "";
+
+    if (!!!!this.options && !!this.options.print) {
+      const cssFiles = this.options.print.printCssFiles;
+      cssFiles.forEach((file) => {
+        cssMarkup = `${cssMarkup}<link href="${file}" rel="stylesheet" type="text/css">`;
+      });
+    }
+    this.printCss = cssMarkup;
   },
   methods: {
     stepNumber(stepIndex) {
@@ -188,9 +200,17 @@ export default {
       }
     },
     printStepper() {
-      window.frames[
-        "print_frame"
-      ].document.head.innerHTML = `<link href="farmers-gov-design-system/dist/css/main.min.css" rel="stylesheet" type="text/css">`;
+      // let printCss = "";
+
+      // if (!!!!this.options && !!this.options.print) {
+      //   const cssFiles = this.options.print.printCssFiles;
+      //   cssFiles.forEach((file) => {
+      //     printCss = `${printCss}<link href="${file}" rel="stylesheet" type="text/css">`;
+      //   });
+      // }
+
+      if (!!this.printCss)
+        window.frames["print_frame"].document.head.innerHTML = this.printCss;
       window.frames["print_frame"].document.body.innerHTML =
         this.$refs.thisStepper.outerHTML;
 
