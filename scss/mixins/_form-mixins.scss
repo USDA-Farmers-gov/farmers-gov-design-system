@@ -18,10 +18,12 @@
       appearance: none;
       -webkit-appearance: none;
     }
+    &:hover {
+      cursor: pointer;
+    }
     &:focus {
       outline: none;
     }
-
     &:disabled,
     &.disabled {
       cursor: auto;
@@ -54,6 +56,9 @@
       background-image: image("correct8.svg");
       appearance: none;
       -webkit-appearance: none;
+    }
+    &:hover {
+      cursor: pointer;
     }
     &:focus {
       outline: none;
