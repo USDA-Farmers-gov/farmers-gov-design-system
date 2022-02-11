@@ -96,7 +96,6 @@ export default {
     this.resetStepper();
 
     let cssMarkup = [];
-
     if (!!this.options && !!this.options.print) {
       const cssFiles = this.options.print.printCssFiles;
       cssFiles.forEach((file) => {
@@ -168,8 +167,10 @@ export default {
     },
     showPrintLink() {
       if (
+        !!this.options &&
+        !!this.options.print.showPrintLink &&
         this.visibleSteps.length ===
-        this.visibleSteps.filter((row) => row.answer).length
+          this.visibleSteps.filter((row) => row.answer).length
       ) {
         this.printLink = true;
       } else {
@@ -197,7 +198,6 @@ export default {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
-          // if (!element) console.error("Scroll element not found!");
         }, 200);
       }
     },
