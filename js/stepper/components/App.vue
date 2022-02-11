@@ -202,15 +202,6 @@ export default {
       }
     },
     printStepper() {
-      // let printCss = "";
-
-      // if (!!!!this.options && !!this.options.print) {
-      //   const cssFiles = this.options.print.printCssFiles;
-      //   cssFiles.forEach((file) => {
-      //     printCss = `${printCss}<link href="${file}" rel="stylesheet" type="text/css">`;
-      //   });
-      // }
-
       if (!!this.printCss)
         window.frames["print_frame"].document.head.innerHTML = this.printCss;
       window.frames["print_frame"].document.body.innerHTML =
