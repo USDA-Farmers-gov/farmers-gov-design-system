@@ -59,12 +59,10 @@
     </div>
 
     <iframe
+      id="print-frame"
       aria-hidden="true"
       title="print_frame"
       name="print_frame"
-      width="0"
-      height="0"
-      frameborder="0"
       tabindex="-1"
       :srcdoc="printCss"
     ></iframe>
