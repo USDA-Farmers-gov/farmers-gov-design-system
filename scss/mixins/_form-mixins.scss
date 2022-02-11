@@ -17,6 +17,9 @@
     .checked {
       @include checked($checked-color);
     }
+    &:hover {
+      cursor: pointer;
+    }
     &:focus {
       outline: none;
     }
@@ -49,6 +52,9 @@
     &:checked,
     .checked {
       @include checked($checked-color);
+    }
+    &:hover {
+      cursor: pointer;
     }
     &:focus {
       outline: none;
