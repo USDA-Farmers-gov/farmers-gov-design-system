@@ -31,12 +31,12 @@ export function scripts(done) {
 
 export function styles(done) {
   gulp
-    .src("./scss/styles.scss")
+    .src("./scss/main.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS())
     .pipe(
       rename({
-        basename: "main",
+        // basename: "main",
         suffix: ".min",
       })
     )

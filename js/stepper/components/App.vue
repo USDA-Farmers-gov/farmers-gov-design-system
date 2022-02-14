@@ -1,5 +1,10 @@
 <template>
-  <div class="row simple-stepper pb-12" :lang="data.lang_code">
+  <div
+    :id="`${stepperId}`"
+    class="row simple-stepper pb-12"
+    :lang="data.lang_code"
+    ref="thisStepper"
+  >
     <div class="medium-12">
       <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
       <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
@@ -20,8 +25,11 @@
             {{ step.question }}
           </h3>
           <div v-html="step.description" />
-
-          <fieldset class="m-0 p-0 no-border" v-if="step.type === 'radio'">
+          <fieldset
+            class="m-0 p-0 no-border"
+            v-if="step.type === 'radio'"
+            @click="showPrintLink()"
+          >
             <legend class="sr-only">{{ step.question }}</legend>
             <RadioButton
               v-for="(option, index) in step.options"
@@ -41,7 +49,23 @@
           />
         </div>
       </div>
+      <a
+        v-if="printLink"
+        class="btn outline print-btn mt-6"
+        @click="printStepper"
+      >
+        Print Results
+      </a>
     </div>
+
+    <iframe
+      id="print-frame"
+      aria-hidden="true"
+      title="print_frame"
+      name="print_frame"
+      tabindex="-1"
+      :srcdoc="printCss"
+    ></iframe>
   </div>
 </template>
 
@@ -51,13 +75,15 @@ import RadioButton from "./form/RadioButton.vue";
 
 export default {
   name: "App",
-  props: ["data"],
+  props: ["data", "options"],
   data() {
     return {
       stepperId: this.data.element_id,
       visibleSteps: [],
       selected: [],
       results: [],
+      printLink: false,
+      printCss: "",
     };
   },
   components: {
@@ -66,6 +92,17 @@ export default {
   },
   mounted() {
     this.resetStepper();
+
+    let cssMarkup = [];
+    if (!!this.options && !!this.options.print) {
+      const cssFiles = this.options.print.printCssFiles;
+      cssFiles.forEach((file) => {
+        cssMarkup.push(
+          `<link href="${file}" rel="stylesheet" type="text/css">`
+        );
+      });
+    }
+    this.printCss = cssMarkup.join("\r\n");
   },
   methods: {
     stepNumber(stepIndex) {
@@ -126,6 +163,18 @@ export default {
         ? this.results.filter((row) => row.stepIndex === index)[0]
         : [];
     },
+    showPrintLink() {
+      if (
+        !!this.options &&
+        !!this.options.print.showPrintLink &&
+        this.visibleSteps.length ===
+          this.visibleSteps.filter((row) => row.answer).length
+      ) {
+        this.printLink = true;
+      } else {
+        this.printLink = false;
+      }
+    },
     formOptionId(question, value) {
       return this.createFormElementId(
         `${this.webFriendlyName(question).substring(
@@ -147,9 +196,20 @@ export default {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
-          // if (!element) console.error("Scroll element not found!");
         }, 200);
       }
+    },
+    printStepper() {
+      if (!!this.printCss)
+        window.frames["print_frame"].document.head.innerHTML = this.printCss;
+      window.frames["print_frame"].document.body.innerHTML =
+        this.$refs.thisStepper.outerHTML;
+
+      setTimeout(this.printWindow, 250);
+    },
+    printWindow() {
+      window.frames["print_frame"].window.focus();
+      window.frames["print_frame"].window.print();
     },
   },
 };
