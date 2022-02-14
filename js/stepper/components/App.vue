@@ -1,71 +1,72 @@
 <template>
-  <div
-    :id="`${stepperId}`"
-    class="row simple-stepper pb-12"
-    :lang="data.lang_code"
-    ref="thisStepper"
-  >
-    <div class="medium-12">
-      <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
-      <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
-      <hr />
-      <div
-        v-for="(step, stepIndex) in data.questions"
-        v-if="stepIsVisible(stepIndex) || stepIndex === 0"
-        :id="`${stepperId}-${stepIndex}`"
-        :class="elementClasses('input-row', answeredClass(step, stepIndex))"
-      >
-        <div class="question-number mr-2">
-          <div class="number-container">
-            <div class="number">{{ stepNumber(stepIndex) }}</div>
+  <div class="container">
+    <div
+      :id="`${stepperId}`"
+      class="row simple-stepper pb-12"
+      :lang="data.lang_code"
+      ref="thisStepper"
+    >
+      <div class="medium-12">
+        <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
+        <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
+        <div
+          v-for="(step, stepIndex) in data.questions"
+          v-if="stepIsVisible(stepIndex) || stepIndex === 0"
+          :id="`${stepperId}-${stepIndex}`"
+          :class="elementClasses('input-row', answeredClass(step, stepIndex))"
+        >
+          <div class="question-number mr-2">
+            <div class="number-container">
+              <div class="number">{{ stepNumber(stepIndex) }}</div>
+            </div>
+          </div>
+          <div class="question-and-answer">
+            <h3 class="question mt-6">
+              {{ step.question }}
+            </h3>
+            <div class="question-description" v-html="step.description" />
+            <fieldset
+              class="m-0 p-0 no-border"
+              v-if="step.type === 'radio'"
+              @click="showPrintLink()"
+            >
+              <legend class="sr-only">{{ step.question }}</legend>
+              <RadioButton
+                v-for="(option, index) in step.options"
+                :key="index"
+                :stepIndex="stepIndex"
+                :id="formOptionId(step.question, option.value)"
+                :name="formOptionName(stepIndex, option)"
+                :value="option.value"
+                :text="option.text"
+                :option="option"
+                :checked="optionIsChecked(option.value, stepIndex)"
+              />
+            </fieldset>
+            <Result
+              v-if="getResult(stepIndex) && getResult(stepIndex).result"
+              :data="getResult(stepIndex).result"
+            />
           </div>
         </div>
-        <div class="question-and-answer">
-          <h3 class="question mt-6">
-            {{ step.question }}
-          </h3>
-          <div v-html="step.description" />
-          <fieldset
-            class="m-0 p-0 no-border"
-            v-if="step.type === 'radio'"
-            @click="showPrintLink()"
-          >
-            <legend class="sr-only">{{ step.question }}</legend>
-            <RadioButton
-              v-for="(option, index) in step.options"
-              :key="index"
-              :stepIndex="stepIndex"
-              :id="formOptionId(step.question, option.value)"
-              :name="formOptionName(stepIndex, option)"
-              :value="option.value"
-              :text="option.text"
-              :option="option"
-              :checked="optionIsChecked(option.value, stepIndex)"
-            />
-          </fieldset>
-          <Result
-            v-if="getResult(stepIndex) && getResult(stepIndex).result"
-            :data="getResult(stepIndex).result"
-          />
-        </div>
+        <a
+          v-if="printLink"
+          class="btn outline print-btn mt-6"
+          @click="printStepper"
+        >
+          Print Results
+        </a>
       </div>
-      <a
-        v-if="printLink"
-        class="btn outline print-btn mt-6"
-        @click="printStepper"
-      >
-        Print Results
-      </a>
-    </div>
 
-    <iframe
-      id="print-frame"
-      aria-hidden="true"
-      title="print_frame"
-      name="print_frame"
-      tabindex="-1"
-      :srcdoc="printCss"
-    ></iframe>
+      <iframe
+        id="print-frame"
+        aria-hidden="true"
+        title="print_frame"
+        name="print_frame"
+        tabindex="-1"
+        :srcdoc="printCss"
+      ></iframe>
+    </div>
   </div>
 </template>
 

@@ -1,8 +1,17 @@
 .simple-stepper {
   .question-and-answer {
+    margin-left: 1rem;
+    @media (max-width: $screen--S) {
+      .start-over {
+        margin-top: 1rem;
+      }
+    }
     .question {
       font-size: 1.8rem;
       line-height: 2.8rem;
+    }
+    .question-description p:first-of-type {
+      margin-top: 1rem;
     }
   }
 }
@@ -15,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6.5rem;
+    width: 4rem;
   }
 }
 .number {

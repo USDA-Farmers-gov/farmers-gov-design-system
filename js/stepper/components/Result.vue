@@ -11,7 +11,11 @@
         <div class="row">
           <div class="medium-12">
             <Button :data="data.button"></Button>
-            <a class="btn tertiary ml-4" @click="goBacktoStart" tabindex="0">
+            <a
+              class="btn tertiary start-over ml-4"
+              @click="goBacktoStart"
+              tabindex="0"
+            >
               Start Over
             </a>
           </div>
