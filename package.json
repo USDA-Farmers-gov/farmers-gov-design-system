@@ -54,5 +54,8 @@
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "seamless-scroll-polyfill": "^2.1.6"
   }
 }

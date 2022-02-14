@@ -74,6 +74,7 @@
 <script>
 import Result from "./Result.vue";
 import RadioButton from "./form/RadioButton.vue";
+import { elementScrollIntoView } from "seamless-scroll-polyfill";
 
 export default {
   name: "App",
@@ -197,7 +198,10 @@ export default {
       if (index !== this.data.questions.length) {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
-          if (!!element) element.scrollIntoView({ behavior: "smooth" });
+          if (!!element)
+            elementScrollIntoView(element, {
+              behavior: "smooth",
+            });
         }, 200);
       }
     },
