@@ -5,6 +5,9 @@ $flexJustifyContent: start, end, center, "space-between", "space-around",
 .flex {
   display: flex;
 }
+.inline-flex {
+  display: inline-flex;
+}
 .flex-row {
   flex-direction: row;
 }

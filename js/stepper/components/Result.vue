@@ -1,35 +1,31 @@
 <template>
   <div>
-    <div v-for="(value, name) in data">
-      <!-- ALERT -->
-      <div v-if="name === 'alert'">
-        <Alert :data="data.alert"></Alert>
-      </div>
+    <div v-for="(value, name, index) in data">
+      <div class="row">
+        <div class="medium-12">
+          <Alert v-if="name === 'alert'" :data="data.alert"></Alert>
+          <div v-if="name === 'markup'" v-html="data.markup"></div>
+        </div>
+        <div
+          v-if="name === 'button' || index === Object.keys(data).length - 1"
+          class="medium-12"
+        >
+          <Button v-if="name === 'button'" :data="data.button"></Button>
+          <StartOverButton @start-over="goBacktoStart" />
 
-      <!-- BUTTON/START OVER LINK -->
-      <div v-if="name === 'button'">
-        <div class="row">
-          <div class="medium-12">
-            <Button :data="data.button"></Button>
-            <a class="btn tertiary ml-4" @click="goBacktoStart" tabindex="0">
-              Start Over
+          <div v-if="printLink" class="inline-flex print-btn">
+            <span class="icon print"></span>
+            <a
+              class="text-link no-icon mt-4"
+              @click="printStepper"
+              tabindex="0"
+            >
+              Print Results
             </a>
           </div>
         </div>
       </div>
-
-      <!-- MARKUP -->
-      <div v-if="name === 'markup'" v-html="data.markup"></div>
     </div>
-    <!-- START OVER -->
-    <a
-      v-if="showStartOver()"
-      class="btn tertiary no-padding-left"
-      @click="goBacktoStart"
-      tabindex="0"
-    >
-      Start Over
-    </a>
   </div>
 </template>
 
