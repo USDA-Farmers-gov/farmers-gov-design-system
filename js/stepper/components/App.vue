@@ -46,16 +46,10 @@
             <Result
               v-if="getResult(stepIndex) && getResult(stepIndex).result"
               :data="getResult(stepIndex).result"
+              :printLink="printLink"
             />
           </div>
         </div>
-        <a
-          v-if="printLink"
-          class="btn outline print-btn mt-6"
-          @click="printStepper"
-        >
-          Print Results
-        </a>
       </div>
 
       <iframe
