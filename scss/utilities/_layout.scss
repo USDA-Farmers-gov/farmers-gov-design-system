@@ -71,6 +71,12 @@ ul {
 .visually-hidden {
   visibility: hidden;
 }
+.span-viewport {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
