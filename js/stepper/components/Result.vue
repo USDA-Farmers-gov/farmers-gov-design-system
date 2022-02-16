@@ -14,8 +14,8 @@
             flex flex-align-items-center flex-column-m
           "
         >
-          <div>
-            <Button v-if="name === 'button'" :data="data.button"></Button>
+          <div v-if="name === 'button'" class="mr-8">
+            <Button :data="data.button"></Button>
           </div>
           <div>
             <a
