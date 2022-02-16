@@ -8,20 +8,33 @@
         </div>
         <div
           v-if="name === 'button' || index === Object.keys(data).length - 1"
-          class="medium-12"
+          class="
+            medium-12
+            step-footer
+            flex flex-align-items-center flex-column-m
+          "
         >
-          <Button v-if="name === 'button'" :data="data.button"></Button>
-          <StartOverButton @start-over="goBacktoStart" />
+          <div>
+            <Button v-if="name === 'button'" :data="data.button"></Button>
+          </div>
+          <div>
+            <a
+              class="btn tertiary pl-0 start-over"
+              tabindex="0"
+              @click="goBacktoStart"
+            >
+              Start Over
+            </a>
+          </div>
 
-          <div v-if="printLink" class="inline-flex print-btn">
+          <div v-if="printLink" class="inline-flex print-btn ml-auto">
             <span class="icon print"></span>
             <a
-              class="text-link no-icon mt-4"
+              class="text-link no-icon mt-4 pr-0"
               @click="printStepper"
               tabindex="0"
+              >Print Results</a
             >
-              Print Results
-            </a>
           </div>
         </div>
       </div>
@@ -32,7 +45,6 @@
 <script>
 import Alert from "./elements/Alert";
 import Button from "./elements/Button";
-import StartOverButton from "./elements/StartOverButton";
 
 export default {
   name: "Result",
@@ -40,7 +52,6 @@ export default {
   components: {
     Alert: Alert,
     Button: Button,
-    StartOverButton: StartOverButton,
   },
   methods: {
     showStartOver() {

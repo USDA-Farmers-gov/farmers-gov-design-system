@@ -48,4 +48,19 @@
       background: none;
     }
   }
+  .step-footer {
+    @media (max-width: $screen--M) {
+      align-items: flex-start;
+      .start-over {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .print-btn {
+        width: 100%;
+        border-top: 2px solid $grey2;
+        margin-left: 0;
+        padding-top: 1.5rem;
+      }
+    }
+  }
 }

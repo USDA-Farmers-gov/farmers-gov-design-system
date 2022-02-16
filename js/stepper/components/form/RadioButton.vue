@@ -7,6 +7,7 @@
         :name="name"
         :value="value"
         @click="$parent.processAnswer(option, stepIndex)"
+        :checked="checked"
       />
       <span>{{ text }}</span>
     </label>

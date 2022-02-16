@@ -1,6 +1,22 @@
 $flexWrap: wrap, "wrap-reverse", nowrap;
-$flexJustifyContent: start, end, center, "space-between", "space-around",
+$flexJustifyContent: "flex-start", "flex-end", center, "space-between",
+  "space-around", "space-evenly";
+$flexAlignItems: start, end, center, "space-between", "space-around",
   "space-evenly";
+$mobileSizes: "l", "m", "s";
+
+@function get-viewport-size($size) {
+  @if ($size == "l") {
+    @return $screen--L;
+  }
+  @if ($size == "m") {
+    @return $screen--M;
+  }
+  @if ($size == "s") {
+    @return $screen--S;
+  }
+  @return 0;
+}
 
 .flex {
   display: flex;
@@ -28,9 +44,30 @@ $flexJustifyContent: start, end, center, "space-between", "space-around",
     flex-wrap: #{$wrap};
   }
 }
+@each $size in $mobileSizes {
+  $viewportSize: get-viewport-size($size);
+  @media (max-width: $viewportSize) {
+    .flex-column-#{$size} {
+      flex-direction: column;
+    }
+  }
+}
+@each $size in $mobileSizes {
+  $viewportSize: get-viewport-size($size);
+  @media (max-width: $viewportSize) {
+    .flex-row-#{$size} {
+      flex-direction: row;
+    }
+  }
+}
 @each $flexJustify in $flexJustifyContent {
-  .flex-jc-#{$flexJustify} {
+  .flex-justify-content-#{$flexJustify} {
     justify-content: #{$flexJustify};
+  }
+}
+@each $flexAlign in $flexAlignItems {
+  .flex-align-items-#{$flexAlign} {
+    align-items: #{$flexAlign};
   }
 }
 .flex-column-reverse-mobile-l {
