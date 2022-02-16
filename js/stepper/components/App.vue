@@ -9,7 +9,6 @@
       <div class="medium-12">
         <h2 v-if="data.stepper_header">{{ data.stepper_header }}</h2>
         <p v-if="data.stepper_description">{{ data.stepper_description }}</p>
-        <hr />
         <div
           v-for="(step, stepIndex) in data.questions"
           v-if="stepIsVisible(stepIndex) || stepIndex === 0"
@@ -21,7 +20,7 @@
               <div class="number">{{ stepNumber(stepIndex) }}</div>
             </div>
           </div>
-          <div class="question-and-answer">
+          <div class="question-and-answer pl-4">
             <h3 class="question mt-6">
               {{ step.question }}
             </h3>
@@ -47,16 +46,10 @@
             <Result
               v-if="getResult(stepIndex) && getResult(stepIndex).result"
               :data="getResult(stepIndex).result"
+              :printLink="printLink"
             />
           </div>
         </div>
-        <a
-          v-if="printLink"
-          class="btn outline print-btn mt-6"
-          @click="printStepper"
-        >
-          Print Results
-        </a>
       </div>
 
       <iframe
@@ -94,9 +87,9 @@ export default {
   },
   mounted() {
     this.resetStepper();
-
     let cssMarkup = [];
     if (!!this.options && !!this.options.print) {
+      this.printLink = this.options.print.showPrintLink;
       const cssFiles = this.options.print.printCssFiles;
       cssFiles.forEach((file) => {
         cssMarkup.push(

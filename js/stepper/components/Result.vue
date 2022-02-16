@@ -30,15 +30,17 @@
 </template>
 
 <script>
-import Alert from "./elements/Alert.vue";
-import Button from "./elements/Button.vue";
+import Alert from "./elements/Alert";
+import Button from "./elements/Button";
+import StartOverButton from "./elements/StartOverButton";
 
 export default {
   name: "Result",
-  props: ["data"],
+  props: ["data", "printLink"],
   components: {
     Alert: Alert,
     Button: Button,
+    StartOverButton: StartOverButton,
   },
   methods: {
     showStartOver() {
@@ -47,6 +49,9 @@ export default {
     goBacktoStart() {
       this.$parent.resetStepper();
       this.$parent.scrollToFirstStep();
+    },
+    printStepper() {
+      this.$parent.printStepper();
     },
   },
 };
