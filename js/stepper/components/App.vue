@@ -59,6 +59,7 @@
         name="print_frame"
         tabindex="-1"
         :srcdoc="printCss"
+        style="height: 0; width: 0; visiblity: hidden"
       ></iframe>
     </div>
   </div>
