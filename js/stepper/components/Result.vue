@@ -5,22 +5,36 @@
         <div class="medium-12">
           <Alert v-if="name === 'alert'" :data="data.alert"></Alert>
           <div v-if="name === 'markup'" v-html="data.markup"></div>
-          <div
-            v-if="name === 'button' || index === Object.keys(data).length - 1"
-          >
-            <Button v-if="name === 'button'" :data="data.button"></Button>
-            <StartOverButton @start-over="goBacktoStart" />
+        </div>
+        <div
+          v-if="name === 'button' || index === Object.keys(data).length - 1"
+          class="
+            medium-12
+            step-footer
+            flex flex-align-items-center flex-column-m
+          "
+        >
+          <div v-if="name === 'button'" class="mr-8">
+            <Button :data="data.button"></Button>
+          </div>
+          <div>
+            <a
+              class="btn tertiary pl-0 start-over"
+              tabindex="0"
+              @click="goBacktoStart"
+            >
+              Start Over
+            </a>
+          </div>
 
-            <span v-if="printLink" class="flex print-btn">
-              <div class="icon print"></div>
-              <a
-                class="text-link no-icon mt-4"
-                @click="printStepper"
-                tabindex="0"
-              >
-                Print Results
-              </a>
-            </span>
+          <div v-if="printLink" class="inline-flex print-btn ml-auto">
+            <span class="icon print"></span>
+            <a
+              class="text-link no-icon mt-4 pr-0"
+              @click="printStepper"
+              tabindex="0"
+              >Print Results</a
+            >
           </div>
         </div>
       </div>
@@ -29,9 +43,8 @@
 </template>
 
 <script>
-import Alert from "./elements/Alert.vue";
-import Button from "./elements/Button.vue";
-import StartOverButton from "./elements/StartOverButton.vue";
+import Alert from "./elements/Alert";
+import Button from "./elements/Button";
 
 export default {
   name: "Result",
@@ -39,7 +52,6 @@ export default {
   components: {
     Alert: Alert,
     Button: Button,
-    StartOverButton: StartOverButton,
   },
   methods: {
     showStartOver() {

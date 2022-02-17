@@ -20,11 +20,11 @@
               <div class="number">{{ stepNumber(stepIndex) }}</div>
             </div>
           </div>
-          <div class="question-and-answer">
+          <div class="question-and-answer pl-4">
             <h3 class="question mt-6">
               {{ step.question }}
             </h3>
-            <div class="question-description" v-html="step.description" />
+            <div v-html="step.description" />
             <fieldset
               class="m-0 p-0 no-border"
               v-if="step.type === 'radio'"
@@ -59,8 +59,7 @@
         name="print_frame"
         tabindex="-1"
         :srcdoc="printCss"
-        style="visibility: hidden; border: none; width: 0; height: 0"
-      />
+      ></iframe>
     </div>
   </div>
 </template>
@@ -68,7 +67,6 @@
 <script>
 import Result from "./Result.vue";
 import RadioButton from "./form/RadioButton.vue";
-import { elementScrollIntoView } from "seamless-scroll-polyfill";
 
 export default {
   name: "App",
@@ -89,9 +87,9 @@ export default {
   },
   mounted() {
     this.resetStepper();
-
     let cssMarkup = [];
     if (!!this.options && !!this.options.print) {
+      this.printLink = this.options.print.showPrintLink;
       const cssFiles = this.options.print.printCssFiles;
       cssFiles.forEach((file) => {
         cssMarkup.push(
@@ -192,10 +190,7 @@ export default {
       if (index !== this.data.questions.length) {
         setTimeout(() => {
           const element = document.getElementById(`${this.stepperId}-${index}`);
-          if (!!element)
-            elementScrollIntoView(element, {
-              behavior: "smooth",
-            });
+          if (!!element) element.scrollIntoView({ behavior: "smooth" });
         }, 200);
       }
     },

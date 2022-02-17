@@ -1,17 +1,8 @@
 .simple-stepper {
   .question-and-answer {
-    margin-left: 1rem;
-    @media (max-width: $screen--S) {
-      .start-over {
-        margin-top: 1rem;
-      }
-    }
     .question {
       font-size: 1.8rem;
       line-height: 2.8rem;
-    }
-    .question-description p:first-of-type {
-      margin-top: 1rem;
     }
   }
 }
@@ -24,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
+    width: 4.5rem;
   }
 }
 .number {
@@ -55,6 +46,31 @@
     }
     &:before {
       background: none;
+    }
+  }
+  .step-footer {
+    width: 100%;
+    .start-over {
+      padding-left: 0;
+    }
+    @media (max-width: $screen--M) {
+      align-items: flex-start;
+      .start-over {
+        padding-top: 2.3rem;
+        padding-bottom: 2.3rem;
+        padding-left: 0;
+      }
+      .print-btn {
+        width: 100%;
+        border-top: 2px solid $grey2;
+        margin-left: 0;
+        padding-top: 1.5rem;
+        @media (max-width: $screen--M) {
+          .icon.print {
+            margin-left: -1rem;
+          }
+        }
+      }
     }
   }
 }

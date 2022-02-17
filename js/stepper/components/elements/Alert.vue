@@ -1,5 +1,5 @@
 <template>
-  <div class="alert-wrapper pt-6">
+  <div class="alert-wrapper full-width pt-6 pb-8">
     <div :class="setAlertClasses()" id="coronavirus-alert">
       <div class="usa-alert-body">
         <div class="usa-alert-text">
