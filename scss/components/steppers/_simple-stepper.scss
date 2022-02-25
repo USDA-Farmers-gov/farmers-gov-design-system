@@ -51,7 +51,7 @@
       background: none;
     }
   }
-  .step-footer {
+  [class*="stepper-button-row"] {
     width: 100%;
     .start-over {
       padding-left: 0;

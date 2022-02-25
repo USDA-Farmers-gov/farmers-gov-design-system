@@ -1,41 +1,37 @@
 <template>
   <div>
-    <div v-for="(value, name, index) in data">
-      <div class="row">
-        <div class="medium-12">
-          <Alert v-if="name === 'alert'" :data="data.alert"></Alert>
-          <div v-if="name === 'markup'" v-html="data.markup"></div>
+    <div v-for="(value, name, index) in data" class="row">
+      <div v-if="name === 'alert'" class="medium-12">
+        <Alert :data="data.alert"></Alert>
+      </div>
+      <div v-if="name === 'markup'" class="medium-12">
+        <div v-html="data.markup"></div>
+      </div>
+      <div
+        v-if="name === 'button' || index === Object.keys(data).length - 1"
+        :class="setRowClasses()"
+      >
+        <div v-if="name === 'button'" class="mr-8">
+          <Button :data="data.button"></Button>
         </div>
-        <div
-          v-if="name === 'button' || index === Object.keys(data).length - 1"
-          class="
-            medium-12
-            step-footer
-            flex flex-align-items-center flex-column-m
-          "
-        >
-          <div v-if="name === 'button'" class="mr-8">
-            <Button :data="data.button"></Button>
-          </div>
-          <div>
-            <a
-              class="btn tertiary pl-0 start-over"
-              tabindex="0"
-              @click="goBacktoStart"
-            >
-              Start Over
-            </a>
-          </div>
+        <div>
+          <a
+            class="btn tertiary pl-0 start-over"
+            tabindex="0"
+            @click="goBacktoStart"
+          >
+            Start Over
+          </a>
+        </div>
 
-          <div v-if="printLink" class="inline-flex print-btn ml-auto">
-            <span class="icon print"></span>
-            <a
-              class="text-link no-icon mt-4 pr-0"
-              @click="printStepper"
-              tabindex="0"
-              >Print Results</a
-            >
-          </div>
+        <div v-if="printLink" class="inline-flex print-btn ml-auto">
+          <span class="icon print"></span>
+          <a
+            class="text-link no-icon mt-4 pr-0"
+            @click="printStepper"
+            tabindex="0"
+            >Print Results</a
+          >
         </div>
       </div>
     </div>
@@ -48,12 +44,16 @@ import Button from "./elements/Button";
 
 export default {
   name: "Result",
-  props: ["data", "printLink"],
+  props: ["data", "printLink", "selectedValue"],
   components: {
     Alert: Alert,
     Button: Button,
   },
   methods: {
+    setRowClasses() {
+      const answerClass = this.webFriendlyName(this.selectedValue);
+      return `medium-12 stepper-button-row-${answerClass} flex flex-align-items-center flex-column-m`;
+    },
     showStartOver() {
       return !this.data.button;
     },

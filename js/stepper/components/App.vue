@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div
-      :id="`${stepperId}`"
+      :id="stepperId"
       class="row simple-stepper pb-12"
       :lang="data.lang_code"
       ref="thisStepper"
@@ -12,7 +12,7 @@
         <div
           v-for="(step, stepIndex) in data.questions"
           v-if="stepIsVisible(stepIndex) || stepIndex === 0"
-          :id="`${stepperId}-${stepIndex}`"
+          :id="`stepper-row-${stepIndex + 1}`"
           :class="elementClasses('input-row', answeredClass(step, stepIndex))"
         >
           <div class="question-number mr-2">
@@ -20,7 +20,7 @@
               <div class="number">{{ stepNumber(stepIndex) }}</div>
             </div>
           </div>
-          <div class="question-and-answer pl-4">
+          <div class="question-and-answer pl-4 full-width">
             <h3 class="question mt-6">
               {{ step.question }}
             </h3>
@@ -47,6 +47,7 @@
               v-if="getResult(stepIndex) && getResult(stepIndex).result"
               :data="getResult(stepIndex).result"
               :printLink="printLink"
+              :selectedValue="selectedValue"
             />
           </div>
         </div>
@@ -80,6 +81,7 @@ export default {
       results: [],
       printLink: false,
       printCss: "",
+      selectedValue: "",
     };
   },
   components: {
@@ -109,6 +111,7 @@ export default {
     resetStepper() {
       this.visibleSteps = [{ stepIndex: 0 }];
       this.results = [];
+      this.selectedValue = "";
     },
     scrollToFirstStep() {
       this.scrollToStep(0);
@@ -125,6 +128,7 @@ export default {
       );
     },
     processAnswer(option, stepIndex) {
+      this.selectedValue = "";
       // remove questions if their index is higher than the one currently selected.
       this.visibleSteps = this.visibleSteps.filter(
         (row) => row.stepIndex <= stepIndex
@@ -132,6 +136,7 @@ export default {
       this.results = [];
 
       if (!!option.value) {
+        this.selectedValue = option.value;
         this.setAnswer(stepIndex, option.value);
         if (!option.go_to) this.scrollToStep(stepIndex + 1);
       }
@@ -140,7 +145,7 @@ export default {
         this.setAnswer(nextStep);
         this.scrollToStep(nextStep);
       }
-      if (!!option.result) {
+      if (!!option.result && !option.go_to) {
         this.results = this.results.filter(
           (row) => row.stepIndex !== stepIndex
         );
@@ -180,7 +185,7 @@ export default {
       );
     },
     formOptionName(stepIndex) {
-      return `${this.stepperId}-${stepIndex + 1}`;
+      return `${this.stepperId}-input-${stepIndex + 1}`;
     },
     answeredClass(step, stepIndex) {
       return this.visibleSteps.filter((row) => row.stepIndex > stepIndex).length
