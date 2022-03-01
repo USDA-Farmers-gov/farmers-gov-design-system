@@ -60,7 +60,7 @@
         name="print_frame"
         tabindex="-1"
         :srcdoc="printCss"
-        style="height: 0; width: 0; visiblity: hidden"
+        style="height: 0; width: 0; visiblity: hidden; border: none"
       ></iframe>
     </div>
   </div>
@@ -69,6 +69,7 @@
 <script>
 import Result from "./Result.vue";
 import RadioButton from "./form/RadioButton.vue";
+import smoothscroll from "smoothscroll-polyfill";
 
 export default {
   name: "App",
@@ -195,7 +196,7 @@ export default {
     scrollToStep(index) {
       if (index !== this.data.questions.length) {
         setTimeout(() => {
-          const element = document.getElementById(`${this.stepperId}-${index}`);
+          const element = document.getElementById(`stepper-row-${index + 1}`);
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
         }, 200);
       }
