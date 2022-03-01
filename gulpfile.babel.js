@@ -45,14 +45,15 @@ export function styles(done) {
 }
 
 export function webpack(done) {
-  gulp
+  return gulp
     .src("./js/stepper/farmers-stepper.js")
     .pipe(webpackStream(require("./webpack.config.js")))
     .on("error", function (err) {
       console.error("WEBPACK ERROR", err);
       this.emit("end");
     })
-    .pipe(gulp.dest("./dist/js"));
+    .pipe(gulp.dest("./dist/js"))
+    .pipe(gulp.dest("../dist/js"));
   done();
 }
 
