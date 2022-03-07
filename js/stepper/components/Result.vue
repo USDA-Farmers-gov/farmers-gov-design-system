@@ -14,7 +14,7 @@
         <div v-if="name === 'button'" class="mr-8">
           <Button :data="data.button"></Button>
         </div>
-        <div>
+        <div class="start-over-container">
           <a
             class="btn tertiary pl-0 start-over"
             tabindex="0"
