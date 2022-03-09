@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <iframe
+      <!--       <iframe
         id="print-frame"
         aria-hidden="true"
         title="print_frame"
@@ -61,7 +61,7 @@
         tabindex="-1"
         :srcdoc="printCss"
         style="height: 0; width: 0; visiblity: hidden; border: none"
-      ></iframe>
+      ></iframe> -->
     </div>
   </div>
 </template>
@@ -202,16 +202,14 @@ export default {
       }
     },
     printStepper() {
-      if (!!this.printCss)
-        window.frames["print_frame"].document.head.innerHTML = this.printCss;
-      window.frames["print_frame"].document.body.innerHTML =
-        this.$refs.thisStepper.outerHTML;
+      const content = this.$refs.thisStepper.outerHTML;
+      const css = this.printCss;
 
-      setTimeout(this.printWindow, 250);
-    },
-    printWindow() {
-      window.frames["print_frame"].window.focus();
-      window.frames["print_frame"].window.print();
+      if (this.is_safari() || (this.is_mobile() && this.is_chrome())) {
+        this.printPopUp(content, css);
+        return;
+      }
+      this.printFromIframe(content, css);
     },
   },
 };

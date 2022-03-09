@@ -56,6 +56,8 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "print-js": "^1.6.0",
+    "printd": "^1.5.0",
     "smoothscroll-polyfill": "^0.4.4"
   }
 }
