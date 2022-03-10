@@ -45,8 +45,17 @@ export function initialize(Vue) {
           ? true
           : false;
       },
-      is_edge: function () {
+      is_edge() {
         return /Edge/.test(navigator.userAgent) ? true : false;
+      },
+      is_firefox() {
+        return navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+      },
+      is_ios() {
+        return /(ipad|iphone)/g.test(navigator.userAgent.toLowerCase());
+      },
+      is_android() {
+        return navigator.userAgent.toLowerCase().indexOf("android") > -1;
       },
       is_mobile() {
         return "ontouchstart" in document.documentElement &&
@@ -55,33 +64,15 @@ export function initialize(Vue) {
           : false;
       },
       printFromIframe(content, css) {
-        const printFrame = document.createElement("iframe");
-        printFrame.name = "print_frame";
-        printFrame.style.height = "0";
-        printFrame.style.width = "0";
-        printFrame.style.visibility = "hidden";
-        printFrame.style.border = "none";
-        document.body.appendChild(printFrame);
-
-        const frameDoc = printFrame.contentWindow
-          ? printFrame.contentWindow
-          : printFrame.contentDocument.document
-          ? printFrame.contentDocument.document
-          : printFrame.contentDocument;
-        frameDoc.document.open();
-        frameDoc.document.write("<html>");
-        frameDoc.document.write(`<head>${css}</head>`);
-        frameDoc.document.write(`<body>${content}</body>`);
-        frameDoc.document.write("</html>");
-        frameDoc.document.close();
+        window.frames["print_frame"].document.head.innerHTML = css;
+        window.frames["print_frame"].document.body.innerHTML = content;
 
         setTimeout(function () {
           window.frames["print_frame"].window.focus();
           window.frames["print_frame"].window.print();
-          document.body.removeChild(printFrame);
         }, 250);
       },
-      printPopUp(content, css) {
+      printPopUp(content, css, printPopUpPage) {
         const isEdge = /Edge/.test(navigator.userAgent) ? true : false;
         const windowHeight = Math.round(screen.height / 2);
         const windowWidth = Math.round(screen.width / 2);
@@ -93,21 +84,20 @@ export function initialize(Vue) {
 
         sessionStorage.removeItem("print_popup_css");
         sessionStorage.setItem("print_popup_css", css);
-
         sessionStorage.removeItem("print_popup");
         sessionStorage.setItem("print_popup", content);
 
         const popup = window.open(
-          `/themes/farmers_update/print-popup.html?${randomId}`,
+          `${printPopUpPage}?${randomId}`,
           "print_card",
           `height=${windowHeight},width=${windowWidth},top=${top},left=${left}`
         );
-        popup.onafterprint = function () {
-          console.log("After print");
-        };
+
         popup.onload = function () {
           popup.print();
-          if (isEdge) popup.close();
+          setTimeout(function () {
+            popup.close();
+          }, 500);
         };
         if (!isEdge) {
           popup.onafterprint = function () {

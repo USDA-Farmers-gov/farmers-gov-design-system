@@ -24,7 +24,10 @@
           </a>
         </div>
 
-        <div v-if="printLink" class="inline-flex print-btn ml-auto">
+        <div
+          v-if="printLink && !firefoxOnAndroid()"
+          class="inline-flex print-btn ml-auto"
+        >
           <span class="icon print"></span>
           <a
             class="text-link no-icon mt-4 pr-0"
@@ -63,6 +66,9 @@ export default {
     },
     printStepper() {
       this.$parent.printStepper();
+    },
+    firefoxOnAndroid() {
+      return this.is_firefox() && this.is_android();
     },
   },
 };

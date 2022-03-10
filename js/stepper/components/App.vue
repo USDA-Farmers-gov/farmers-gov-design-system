@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <!--       <iframe
+      <iframe
         id="print-frame"
         aria-hidden="true"
         title="print_frame"
@@ -61,7 +61,7 @@
         tabindex="-1"
         :srcdoc="printCss"
         style="height: 0; width: 0; visiblity: hidden; border: none"
-      ></iframe> -->
+      ></iframe>
     </div>
   </div>
 </template>
@@ -82,7 +82,9 @@ export default {
       results: [],
       printLink: false,
       printCss: "",
+      printPopUpPage: this.options.print.printPopupPage,
       selectedValue: "",
+      touchDevice: "ontouchstart" in document.documentElement,
     };
   },
   components: {
@@ -204,9 +206,11 @@ export default {
     printStepper() {
       const content = this.$refs.thisStepper.outerHTML;
       const css = this.printCss;
-
-      if (this.is_safari() || (this.is_mobile() && this.is_chrome())) {
-        this.printPopUp(content, css);
+      if (
+        (this.is_safari() && !this.touchDevice) ||
+        (this.is_chrome() && this.is_ios())
+      ) {
+        this.printPopUp(content, css, this.printPopUpPage);
         return;
       }
       this.printFromIframe(content, css);
