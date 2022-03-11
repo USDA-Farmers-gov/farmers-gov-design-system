@@ -82,7 +82,9 @@ export default {
       results: [],
       printLink: false,
       printCss: "",
+      printPopUpPage: this.options.print.printPopupPage,
       selectedValue: "",
+      touchDevice: "ontouchstart" in document.documentElement,
     };
   },
   components: {
@@ -202,16 +204,16 @@ export default {
       }
     },
     printStepper() {
-      if (!!this.printCss)
-        window.frames["print_frame"].document.head.innerHTML = this.printCss;
-      window.frames["print_frame"].document.body.innerHTML =
-        this.$refs.thisStepper.outerHTML;
-
-      setTimeout(this.printWindow, 250);
-    },
-    printWindow() {
-      window.frames["print_frame"].window.focus();
-      window.frames["print_frame"].window.print();
+      const content = this.$refs.thisStepper.outerHTML;
+      const css = this.printCss;
+      if (
+        (this.is_safari() && !this.touchDevice) ||
+        (this.is_chrome() && this.is_ios())
+      ) {
+        this.printPopUp(content, css, this.printPopUpPage);
+        return;
+      }
+      this.printFromIframe(content, css);
     },
   },
 };
