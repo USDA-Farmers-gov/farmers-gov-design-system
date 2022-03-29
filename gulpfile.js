@@ -51,6 +51,7 @@ function webpack(done) {
       this.emit("end");
     })
     .pipe(gulp.dest("./dist/js"));
+  gulp.src("./dist/js/farmers-stepper.min.js").pipe(gulp.dest("../dist/js"));
   done();
 }
 
