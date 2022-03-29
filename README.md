@@ -1,17 +1,18 @@
 # Farmers.gov Design System setup
+
 ---
 
 ### Basic Setup
+
 #### 1. Clone the repository into the root directory of your site
-`$ git clone https://github.com/USDA-Farmers-gov/Farmers.Gov-Design-System.git`
 
-#### 2. Rename the repo folder to be web friendly
-`$ mv Farmers.Gov-Design-System farmers-gov`
+`$ git clone https://github.com/USDA-Farmers-gov/farmers-gov-design-system.git`
 
-#### 3. Include the JS and CSS in the header (JS may need to go before closing body tag)
+#### 2. Include the JS and CSS in the header (JS may need to go before closing body tag)
+
 ```
-<script src="/farmers-gov/dist/js/farmers.min.js"></script>
-<link rel="stylesheet" media="all" href="/farmers-gov/dist/css/main.min.css" />
+<script src="/farmers-gov-design-system/dist/js/farmers.min.js"></script>
+<link rel="stylesheet" media="all" href="/farmers-gov-design-system/dist/css/main.min.css" />
 ```
 
 <p class="hide-on-site">
@@ -24,22 +25,23 @@
 
 _In order to use our Gulp tasks to compile the Sass and ES6+ JavaScript files, you'll need to have [Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), and [Gulp](https://gulpjs.com/) installed on your machine._
 
-+ To download this repository, the following commands can be used in the terminal.  
-  `$ git clone git@github.com:USDA-Farmers-gov/Farmers.Gov-Design-System.git`  
-then run `$ cd Farmers.Gov-Design-System` to navigate into the repository directory.
+- To download this repository, the following commands can be used in the terminal.  
+   `$ git clone git@github.com:USDA-Farmers-gov/farmers-gov-design-system.git`  
+  then run `$ cd farmers-gov-design-system` to navigate into the repository directory.
 
-+ Once you have the repository downloaded, make sure you are in the repository directory and run `npm install` to get all of the necessary packages.
+- Once you have the repository downloaded, make sure you are in the repository directory and run `npm install` to get all of the necessary packages.
 
-+ After all of the packages have been installed, you can run the Gulp tasks to generate the compiled JavaScript and CSS files.
+- After all of the packages have been installed, you can run the Gulp tasks to generate the compiled JavaScript and CSS files.
 
-##### Gulp Tasks   
-_These gulp tasks put the compiled assets in the `/dist` directory._   
+##### Gulp Tasks
 
-| Task                   | Description                                                                                                                          |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `gulp scripts`         | Transpiles the main a JavaScript file located in `/js/farmers.js`                                                                    |
+_These gulp tasks put the compiled assets in the `/dist` directory._
+
+| Task                   | Description                                                                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `gulp scripts`         | Transpiles the main a JavaScript file located in `/js/farmers.js`                                                                     |
 | `gulp styles`          | Compiles the main a Sass file located in `/scss/styles.scss`                                                                          |
-| `gulp assets`          | Copies files from the `img/` and `fonts/` directories                                                                                |
+| `gulp assets`          | Copies files from the `img/` and `fonts/` directories                                                                                 |
 | `gulp watch`           | Watches all `.js` files in the `js/` directory and all `.scss` files in the `scss/` directory and compiles/transpiles any new changes |
-| `gulp clean`           | Deletes files and directories in the `dist/` directory                                                                               |
-| `gulp` or `gulp build` | Runs `gulp clean`, `gulp styles`, `gulp scripts` and `gulp assets`                                                                   |
+| `gulp clean`           | Deletes files and directories in the `dist/` directory                                                                                |
+| `gulp` or `gulp build` | Runs `gulp clean`, `gulp styles`, `gulp scripts` and `gulp assets`                                                                    |

@@ -198,7 +198,9 @@ export default {
     scrollToStep(index) {
       if (index !== this.data.questions.length) {
         setTimeout(() => {
-          const element = document.getElementById(`stepper-row-${index + 1}`);
+          const element = document.querySelector(
+            `#${this.stepperId} #stepper-row-${index + 1}`
+          );
           if (!!element) element.scrollIntoView({ behavior: "smooth" });
         }, 200);
       }
