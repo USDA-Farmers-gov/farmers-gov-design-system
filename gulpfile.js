@@ -54,16 +54,16 @@ function webpack(done) {
   done();
 }
 
-function watchFiles() {
-  watch("scss/**/*.scss", css);
-  watch("js/**/*.js", js);
-  gulp.watch(["./js/stepper/*.js", "./js/stepper/**/*.vue"], webpack);
-}
-
 function assets(done) {
   gulp.src(["./fonts/**/*"]).pipe(gulp.dest("./dist/fonts"));
   gulp.src(["./img/**/*"]).pipe(gulp.dest("./dist/images"));
   done();
+}
+
+function watchFiles() {
+  watch("scss/**/*.scss", css);
+  watch("js/**/*.js", js);
+  gulp.watch(["./js/stepper/*.js", "./js/stepper/**/*.vue"], webpack);
 }
 
 exports.watch = watchFiles;
