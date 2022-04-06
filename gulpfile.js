@@ -54,11 +54,6 @@ function webpack(done) {
   done();
 }
 
-function assets(done) {
-  src(["fonts/**/*"]).pipe(dest("./dist/fonts"));
-  return src(["img/**/*"]).pipe(dest("./dist/images"));
-}
-
 function watchFiles() {
   watch("scss/**/*.scss", css);
   watch("js/**/*.js", js);
@@ -68,7 +63,6 @@ function watchFiles() {
 function assets(done) {
   gulp.src(["./fonts/**/*"]).pipe(gulp.dest("./dist/fonts"));
   gulp.src(["./img/**/*"]).pipe(gulp.dest("./dist/images"));
-  gulp.src(["farmers-design-system/dist/js/*"]).pipe(gulp.dest("./dist/js"));
   done();
 }
 
