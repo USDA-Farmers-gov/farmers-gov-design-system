@@ -76,7 +76,9 @@ export default {
   props: ["data", "options"],
   data() {
     return {
-      stepperId: this.data.element_id,
+      stepperId: !!this.data.anchor_link_id
+        ? this.data.anchor_link_id
+        : this.data.element_id,
       visibleSteps: [],
       selected: [],
       results: [],
