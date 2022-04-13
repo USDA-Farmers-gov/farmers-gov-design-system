@@ -12,169 +12,170 @@ function processAccordions() {
 
   setBoxAccordionTopHeight();
   youTubeKeyboardAccessibility();
-  Array.prototype.slice
-    .call(document.querySelectorAll(".Accordion"))
-    .forEach(function (accordion) {
-      // Allow for multiple accordion sections to be expanded at the same time
-      var allowMultiple = false; // we don't want multiple accordion sections to be expanded at the same time
+  document.querySelectorAll(".Accordion").forEach(function (accordion) {
+    // Allow for multiple accordion sections to be expanded at the same time
+    var allowMultiple = false; // we don't want multiple accordion sections to be expanded at the same time
 
-      // Allow for each toggle to both open and close individually
-      var allowToggle = accordion.hasAttribute("data-allow-toggle");
+    // Allow for each toggle to both open and close individually
+    var allowToggle = accordion.hasAttribute("data-allow-toggle");
 
-      // Create the array of toggle elements for the accordion group
-      var triggers = [...accordion.querySelectorAll(".Accordion-trigger")];
-      var panels = [...accordion.querySelectorAll(".Accordion-panel")];
+    // Create the array of toggle elements for the accordion group
+    var triggers = [...accordion.querySelectorAll(".Accordion-trigger")];
+    var panels = [...accordion.querySelectorAll(".Accordion-panel")];
 
-      triggers.map((target) => {
-        panelWidthFix(accordion, target);
-      });
+    triggers.map((target) => {
+      panelWidthFix(accordion, target);
+    });
 
-      accordion.addEventListener("click", function (event) {
-        var target = event.target;
-        target.parentElement.parentElement.classList.contains(
-          "Accordion-trigger"
-        )
-          ? (target = target.parentElement.parentElement)
-          : target.parentElement.classList.contains("Accordion-trigger")
-          ? (target = target.parentElement)
-          : ""; // Kind of a hack to set target element correctly
+    accordion.addEventListener("click", function (event) {
+      var target = event.target;
+      target.parentElement.parentElement.classList.contains("Accordion-trigger")
+        ? (target = target.parentElement.parentElement)
+        : target.parentElement.classList.contains("Accordion-trigger")
+        ? (target = target.parentElement)
+        : ""; // Kind of a hack to set target element correctly
 
-        if (target.classList.contains("Accordion-trigger")) {
-          // Check if the current toggle is expanded.
-          var isExpanded = target.getAttribute("aria-expanded") == "true";
-          var active = accordion.querySelector('[aria-expanded="true"]');
-
-          // without allowMultiple, close the open accordion
-          if (!allowMultiple && active && active !== target) {
-            // Set the expanded state on the triggering element
-            active.setAttribute("aria-expanded", "false");
-            // Hide the accordion sections, using aria-controls to specify the desired section
-            document
-              .getElementById(active.getAttribute("aria-controls"))
-              .setAttribute("hidden", "");
-
-            // When toggling is not allowed, clean up disabled state
-            if (!allowToggle) {
-              active.removeAttribute("aria-disabled");
-            }
-          }
-
-          if (!isExpanded) {
-            document
-              .querySelectorAll(".box-accordion-top")
-              .forEach((accordion) =>
-                accordion.setAttribute("aria-expanded", false)
-              );
-            document
-              .querySelectorAll(".Accordion-panel")
-              .forEach((accordion) => accordion.setAttribute("hidden", true));
-
-            // Set the expanded state on the triggering element
-            target.setAttribute("aria-expanded", "true");
-
-            // Hide the accordion sections, using aria-controls to specify the desired section
-            document
-              .getElementById(target.getAttribute("aria-controls"))
-              .removeAttribute("hidden");
-
-            // If toggling is not allowed, set disabled state on trigger
-            if (!allowToggle) {
-              target.setAttribute("aria-disabled", "true");
-            }
-          } else if (allowToggle && isExpanded) {
-            // Set the expanded state on the triggering element
-            target.setAttribute("aria-expanded", "false");
-            // Hide the accordion sections, using aria-controls to specify the desired section
-            document
-              .getElementById(target.getAttribute("aria-controls"))
-              .setAttribute("hidden", "");
-          }
-
-          event.preventDefault();
-        }
-
-        let activePanel = panels.filter((el) => !el.hasAttribute("hidden"))[0];
-        activePanel
-          ? activePanel.scrollIntoView({
-              behavior: "smooth",
-            })
-          : "";
-      });
-
-      // Bind keyboard behaviors on the main accordion container
-      accordion.addEventListener("keydown", function (event) {
-        var target = event.target;
-        var key = event.which.toString();
-
+      if (target.classList.contains("Accordion-trigger")) {
+        // Check if the current toggle is expanded.
         var isExpanded = target.getAttribute("aria-expanded") == "true";
-        var allowToggle = allowMultiple
-          ? allowMultiple
-          : accordion.hasAttribute("data-allow-toggle");
+        var active = accordion.querySelector('[aria-expanded="true"]');
 
-        // 33 = Page Up, 34 = Page Down
-        var ctrlModifier = event.ctrlKey && key.match(/33|34/);
+        // without allowMultiple, close the open accordion
+        if (!allowMultiple && active && active !== target) {
+          // Set the expanded state on the triggering element
+          active.setAttribute("aria-expanded", "false");
+          // Hide the accordion sections, using aria-controls to specify the desired section
+          document
+            .getElementById(active.getAttribute("aria-controls"))
+            .setAttribute("hidden", "");
 
-        // Is this coming from an accordion header?
-        if (target.classList.contains("Accordion-trigger")) {
-          // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
-          // 38 = Up, 40 = Down
-          if (key.match(/38|40/) || ctrlModifier) {
-            var index = triggers.indexOf(target);
-            var direction = key.match(/34|40/) ? 1 : -1;
-            var length = triggers.length;
-            var newIndex = (index + length + direction) % length;
-
-            triggers[newIndex].focus();
-
-            event.preventDefault();
-          } else if (key.match(/35|36/)) {
-            // 35 = End, 36 = Home keyboard operations
-            switch (key) {
-              // Go to first accordion
-              case "36":
-                triggers[0].focus();
-                break;
-              // Go to last accordion
-              case "35":
-                triggers[triggers.length - 1].focus();
-                break;
-            }
-            event.preventDefault();
-          } else if (key.match(/32|13/)) {
-            // 13 = Enter, 32 = Space keyboard operations
-            event.preventDefault();
-            target.click();
+          // When toggling is not allowed, clean up disabled state
+          if (!allowToggle) {
+            active.removeAttribute("aria-disabled");
           }
         }
-      });
 
-      // These are used to style the accordion when one of the buttons has focus
-      accordion
-        .querySelectorAll(".Accordion-trigger")
-        .forEach(function (trigger) {
-          trigger.addEventListener("focus", function (event) {
-            // accordion.classList.add('focus');
-            event.target.classList.add("focus");
-          });
+        if (!isExpanded) {
+          document
+            .querySelectorAll(".box-accordion-top")
+            .forEach((boxAccordionTop) =>
+              boxAccordionTop.setAttribute("aria-expanded", false)
+            );
+          document
+            .querySelectorAll(".Accordion-panel")
+            .forEach((accordionPanel) => {
+              accordionPanel.setAttribute("aria-hidden", false);
+              accordionPanel.setAttribute("hidden", false);
+            });
 
-          trigger.addEventListener("blur", function (event) {
-            accordion.classList.remove("focus");
-            event.target.classList.remove("focus");
-          });
+          // Set the expanded state on the triggering element
+          target.setAttribute("aria-expanded", "true");
+
+          // Hide the accordion sections, using aria-controls to specify the desired section
+          document
+            .getElementById(target.getAttribute("aria-controls"))
+            .removeAttribute("hidden");
+
+          // If toggling is not allowed, set disabled state on trigger
+          if (!allowToggle) target.setAttribute("aria-disabled", "true");
+        } else if (allowToggle && !!isExpanded) {
+          // Set the expanded state on the triggering element
+          target.setAttribute("aria-expanded", "false");
+          // Hide the accordion sections, using aria-controls to specify the desired section
+
+          const ariaControlsTarget = document.getElementById(
+            target.getAttribute("aria-controls")
+          );
+
+          ariaControlsTarget.setAttribute("aria-hidden", true);
+          ariaControlsTarget.setAttribute("hidden", true);
+        }
+
+        event.preventDefault();
+      }
+
+      let activePanel = panels.filter((el) => !el.hasAttribute("hidden"))[0];
+      activePanel
+        ? activePanel.scrollIntoView({
+            behavior: "smooth",
+          })
+        : "";
+    });
+
+    // Bind keyboard behaviors on the main accordion container
+    // accordion.addEventListener("keydown", function (event) {
+    //   var target = event.target;
+    //   var key = event.which.toString();
+
+    //   // var isExpanded = target.getAttribute("aria-expanded") == "true";
+    //   // var allowToggle = allowMultiple
+    //   //   ? allowMultiple
+    //   //   : accordion.hasAttribute("data-allow-toggle");
+
+    //   // 33 = Page Up, 34 = Page Down
+    //   var ctrlModifier = event.ctrlKey && key.match(/33|34/);
+
+    //   // Is this coming from an accordion header?
+    //   if (target.classList.contains("Accordion-trigger")) {
+    //     // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+    //     // 38 = Up, 40 = Down
+    //     if (key.match(/38|40/) || ctrlModifier) {
+    //       var index = triggers.indexOf(target);
+    //       var direction = key.match(/34|40/) ? 1 : -1;
+    //       var length = triggers.length;
+    //       var newIndex = (index + length + direction) % length;
+
+    //       triggers[newIndex].focus();
+
+    //       event.preventDefault();
+    //     } else if (key.match(/35|36/)) {
+    //       // 35 = End, 36 = Home keyboard operations
+    //       switch (key) {
+    //         // Go to first accordion
+    //         case "36":
+    //           triggers[0].focus();
+    //           break;
+    //         // Go to last accordion
+    //         case "35":
+    //           triggers[triggers.length - 1].focus();
+    //           break;
+    //       }
+    //       event.preventDefault();
+    //     } else if (key.match(/32|13/)) {
+    //       // 13 = Enter, 32 = Space keyboard operations
+    //       event.preventDefault();
+    //       target.click();
+    //     }
+    //   }
+    // });
+
+    // These are used to style the accordion when one of the buttons has focus
+    accordion
+      .querySelectorAll(".Accordion-trigger")
+      .forEach(function (trigger) {
+        trigger.addEventListener("focus", function (event) {
+          // accordion.classList.add('focus');
+          event.target.classList.add("focus");
         });
 
-      // Minor setup: will set disabled state, via aria-disabled, to an
-      // expanded/ active accordion which is not allowed to be toggled close
-      if (!allowToggle) {
-        // Get the first expanded/ active accordion
-        var expanded = accordion.querySelector('[aria-expanded="true"]');
+        trigger.addEventListener("blur", function (event) {
+          accordion.classList.remove("focus");
+          event.target.classList.remove("focus");
+        });
+      });
 
-        // If an expanded/ active accordion is found, disable
-        if (expanded) {
-          expanded.setAttribute("aria-disabled", "true");
-        }
+    // Minor setup: will set disabled state, via aria-disabled, to an
+    // expanded/ active accordion which is not allowed to be toggled close
+    if (!allowToggle) {
+      // Get the first expanded/ active accordion
+      var expanded = accordion.querySelector('[aria-expanded="true"]');
+
+      // If an expanded/ active accordion is found, disable
+      if (expanded) {
+        expanded.setAttribute("aria-disabled", "true");
       }
-    });
+    }
+  });
 
   window.addEventListener("resize", () => {
     [...document.querySelectorAll(".Accordion")].map((accordion) => {
@@ -196,9 +197,10 @@ function processAccordions() {
 
   accordion_card_array.map((cardAccordion) => {
     cardAccordion
-      .querySelector(".card-accordion-toggle")
+      .querySelector(".card-accordion-toggle a")
       .addEventListener("click", (evt) => {
-        toggleAccordion(evt, cardAccordion);
+        console.log("click");
+        toggleCardAccordion(evt, cardAccordion);
       });
 
     cardAccordion.addEventListener("keydown", (evt) => {
@@ -210,16 +212,46 @@ function processAccordions() {
       }
     });
 
+    console.log(cardAccordion.querySelector(".card-accordion-toggle button"));
     cardAccordion
-      .querySelector(".card-accordion-toggle")
-      .addEventListener("keydown", (evt) => {
-        if (evt.keyCode.toString().match(/32|13/)) {
-          evt.preventDefault();
-          cardAccordion.tabIndex = "0";
-          cardAccordion.focus();
-          toggleAccordion(evt, cardAccordion);
+      .querySelector(".card-accordion-toggle button")
+      .addEventListener("keydown", (event) => {
+        if (
+          event.code.toLowerCase() === "space" ||
+          event.key.toLowerCase === "enter"
+        ) {
+          event.preventDefault();
+          toggleCardAccordion(event, cardAccordion);
+
+          const showContent = cardAccordion
+            .querySelector(".card-accordion")
+            .classList.contains("show");
+          const tabIndex = !!showContent ? "0" : "-1";
+
+          cardAccordion.tabIndex = tabIndex;
+          !!showContent ? cardAccordion.focus() : cardAccordion.blur();
         }
       });
+
+    // cardAccordion
+    //   .querySelector(".card-accordion-toggle a")
+    //   .addEventListener("keydown", (event) => {
+    //     if (
+    //       event.code.toLowerCase() === "space" ||
+    //       event.key.toLowerCase === "enter"
+    //     ) {
+    //       event.preventDefault();
+    //       toggleCardAccordion(event, cardAccordion);
+
+    //       const showContent = cardAccordion
+    //         .querySelector(".card-accordion")
+    //         .classList.contains("show");
+    //       const tabIndex = !!showContent ? "0" : "-1";
+
+    //       cardAccordion.tabIndex = tabIndex;
+    //       !!showContent ? cardAccordion.focus() : cardAccordion.blur();
+    //     }
+    //   });
   });
   document.body.addEventListener("click", (evt) => {
     const tabbedAccordions = document.querySelectorAll(
@@ -232,8 +264,10 @@ function processAccordions() {
     }
   });
 }
-function toggleAccordion(evt, cardAccordion) {
+function toggleCardAccordion(evt, cardAccordion) {
   evt.preventDefault();
+  cardAccordion.tabIndex = "-1";
+  cardAccordion.blur();
   var target = evt.target;
   target.parentElement.parentElement.parentElement.classList.contains(
     "Card-Accordion"
@@ -276,11 +310,8 @@ function toggleAccordion(evt, cardAccordion) {
       for (let i = 0; i < content_links.length; i++)
         content_links[i].setAttribute("tabindex", "-1");
 
-      const toggleLink = target.querySelector(".card-accordion-toggle > a");
-      if (toggleLink) {
-        toggleLink.innerHTML = "Show More";
-        toggleLink.focus();
-      }
+      const toggleLink = target.querySelector(".card-accordion-toggle a");
+      if (!!toggleLink) toggleLink.innerHTML = "Show More";
 
       target.scrollIntoView({
         behavior: "smooth",

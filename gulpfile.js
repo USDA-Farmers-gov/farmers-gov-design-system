@@ -15,13 +15,16 @@ const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 const merge = require("merge-stream");
 const webpackStream = require("webpack-stream");
+const sourcemaps = require("gulp-sourcemaps");
 const clean = () => del(["dist"]);
 
 function css(done) {
   src("scss/styles.scss")
+    .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS())
     .pipe(rename({ extname: ".min.css" }))
+    .pipe(sourcemaps.write("./maps"))
     .pipe(dest("./dist/css"));
   done();
 }
@@ -36,7 +39,9 @@ function js(done) {
       .pipe(source(entry))
       .pipe(rename({ extname: ".min.js" }))
       .pipe(buffer())
+      .pipe(sourcemaps.init({ loadmaps: true }))
       .pipe(uglify())
+      .pipe(sourcemaps.write("./maps"))
       .pipe(dest("./dist/js"));
   });
   done();
