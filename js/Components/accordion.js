@@ -103,51 +103,48 @@ function processAccordions() {
     });
 
     // Bind keyboard behaviors on the main accordion container
-    // accordion.addEventListener("keydown", function (event) {
-    //   var target = event.target;
-    //   var key = event.which.toString();
+    accordion.addEventListener("keydown", function (event) {
+      var target = event.target;
+      var key = event.which.toString();
 
-    //   // var isExpanded = target.getAttribute("aria-expanded") == "true";
-    //   // var allowToggle = allowMultiple
-    //   //   ? allowMultiple
-    //   //   : accordion.hasAttribute("data-allow-toggle");
+      // var isExpanded = target.getAttribute("aria-expanded") == "true";
+      // var allowToggle = allowMultiple
+      //   ? allowMultiple
+      //   : accordion.hasAttribute("data-allow-toggle");
 
-    //   // 33 = Page Up, 34 = Page Down
-    //   var ctrlModifier = event.ctrlKey && key.match(/33|34/);
+      // 33 = Page Up, 34 = Page Down
+      var ctrlModifier = event.ctrlKey && key.match(/33|34/);
 
-    //   // Is this coming from an accordion header?
-    //   if (target.classList.contains("Accordion-trigger")) {
-    //     // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
-    //     // 38 = Up, 40 = Down
-    //     if (key.match(/38|40/) || ctrlModifier) {
-    //       var index = triggers.indexOf(target);
-    //       var direction = key.match(/34|40/) ? 1 : -1;
-    //       var length = triggers.length;
-    //       var newIndex = (index + length + direction) % length;
+      // Is this coming from an accordion header?
+      if (target.classList.contains("Accordion-trigger")) {
+        // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
+        // 38 = Up, 40 = Down
+        console.log(event.key);
+        if (key.match(/38|40/) || ctrlModifier) {
+          var index = triggers.indexOf(target);
+          var direction = key.match(/34|40/) ? 1 : -1;
+          var length = triggers.length;
+          var newIndex = (index + length + direction) % length;
 
-    //       triggers[newIndex].focus();
+          triggers[newIndex].focus();
 
-    //       event.preventDefault();
-    //     } else if (key.match(/35|36/)) {
-    //       // 35 = End, 36 = Home keyboard operations
-    //       switch (key) {
-    //         // Go to first accordion
-    //         case "36":
-    //           triggers[0].focus();
-    //           break;
-    //         // Go to last accordion
-    //         case "35":
-    //           triggers[triggers.length - 1].focus();
-    //           break;
-    //       }
-    //       event.preventDefault();
-    //     } else if (key.match(/32|13/)) {
-    //       // 13 = Enter, 32 = Space keyboard operations
-    //       event.preventDefault();
-    //       target.click();
-    //     }
-    //   }
-    // });
+          event.preventDefault();
+        } else if (key.match(/35|36/)) {
+          // 35 = End, 36 = Home keyboard operations
+          switch (key) {
+            // Go to first accordion
+            case "36":
+              triggers[0].focus();
+              break;
+            // Go to last accordion
+            case "35":
+              triggers[triggers.length - 1].focus();
+              break;
+          }
+          event.preventDefault();
+        }
+      }
+    });
 
     // These are used to style the accordion when one of the buttons has focus
     accordion
@@ -320,12 +317,11 @@ function toggleCardAccordion(evt, cardAccordion) {
 }
 function panelWidthFix(accordionBlock, accordionTarget) {
   if (!!accordionTarget) {
-    const targetPanel = accordionTarget.nextSibling.nextElementSibling;
+    const targetPanel = accordionBlock.querySelector(
+      `#${accordionTarget.getAttribute("aria-controls")}`
+    );
     const offset =
-      (accordionTarget.parentElement.offsetLeft - accordionBlock.offsetLeft) *
-        -1 +
-      "px";
-
+      (accordionTarget.offsetLeft - accordionBlock.offsetLeft) * -1 + 10 + "px";
     targetPanel.style.marginLeft = offset;
     targetPanel.style.width = `${accordionBlock.offsetWidth - 20}px`;
   }
