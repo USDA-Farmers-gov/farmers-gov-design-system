@@ -199,7 +199,6 @@ function processAccordions() {
     cardAccordion
       .querySelector(".card-accordion-toggle a")
       .addEventListener("click", (evt) => {
-        console.log("click");
         toggleCardAccordion(evt, cardAccordion);
       });
 
@@ -212,9 +211,8 @@ function processAccordions() {
       }
     });
 
-    console.log(cardAccordion.querySelector(".card-accordion-toggle button"));
     cardAccordion
-      .querySelector(".card-accordion-toggle button")
+      .querySelector(".card-accordion-toggle a")
       .addEventListener("keydown", (event) => {
         if (
           event.code.toLowerCase() === "space" ||
@@ -333,8 +331,8 @@ function panelWidthFix(accordionBlock, accordionTarget) {
   }
 }
 function setBoxAccordionTopHeight() {
-  Array.prototype.slice
-    .call(document.querySelectorAll(".box-accordion-top"))
+  document
+    .querySelectorAll(".box-accordion-top")
     .forEach(function (boxAccordion) {
       setTimeout(setHeight, 100);
 
