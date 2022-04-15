@@ -119,7 +119,6 @@ function processAccordions() {
       if (target.classList.contains("Accordion-trigger")) {
         // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
         // 38 = Up, 40 = Down
-        console.log(event.key);
         if (key.match(/38|40/) || ctrlModifier) {
           var index = triggers.indexOf(target);
           var direction = key.match(/34|40/) ? 1 : -1;

@@ -6,7 +6,10 @@
           <h2 class="usa-alert-heading headline-4">
             {{ data.header }}
           </h2>
-          <div v-html="data.content" />
+          <div
+            v-html="setAllLinksOpenInNewWindow(data.content)"
+            @click="handleLinkAlert"
+          />
         </div>
       </div>
     </div>
@@ -16,6 +19,14 @@
 export default {
   name: "Alert",
   props: ["data"],
+  data() {
+    return {
+      extLinks: [],
+    };
+  },
+  mounted() {
+    this.extLinks = this.getExternalLinksFromContent(this.data.content);
+  },
   methods: {
     setAlertClasses() {
       let classes = "usa-alert";

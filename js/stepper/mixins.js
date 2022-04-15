@@ -9,6 +9,49 @@ export function initialize(Vue) {
         }
         return text;
       },
+      getExternalLinksFromContent(content) {
+        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, "text/html");
+        const links = doc.body.querySelectorAll("a");
+        let extLinks = [];
+        links.forEach((link) => {
+          const internalLink = this.checkIfLinkInternal(link, extLinkData);
+          if (!internalLink) extLinks.push(link.href);
+        });
+        return extLinks;
+      },
+      handleLinkAlert(event) {
+        if (!!event.target.href && this.extLinks.includes(event.target.href)) {
+          event.preventDefault();
+          const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+          var confirm = window.confirm(extLinkData.extAlertText);
+          if (!!confirm) window.open(event.target, "_blank");
+        }
+      },
+      checkIfLinkInternal(link) {
+        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+        const url = !!link.href ? link.href : link;
+
+        let domain = new URL(url);
+        domain = domain.hostname;
+        let extExclude = new RegExp(
+          extLinkData.extExclude.replace(/\\/, "\\"),
+          "i"
+        );
+        return extExclude.test(domain);
+      },
+      setAllLinksOpenInNewWindow(content) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, "text/html");
+        const links = doc.body.querySelectorAll("a");
+
+        links.forEach((link) => {
+          link.setAttribute("target", "_blank");
+        });
+
+        return doc.body.innerHTML;
+      },
       createFormElementId(value) {
         return `${this.data.element_id}-${value}`;
       },
