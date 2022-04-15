@@ -7,7 +7,7 @@
             {{ data.header }}
           </h2>
           <div
-            v-html="setAllLinksOpenInNewWindow(data.content)"
+            v-html="processLinksInContent(data.content)"
             @click="handleLinkAlert"
           />
         </div>

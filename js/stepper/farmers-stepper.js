@@ -6,13 +6,22 @@ require("./mixins").initialize(Vue);
 export default function FGStepper(data, options) {
   const el = document.getElementById(data.element_id);
 
-  // this extracts data from the extlink Drupal module (if enabled)
-  const extLinkModuleData = JSON.parse(
-    document.querySelector(
-      'script[data-drupal-selector="drupal-settings-json"]'
-    ).innerHTML
-  ).data.extlink;
-  localStorage.setItem("extlink_data", JSON.stringify(extLinkModuleData));
+  // extract data from the extlink Drupal module (if enabled)
+  const drupalJsonSettings = document.querySelector(
+    'script[data-drupal-selector="drupal-settings-json"]'
+  );
+
+  if (
+    !!JSON.parse(drupalJsonSettings.innerHTML).data &&
+    !!JSON.parse(drupalJsonSettings.innerHTML).data.extlink
+  ) {
+    const extLinkModuleData = !!drupalJsonSettings
+      ? JSON.parse(drupalJsonSettings.innerHTML).data.extlink
+      : "";
+
+    if (!!extLinkModuleData)
+      localStorage.setItem("extlink_data", JSON.stringify(extLinkModuleData));
+  }
 
   var app = new Vue({
     el: el,
@@ -21,7 +30,6 @@ export default function FGStepper(data, options) {
         props: {
           data: data,
           options: options,
-          extLinkModuleData: extLinkModuleData,
         },
       }),
   });
