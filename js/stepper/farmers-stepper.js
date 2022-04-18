@@ -23,6 +23,13 @@ export default function FGStepper(data, options) {
       localStorage.setItem("extlink_data", JSON.stringify(extLinkModuleData));
   }
 
+  if (
+    (!JSON.parse(drupalJsonSettings.innerHTML).data ||
+      !JSON.parse(drupalJsonSettings.innerHTML).data.extlink) &&
+    !!localStorage.getItem("extlink_data")
+  )
+    localStorage.removeItem("extlink_data");
+
   var app = new Vue({
     el: el,
     render: (h) =>

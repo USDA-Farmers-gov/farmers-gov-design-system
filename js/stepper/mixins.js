@@ -9,26 +9,6 @@ export function initialize(Vue) {
         }
         return text;
       },
-      getExternalLinksFromContent(content) {
-        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
-        let externalLinks = [];
-
-        if (!!extLinkData) {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(content, "text/html");
-          const links = doc.body.querySelectorAll("a");
-          let extLinks = [];
-
-          links.forEach((link) => {
-            const internalLink = this.checkIfLinkInternal(link);
-            if (!internalLink) extLinks.push(link.href);
-          });
-
-          externalLinks = extLinks;
-        }
-
-        return externalLinks;
-      },
       processLinksInContent(content) {
         // - makes all links open in new window
         // - adds external link icon where appropriate and only if extlink Drupal module enabled.

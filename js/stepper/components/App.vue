@@ -98,7 +98,6 @@ export default {
     RadioButton: RadioButton,
   },
   mounted() {
-    this.extLinks = this.getExternalLinksFromContent(this.data.content);
     this.resetStepper();
     let cssMarkup = [];
     if (!!this.options && !!this.options.print) {

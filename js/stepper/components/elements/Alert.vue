@@ -24,9 +24,6 @@ export default {
       extLinks: [],
     };
   },
-  mounted() {
-    this.extLinks = this.getExternalLinksFromContent(this.data.content);
-  },
   methods: {
     setAlertClasses() {
       let classes = "usa-alert";
