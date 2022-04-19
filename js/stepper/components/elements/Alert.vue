@@ -6,7 +6,10 @@
           <h2 class="usa-alert-heading headline-4">
             {{ data.header }}
           </h2>
-          <div v-html="data.content" />
+          <div
+            v-html="processLinksInContent(data.content)"
+            @click="handleLinkAlert"
+          />
         </div>
       </div>
     </div>
@@ -16,6 +19,11 @@
 export default {
   name: "Alert",
   props: ["data"],
+  data() {
+    return {
+      extLinks: [],
+    };
+  },
   methods: {
     setAlertClasses() {
       let classes = "usa-alert";

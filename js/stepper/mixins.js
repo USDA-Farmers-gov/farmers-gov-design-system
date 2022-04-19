@@ -9,6 +9,78 @@ export function initialize(Vue) {
         }
         return text;
       },
+      processLinksInContent(content) {
+        // - makes all links open in new window
+        // - adds external link icon where appropriate and only if extlink Drupal module enabled.
+        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, "text/html");
+        const links = doc.body.querySelectorAll("a");
+
+        links.forEach((link) => {
+          link.setAttribute("target", "_blank");
+        });
+
+        if (!!extLinkData) {
+          links.forEach((link) => {
+            const internalLink = this.checkIfLinkInternal(link);
+            if (!internalLink)
+              link.innerHTML =
+                link.innerHTML +
+                `<svg focusable="false" class="ext" role="img" aria-label="(link is external)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40">
+                  <metadata>
+                      <sfw xmlns="http://ns.adobe.com/SaveForWeb/1.0/">
+                          <slicesourcebounds y="-8160" x="-8165" width="16389" height="16384" bottomleftorigin="true"></slicesourcebounds>
+                          <optimizationsettings>
+                              <targetsettings targetsettingsid="0" fileformat="PNG24Format">
+                                  <png24format transparency="true" filtered="false" interlaced="false" nomattecolor="false" mattecolor="#FFFFFF"></png24format>
+                              </targetsettings>
+                          </optimizationsettings>
+                      </sfw>
+                  </metadata>
+                  <title>(link is external)</title>
+                  <path d="M48 26c-1.1 0-2 0.9-2 2v26H10V18h26c1.1 0 2-0.9 2-2s-0.9-2-2-2H8c-1.1 0-2 0.9-2 2v40c0 1.1 0.9 2 2 2h40c1.1 0 2-0.9 2-2V28C50 26.9 49.1 26 48 26z"></path>
+                  <path d="M56 6H44c-1.1 0-2 0.9-2 2s0.9 2 2 2h7.2L30.6 30.6c-0.8 0.8-0.8 2 0 2.8C31 33.8 31.5 34 32 34s1-0.2 1.4-0.6L54 12.8V20c0 1.1 0.9 2 2 2s2-0.9 2-2V8C58 6.9 57.1 6 56 6z"></path>
+              </svg>`;
+          });
+        }
+
+        return doc.body.innerHTML;
+      },
+      handleLinkAlert(event) {
+        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+        if (
+          !!extLinkData &&
+          !!event.target.href &&
+          !this.checkIfLinkInternal(event.target.href)
+        ) {
+          event.preventDefault();
+
+          const confirm = window.confirm(extLinkData.extAlertText);
+          if (!!confirm) window.open(event.target, "_blank");
+        }
+      },
+      checkIfLinkInternal(link) {
+        const extLinkData = JSON.parse(localStorage.getItem("extlink_data"));
+        let isInternal = true;
+        const url = !!link.href ? link.href : link;
+        // console.log(link.href);
+
+        if (!!extLinkData) {
+          let domain = new URL(url);
+          domain = domain.hostname;
+          if (window.location.hostname === domain) isInternal = true;
+          if (window.location.hostname !== domain) {
+            let extExclude = new RegExp(
+              extLinkData.extExclude.replace(/\\/, "\\"),
+              "i"
+            );
+            isInternal = extExclude.test(domain);
+          }
+        }
+        return isInternal;
+      },
+
       createFormElementId(value) {
         return `${this.data.element_id}-${value}`;
       },
