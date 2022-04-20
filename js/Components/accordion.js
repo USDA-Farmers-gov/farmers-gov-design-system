@@ -212,7 +212,7 @@ function processAccordions() {
       .addEventListener("keydown", (event) => {
         if (
           event.code.toLowerCase() === "space" ||
-          event.key.toLowerCase === "enter"
+          event.key.toLowerCase() === "enter"
         ) {
           event.preventDefault();
           toggleCardAccordion(event, cardAccordion);
