@@ -14,6 +14,7 @@
         <div v-if="name === 'button'" class="mr-8">
           <Button :data="data.button"></Button>
         </div>
+
         <div
           v-if="printLink && !firefoxOnAndroid()"
           class="inline-flex print-btn mr-auto"
