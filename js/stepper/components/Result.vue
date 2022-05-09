@@ -14,19 +14,6 @@
         <div v-if="name === 'button'" class="mr-8">
           <Button :data="data.button"></Button>
         </div>
-        <div
-          v-if="printLink && !firefoxOnAndroid()"
-          class="inline-flex print-btn mr-auto"
-        >
-          <span class="icon print"></span>
-          <a
-            class="text-link no-icon mt-4 pr-0"
-            @click="printStepper"
-            tabindex="0"
-            >Print Results</a
-          >
-        </div>
-
         <div class="start-over-container">
           <a
             class="btn tertiary pl-0 start-over"
@@ -35,6 +22,19 @@
           >
             Start Over
           </a>
+        </div>
+
+        <div
+          v-if="printLink && !firefoxOnAndroid()"
+          class="inline-flex print-btn ml-auto"
+        >
+          <span class="icon print"></span>
+          <a
+            class="text-link no-icon mt-4 pr-0"
+            @click="printStepper"
+            tabindex="0"
+            >Print Results</a
+          >
         </div>
       </div>
     </div>
