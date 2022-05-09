@@ -58,16 +58,20 @@
     }
     @media (max-width: $screen--M) {
       align-items: flex-start;
-      .start-over {
-        padding-top: 2.3rem;
-        padding-bottom: 2.3rem;
-        padding-left: 0;
+      .start-over-container {
+        border-top: 2px solid $grey2;
+        width: 100%;
+        .start-over {
+          padding-top: 1.5rem;
+          padding-bottom: 2.3rem;
+          padding-left: 0;
+        }
       }
       .print-btn {
         width: 100%;
-        border-top: 2px solid $grey2;
         margin-left: 0;
-        padding-top: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         @media (max-width: $screen--M) {
           .icon.print {
             margin-left: -1rem;
