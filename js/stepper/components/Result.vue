@@ -17,7 +17,7 @@
 
         <div
           v-if="printLink && !firefoxOnAndroid()"
-          class="inline-flex print-btn ml-auto"
+          class="inline-flex print-btn mr-auto"
         >
           <span class="icon print"></span>
           <a
@@ -26,6 +26,16 @@
             tabindex="0"
             >Print Results</a
           >
+        </div>
+
+        <div class="start-over-container">
+          <a
+            class="btn tertiary pl-0 start-over"
+            tabindex="0"
+            @click="goBacktoStart"
+          >
+            Start Over
+          </a>
         </div>
       </div>
     </div>
