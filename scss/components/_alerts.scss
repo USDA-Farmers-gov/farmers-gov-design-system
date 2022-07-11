@@ -2,6 +2,9 @@
 .alert-wrapper {
   padding-top: 0;
   padding-bottom: 2.5rem;
+  &.compact-alert:hover {
+    cursor: pointer;
+  }
 }
 .usa-alert {
   margin-top: 0;
@@ -78,6 +81,9 @@
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: 9px 11px;
+    &.exclamation-icon {
+      background-image: image("alerts/exclamation-icon.svg");
+    }
   }
 }
 .usa-alert {
