@@ -2,8 +2,53 @@
 .alert-wrapper {
   padding-top: 0;
   padding-bottom: 2.5rem;
-  &.compact-alert:hover {
-    cursor: pointer;
+  &.compact-alert {
+    padding-bottom: 1rem;
+
+    .usa-alert {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+      font-size: 1.6rem;
+    }
+    .usa-alert-body {
+      &.exclamation-icon {
+        background-image: none;
+        .usa-alert-heading {
+          display: flex;
+          &:before {
+            content: "";
+            display: inline-block;
+            background-image: image("alerts/exclamation-icon.svg");
+            background-repeat: no-repeat;
+            background-size: 2.4rem 2.4rem;
+            background-position: 0 1px;
+            height: 3rem;
+            width: 4rem;
+          }
+        }
+      }
+      .usa-alert-text {
+        align-items: center;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 0;
+        .icon {
+          position: relative;
+          top: -0.1rem;
+        }
+      }
+    }
   }
 }
 .usa-alert {

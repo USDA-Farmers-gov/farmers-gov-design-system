@@ -245,5 +245,13 @@ p {
 }
 
 .underline {
-  text-decoration: underline;  
+  text-decoration: underline;
+}
+
+.mini-header {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
