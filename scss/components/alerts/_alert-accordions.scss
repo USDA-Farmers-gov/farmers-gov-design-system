@@ -1,0 +1,25 @@
+// alert accordion
+.alert-accordion-wrapper {
+  padding-bottom: 1.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+  .alert-accordion {
+    .icon.accordion-expand,
+    .icon.accordion-collapse {
+      align-self: center;
+    }
+    .alert-description {
+      white-space: pre-line;
+    }
+    .usa-alert-text-small {
+      font-size: 1.4rem;
+    }
+  }
+  .alert-accordion-content {
+    background: #ffffff;
+    box-shadow: 0 0.3rem 0.4rem 0 $grey3;
+    border-radius: 0.2rem;
+    padding: 2rem 4rem 4rem 4rem;
+  }
+}
