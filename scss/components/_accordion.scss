@@ -101,6 +101,22 @@
       background: transparent !important;
     }
   }
+  &.horizontal {
+    height: fit-content;
+    .card-accordion-horizontal-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .card-accordion-toggle {
+      position: relative;
+      width: fit-content;
+      min-width: 16rem;
+      height: fit-content;
+      background: none;
+      padding-top: 0;
+    }
+  }
   .card-accordion-content {
     h1,
     h2,
