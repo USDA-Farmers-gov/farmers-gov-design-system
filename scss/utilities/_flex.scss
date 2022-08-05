@@ -39,6 +39,9 @@ $mobileSizes: "l", "m", "s";
 .flex-no-resize {
   flex: 0 0 auto;
 }
+.align-self-center {
+  align-self: center;
+}
 @each $wrap in $flexWrap {
   .flex-#{$wrap} {
     flex-wrap: #{$wrap};
