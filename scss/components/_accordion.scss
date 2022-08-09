@@ -126,6 +126,9 @@
     h6 {
       margin: 0 !important;
     }
+    &[hidden="until-found"] {
+      display: contents !important;
+    }
   }
   .card-accordion-toggle {
     position: absolute;
