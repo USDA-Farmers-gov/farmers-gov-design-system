@@ -108,6 +108,7 @@
   &.horizontal {
     height: fit-content;
     margin-bottom: 0;
+    padding: 2.4rem 3.2rem;
 
     .card-accordion-horizontal-header {
       display: flex;
@@ -179,4 +180,7 @@
       background-position: right 1.3rem;
     }
   }
+}
+.card-accordion-horizontal-content {
+  padding: 3.4rem 3.2rem;
 }
