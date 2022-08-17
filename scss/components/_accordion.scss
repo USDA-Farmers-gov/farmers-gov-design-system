@@ -83,10 +83,6 @@
   }
 }
 
-.card-accordion-horizontal-content {
-  box-shadow: 0 1px 4px 0 $grey3;
-}
-
 .card-accordion {
   position: relative;
   display: flex;
@@ -109,7 +105,9 @@
     height: fit-content;
     margin-bottom: 0;
     padding: 2.4rem 3.2rem;
-
+    &.collapsed {
+      margin-bottom: 1rem;
+    }
     .card-accordion-horizontal-header {
       display: flex;
       flex-direction: row;
@@ -183,4 +181,5 @@
 }
 .card-accordion-horizontal-content {
   padding: 3.4rem 3.2rem;
+  box-shadow: 0 1px 4px 0 $grey3;
 }
