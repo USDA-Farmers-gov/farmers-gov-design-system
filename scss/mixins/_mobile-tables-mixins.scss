@@ -91,6 +91,9 @@
         max-width: 16rem;
         word-wrap: break-word;
       }
+      &.full-width {
+        display: block;
+      }
     }
   }
 }

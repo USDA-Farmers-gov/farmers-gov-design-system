@@ -61,6 +61,8 @@ function setupTableForMobile(table) {
       const headerCells = row.querySelectorAll("th");
       const tableCells = row.querySelectorAll("td");
 
+      if (tableCells.length <= 2) table.classList.remove("simple-table");
+
       if (!!headerCells.length) {
         headerData = [];
 
