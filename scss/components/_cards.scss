@@ -33,6 +33,10 @@
 
   .headline {
     border-bottom: 0.4rem solid $heritage;
+    &.no-bottom-border {
+      border-bottom: none;
+    }
+
     h4 {
       padding-bottom: 0.6rem;
     }
