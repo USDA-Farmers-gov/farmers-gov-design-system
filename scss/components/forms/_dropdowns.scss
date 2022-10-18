@@ -1,4 +1,5 @@
-select {
+select,
+input.fg-datepicker {
   -moz-appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -39,4 +40,9 @@ select {
     cursor: not-allowed;
     color: $grey3;
   }
+}
+
+// for Vue 3 datepicker - https://vue3datepicker.com
+label div.dp__main {
+  margin-top: 5px;
 }
