@@ -57,7 +57,7 @@ export function initialize(Vue) {
           event.preventDefault();
 
           const confirm = window.confirm(extLinkData.extAlertText);
-          if (!!confirm) window.open(event.target, "_blank");
+          if (!!confirm) window.open(event.target, "_self");
         }
       },
       checkIfLinkInternal(link) {

@@ -41,6 +41,10 @@ input.fg-datepicker {
     color: $grey3;
   }
 }
+input.fg-datepicker {
+  background-image: image("calendar.svg");
+  background-size: 20px auto;
+}
 
 // for Vue 3 datepicker - https://vue3datepicker.com
 label div.dp__main {
