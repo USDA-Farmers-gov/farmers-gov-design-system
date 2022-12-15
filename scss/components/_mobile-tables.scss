@@ -1,7 +1,7 @@
 @import "./table-vars";
 @import "../mixins/_mobile-tables-mixins";
 
-@media (max-width: $screen--S) {
+@media (max-width: $screen--M) {
   table {
     display: none;
   }
