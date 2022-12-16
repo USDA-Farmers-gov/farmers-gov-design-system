@@ -1,3 +1,24 @@
+.show-on-mobile-l {
+  display: none;
+  @media screen and (max-width: $screen--L) {
+    display: block !important;
+  }
+}
+
+.show-on-mobile-m {
+  display: none;
+  @media screen and (max-width: $screen--M) {
+    display: block !important;
+  }
+}
+
+.show-on-mobile-s {
+  display: none;
+  @media screen and (max-width: $screen--S) {
+    display: block !important;
+  }
+}
+
 .hide-on-mobile-l {
   @media screen and (max-width: $screen--L) {
     display: none;
