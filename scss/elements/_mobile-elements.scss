@@ -1,0 +1,17 @@
+.hide-on-mobile-l {
+  @media screen and (max-width: $screen--L) {
+    display: none;
+  }
+}
+
+.hide-on-mobile-m {
+  @media screen and (max-width: $screen--M) {
+    display: none;
+  }
+}
+
+.hide-on-mobile-s {
+  @media screen and (max-width: $screen--S) {
+    display: none;
+  }
+}

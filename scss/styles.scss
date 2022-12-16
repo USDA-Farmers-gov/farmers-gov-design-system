@@ -1,6 +1,8 @@
 // Farmers Design System 1.0 (...not)
 @import "settings";
 
+// Flexbox Grid
+@import "grid/styles";
 @import "path-helper";
 
 @import "mixins/mixins";
@@ -9,9 +11,7 @@
 @import "elements/typography";
 @import "elements/lists";
 @import "elements/arrows";
-
-// Flexbox Grid
-@import "grid/styles";
+@import "elements/mobile-elements";
 
 @import "mixins/mixins";
 
