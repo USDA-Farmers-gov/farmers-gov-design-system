@@ -21,6 +21,9 @@ $mobileSizes: "l", "m", "s";
 .flex {
   display: flex;
 }
+.flex-no-alter {
+  flex: 0 0 auto;
+}
 .inline-flex {
   display: inline-flex;
 }
