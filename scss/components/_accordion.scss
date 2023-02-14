@@ -101,6 +101,13 @@
       background: transparent !important;
     }
   }
+  &.accent-top {
+    border-top: 0.6rem solid $heritage;
+    border-radius: 0.2rem 0.2rem 0 0;
+  }
+  &.padding-sm {
+    padding: 2.6rem 2rem initial 2rem;
+  }
   &.horizontal {
     height: fit-content;
     margin-bottom: 0;
