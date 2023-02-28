@@ -69,6 +69,14 @@
       float: none;
       color: $heritage !important;
     }
+    a.btn {
+      float: none;
+      color: $white !important;
+    }
+    a.btn.outline {
+      float: none;
+      color: $bigsky !important;
+    }
     p:first-of-type {
       margin-top: 0;
     }
@@ -134,6 +142,7 @@
 .usa-alert {
   padding-right: 2rem;
   padding-left: 2rem;
+
   &.usa-alert-warning {
     border-left: 1rem solid #fdb81e;
   }
