@@ -1,7 +1,9 @@
 window.addEventListener("render-accordions", function () {
+  console.log("1");
   processAccordions();
 });
 window.addEventListener("load", function () {
+  console.log("2");
   processAccordions();
 });
 
@@ -94,9 +96,9 @@ function processAccordions() {
         event.preventDefault();
       }
 
-      let activePanel = panels.filter((el) => !el.hasAttribute("hidden"))[0];
-      activePanel
-        ? activePanel.scrollIntoView({
+      const scrollElement = document.getElementById(accordion.id);
+      scrollElement
+        ? scrollElement.scrollIntoView({
             behavior: "smooth",
           })
         : "";
