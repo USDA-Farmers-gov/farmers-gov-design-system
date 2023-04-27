@@ -1,9 +1,7 @@
 window.addEventListener("render-accordions", function () {
-  console.log("1");
   processAccordions();
 });
 window.addEventListener("load", function () {
-  console.log("2");
   processAccordions();
 });
 
