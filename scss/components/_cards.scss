@@ -9,6 +9,8 @@
 }
 
 .content-card {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   box-shadow: 0 0.1rem 0.4rem 0 #bbbbbb;
   border-radius: 0.2rem;
@@ -68,6 +70,9 @@
         padding-bottom: 0;
       }
     }
+  }
+  .card-link {
+    margin-top: auto;
   }
 }
 

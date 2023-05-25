@@ -1,0 +1,12 @@
+.tag {
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: fit-content;
+	padding: 0.75rem 1rem;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	margin-top: 0.22rem;
+	&.tag-lightblue {
+		background: #e2eeff;
+	}
+}
