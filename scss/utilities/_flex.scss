@@ -42,8 +42,29 @@ $mobileSizes: "l", "m", "s";
 .flex-no-resize {
   flex: 0 0 auto;
 }
+.align-self-auto {
+  align-self: auto;
+}
+.align-self-normal {
+  align-self: normal;
+}
 .align-self-center {
   align-self: center;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+.align-self-start {
+  align-self: start;
+}
+.align-self-end {
+  align-self: end;
+}
+.align-self-flex-start {
+  align-self: flex-start;
+}
+.align-self-flex-end {
+  align-self: flex-end;
 }
 @each $wrap in $flexWrap {
   .flex-#{$wrap} {
