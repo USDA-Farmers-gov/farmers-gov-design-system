@@ -53,7 +53,8 @@
     "webpack-cli": "^4.9.1",
     "webpack-stream": "^7.0.0"
   },
-  "resolutions": {
-    "glob-parent": "^6.0.2"
+  "overrides": {
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2"
   }
 }
