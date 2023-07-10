@@ -12,7 +12,7 @@
 
 ```
 <script src="/farmers-gov-design-system/dist/js/farmers.min.js"></script>
-<link rel="stylesheet" media="all" href="/farmers-gov-design-system/dist/css/main.min.css" />
+<link rel="stylesheet" media="all" href="/farmers-gov-design-system/dist/css/styles.min.css" />
 ```
 
 <p class="hide-on-site">
@@ -25,13 +25,13 @@
 
 _In order to use our Gulp tasks to compile the Sass and ES6+ JavaScript files, you'll need to have [Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), and [Gulp](https://gulpjs.com/) installed on your machine._
 
-- To download this repository, the following commands can be used in the terminal.  
-   `$ git clone git@github.com:USDA-Farmers-gov/farmers-gov-design-system.git`  
-  then run `$ cd farmers-gov-design-system` to navigate into the repository directory.
+-  To download this repository, the following commands can be used in the terminal.  
+    `$ git clone git@github.com:USDA-Farmers-gov/farmers-gov-design-system.git`  
+   then run `$ cd farmers-gov-design-system` to navigate into the repository directory.
 
-- Once you have the repository downloaded, make sure you are in the repository directory and run `npm install` to get all of the necessary packages.
+-  Once you have the repository downloaded, make sure you are in the repository directory and run `npm install` to get all of the necessary packages.
 
-- After all of the packages have been installed, you can run the Gulp tasks to generate the compiled JavaScript and CSS files.
+-  After all of the packages have been installed, you can run the Gulp tasks to generate the compiled JavaScript and CSS files.
 
 ##### Gulp Tasks
 
