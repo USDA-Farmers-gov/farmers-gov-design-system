@@ -37,13 +37,12 @@ export const megamenu_mobile = function () {
     // end 508 fixes
     // copy nodes to menu
     if (signupNode) {
-      const signupNodeLink = signupNode.querySelector("a");
-
-      general_utils.removeClassIfExists(signupNode, "header-button");
-      general_utils.addClassIfDoesntExist(signupNode, "utility-nav-buttons");
-      general_utils.addClassIfDoesntExist(signupNodeLink, "utility-nav-links");
-      general_utils.addClassIfDoesntExist(signupNodeLink, "btn");
-      general_utils.addClassIfDoesntExist(signupNodeLink, "tertiary");
+      const signupNodeLinks = signupNode.querySelectorAll("a");
+      signupNodeLinks.forEach((link) => {
+        general_utils.removeClassIfExists(link, "tertiary");
+        general_utils.addClassIfDoesntExist(link, "sm-btn");
+        general_utils.addClassIfDoesntExist(link, "outline");
+      });
 
       megaMenuMobile.querySelector(".mm-signup").innerHTML =
         signupNode.outerHTML;
@@ -51,14 +50,6 @@ export const megamenu_mobile = function () {
     if (searchNode)
       megaMenuMobile.querySelector(".mm-search").innerHTML =
         searchNode.outerHTML;
-    // if (utilityNav) {
-    //   const utilNavMarkup = !!brandingBarMenu
-    //     ? `${brandingBarMenu.innerHTML} ${utilityNav.innerHTML}`
-    //     : utilityNav.innerHTML;
-    //   megaMenuMobile.querySelector(".mm-utility-nav").innerHTML = utilNavMarkup;
-    // }
-
-    // utilityNav.querySelector("ul").className = "";
 
     const topNav = document.querySelector(".mm-top-nav");
     const linksContainer = megaMenuMobile.querySelector(".mm-links-container");

@@ -221,7 +221,7 @@
   .header-button,
   .utility-nav-buttons {
     display: flex;
-    background: $white;
+    // background: $white;
     box-shadow: none;
     margin: 0;
     border-radius: 2.5px;
@@ -230,18 +230,21 @@
       font-size: 1.3rem;
     }
   }
+  .seperator {
+    visibility: hidden;
+    width: 1rem;
+  }
   .utility-nav-buttons {
     width: fit-content;
     width: intrinsic;
     width: -moz-max-content;
     zoom: 1;
     a {
-      background: #fff;
+      // background: #fff;
       color: #1a6ad3;
       font-size: 1.6rem !important;
       border: 1px solid #1a6ad3;
       box-shadow: 0 1px 4px 0 #bbb;
-      padding: 1rem 1.5rem;
       width: fit-content;
       border-radius: 2.5px;
     }
