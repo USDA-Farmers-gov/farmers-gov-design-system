@@ -44,6 +44,7 @@
     "clean-terminal-webpack-plugin": "^3.0.0",
     "css-loader": "^6.5.1",
     "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
     "sass-loader": "^12.4.0",
     "vue-fragment": "^1.5.2",
