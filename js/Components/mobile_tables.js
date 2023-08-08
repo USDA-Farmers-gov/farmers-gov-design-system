@@ -1,15 +1,55 @@
 window.addEventListener("load", function () {
-  processMobileTables();
+  setTimeout(() => {
+    saveTableWidths();
+    processMobileTables();
+  }, "2000");
 });
 
 window.addEventListener("resize", function () {
   processMobileTables();
 });
 
+function saveTableWidths() {
+  const key = "ds_table_widths";
+  sessionStorage.removeItem(key);
+  const tables = document.querySelectorAll("table");
+  let widths = [];
+  tables.forEach((table, idx) => {
+    widths.push({
+      index: idx,
+      tableWidth: table.getBoundingClientRect().width,
+    });
+  });
+  sessionStorage.setItem(key, JSON.stringify(widths));
+}
+
 function processMobileTables() {
   const tables = document.querySelectorAll("table");
-  if (!!tables) {
-    tables.forEach((table) => {
+  const staticColClass = "show-mobile-static-column";
+  if (!!tables.length) {
+    const widths = JSON.parse(sessionStorage.getItem("ds_table_widths"));
+    const bodyWidth = document.body.getBoundingClientRect().width;
+
+    tables.forEach((table, idx) => {
+      if (
+        !!table.closest(".mobile-static-column-container") &&
+        widths[idx].tableWidth > bodyWidth &&
+        table.getBoundingClientRect().width > bodyWidth
+      ) {
+        table
+          .closest(".mobile-static-column-container")
+          .classList.add(staticColClass);
+      }
+
+      if (
+        !!table.closest(".mobile-static-column-container") &&
+        widths[idx].tableWidth < bodyWidth &&
+        table.getBoundingClientRect().width < bodyWidth
+      )
+        table
+          .closest(".mobile-static-column-container")
+          .classList.remove(staticColClass);
+
       const headers = table.querySelectorAll("thead th");
       const dataRows = table.querySelectorAll("tr");
       const headersInData = table.querySelectorAll("tbody th");
@@ -81,8 +121,6 @@ function setupTableForMobile(table) {
 
 function checkIfSimpleTable(table, headers, dataRows, headersInData) {
   let integer = 0;
-  // console.log(headersInData);
-  // if (headersInData.length) integer++;
 
   if (!!table && table.classList.contains("ui-datepicker-calendar")) integer++;
 
