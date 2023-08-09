@@ -3,10 +3,10 @@
 
 @media (max-width: $screen--M) {
   table {
-    display: none;
+    visibility: hidden;
   }
   .show-on-mobile {
-    display: block;
+    visibility: visible;
   }
   .simple-table:not(.table-minimal) {
     @include simple-table-mobile;
@@ -29,11 +29,11 @@
   }
 }
 
-div.show-mobile-static-column {
+div.mobile-static-column-container {
   overflow: auto;
   width: 100%;
 
-  table.mobile-static-column {
+  table.show-mobile-static-column {
     table-layout: fixed;
     width: fit-content;
     border-collapse: separate;
