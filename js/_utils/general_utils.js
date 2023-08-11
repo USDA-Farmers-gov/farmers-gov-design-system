@@ -48,10 +48,11 @@ export function decodeHTMLEntities(html) {
 }
 
 export function addClassIfDoesntExist(element, className) {
-  if (!element.classList.contains(className)) element.classList.add(className);
+  if (!!element && !element.classList.contains(className))
+    element.classList.add(className);
 }
 export function removeClassIfExists(element, className) {
-  if (element.classList.contains(className))
+  if (!!element && element.classList.contains(className))
     element.classList.remove(className);
 }
 
