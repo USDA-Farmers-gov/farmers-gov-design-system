@@ -1,35 +1,61 @@
 window.addEventListener("load", function () {
   setTimeout(() => {
+    const tables = document.querySelectorAll("table");
+    if (!!tables.length) startDocWatcher();
     saveTableWidths();
     processMobileTables();
-  }, "1500");
+  }, "750");
 });
 
 window.addEventListener("resize", function () {
   processMobileTables();
 });
 
+function startDocWatcher() {
+  // watch for changes in the document to re-process mobile
+  // tables when there is dynamic content (like in tools)
+  let observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      setTimeout(() => {
+        processMobileTables();
+      }, "750");
+    });
+  });
+
+  observer.observe(document.body, {
+    characterDataOldValue: true,
+    subtree: true,
+    childList: true,
+    characterData: true,
+  });
+}
+
 function saveTableWidths() {
   const key = "ds_table_widths";
   sessionStorage.removeItem(key);
   const tables = document.querySelectorAll("table");
   let widths = [];
-  tables.forEach((table, idx) => {
-    widths.push({
-      index: idx,
-      tableWidth: table.getBoundingClientRect().width,
+
+  if (!!tables.length) {
+    tables.forEach((table, idx) => {
+      widths.push({
+        index: idx,
+        tableWidth: table.getBoundingClientRect().width,
+      });
     });
-  });
+  }
   sessionStorage.setItem(key, JSON.stringify(widths));
 }
 
 function processMobileTables() {
   const tables = document.querySelectorAll("table");
+
   if (!!tables.length) {
     tables.forEach((table, idx) => {
       if (
         !!table.classList &&
-        table.classList.contains("mobile-static-column")
+        table.classList.contains("mobile-static-column") &&
+        !table.classList.contains("show-mobile-static-column")
       ) {
         processStaticColTable(table, idx);
         setupStaticColContainer(table);
@@ -42,7 +68,7 @@ function processMobileTables() {
         table,
         headers,
         dataRows,
-        headersInData
+        headersInData,
       );
 
       if (!simpleTable) {
@@ -70,6 +96,7 @@ function processStaticColTable(table, idx) {
   // if the table goes outside of the body container, add class
   // to activate static column
   if (
+    !!widths[idx] &&
     widths[idx].tableWidth > bodyWidth &&
     table.getBoundingClientRect().width > bodyWidth
   )
@@ -78,6 +105,7 @@ function processStaticColTable(table, idx) {
   // if the table is inside of the body container, remove class
   // for static column
   if (
+    !!widths[idx] &&
     widths[idx].tableWidth < bodyWidth &&
     table.getBoundingClientRect().width < bodyWidth
   )
