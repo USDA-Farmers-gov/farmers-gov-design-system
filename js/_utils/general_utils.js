@@ -67,3 +67,12 @@ export function formatYouTubeUrl(url) {
   }
   return url;
 }
+
+export function detectDeviceType() {
+  // window variables are set when farmers.js is loaded
+  let deviceType = "";
+  if (window.is_mobile_device && !window.is_iPad) deviceType = "phone";
+  if (window.is_iPad) deviceType = "ipad";
+  if (!window.is_mobile_device && !window.is_iPad) deviceType = "desktop";
+  return deviceType;
+}

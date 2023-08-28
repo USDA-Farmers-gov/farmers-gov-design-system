@@ -320,3 +320,14 @@ a.btn {
 .print-btn a.text-link {
   display: inline-block;
 }
+
+.back-to-top {
+  display: none;
+  &.show {
+    display: block;
+  }
+  &.sitewide {
+    margin-right: 57px;
+    margin-bottom: 20px;
+  }
+}
