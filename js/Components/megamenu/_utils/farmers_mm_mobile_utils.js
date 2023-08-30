@@ -4,7 +4,7 @@ import * as mm_mobile_helpers from "./farmers_mm_mobile_helpers";
 export function processMobileSections() {
   window.addEventListener("DOMContentLoaded", function () {
     const firstLevelMenus = document.querySelectorAll(
-      ".tb-megamenu-item.level-1"
+      ".tb-megamenu-item.level-1",
     );
     const linksContainer = document.querySelector(".mm-links-container");
 
@@ -17,7 +17,7 @@ export function processMobileSections() {
       mm_mobile_helpers.setupFirstLevelTab(
         firstLevel,
         categoryName,
-        linksContainer
+        linksContainer,
       );
 
       const sideMenu = firstLevel.querySelectorAll(".tb-megamenu-item.level-2");
@@ -30,12 +30,12 @@ export function processMobileSections() {
         mm_mobile_helpers.setupMobileGridLinks(
           firstLevel,
           submenus,
-          linksContainer
+          linksContainer,
         );
 
         mm_mobile_helpers.setupFeaturedLinksContainer(
           firstLevel,
-          linksContainer
+          linksContainer,
         );
 
         mm_mobile_helpers.setupLandingPageLink(firstLevel, linksContainer);
@@ -43,7 +43,7 @@ export function processMobileSections() {
       if (!submenus.length)
         mm_mobile_helpers.setupLandingPageLinkNoSubmenu(
           firstLevel,
-          categoryName
+          categoryName,
         );
     });
   });
@@ -58,7 +58,7 @@ export function backToTopShowHide() {
       navContainer.addEventListener("scroll", function (element) {
         let position = document
           .querySelector(
-            "#mm-mobile .mm-links-container .mm-mobile-nav-category"
+            "#mm-mobile .mm-links-container .mm-mobile-nav-category",
           )
           .getBoundingClientRect().y;
 
@@ -77,8 +77,8 @@ export function backToTopShowHide() {
 
 export function showBackToTop(show) {
   const backToTop = document.querySelector(".back-to-top.mm-back-to-top");
-  const displayStyle = show ? "block" : "none";
-  backToTop.style.display = displayStyle;
+  const visibilityStyle = show ? "visible" : "hidden";
+  backToTop.style.visibility = visibilityStyle;
 }
 
 export function toggleMobileMegaMenu(action) {
@@ -92,7 +92,7 @@ export function toggleMobileMegaMenu(action) {
   if (action === "close") {
     document.querySelector(".nav-container").classList.remove(openClass);
     document.querySelector(".nav-container").classList.add(closeClass);
-    document.querySelector(".back-to-top.mm-back-to-top").style.display =
-      "none";
+    document.querySelector(".back-to-top.mm-back-to-top").style.visibility =
+      "hidden";
   }
 }

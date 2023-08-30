@@ -30,7 +30,7 @@ $close-button-height: 5.5rem;
   padding: 0 2rem 2rem 2rem;
 }
 .mm-back-to-top {
-  display: none;
+  visibility: hidden;
   right: 2rem !important;
   z-index: 999999999 !important;
   bottom: 4rem !important;
