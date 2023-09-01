@@ -29,9 +29,9 @@ function processBackToTop() {
 
 function setWhenVisible() {
 	const deviceType = general_utils.detectDeviceType();
-	let pixels = 986;
-	if (deviceType === "dekstop") pixels = 963;
-	if (deviceType === "ipad") pixels = 1117;
-	if (deviceType === "phone") pixels = 880;
+	let pixels = 3946;
+	if (deviceType === "desktop") pixels = 3852;
+	if (deviceType === "phone") pixels = 3520;
+	if (deviceType === "ipad") pixels = 4468;
 	return pixels;
 }
