@@ -12,11 +12,16 @@ ul.sidemenu {
   padding-left: 0;
   > li {
     font-size: 1.6rem;
-
     width: 95.5%;
     margin-left: 1.8rem;
-    > a {
-      .mm-nav-link {
+    &.tbm-item.level-2.tbm-item--has-flyout.open {
+      .tbm-link-container {
+        @extend %sidemenu-active-link;
+        border-left: 0.4rem $heritage solid;
+      }
+    }
+    .tbm-link-container {
+      .tbm-link.level-2 {
         display: flex;
         align-items: center;
         font-weight: 700;
