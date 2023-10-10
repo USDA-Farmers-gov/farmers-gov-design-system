@@ -6,32 +6,50 @@
   text-shadow: none;
   -webkit-text-stroke: unset;
 }
-
+.tbm-submenu {
+  display: block;
+  visibility: hidden;
+  border: none;
+}
+.tbm-item.level-1.open {
+  > .tbm-submenu.tbm-item-child.nav-submenu {
+    visibility: visible !important;
+  }
+}
+.tbm-item.level-2.open {
+  pointer-events: none;
+}
+.tbm-item.level-2 .tbm-submenu.tbm-item-child.nav-submenu {
+  border-left: 1px solid #ccc;
+  left: 25.4rem;
+}
+.tbm-item.level-2.tbm-item--has-flyout {
+  &.open {
+    .tbm-submenu {
+      visibility: visible !important;
+    }
+  }
+}
 ul.sidemenu {
   list-style-type: none;
   padding-left: 0;
+  width: 100%;
+  margin-top: 1rem;
   > li {
     font-size: 1.6rem;
     width: 95.5%;
     margin-left: 1.8rem;
-    &.tbm-item.level-2.tbm-item--has-flyout.open {
-      .tbm-link-container {
-        @extend %sidemenu-active-link;
-        border-left: 0.4rem $heritage solid;
-      }
-    }
+
     .tbm-link-container {
+      padding-left: 0.12rem;
+      border-left: 0.4rem transparent solid;
       .tbm-link.level-2 {
         display: flex;
         align-items: center;
         font-weight: 700;
         text-transform: initial;
         width: 100%;
-        margin-left: 0 !important;
-        .mm-top-level-title {
-          padding-right: 1.5rem;
-          line-height: 2rem;
-        }
+        padding: 0.5rem !important;
         .nav-arrow {
           position: relative;
           float: right;
@@ -46,9 +64,31 @@ ul.sidemenu {
           -webkit-transform: rotate(-45deg);
         }
       }
+      &:focus {
+        color: $asphalt !important;
+        border: none !important;
+      }
+      &:hover {
+        @extend %sidemenu-active-link;
+        border-left: 0.4rem $heritage solid;
+        padding-left: 0 !important;
+        .tbm-toggle {
+          color: $asphalt !important;
+          padding-left: 0.7rem !important;
+        }
+      }
     }
-    > a,
-    > a:visited {
+    &.tbm-item.level-2.tbm-item--has-flyout.open {
+      .tbm-link-container {
+        @extend %sidemenu-active-link;
+        border-left: 0.4rem $heritage solid;
+        &:focus {
+          color: $asphalt !important;
+          border: none !important;
+        }
+      }
+    }
+    .tbm-toggle {
       display: flex;
       text-decoration: none;
       color: $asphalt;
@@ -58,13 +98,17 @@ ul.sidemenu {
         margin-top: 1rem;
         margin-left: auto;
       }
-      &.active,
-      &.active:hover,
-      &.sidemenu-hover,
-      &.sidemenu-hover:hover {
-        @extend %sidemenu-active-link;
-        border-left: 0.4rem $heritage solid;
+      &:focus {
+        color: $asphalt !important;
+        border: none !important;
       }
+      // &.active,
+      // &.active:hover,
+      // &.sidemenu-hover,
+      // &.sidemenu-hover:hover {
+      //   @extend %sidemenu-active-link;
+      //   border-left: 0.4rem $heritage solid;
+      // }
     }
 
     > a:hover,
