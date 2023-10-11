@@ -17,20 +17,25 @@
     visibility: visible !important;
   }
 }
-.tbm-item.level-2.open .tbm-link-container {
-  pointer-events: none;
-}
-.tbm-item.level-2 .tbm-submenu.tbm-item-child.nav-submenu {
-  border-left: 1px solid #ccc;
-  left: 25.4rem;
-}
-.tbm-item.level-2.tbm-item--has-flyout {
-  &.open {
-    .tbm-submenu {
-      visibility: visible !important;
+.tbm-item.level-2.open {
+  .tbm-link-container {
+    pointer-events: none;
+  }
+  .tbm-submenu.tbm-item-child.nav-submenu {
+    left: 25.4rem;
+    .mega-dropdown-inner {
+      border-left: 1px solid #ccc;
     }
   }
 }
+
+// .tbm-item.level-2.tbm-item--has-flyout {
+//   &.open {
+//     .tbm-submenu {
+//       visibility: visible !important;
+//     }
+//   }
+// }
 ul.sidemenu {
   list-style-type: none;
   padding-left: 0;

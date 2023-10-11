@@ -28,14 +28,12 @@ export function menuClickEvents() {
         );
 
         const button = section.querySelector("button");
-
+        if (!!button) button.click();
         if (!!sideMenuFirstLink) {
           sideMenuFirstLink.classList.remove("open");
           if (link.getAttribute("aria-expanded") === "false")
             sideMenuFirstLink.classList.add("open");
         }
-
-        if (!!button) button.click();
       });
     }
   });
@@ -100,6 +98,7 @@ export function setupNavLinks() {
           const cardHeight = link
             .querySelector(".tbm-toggle")
             .getAttribute("data-grid-card-height");
+
           submenu.style.minHeight = `${Number(cardHeight) + 70}px`;
         });
       });
@@ -210,9 +209,10 @@ export function processSubmenuBanner(item) {
     : "";
 
   if (landingPageBanner) {
-    const submenuLevel1 = item.querySelector(
-      ".tbm-submenu.tbm-item-child.nav-submenu",
-    );
+    // const submenuLevel1 = item.querySelector(
+    //   ".tbm-submenu.tbm-item-child.nav-submenu",
+    // );
+    const submenuLevel1 = item.querySelector(".mega-dropdown-inner");
 
     if (submenuLevel1) {
       submenuLevel1.prepend(landingPageBanner);
