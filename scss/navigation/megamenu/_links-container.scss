@@ -22,6 +22,17 @@
 }
 
 .tbm-item.level-2.tbm-item--has-flyout {
+  .tbm-submenu.tbm-item-child.nav-submenu {
+    left: -999999999px;
+  }
+
+  &.open {
+    .tbm-submenu.tbm-item-child.nav-submenu {
+      left: 26.9rem;
+    }
+  }
+}
+.tbm-item.level-2.tbm-item--has-flyout {
   .subcategory {
     grid-template-columns: repeat(2, 50%);
     @media (max-width: $screen--M) {
@@ -29,7 +40,6 @@
     }
   }
   .mm-card-grid {
-    position: relative;
     width: 83.5rem;
     visibility: hidden;
   }
@@ -41,6 +51,7 @@
 }
 
 .mm-card-grid {
+  position: relative;
   background: $white;
   display: flex;
   width: 114.8rem;

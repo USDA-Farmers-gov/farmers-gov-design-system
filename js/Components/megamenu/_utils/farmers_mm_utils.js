@@ -62,7 +62,7 @@ export function menuClickEvents() {
 //   });
 // }
 
-export function setupFirstLevelLinks() {
+export function setupNavLinks() {
   const firstLevelSelector = ".tbm-item.level-1";
   const firstLevelOpenSelector = `${firstLevelSelector}.open`;
   const firstLevel = document.querySelectorAll(firstLevelSelector);
@@ -74,7 +74,36 @@ export function setupFirstLevelLinks() {
   firstLevel.forEach((item) => {
     processSubmenuBanner(item);
     setPanelMinHeight(item);
+  });
 
+  const submenus = document.querySelectorAll(
+    ".level-1 > div.tbm-submenu.tbm-item-child.nav-submenu",
+  );
+  submenus.forEach((submenu) => {
+    const sidemenuLinks = document.querySelectorAll(
+      ".tbm .sidemenu .tbm-item.level-2.tbm-item--has-flyout",
+    );
+
+    if (sidemenuLinks) {
+      sidemenuLinks.forEach((link) => {
+        const cardGridHeight = link
+          .querySelector(".tbm-submenu.tbm-item-child.nav-submenu")
+          .getBoundingClientRect().height;
+
+        if (cardGridHeight)
+          link
+            .querySelector(".tbm-toggle")
+            .setAttribute("data-grid-card-height", cardGridHeight);
+
+        // click events
+        link.addEventListener("click", (event) => {
+          const cardHeight = link
+            .querySelector(".tbm-toggle")
+            .getAttribute("data-grid-card-height");
+          submenu.style.minHeight = `${Number(cardHeight) + 70}px`;
+        });
+      });
+    }
     // const link = item.querySelector("a");
     // const activeLinkClass = "mm-active";
 

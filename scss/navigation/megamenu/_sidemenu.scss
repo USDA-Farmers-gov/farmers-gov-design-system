@@ -13,10 +13,11 @@
 }
 .tbm-item.level-1.open {
   > .tbm-submenu.tbm-item-child.nav-submenu {
+    background: $white;
     visibility: visible !important;
   }
 }
-.tbm-item.level-2.open {
+.tbm-item.level-2.open .tbm-link-container {
   pointer-events: none;
 }
 .tbm-item.level-2 .tbm-submenu.tbm-item-child.nav-submenu {

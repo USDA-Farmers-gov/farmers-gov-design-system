@@ -11,7 +11,7 @@ export const megamenu = function () {
 
     mm_utils.menuClickEvents();
     // mm_utils.scrollEvents();
-    mm_utils.setupFirstLevelLinks();
+    mm_utils.setupNavLinks();
     mm_utils.setupSecondLevelLinks();
     // mm_utils.setupSideMenuLinks();
     mm_utils.closeOnOutsideClick();
