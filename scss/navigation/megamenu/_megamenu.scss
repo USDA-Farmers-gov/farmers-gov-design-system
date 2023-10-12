@@ -317,8 +317,10 @@ body {
     display: flex;
     position: relative;
     .tbm-item.level-1 {
-      margin: 0 0.7rem;
+      margin: 0;
       .tbm-link-container {
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
         a {
           height: fit-content;
           align-self: center;
@@ -338,8 +340,8 @@ body {
             border-bottom: 3px $white solid;
           }
         }
-        .nav-arrow {
-          width: 2rem;
+        .nav-arrow.first-level {
+          width: 1.2rem;
           left: -5px;
           &:before {
             position: relative;
@@ -357,8 +359,9 @@ body {
       }
 
       &.open {
-        .tbm-link-container .nav-arrow {
+        .tbm-link-container .nav-arrow.first-level {
           &:before {
+            top: -2px;
             border-color: $heritage;
             border-width: 0 2px 2px 0;
             border-style: solid;
@@ -366,6 +369,12 @@ body {
             -webkit-transform: rotate(-135deg);
           }
         }
+      }
+    }
+    .tbm-item.level-1:first-of-type {
+      margin: 0 0.5rem 0 0;
+      a {
+        margin: 0 0.5rem 0 0;
       }
     }
 

@@ -14,8 +14,10 @@ export function closeOnOutsideClick() {
 }
 
 export function menuClickEvents() {
-  const levelOneLinks = document.querySelectorAll(".tbm-item.level-1");
-  levelOneLinks.forEach(function (section) {
+  const levelOneLinksDropdowns = document.querySelectorAll(
+    ".tbm-item.level-1.tbm-item--has-dropdown",
+  );
+  levelOneLinksDropdowns.forEach(function (section) {
     const link = section.querySelector("a");
 
     if (!!link) {
@@ -29,14 +31,26 @@ export function menuClickEvents() {
 
         const button = section.querySelector("button");
         if (!!button) button.click();
-        if (!!sideMenuFirstLink) {
-          sideMenuFirstLink.classList.remove("open");
-          if (link.getAttribute("aria-expanded") === "false")
-            sideMenuFirstLink.classList.add("open");
-        }
+        setFirstSideMenuLinkAsActive(link, sideMenuFirstLink);
+      });
+
+      // button
+      section.querySelector("button").addEventListener("click", (event) => {
+        const sideMenuFirstLink = section.querySelector(
+          ".tbm-item.level-2.tbm-item--has-flyout",
+        );
+        setFirstSideMenuLinkAsActive(link, sideMenuFirstLink);
       });
     }
   });
+}
+
+export function setFirstSideMenuLinkAsActive(link, sideMenuFirstLink) {
+  if (!!sideMenuFirstLink) {
+    sideMenuFirstLink.classList.remove("open");
+    if (link.getAttribute("aria-expanded") === "false")
+      sideMenuFirstLink.classList.add("open");
+  }
 }
 
 // export function scrollEvents() {
@@ -152,23 +166,21 @@ export function setupNavLinks() {
 }
 
 export function setupSecondLevelLinks() {
-  const sidemenus = document.querySelectorAll(
-    ".tbm-item.level-2.tbm-item--has-flyout",
-  );
+  const sidemenus = document.querySelectorAll(".tbm-subnav.level-1.sidemenu");
+  const top = document
+    .querySelector(".tbm-submenu.tbm-item-child.nav-submenu")
+    .getBoundingClientRect().top;
 
-  sidemenus.forEach((menu) => {
-    const submenu = menu.querySelector(
-      ".tbm-item.level-2 .tbm-submenu.tbm-item-child.nav-submenu",
-    );
-
-    const topDifference =
-      document
-        .querySelector(".tbm-submenu.tbm-item-child.nav-submenu")
-        .getBoundingClientRect().top -
-      submenu.getBoundingClientRect().top +
-      70;
-
-    submenu.style.top = `${topDifference}px`;
+  sidemenus.forEach((sidmenu) => {
+    sidmenu.querySelectorAll("li.tbm-item.level-2").forEach((item, idx) => {
+      const submenu = item.querySelector(
+        ".tbm-submenu.tbm-item-child.nav-submenu",
+      );
+      if (!!submenu) {
+        const topDifference = top - submenu.getBoundingClientRect().top + 70;
+        submenu.style.top = `${topDifference - idx * 3}px`;
+      }
+    });
   });
 }
 
