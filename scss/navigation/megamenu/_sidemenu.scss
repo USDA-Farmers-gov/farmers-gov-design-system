@@ -50,7 +50,7 @@ ul.sidemenu {
   margin-top: 1rem;
   > li {
     font-size: 1.6rem;
-    width: 95.5%;
+    width: 100%;
     margin-left: 1.8rem;
 
     .tbm-link-container {
@@ -62,7 +62,7 @@ ul.sidemenu {
         font-weight: 700;
         text-transform: initial;
         width: 100%;
-        padding: 0.5rem !important;
+        padding: 0.5rem 0 !important;
         &:hover {
           color: $asphalt !important;
         }
@@ -91,18 +91,7 @@ ul.sidemenu {
         padding-right: 2rem;
         .nav-arrow {
           display: flex;
-          // position: relative;
-          // top: 1.5rem;
-          // float: right;
-          // border-width: 0 2px 2px 0;
-          // border-style: solid;
-          // padding: 3.5px;
-          // height: 4px;
-          // width: 4px;
-          // margin-left: auto;
-          // border-color: $asphalt;
-          // transform: rotate(-45deg);
-          // -webkit-transform: rotate(-45deg);
+          top: -3px;
           &:before {
             content: "";
             position: relative;

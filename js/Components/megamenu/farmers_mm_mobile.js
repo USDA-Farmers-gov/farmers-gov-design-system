@@ -5,15 +5,15 @@ export const megamenu_mobile = function () {
   mm_mobile_utils.processMobileSections();
   mm_mobile_utils.backToTopShowHide();
 
-  if (document.querySelector(".tb-megamenu")) {
+  if (document.querySelector(".tbm")) {
     const megaMenuMobile = document.querySelector(
-      ".mm-mobile-primary-nav.megamenu"
+      ".mm-mobile-primary-nav.megamenu",
     );
     const signUpElement = !!document.querySelector(".header-button")
       ? document.querySelector(".header-button")
       : "";
     const signUpButtonsElement = !!document.querySelector(
-      ".utility-nav-buttons"
+      ".utility-nav-buttons",
     )
       ? document.querySelector(".utility-nav-buttons")
       : "";
@@ -96,9 +96,7 @@ export const megamenu_mobile = function () {
       )
         megaMenuMobile.style.display = "none";
     });
-    const firstLevelMenus = document.querySelectorAll(
-      ".tb-megamenu-item.level-1"
-    );
+    const firstLevelMenus = document.querySelectorAll(".tbm-item.level-1");
 
     firstLevelMenus.forEach(function (element) {
       var decodeHTML = function (html) {
@@ -108,15 +106,15 @@ export const megamenu_mobile = function () {
       };
 
       const linkText = element
-        .querySelector(".mm-nav-link > div")
+        .querySelector(".tbm-link-container a")
         .innerHTML.trim();
       if (linkText.toLowerCase() === "home") return;
 
       let listItem = document.createElement("li");
       let link = document.createElement("a");
 
-      const subMenu = element.querySelector(".tb-megamenu-item.level-2")
-        ? element.querySelector(".tb-megamenu-item.level-2").cloneNode(true)
+      const subMenu = element.querySelector(".tbm-item.level-2")
+        ? element.querySelector(".tbm-item.level-2").cloneNode(true)
         : "";
 
       link.text = general_utils.decodeHTMLEntities(linkText);
@@ -131,13 +129,13 @@ export const megamenu_mobile = function () {
     });
 
     const navJumpLinks = document.querySelectorAll(
-      ".mm-mobile-top-nav:not(.home)"
+      ".mm-mobile-top-nav:not(.home)",
     );
     navJumpLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
         const navContainer = document.querySelector(
-          "#mm-mobile .nav-container"
+          "#mm-mobile .nav-container",
         );
         const closeButtonHeight = document
           .querySelector(".mm-mobile-menu-close")

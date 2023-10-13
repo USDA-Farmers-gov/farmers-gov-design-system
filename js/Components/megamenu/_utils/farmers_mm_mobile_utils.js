@@ -3,14 +3,12 @@ import * as mm_mobile_helpers from "./farmers_mm_mobile_helpers";
 
 export function processMobileSections() {
   window.addEventListener("DOMContentLoaded", function () {
-    const firstLevelMenus = document.querySelectorAll(
-      ".tb-megamenu-item.level-1",
-    );
+    const firstLevelMenus = document.querySelectorAll(".tbm-item.level-1");
     const linksContainer = document.querySelector(".mm-links-container");
 
     firstLevelMenus.forEach(function (firstLevel) {
       let categoryName = firstLevel
-        .querySelector(".mm-nav-link div")
+        .querySelector(".tbm-link-container a")
         .firstChild.nodeValue.trim();
       if (categoryName.toLowerCase() === "home") return;
 
@@ -20,7 +18,7 @@ export function processMobileSections() {
         linksContainer,
       );
 
-      const sideMenu = firstLevel.querySelectorAll(".tb-megamenu-item.level-2");
+      const sideMenu = firstLevel.querySelectorAll(".tbm-item.level-2");
       const submenus = sideMenu.length
         ? sideMenu
         : firstLevel.querySelectorAll(".mm-card-grid .subcategory.row");

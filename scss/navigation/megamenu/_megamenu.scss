@@ -101,6 +101,8 @@ body {
     }
   }
   .mega-dropdown-inner {
+    display: block;
+    width: fit-content;
     visibility: hidden;
   }
   &.open {
@@ -114,7 +116,7 @@ body {
 }
 .tbm-row {
   display: block;
-  width: fit-content;
+  width: 28.9rem;
 }
 .tbm-column {
   width: 25rem;
@@ -355,6 +357,9 @@ body {
             transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
           }
+          &:focus {
+            visibility: hidden;
+          }
         }
       }
 
@@ -409,6 +414,9 @@ body {
       }
     }
   }
+}
+.offscreen {
+  left: -9999999999px;
 }
 // .nav-submenu {
 //   display: none;

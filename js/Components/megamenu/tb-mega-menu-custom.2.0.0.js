@@ -9,10 +9,11 @@ export const megamenu = function () {
   if (document.querySelector(".tbm")) {
     console.log("loading megamenu...");
 
-    mm_utils.menuClickEvents();
-    // mm_utils.scrollEvents();
     mm_utils.setupNavLinks();
     mm_utils.setupSecondLevelLinks();
+    mm_utils.menuClickEvents();
+    mm_utils.scrollEvents();
+    mm_utils.disableLinkContainerEvents();
     // mm_utils.setupSideMenuLinks();
     mm_utils.closeOnOutsideClick();
     // mm_accessibility.keyboardEventListeners();
