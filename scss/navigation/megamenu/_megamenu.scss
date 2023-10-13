@@ -65,6 +65,10 @@ body {
     }
   }
 }
+
+.tbm {
+  left: -7px;
+}
 .tbm-submenu {
   z-index: 9999999;
 }
@@ -321,8 +325,8 @@ body {
     .tbm-item.level-1 {
       margin: 0;
       .tbm-link-container {
-        padding-right: 0.7rem;
-        padding-left: 0.7rem;
+        padding-right: 0.8rem;
+        padding-left: 0.8rem;
         a {
           height: fit-content;
           align-self: center;
