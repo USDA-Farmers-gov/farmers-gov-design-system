@@ -156,7 +156,10 @@ export function setupNavLinks() {
 
         // click events
         link.addEventListener("click", (event) => {
-          if (!!link.classList.contains("open")) event.preventDefault();
+          if (!!link.classList.contains("open")) {
+            event.preventDefault();
+            return;
+          }
 
           const childSubMenus = document.querySelectorAll(
             ".level-2 .tbm-submenu.tbm-item-child.nav-submenu",
