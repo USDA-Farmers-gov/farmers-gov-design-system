@@ -1,7 +1,7 @@
 import "./Components/accordion";
 import "./Components/menu";
 import "./Components/mobile_tables";
-import "./Components/megamenu/tb-mega-menu-custom.1.0.0";
+import "./Components/megamenu/tb-mega-menu-custom.2.0.0";
 import "./Components/forms/_forms";
 import * as back_to_top from "./Components/back_to_top";
 

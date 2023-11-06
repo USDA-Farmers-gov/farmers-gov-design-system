@@ -11,26 +11,49 @@
   text-decoration: none;
   line-height: 2rem;
 }
+
+.tbm-item.level-2 .tbm-submenu.tbm-item-child.nav-submenu {
+  background: transparent;
+  border: none;
+  box-shadow: unset;
+}
+.tbm-item.level-2.tbm-item--has-flyout {
+  .subcategory {
+    grid-template-columns: repeat(2, 50%);
+    @media (max-width: $screen--M) {
+      grid-template-columns: auto;
+    }
+  }
+  .tbm-submenu.tbm-item-child.nav-submenu {
+    left: -999999999px;
+  }
+  .mm-card-grid {
+    width: 83.5rem;
+  }
+  &.open {
+    .tbm-submenu.tbm-item-child.nav-submenu {
+      left: 26.9rem;
+    }
+  }
+}
+
 .mm-card-grid {
-  display: flex;
   position: relative;
-  left: 0.5rem;
+  background: $white;
+  display: flex;
+  width: 112.2rem;
   .mm-grid-blocks {
     flex: 1;
     position: relative;
     padding-top: 2.6rem;
     padding-right: 1rem;
-    padding-left: 3.5rem;
+    padding-left: 2rem;
     width: 52.4rem;
     @media (max-width: $screen--L) {
       width: auto;
     }
     .subcategory {
       display: grid;
-      grid-template-columns: repeat(2, 50%);
-      @media (max-width: $screen--L) {
-        grid-template-columns: auto;
-      }
       .mm-grid-item {
         a {
           @extend %nav-mega-menu-link;
@@ -76,8 +99,9 @@
   }
 }
 .nav-submenu {
-  width: 115rem;
+  min-width: 112.4rem;
   padding: 0;
+
   &.active {
     display: flex;
   }
