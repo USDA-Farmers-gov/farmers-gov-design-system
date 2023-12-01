@@ -311,10 +311,11 @@ export function setPanelMinHeight(item) {
 // }
 
 export function closeAllMenus(event) {
+  const overlay = document.querySelector(".usa-overlay");
   const openLinks = document.querySelectorAll(".tbm-item.level-1.open");
 
   openLinks.forEach((link) => {
     link.querySelector("a").click();
   });
-  if (event) toggleContentOverlay();
+  if (event && overlay.style.display !== "none") toggleContentOverlay();
 }
