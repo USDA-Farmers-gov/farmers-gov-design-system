@@ -103,6 +103,7 @@ export function scrollEvents() {
 
 export function toggleContentOverlay(force_block) {
   const overlay = document.querySelector(".usa-overlay");
+
   let display = "none";
 
   const docHeight =
@@ -112,10 +113,11 @@ export function toggleContentOverlay(force_block) {
   document.querySelector(".usa-overlay").style.height = `${docHeight}px`;
 
   if (overlay.style.display !== "block" || !!force_block) display = "block";
-
-  if (force_block === false) display = "none";
-
+  if (overlay.style.display === "none") display = "block";
+  if (force_block === false || overlay.style.display === "block")
+    display = "none";
   overlay.style.display = display;
+
   // mm_accessibility.ariaCheck();
   // blurNonOpenFirstLevelLink();
 }
@@ -245,7 +247,7 @@ export function setupSecondLevelLinks() {
       );
       if (!!submenu) {
         const topDifference = top - submenu.getBoundingClientRect().top + 70;
-        submenu.style.top = `${topDifference - idx * 3}px`;
+        submenu.style.top = `${topDifference}px`;
       }
     });
   });
