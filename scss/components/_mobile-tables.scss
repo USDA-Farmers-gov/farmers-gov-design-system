@@ -30,8 +30,10 @@
 }
 
 div.mobile-static-column-container {
-  overflow: auto;
-  width: 100%;
+  @media screen and (max-width: $screen--M) {
+    overflow: auto;
+    width: 100%;
+  }
 
   table.show-mobile-static-column {
     table-layout: fixed;
