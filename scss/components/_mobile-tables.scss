@@ -35,7 +35,8 @@ div.mobile-static-column-container {
     width: 100%;
   }
 
-  table.show-mobile-static-column {
+  table.show-mobile-static-column,
+  table.mobile-static-column {
     table-layout: fixed;
     width: fit-content;
     border-collapse: separate;
