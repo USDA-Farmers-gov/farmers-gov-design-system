@@ -25,7 +25,6 @@ export function menuClickEvents() {
       section.querySelector("a").addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
-
         const sideMenuFirstLink = section.querySelector(
           ".tbm-item.level-2.tbm-item--has-flyout",
         );
@@ -115,7 +114,7 @@ export function toggleContentOverlay(force_block) {
   if (overlay.style.display === "none") display = "block";
   if (force_block === false || overlay.style.display === "block")
     display = "none";
-  if (!!force_block) display = "block";
+  if (!!force_block && force_block !== false) display = "block";
   overlay.style.display = display;
 
   // mm_accessibility.ariaCheck();
