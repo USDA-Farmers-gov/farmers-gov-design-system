@@ -112,10 +112,10 @@ export function toggleContentOverlay(force_block) {
 
   document.querySelector(".usa-overlay").style.height = `${docHeight}px`;
 
-  if (overlay.style.display !== "block" || !!force_block) display = "block";
   if (overlay.style.display === "none") display = "block";
   if (force_block === false || overlay.style.display === "block")
     display = "none";
+  if (!!force_block) display = "block";
   overlay.style.display = display;
 
   // mm_accessibility.ariaCheck();
