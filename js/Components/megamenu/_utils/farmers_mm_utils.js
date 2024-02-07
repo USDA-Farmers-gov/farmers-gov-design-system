@@ -2,7 +2,7 @@ import * as mm_accessibility from "./accessibility/farmers_mm_accessibility";
 
 export function closeOnOutsideClick() {
   document.addEventListener("click", (event) => {
-    const isClickInside = document.querySelector(".tbm").contains(event.target)
+    let isClickInside = document.querySelector(".tbm").contains(event.target)
       ? true
       : false;
 
@@ -36,11 +36,12 @@ export function menuClickEvents() {
 
       // button
       section.querySelector("button").addEventListener("click", (event) => {
+        const toggleVar = section.classList.contains("open") ? false : true;
         const sideMenuFirstLink = section.querySelector(
           ".tbm-item.level-2.tbm-item--has-flyout",
         );
         setFirstSideMenuLinkAsActive(link, sideMenuFirstLink);
-        toggleContentOverlay(true);
+        toggleContentOverlay(toggleVar);
       });
     }
   });
