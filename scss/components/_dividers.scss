@@ -25,6 +25,10 @@
       background-color: #fff0;
     }
   }
+  &.padding {
+    padding-bottom: 3.5rem;
+    padding-top: 3.5rem;
+  }
   &:before {
     border-bottom: 1px solid #49a564;
     content: "";
