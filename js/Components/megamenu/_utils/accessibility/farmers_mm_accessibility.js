@@ -5,12 +5,12 @@ export function handleKeyboard(event) {
 	if (event.keyCode == 27) mm_accessibility_keyboard.escapeKey(event);
 	if (event.keyCode == 36 || event.keyCode == 35)
 		mm_accessibility_keyboard.homeEnd(event);
-	if (event.keyCode == 39) mm_accessibility_keyboard.topLevelArrows("right");
-	if (event.keyCode == 37) mm_accessibility_keyboard.topLevelArrows("left");
-	if (event.keyCode == 38)
-		mm_accessibility_keyboard.secondLevelArrows(event, "up");
-	if (event.keyCode == 40)
-		mm_accessibility_keyboard.secondLevelArrows(event, "down");
+	// if (event.keyCode == 39) mm_accessibility_keyboard.topLevelArrows("right");
+	// if (event.keyCode == 37) mm_accessibility_keyboard.topLevelArrows("left");
+	// if (event.keyCode == 38)
+	// 	mm_accessibility_keyboard.secondLevelArrows(event, "up");
+	// if (event.keyCode == 40)
+	// 	mm_accessibility_keyboard.secondLevelArrows(event, "down");
 
 	document.querySelectorAll(".tbm .level-2").forEach((link) => {
 		link.addEventListener("keyup", (event) => {
