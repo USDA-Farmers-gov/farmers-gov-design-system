@@ -37,7 +37,7 @@
     "vue": "^2.6.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.15.8",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
