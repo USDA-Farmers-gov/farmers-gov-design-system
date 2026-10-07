@@ -209,17 +209,20 @@ body {
           width: 1.2rem;
 
           &:before {
-            left: -5px;
+            display: inline-block;
+            left: -4px;
             position: relative;
             border-color: $white;
             border-width: 0 2px 2px 0;
             border-style: solid;
-            display: inline-block;
             padding: 3.5px;
-            position: relative;
             top: -5px;
             transform: rotate(45deg);
             -webkit-transform: rotate(45deg);
+
+            @supports (-moz-appearance: none) {
+              left: -2px;
+            }
           }
         }
       }
