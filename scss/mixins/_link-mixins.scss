@@ -1,6 +1,8 @@
+@use '../elements/colors' as DSColors;
+
 @mixin primary-hover {
-  text-shadow: 0 0 0.08rem $heritage;
-  -webkit-text-stroke: 1px $heritage;
+  text-shadow: 0 0 0.08rem DSColors.$heritage;
+  -webkit-text-stroke: 1px DSColors.$heritage;
 }
 
 @mixin hover-pointer-only {
@@ -30,9 +32,9 @@
 }
 @mixin grey-bg-link-hover {
   > a:hover {
-    color: $dkblue;
-    text-shadow: 0 0 0.08rem $dkblue;
-    -webkit-text-stroke: 1px $dkblue;
+    color: DSColors.$dkblue;
+    text-shadow: 0 0 0.08rem DSColors.$dkblue;
+    -webkit-text-stroke: 1px DSColors.$dkblue;
   }
 }
 @mixin underline-hover {

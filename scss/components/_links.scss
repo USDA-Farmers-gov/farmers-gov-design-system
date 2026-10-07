@@ -1,56 +1,59 @@
+@use '../elements/colors' as DSColors;
+@use '../mixins/link-mixins' as DSLinkMixins;
+
 @mixin text-link-psuedo {
   &:visited,
   &.visited {
-    color: $visited;
+    color: DSColors.$visited;
     &:hover,
     &.hover {
-      color: $dkblue;
-      text-shadow: 0 0 0px $dkblue;
-      -webkit-text-stroke: 0 $dkblue;
+      color: DSColors.$dkblue;
+      text-shadow: 0 0 0px DSColors.$dkblue;
+      -webkit-text-stroke: 0 DSColors.$dkblue;
     }
   }
   &:hover,
   &.hover {
-    color: $sweetgrass;
+    color: DSColors.$sweetgrass;
     text-shadow: 0 0 0px #fff0;
     -webkit-text-stroke: 0 #fff0;
   }
   &:focus,
   &.focus {
-    color: $sweetgrass;
+    color: DSColors.$sweetgrass;
   }
 }
 
 a {
-  color: $heritage;
+  color: DSColors.$heritage;
   text-decoration: underline;
   cursor: pointer;
   &:visited,
   &.visited {
-    color: $visited;
+    color: DSColors.$visited;
     &:hover,
     &.hover {
-      text-shadow: 0 0 0.08rem $visited;
-      -webkit-text-stroke: 1px $visited;
+      text-shadow: 0 0 0.08rem DSColors.$visited;
+      -webkit-text-stroke: 1px DSColors.$visited;
     }
   }
   &:hover,
   &.hover {
-    text-shadow: 0 0 0.08rem $heritage;
-    -webkit-text-stroke: 1px $heritage;
+    text-shadow: 0 0 0.08rem DSColors.$heritage;
+    -webkit-text-stroke: 1px DSColors.$heritage;
   }
   &:focus,
   &.focus {
     outline-width: 0px;
     outline-offset: 3px;
-    outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
+    outline-color: DSColors.$focus;
+    box-shadow: 0px 0px 4px DSColors.$focus;
   }
 }
 
 .text-link {
   display: block;
-  color: $heritage;
+  color: DSColors.$heritage;
   cursor: pointer;
   font-family: "Public Sans";
   font-size: 20px;
@@ -75,7 +78,7 @@ a {
 .external-link {
   display: block;
   width: 98%;
-  color: $heritage;
+  color: DSColors.$heritage;
   font-size: 2rem;
   font-weight: 700;
   padding-right: 1.5rem;
@@ -124,28 +127,28 @@ a {
   }
   &:visited,
   &.visited {
-    color: $visited;
+    color: DSColors.$visited;
   }
   &:hover,
   &.hover {
-    color: $sweetgrass;
-    text-shadow: 0 0 0.08rem $heritage;
-    -webkit-text-stroke: 1px $heritage;
+    color: DSColors.$sweetgrass;
+    text-shadow: 0 0 0.08rem DSColors.$heritage;
+    -webkit-text-stroke: 1px DSColors.$heritage;
   }
   &:focus,
   &.focus {
-    color: $sweetgrass;
+    color: DSColors.$sweetgrass;
     outline-width: 0px;
     outline-offset: 3px;
-    outline-color: $focus;
-    box-shadow: 0px 0px 4px $focus;
+    outline-color: DSColors.$focus;
+    box-shadow: 0px 0px 4px DSColors.$focus;
   }
 }
 
 .grey-1 {
-  @include grey-bg-link-hover;
+  @include DSLinkMixins.grey-bg-link-hover;
   p,
   span {
-    @include grey-bg-link-hover;
+    @include DSLinkMixins.grey-bg-link-hover;
   }
 }
