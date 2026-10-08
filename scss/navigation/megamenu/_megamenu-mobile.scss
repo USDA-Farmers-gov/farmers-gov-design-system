@@ -1,3 +1,7 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+@use '../main-menu';
+
 $close-button-height: 5.5rem;
 
 #mm-mobile {
@@ -48,7 +52,7 @@ $close-button-height: 5.5rem;
     top: 0;
     z-index: 9999999;
     text-transform: uppercase;
-    background: $heritage;
+    background: DSColors.$heritage;
     height: $close-button-height;
     font-size: 1.6rem;
     font-weight: 600;
@@ -82,10 +86,10 @@ $close-button-height: 5.5rem;
       background: none !important;
       width: auto;
       a {
-        background: $white;
-        color: $bigsky;
+        background: DSColors.$white;
+        color: DSColors.$bigsky;
         font-size: 1.6rem;
-        border: 1px solid $bigsky;
+        border: 1px solid DSColors.$bigsky;
         box-shadow: 0 1px 4px 0 #bbb;
         padding: 1rem 1.5rem;
         width: fit-content;
@@ -110,7 +114,7 @@ $close-button-height: 5.5rem;
   }
   .mm-mobile-top-nav {
     display: flex;
-    color: $white;
+    color: DSColors.$white;
     font-size: 1.4rem;
     padding-bottom: 0.5rem;
     text-transform: uppercase;
@@ -131,9 +135,9 @@ $close-button-height: 5.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: $white;
+    background: DSColors.$white;
     .mm-link-category {
-      color: $asphalt;
+      color: DSColors.$asphalt;
       font-size: 1.4rem;
       line-height: 2rem;
       font-weight: 700;
@@ -147,7 +151,7 @@ $close-button-height: 5.5rem;
         display: flex;
         height: 5rem;
         width: 23rem;
-        color: $asphalt;
+        color: DSColors.$asphalt;
         font-weight: 700;
         text-transform: uppercase;
 
@@ -156,14 +160,14 @@ $close-button-height: 5.5rem;
           display: flex;
           text-transform: initial;
           text-decoration: none;
-          color: $asphalt;
+          color: DSColors.$asphalt;
           align-items: center;
           padding-bottom: 2rem;
           margin-top: 0;
           width: 100%;
           border-bottom: 1px solid #ededed;
           &:after {
-            @include arrow-right;
+            @include DSLinkMixins.arrow-right;
             float: none;
             margin-top: 0;
             margin-left: auto;
@@ -173,7 +177,7 @@ $close-button-height: 5.5rem;
           padding-left: 0;
           list-style: none;
           li {
-            color: $asphalt;
+            color: DSColors.$asphalt;
             font-weight: normal;
             text-transform: initial;
             padding-bottom: 1rem;
@@ -197,15 +201,15 @@ $close-button-height: 5.5rem;
       font-size: 1.6rem;
       line-height: 2.4rem;
       font-weight: 600;
-      background: $heritage;
+      background: DSColors.$heritage;
       padding: 2rem;
       border-top: 1px solid rgba(73, 165, 100, 0.5);
-      box-shadow: 0 4px 6px -4px $asphalt;
+      box-shadow: 0 4px 6px -4px DSColors.$asphalt;
       //0 1px 4px 0
-      // box-shadow: 0 4px 4px 4px $asphalt;
+      // box-shadow: 0 4px 4px 4px DSColors.$asphalt;
     }
     > a {
-      color: $white;
+      color: DSColors.$white;
       padding: 1rem;
       text-decoration: none;
       border-top: 1px solid #ededed;
@@ -244,7 +248,7 @@ $close-button-height: 5.5rem;
           box-shadow: none !important;
         }
         &:hover {
-          @include no-hover-color;
+          @include DSLinkMixins.no-hover-color;
         }
       }
 
@@ -252,7 +256,7 @@ $close-button-height: 5.5rem;
         font-size: 1.4rem;
         padding-left: 0;
         a {
-          color: $asphalt;
+          color: DSColors.$asphalt;
           text-decoration: none;
           overflow-wrap: break-word;
         }
@@ -270,7 +274,7 @@ $close-button-height: 5.5rem;
   .mm-utility-nav {
     width: 100%;
     padding: 1rem 0 13rem 0;
-    background: $white;
+    background: DSColors.$white;
     .utility-nav-buttons {
       display: none !important;
     }
@@ -290,7 +294,7 @@ $close-button-height: 5.5rem;
           padding-left: 1.8rem;
         }
         a {
-          color: $asphalt;
+          color: DSColors.$asphalt;
           font-size: 1.4rem;
           text-decoration: none;
           text-transform: none;
@@ -311,7 +315,7 @@ $close-button-height: 5.5rem;
       }
       li:last-of-type {
         padding-bottom: 2rem;
-        border-bottom: 1px $grey2 solid;
+        border-bottom: 1px DSColors.$grey2 solid;
       }
     }
   }

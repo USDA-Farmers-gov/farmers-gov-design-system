@@ -1,5 +1,8 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../components/table-vars' as DSTableVars;
+
 @mixin cell-border {
-  border-color: $grey3;
+  border-color: DSColors.$grey3;
   border-style: solid;
 }
 
@@ -15,10 +18,10 @@
   tr {
     display: flex;
     flex-direction: column;
-    background-color: $white !important;
+    background-color: DSColors.$white !important;
     th:not(:last-child),
     td:not(:last-child) {
-      border-right: $table-cell-border-top;
+      border-right: DSTableVars.$table-cell-border-top;
     }
     th {
       display: none;
@@ -32,9 +35,9 @@
       }
       &:first-of-type {
         @include cell-border;
-        border-bottom: 1px $grey3 solid !important;
+        border-bottom: 1px DSColors.$grey3 solid !important;
         border-width: 4px 1px 1px 1px;
-        background: $grey2;
+        background: DSColors.$grey2;
       }
       &:before {
         content: attr(data-th);
@@ -49,7 +52,7 @@
 @mixin complex-table-mobile {
   display: block;
   td {
-    background: $white;
+    background: DSColors.$white;
     display: table-cell;
     min-width: 65vw;
   }

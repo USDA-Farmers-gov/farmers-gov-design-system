@@ -1,14 +1,16 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 .arrow {
   display: inline-block;
   height: 0.8rem;
   width: 0.8rem;
   padding: 0.25rem;
   margin-top: 0.5rem;
-  border: solid $asphalt;
+  border: solid DSColors.$asphalt;
   border-width: 0 2px 2px 0;
 }
 .arrow-bigsky {
-  border: solid $bigsky;
+  border: solid DSColors.$bigsky;
   border-width: 0 2px 2px 0;
 }
 .arrow-up {

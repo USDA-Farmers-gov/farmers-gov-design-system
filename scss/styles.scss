@@ -1,55 +1,55 @@
 // Farmers Design System 1.0 (...not)
-@import "settings";
+@use "settings";
 
 // Flexbox Grid
-@import "grid/styles";
-@import "path-helper";
+// @use "grid/styles";
+@use "path-helper";
 
-@import "mixins/mixins";
-@import "elements/colors";
+// @use "mixins/mixins";
+@use "elements/colors";
 
-@import "elements/animations";
-@import "elements/typography";
-@import "elements/lists";
-@import "elements/arrows";
-@import "elements/mobile-elements";
-@import "elements/tags";
+@use "elements/animations";
+@use "elements/typography";
+@use "elements/lists";
+@use "elements/arrows";
+@use "elements/mobile-elements";
+@use "elements/tags";
 
-@import "mixins/mixins";
+@use "mixins/mixins";
 
 // Components
-@import "components/alerts/alerts";
-@import "components/links";
-@import "components/tables";
-@import "components/mobile-tables";
-@import "components/icons";
-@import "components/images";
-@import "components/cards";
-@import "components/buttons";
-@import "components/buttons-side-by-side";
-@import "components/dividers";
-@import "components/accordion";
-@import "components/usa-gov-banner";
+@use "components/alerts/alerts";
+@use "components/links";
+@use "components/tables";
+@use "components/mobile-tables";
+@use "components/icons";
+@use "components/images";
+@use "components/cards";
+@use "components/buttons";
+@use "components/buttons-side-by-side";
+@use "components/dividers";
+@use "components/accordion";
+@use "components/usa-gov-banner";
 
 // Form Elements
-@import "components/forms/forms";
-@import "components/forms/radio-and-checkbox";
-@import "components/forms/radio-and-checkbox-cards";
-@import "components/forms/dropdowns";
+@use "components/forms/forms";
+@use "components/forms/radio-and-checkbox";
+@use "components/forms/radio-and-checkbox-cards";
+@use "components/forms/dropdowns";
 
 // Steppers
-@import "components/steppers/simple-stepper";
+@use "components/steppers/simple-stepper";
 
 // Header & Footer
-@import "components/header";
-@import "components/footer";
+@use "components/header";
+@use "components/footer";
 
 // Navigation
-@import "navigation/main-menu";
-@import "navigation/mobile-menu";
-@import "navigation/megamenu/styles";
-@import "navigation/branding-bar-menu";
-@import "navigation/utility";
+@use "navigation/main-menu";
+@use "navigation/mobile-menu";
+@use "navigation/megamenu/styles";
+@use "navigation/branding-bar-menu";
+@use "navigation/utility";
 
 // Utilties
-@import "utilities/utilities";
+@use "utilities/utilities";

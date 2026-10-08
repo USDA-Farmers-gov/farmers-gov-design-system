@@ -1,13 +1,15 @@
+@use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+
 .tbm-submenu.tbm-item-child.nav-submenu {
   .mm-landing-page-banner {
     left: 6rem;
-    @media (max-width: $screen--L) {
+    @media (max-width: DSGridVars.$screen--L) {
       width: $nav-panel-mobile-width;
       left: 2rem !important;
     }
   }
 
-  @media (max-width: $screen--L) {
+  @media (max-width: DSGridVars.$screen--L) {
     .mega-dropdown-inner {
       position: relative;
       background: none !important;
@@ -49,7 +51,7 @@
 }
 .subcategory {
   grid-template-columns: repeat(3, 33%);
-  @media (max-width: $screen--M) {
+  @media (max-width: DSGridVars.$screen--M) {
     grid-template-columns: auto;
   }
 }

@@ -1,3 +1,7 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../../farmers-gov-design-system/scss/mixins/form-mixins' as DSFormMixins;
+
 .radio-button-card,
 .cb-card {
   display: flex;
@@ -10,19 +14,19 @@
   font-weight: 700;
   justify-content: space-between;
   align-items: flex-end;
-  background: $white;
-  border: 0.2rem solid $grey3;
-  box-shadow: 0 0.1rem 0.4rem 0 $grey3;
+  background: DSColors.$white;
+  border: 0.2rem solid DSColors.$grey3;
+  box-shadow: 0 0.1rem 0.4rem 0 DSColors.$grey3;
   border-radius: 0.2rem;
   appearance: none;
   -webkit-appearance: none;
-  @media (max-width: $screen--S) {
+  @media (max-width: DSGridVars.$screen--S) {
     max-width: 100%;
     width: 100%;
   }
 
   &:hover {
-    border: 0.2rem solid $sweetgrass;
+    border: 0.2rem solid DSColors.$sweetgrass;
     cursor: pointer;
   }
   &.disabled {
@@ -30,8 +34,8 @@
     &:hover {
       cursor: auto;
       border: none;
-      border: 0.2rem solid $grey3;
-      box-shadow: 0 0.1rem 0.4rem 0 $grey3;
+      border: 0.2rem solid DSColors.$grey3;
+      box-shadow: 0 0.1rem 0.4rem 0 DSColors.$grey3;
     }
   }
 
@@ -59,7 +63,7 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
 
-    @media (max-width: $screen--S) {
+    @media (max-width: DSGridVars.$screen--S) {
       width: 100%;
     }
 
@@ -92,7 +96,7 @@
     flex-direction: column;
   }
   &.checked {
-    border: 0.2rem solid $sweetgrass;
+    border: 0.2rem solid DSColors.$sweetgrass;
   }
   &:focus-within {
     outline-color: #3e94cf;
@@ -101,12 +105,12 @@
     outline-offset: 0.5rem;
   }
 
-  @include radio-button-input(3.2rem, $sweetgrass, $sweetgrass);
+  @include DSFormMixins.radio-button-input(3.2rem, DSColors.$sweetgrass, DSColors.$sweetgrass);
   .radio-button-input {
     margin-right: 0;
   }
 
-  @include cb-input(3.2rem, $sweetgrass, $sweetgrass);
+  @include DSFormMixins.cb-input(3.2rem, DSColors.$sweetgrass, DSColors.$sweetgrass);
   .cb-input {
     margin-right: -0.1rem;
     margin-bottom: 0.1rem;

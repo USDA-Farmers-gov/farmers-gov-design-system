@@ -1,16 +1,19 @@
-@import "./table-vars";
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use 'table-vars' as DSTableVars;
+
 // Table styling.
 // Removes default browser settings
 table {
   font-size: 1.8rem;
-  margin-bottom: $table-margin-bottom;
+  margin-bottom: DSTableVars.$table-margin-bottom;
   border-collapse: collapse;
-  border-top: $table-cell-border-top;
+  border-top: DSTableVars.$table-cell-border-top;
   overflow-x: auto;
   display: inline-table;
   max-width: 100%;
   width: fit-content;
-  border-radius: $table-bordered-border-radius;
+  border-radius: DSTableVars.$table-bordered-border-radius;
   caption {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px);
@@ -18,28 +21,24 @@ table {
   &.full-width {
     display: table;
   }
-  // tr:first-child {
-  //   th {
-  //     border-top: $table-cell-border-top;
-  //   }
-  // }
+
   tr:last-child {
     th,
     td {
-      border-bottom: $table-cell-border-top;
+      border-bottom: DSTableVars.$table-cell-border-top;
     }
   }
   thead {
-    background-color: $table-header-background-color;
-    font-weight: $table-header-font-weight;
+    background-color: DSTableVars.$table-header-background-color;
+    font-weight: DSTableVars.$table-header-font-weight;
     border-top: none;
     tr {
-      background-color: $table-header-background-color;
+      background-color: DSTableVars.$table-header-background-color;
       border-top: none;
       td {
-        font-weight: $table-header-font-weight;
+        font-weight: DSTableVars.$table-header-font-weight;
         border-top: none;
-        padding: $table-cell-padding;
+        padding: DSTableVars.$table-cell-padding;
       }
     }
   }
@@ -48,17 +47,17 @@ table {
   }
   th,
   td {
-    padding: $table-cell-padding-top-bottom $table-cell-padding-left-right;
-    text-align: $table-cell-text-align;
-    border-left: $table-cell-border-top;
-    border-bottom: $table-cell-border-top;
+    padding: DSTableVars.$table-cell-padding-top-bottom DSTableVars.$table-cell-padding-left-right;
+    text-align: DSTableVars.$table-cell-text-align;
+    border-left: DSTableVars.$table-cell-border-top;
+    border-bottom: DSTableVars.$table-cell-border-top;
     vertical-align: top;
     &:first-child {
-      border-left: $table-cell-border-top;
+      border-left: DSTableVars.$table-cell-border-top;
     }
   }
   th {
-    font-weight: $table-header-font-weight;
+    font-weight: DSTableVars.$table-header-font-weight;
   }
   th {
     vertical-align: middle;
@@ -68,10 +67,10 @@ table {
   }
   td:last-child,
   th:last-child {
-    border-right: $table-cell-border-top;
+    border-right: DSTableVars.$table-cell-border-top;
   }
   tbody + tbody {
-    border-top: $table-body-border-top;
+    border-top: DSTableVars.$table-body-border-top;
   }
   tbody {
     tr:nth-child(even) {
@@ -81,7 +80,7 @@ table {
       border-top: none;
     }
     th {
-      background-color: $table-subheader-background-color;
+      background-color: DSTableVars.$table-subheader-background-color;
     }
   }
 }
@@ -90,14 +89,14 @@ table {
 table tbody + tbody,
 .table tbody + tbody,
 %table tbody + tbody {
-  border-top: $table-body-border-top;
+  border-top: DSTableVars.$table-body-border-top;
 }
 
 // Adds zebra striping to the table {
 .striping {
   tbody {
     tr:nth-child(even) {
-      background-color: $grey1;
+      background-color: DSColors.$grey1;
     }
   }
   td,
@@ -111,14 +110,14 @@ table tbody + tbody,
 %table-condensed th,
 .table-condensed td,
 %table-condensed td {
-  padding: $table-condensed-padding;
+  padding: DSTableVars.$table-condensed-padding;
 }
 
 // Adds borders and border-radius.
 .table-bordered,
 %table-bordered {
-  border: $table-bordered-border;
-  border-radius: $table-bordered-border-radius;
+  border: DSTableVars.$table-bordered-border;
+  border-radius: DSTableVars.$table-bordered-border-radius;
 }
 
 .table-bordered th + th,
@@ -129,7 +128,7 @@ table tbody + tbody,
 %table-bordered th + td,
 .table-bordered td + th,
 %table-bordered td + th {
-  border-left: $table-border-left;
+  border-left: DSTableVars.$table-border-left;
 }
 
 .table-bordered thead:first-child tr:first-child th,
@@ -145,32 +144,32 @@ table tbody + tbody,
 %table-bordered thead:first-child tr:first-child th:first-child,
 .table-bordered tbody:first-child tr:first-child td:first-child,
 %table-bordered tbody:first-child tr:first-child td:first-child {
-  border-radius: $table-bordered-child-radius 0 0 0;
+  border-radius: DSTableVars.$table-bordered-child-radius 0 0 0;
 }
 
 .table-bordered thead:first-child tr:first-child th:last-child,
 %table-bordered thead:first-child tr:first-child th:last-child,
 .table-bordered tbody:first-child tr:first-child td:last-child,
 %table-bordered tbody:first-child tr:first-child td:last-child {
-  border-radius: 0 $table-bordered-child-radius 0 0;
+  border-radius: 0 DSTableVars.$table-bordered-child-radius 0 0;
 }
 
 .table-bordered thead:last-child tr:last-child th:first-child,
 %table-bordered thead:last-child tr:last-child th:first-child,
 .table-bordered tbody:last-child tr:last-child td:first-child,
 %table-bordered tbody:last-child tr:last-child td:first-child {
-  border-radius: 0 0 0 $table-bordered-child-radius;
+  border-radius: 0 0 0 DSTableVars.$table-bordered-child-radius;
 }
 
 .table-bordered thead:last-child tr:last-child th:last-child,
 %table-bordered thead:last-child tr:last-child th:last-child,
 .table-bordered tbody:last-child tr:last-child td:last-child,
 %table-bordered tbody:last-child tr:last-child td:last-child {
-  border-radius: 0 0 $table-bordered-child-radius 0;
+  border-radius: 0 0 DSTableVars.$table-bordered-child-radius 0;
 }
 
 .complex-table td {
-  background: $white;
+  background: DSColors.$white;
 }
 
 .table-minimal {
@@ -182,8 +181,8 @@ table tbody + tbody,
     tr {
       display: table-row;
       border-top: 1px solid #bbb !important;
-      background: $white !important;
-      @media (max-width: $screen--S) {
+      background: DSColors.$white !important;
+      @media (max-width: DSGridVars.$screen--S) {
         display: flex;
         flex-direction: column;
         padding-bottom: 3rem;
@@ -192,9 +191,9 @@ table tbody + tbody,
         vertical-align: top;
         border: none;
         line-height: 28px;
-        background: $white !important;
+        background: DSColors.$white !important;
 
-        @media (max-width: $screen--S) {
+        @media (max-width: DSGridVars.$screen--S) {
           width: 100% !important;
           padding-top: 3rem !important;
           padding-bottom: 0 !important;

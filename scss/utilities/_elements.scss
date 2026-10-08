@@ -1,15 +1,17 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 .no-border {
   border: none;
 }
 .grey-border-top {
-  border-top: 1px solid $grey2;
+  border-top: 1px solid DSColors.$grey2;
 }
 .grey-border-bottom {
-  border-bottom: 1px solid $grey2;
+  border-bottom: 1px solid DSColors.$grey2;
 }
 .top-border-grey2 {
-  border-top: 1px $gray2 solid;
+  border-top: 1px DSColors.$gray2 solid;
 }
 .bottom-border-grey2 {
-  border-bottom: 1px $gray2 solid;
+  border-bottom: 1px DSColors.$gray2 solid;
 }

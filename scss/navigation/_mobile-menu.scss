@@ -1,3 +1,7 @@
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+
 .mobile-primary-nav,
 .mm-mobile-primary-nav {
   width: 100vw;
@@ -15,7 +19,7 @@
     max-width: 75vw;
     width: 75vw;
     height: 100%;
-    background: $heritage;
+    background: DSColors.$heritage;
     align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -133,7 +137,7 @@
     }
 
     .mobile-nav-header {
-      background-color: $heritage;
+      background-color: DSColors.$heritage;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -141,7 +145,7 @@
       width: 100%;
       min-height: 16%;
       padding: 2rem 2rem 1rem 3rem;
-      color: $white;
+      color: DSColors.$white;
 
       & > span {
         width: 2rem;
@@ -221,7 +225,7 @@
   .header-button,
   .utility-nav-buttons {
     display: flex;
-    // background: $white;
+    // background: DSColors.$white;
     box-shadow: none;
     margin: 0;
     border-radius: 2.5px;
@@ -256,7 +260,7 @@
     flex-direction: column;
     .header-inner-wrap {
       width: 100%;
-      @media (max-width: $screen--M) {
+      @media (max-width: DSGridVars.$screen--M) {
         padding-top: 0;
         padding-right: 0;
       }
@@ -300,7 +304,7 @@
         }
       }
 
-      @include mobile-util-nav-links;
+      @include DSLinkMixins.mobile-util-nav-links;
     }
     .utility-nav {
       display: flex;
@@ -309,7 +313,7 @@
       .utility-nav-buttons {
         display: none;
       }
-      @include mobile-util-nav-links;
+      @include DSLinkMixins.mobile-util-nav-links;
     }
   }
 }

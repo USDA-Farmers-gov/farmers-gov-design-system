@@ -1,3 +1,5 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 @mixin radio-button-input($dimension, $input-border-color, $checked-color) {
   label.checked input:not(:checked) {
     @include checked($checked-color);
@@ -8,7 +10,7 @@
     height: $dimension;
     margin: 0.2rem 0.75rem 0.3rem 0;
     border: 0.2rem solid $input-border-color;
-    background-color: $white;
+    background-color: DSColors.$white;
     border-radius: 50%;
     appearance: none;
     -webkit-appearance: none;
@@ -26,7 +28,7 @@
     &:disabled,
     &.disabled {
       cursor: auto;
-      border: 0.2rem solid $grey3;
+      border: 0.2rem solid DSColors.$grey3;
       background: #f7f7f7;
       &:hover {
         cursor: auto;
@@ -66,7 +68,7 @@
     &:disabled,
     &.disabled {
       cursor: auto;
-      border: 0.2rem solid $grey3;
+      border: 0.2rem solid DSColors.$grey3;
       background: #f7f7f7;
       &:hover {
         cursor: auto;
@@ -77,7 +79,7 @@
 
 @mixin checked($checked-color) {
   background-color: $checked-color;
-  border: 0.2rem solid $white;
+  border: 0.2rem solid DSColors.$white;
   box-shadow: 0 0 0 0.2rem $checked-color;
   appearance: none;
   -webkit-appearance: none;

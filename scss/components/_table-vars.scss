@@ -1,5 +1,7 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 // Table Settings
-$table-border-color: $grey3;
+$table-border-color: DSColors.$grey3;
 
 $table-border-width: 1px;
 $table-border-style: solid;
@@ -13,8 +15,8 @@ $table-cell-text-align: left;
 $table-cell-border-top: $table-border-width $table-border-style
   $table-border-color;
 $table-header-font-weight: bold;
-$table-header-background-color: $grey2;
-$table-subheader-background-color: $grey1;
+$table-header-background-color: DSColors.$grey2;
+$table-subheader-background-color: DSColors.$grey1;
 $table-body-border-top: 0.1rem $table-border-style $table-border-color;
 $table-condensed-padding: 2.4rem;
 $table-bordered-border: $table-border-width $table-border-style

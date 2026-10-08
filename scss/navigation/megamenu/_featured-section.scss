@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+
 .mm-grid-featured {
   width: 34.8rem;
   background-color: #efefef;
@@ -48,10 +51,10 @@
     line-height: 2rem;
     margin-bottom: 1rem;
     &:hover {
-      @include underline-hover;
+      @include DSLinkMixins.underline-hover;
     }
     &:visited {
-      color: $heritage !important;
+      color: DSColors.$heritage !important;
     }
   }
   ul.nav-mega-menu-featured-links {
@@ -67,7 +70,7 @@
       line-height: 2rem;
       a {
         background: none !important;
-        color: $heritage;
+        color: DSColors.$heritage;
         border-bottom: none;
         font-size: 1.4rem !important;
         text-decoration: none;
@@ -78,7 +81,7 @@
         width: 0.4rem;
         height: 0.4rem;
         border-radius: 50%;
-        background: $asphalt;
+        background: DSColors.$asphalt;
         display: inline-block;
         margin: 0.8rem 1rem 0 0;
       }

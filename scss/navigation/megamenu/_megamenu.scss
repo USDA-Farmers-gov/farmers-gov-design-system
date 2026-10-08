@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 $nav-link-top-spacing: 0.25rem;
 $nav-panel-mobile-width: 96vw;
 
@@ -12,7 +15,7 @@ $nav-panel-mobile-width: 96vw;
 
 @mixin nav-mega-menu-link {
   display: block;
-  color: $heritage;
+  color: DSColors.$heritage;
   font-size: 1.4rem;
   font-weight: 700;
   text-decoration: none;
@@ -23,7 +26,7 @@ $nav-panel-mobile-width: 96vw;
   margin-top: 3px;
   border-style: solid;
   border-width: 0 0 3px 0;
-  border-bottom-color: $white;
+  border-bottom-color: DSColors.$white;
 }
 
 @mixin mobile-menu-on-tablet {
@@ -58,7 +61,7 @@ body {
     }
   }
 
-  @media (min-width: $break--M) and (hover: none) and (pointer: coarse) {
+  @media (min-width: DSGridVars.$break--M) and (hover: none) and (pointer: coarse) {
 
     .main-header>.container,
     .usa-banner-inner.container {
@@ -187,7 +190,7 @@ body {
         a {
           height: fit-content;
           align-self: center;
-          color: $white;
+          color: DSColors.$white;
           text-decoration: none;
           font-size: 1.6rem;
           font-weight: 500;
@@ -201,7 +204,7 @@ body {
             background: none;
             text-shadow: none !important;
             -webkit-text-stroke: unset !important;
-            border-bottom: 3px $white solid;
+            border-bottom: 3px DSColors.$white solid;
           }
         }
 
@@ -212,7 +215,7 @@ body {
             display: inline-block;
             left: -4px;
             position: relative;
-            border-color: $white;
+            border-color: DSColors.$white;
             border-width: 0 2px 2px 0;
             border-style: solid;
             padding: 3.5px;
@@ -231,7 +234,7 @@ body {
         .tbm-link-container .nav-arrow.first-level {
           &:before {
             top: -2px;
-            border-color: $heritage;
+            border-color: DSColors.$heritage;
             border-width: 0 2px 2px 0;
             border-style: solid;
             transform: rotate(-135deg);
@@ -267,14 +270,14 @@ body {
 
   &.open {
     .tbm-link-container {
-      background: $white;
+      background: DSColors.$white;
       border-radius: 0.25rem 0.25rem 0 0;
       height: 100%;
       // border-bottom: 3px transparent solid;
       margin: 0.5rem 0 0 0;
 
       a {
-        color: $heritage !important;
+        color: DSColors.$heritage !important;
 
         &:focus {
           box-shadow: unset;

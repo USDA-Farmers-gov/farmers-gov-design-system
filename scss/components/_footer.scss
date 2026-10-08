@@ -1,5 +1,8 @@
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 footer {
-  @media (max-width: $screen--L) {
+  @media (max-width: DSGridVars.$screen--L) {
     .container {
       padding-left: 2rem;
       padding-right: 2rem;
@@ -7,7 +10,7 @@ footer {
   }
   .footer-primary-section {
     background: #f1f1f1;
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
       .medium-12,
       > .container {
         padding-left: 5px;
@@ -18,7 +21,7 @@ footer {
       display: flex;
       align-items: center;
       height: 8rem;
-      @media (max-width: $screen--M) {
+      @media (max-width: DSGridVars.$screen--M) {
         height: auto;
       }
       ul {
@@ -26,7 +29,7 @@ footer {
         padding-left: 0;
         margin-top: 17px;
         list-style-type: none;
-        @media (max-width: $screen--M) {
+        @media (max-width: DSGridVars.$screen--M) {
           flex-direction: column;
           width: 100%;
           margin-top: 0;
@@ -37,16 +40,16 @@ footer {
           font-weight: bold;
           padding-right: 4rem;
           margin-bottom: 0;
-          @media (max-width: $screen--M) {
+          @media (max-width: DSGridVars.$screen--M) {
             display: flex;
             align-items: center;
             height: 6.7rem;
-            border-bottom: 1px solid $grey3;
+            border-bottom: 1px solid DSColors.$grey3;
             padding-right: 0;
             padding-left: 2rem;
           }
           a {
-            color: $asphalt;
+            color: DSColors.$asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -60,27 +63,27 @@ footer {
   }
   .footer-links-container {
     display: flex;
-    @media (max-width: $screen--S) {
+    @media (max-width: DSGridVars.$screen--S) {
       padding-right: 1.5rem;
       padding-left: 1.5rem;
     }
   }
   .footer-secondary-section {
-    background: $grey1;
+    background: DSColors.$grey1;
     padding-top: 24px;
     &.footer-widget {
-      @media (max-width: $screen--S) {
+      @media (max-width: DSGridVars.$screen--S) {
         flex-direction: column;
       }
     }
     &.footer-widget .row {
-      @media (max-width: $screen--S) {
+      @media (max-width: DSGridVars.$screen--S) {
         flex-direction: column;
       }
     }
     .footer-links-nav {
       display: flex;
-      @media (max-width: $screen--S) {
+      @media (max-width: DSGridVars.$screen--S) {
         flex-direction: column;
         ul {
           padding-left: 1rem;
@@ -102,7 +105,7 @@ footer {
           padding-right: 24px;
           a {
             font-size: 1.4rem;
-            color: $asphalt;
+            color: DSColors.$asphalt;
             text-decoration: none;
             &:hover {
               text-decoration: underline;
@@ -127,7 +130,7 @@ footer {
     }
   }
   .footer-tertiary-section {
-    background: $grey1;
+    background: DSColors.$grey1;
     padding-top: 1rem;
     padding-bottom: 3.5rem;
     left: 50%;
@@ -137,7 +140,7 @@ footer {
     position: relative;
     right: 50%;
     width: 100vw;
-    @media (max-width: $screen--S) {
+    @media (max-width: DSGridVars.$screen--S) {
       padding-right: 1.5rem;
       padding-left: 1.5rem;
     }
@@ -151,7 +154,7 @@ footer {
         }
         .agency-link {
           display: flex;
-          color: $asphalt;
+          color: DSColors.$asphalt;
           text-decoration: none;
           &:hover {
             text-decoration: underline;

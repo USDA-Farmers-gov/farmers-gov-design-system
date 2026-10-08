@@ -1,3 +1,5 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 select,
 input.fg-datepicker {
   -moz-appearance: none;
@@ -8,10 +10,10 @@ input.fg-datepicker {
   background-position: right 16px center;
   background-repeat: no-repeat;
   background-size: 1.3rem;
-  border: 1px solid $grey4;
+  border: 1px solid DSColors.$grey4;
   border-radius: 2px;
   box-sizing: border-box;
-  color: $asphalt;
+  color: DSColors.$asphalt;
   display: block;
   font-size: 1.7rem;
   font-weight: 700;
@@ -23,22 +25,22 @@ input.fg-datepicker {
   width: 100%;
   &:focus,
   &.focus {
-    box-shadow: 0px 0px 4px 0 $focus;
+    box-shadow: 0px 0px 4px 0 DSColors.$focus;
     &:hover {
       background-color: #fff;
     }
   }
   &:hover,
   &.hover {
-    background-color: $softgreen;
+    background-color: DSColors.$softgreen;
   }
   &:disabled,
   &.disabled {
-    background-color: $grey1;
+    background-color: DSColors.$grey1;
     background-image: image("arrow-down-disabled.svg");
-    border: 1px solid $grey3;
+    border: 1px solid DSColors.$grey3;
     cursor: not-allowed;
-    color: $grey3;
+    color: DSColors.$grey3;
   }
 }
 input.fg-datepicker {

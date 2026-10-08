@@ -1,9 +1,11 @@
+@use 'variables' as DSGridVars;
+
 //
 //  Utilities -> Grid
 //  _____________________________________________
 @use 'sass:math';
 
-@mixin grid-column($_gutter: $grid__gutter) {
+@mixin grid-column($_gutter: DSGridVars.$grid__gutter) {
     flex: 0 0 100%;
     max-width: 100%;
     // Prevent columns from collapsing when empty
@@ -11,27 +13,27 @@
     // Inner gutter via padding
     padding-left: math.div($_gutter, 2);
     padding-right: math.div($_gutter, 2);
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
         padding-left: 0;
         padding-right: 0;
     }
 }
 
 //  Centered container element
-@mixin init-container($_gutter: $grid__gutter) {
+@mixin init-container($_gutter: DSGridVars.$grid__gutter) {
     margin-right: auto;
     margin-left: auto;
-    max-width: $container_width;
+    max-width: DSGridVars.$container_width;
     padding-left: math.div($_gutter, 2);
     padding-right: math.div($_gutter, 2);
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
 }
 
 //  Creates a wrapper for a series of columns
-@mixin init-row($_gutter: $grid__gutter) {
+@mixin init-row($_gutter: DSGridVars.$grid__gutter) {
     display: flex;
     flex: 0 1 auto;
     flex-direction: row;
@@ -40,64 +42,64 @@
     margin-right: 0;
     margin-left: math.div($_gutter, -2);
     margin-right: math.div($_gutter, -2);
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
         margin-left: 0;
         margin-right: 0;
     }
 }
 
 //  Generate extra small columns
-@mixin create-X($_columns, $_gutter: $grid__gutter) {
+@mixin create-X($_columns, $_gutter: DSGridVars.$grid__gutter) {
     @include grid-column($_gutter);
-    max-width: math.percentage(math.div($_columns, $grid__columns));
+    max-width: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
 }
 
 @mixin create-X--offset($_columns) {
-    margin-left: math.percentage(math.div($_columns, $grid__columns));
+    margin-left: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
 }
 
 //  Generate small columns
-@mixin create-S($_columns, $_gutter: $grid__gutter) {
+@mixin create-S($_columns, $_gutter: DSGridVars.$grid__gutter) {
     @include grid-column($_gutter);
 
-    @media (min-width: $screen--S) {
-        max-width: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--S) {
+        max-width: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
 @mixin create-S--offset($_columns) {
-    @media (min-width: $screen--S) {
-        margin-left: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--S) {
+        margin-left: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
 //  Generate medium columns
-@mixin create-M($_columns, $_gutter: $grid__gutter) {
+@mixin create-M($_columns, $_gutter: DSGridVars.$grid__gutter) {
     @include grid-column($_gutter);
 
-    @media (min-width: $screen--M) {
-        max-width: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--M) {
+        max-width: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
 @mixin create-M--offset($_columns) {
-    @media (min-width: $screen--M) {
-        margin-left: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--M) {
+        margin-left: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
 //  Generate large columns
-@mixin create-L($_columns, $_gutter: $grid__gutter) {
+@mixin create-L($_columns, $_gutter: DSGridVars.$grid__gutter) {
     @include grid-column($_gutter);
 
-    @media (min-width: $screen--L) {
-        max-width: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--L) {
+        max-width: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
 @mixin create-L--offset($_columns) {
-    @media (min-width: $screen--L) {
-        margin-left: math.percentage(math.div($_columns, $grid__columns));
+    @media (min-width: DSGridVars.$screen--L) {
+        margin-left: math.percentage(math.div($_columns, DSGridVars.$grid__columns));
     }
 }
 
@@ -106,10 +108,10 @@
 @mixin create-all-grid-columns(
     $i: 1,
     $list:
-        ".#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}"
+        ".#{DSGridVars.$name--X}#{$i}, .#{DSGridVars.$name--S}#{$i}, .#{DSGridVars.$name--M}#{$i}, .#{DSGridVars.$name--L}#{$i}, .#{DSGridVars.$name--XL}#{$i}"
 ) {
-    @for $i from (1 + 1) through $grid__columns {
-        $list: "#{$list}, .#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}";
+    @for $i from (1 + 1) through DSGridVars.$grid__columns {
+        $list: "#{$list}, .#{DSGridVars.$name--X}#{$i}, .#{DSGridVars.$name--S}#{$i}, .#{DSGridVars.$name--M}#{$i}, .#{DSGridVars.$name--L}#{$i}, .#{DSGridVars.$name--XL}#{$i}";
     }
     #{$list} {
         @include grid-column();
@@ -119,13 +121,13 @@
 @mixin calc-grid-column($index, $class, $type) {
     @if ($type == width) and ($index > 0) {
         .#{$class}#{$index} {
-            flex-basis: math.percentage(math.div($index, $grid__columns));
-            max-width: math.percentage(math.div($index, $grid__columns));
+            flex-basis: math.percentage(math.div($index, DSGridVars.$grid__columns));
+            max-width: math.percentage(math.div($index, DSGridVars.$grid__columns));
         }
     }
     @if ($type == offset) {
         .#{$class}--offset#{$index} {
-            margin-left: math.percentage(math.div($index, $grid__columns));
+            margin-left: math.percentage(math.div($index, DSGridVars.$grid__columns));
         }
     }
     @if ($type == order) {
@@ -177,15 +179,15 @@
 
 // Create grid for specific class
 @mixin create-grid-columns($_class) {
-    @include loop-grid-columns($grid__columns, $_class, width);
-    @include loop-grid-columns($grid__columns, $_class, offset);
-    @include loop-grid-columns($grid__columns, $_class, order);
+    @include loop-grid-columns(DSGridVars.$grid__columns, $_class, width);
+    @include loop-grid-columns(DSGridVars.$grid__columns, $_class, offset);
+    @include loop-grid-columns(DSGridVars.$grid__columns, $_class, order);
     @include create-positioning-row($_class);
 }
 
 // Reverse Column Order
 .col-reverse-sm {
-    @media screen and (max-width: $screen--M) {
+    @media screen and (max-width: DSGridVars.$screen--M) {
         display: flex;
         flex-direction: column-reverse !important;
     }

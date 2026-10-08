@@ -1,3 +1,7 @@
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../farmers-gov-design-system/scss/elements/typography' as DSTypography;
+
 .header-button {
   position: absolute;
   top: 0;
@@ -8,7 +12,7 @@
   height: 48px;
   vertical-align: middle;
   border-radius: 0 0 2px 2px;
-  background-color: $white;
+  background-color: DSColors.$white;
   box-shadow: 0 3px 14px 0 #d8d8d8;
   width: 216px;
   display: flex;
@@ -21,7 +25,7 @@
   font-size: 16px;
   line-height: 20px;
   padding: 1.6rem;
-  color: $asphalt;
+  color: DSColors.$asphalt;
   text-decoration: none;
   width: 100%;
   text-align: center;
@@ -31,11 +35,11 @@
   -webkit-text-stroke: 1px #fff0;
 }
 .header-button a .arrow {
-  border: solid $asphalt;
+  border: solid DSColors.$asphalt;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
-  color: $asphalt;
+  color: DSColors.$asphalt;
   margin-left: 1px;
   top: -1px;
   position: relative;
@@ -53,22 +57,22 @@
 #search-field-mobile {
   display: flex;
   margin-bottom: 0;
-  background-color: $heritage;
+  background-color: DSColors.$heritage;
   label.usa-sr-only {
-    background-color: $heritage !important;
+    background-color: DSColors.$heritage !important;
     color: #fff !important;
   }
   span.usa-sr-only {
-    background-color: $heritage !important;
+    background-color: DSColors.$heritage !important;
     color: #fff !important;
   }
   form.search {
     margin: 1.5rem 2rem;
   }
   [type="search"] {
-    font-family: $public-sans;
+    font-family: DSTypography.$public-sans;
     display: block;
-    color: $asphalt;
+    color: DSColors.$asphalt;
     width: calc(100% - 4.5rem);
     max-width: 46rem;
     outline: 0;
@@ -87,7 +91,7 @@
     background-image: image("search.svg");
     background-position: 50%;
     background-repeat: no-repeat;
-    background-color: $grey1;
+    background-color: DSColors.$grey1;
     width: 4.5rem;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -109,7 +113,7 @@
 .main-header {
   .skip-nav {
     background: transparent;
-    color: $asphalt;
+    color: DSColors.$asphalt;
     left: 0;
     padding: 1rem 1.5rem;
     position: absolute;
@@ -131,7 +135,7 @@
     height: 80px;
     padding-top: 1.5rem;
 
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
       height: auto;
     }
     & > div {
@@ -149,7 +153,7 @@
       right: 7px;
       top: 0;
       z-index: 1;
-      background-color: $white;
+      background-color: DSColors.$white;
     }
   }
 }
@@ -192,9 +196,9 @@
 .agency-banner {
   a.agency-logo-text {
     text-decoration: none;
-    color: $asphalt;
+    color: DSColors.$asphalt;
     &:hover {
-      color: $asphalt;
+      color: DSColors.$asphalt;
       text-shadow: none;
       -webkit-text-stroke: inherit;
     }
@@ -212,7 +216,7 @@
     float: left;
     font-size: 2rem;
     font-weight: 500;
-    @media (max-width: $screen--S) {
+    @media (max-width: DSGridVars.$screen--S) {
       margin-top: -0.5rem;
       font-size: 1.6rem;
     }
@@ -223,14 +227,14 @@
     text-transform: uppercase;
     font-size: 1.35rem;
     margin-top: 4px;
-    @media (max-width: $screen--S) {
+    @media (max-width: DSGridVars.$screen--S) {
       font-size: 1.2rem;
     }
   }
 }
 
 .primary-nav-wrap {
-  background: $heritage;
+  background: DSColors.$heritage;
   height: 64px;
   position: relative;
 
