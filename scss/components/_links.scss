@@ -1,5 +1,6 @@
 @use '../elements/colors' as DSColors;
 @use '../mixins/link-mixins' as DSLinkMixins;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 @mixin text-link-psuedo {
   &:visited,
@@ -69,7 +70,7 @@ a {
     right: 1.5rem;
     height: 4rem;
     width: 4rem;
-    background: image("caret-right.svg") no-repeat 99.5% 0.4rem;
+    background: DSPathHelper.image("caret-right.svg") no-repeat 99.5% 0.4rem;
     background-size: 2rem;
   }
   @include text-link-psuedo;
@@ -89,7 +90,7 @@ a {
     margin-right: -4rem;
     height: 2rem;
     width: 1.6rem;
-    background: image("external-link-icon.svg") no-repeat;
+    background: DSPathHelper.image("external-link-icon.svg") no-repeat;
     background-position: right 0.9rem;
     background-size: 1.2rem;
   }
@@ -118,7 +119,7 @@ a {
     display: inline-block;
     flex-shrink: 0;
     vertical-align: top;
-    background: image("leaves.svg") no-repeat;
+    background: DSPathHelper.image("leaves.svg") no-repeat;
     width: 18px;
     height: 26px;
     float: left;

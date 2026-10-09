@@ -1,4 +1,5 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 // United States Government Affiliate Banner
 // DO NOT CHANGE!!!
@@ -93,8 +94,8 @@
   .usa-banner-button[aria-expanded="false"] {
     background-image: none;
     &:after {
-      background-image: image("angle-arrow-down-primary.png");
-      background-image: image("angle-arrow-down-primary.svg");
+      background-image: DSPathHelper.image("angle-arrow-down-primary.png");
+      background-image: DSPathHelper.image("angle-arrow-down-primary.svg");
       background-size: 100%;
       content: "";
       display: inline-block;
@@ -105,8 +106,8 @@
   }
   .usa-banner-button[aria-expanded="true"] {
     &:after {
-      background-image: image("angle-arrow-up-primary.png");
-      background-image: image("angle-arrow-up-primary.svg");
+      background-image: DSPathHelper.image("angle-arrow-up-primary.png");
+      background-image: DSPathHelper.image("angle-arrow-up-primary.svg");
       background-size: 100%;
       content: "";
       display: inline-block;

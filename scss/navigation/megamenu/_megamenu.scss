@@ -2,7 +2,6 @@
 @use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
 
 $nav-link-top-spacing: 0.25rem;
-$nav-panel-mobile-width: 96vw;
 
 @mixin nav-arrow-shared-styles {
   position: relative;

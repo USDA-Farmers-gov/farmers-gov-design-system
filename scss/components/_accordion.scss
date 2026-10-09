@@ -1,5 +1,6 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 .box-accordion {
 
@@ -38,7 +39,7 @@
       color: DSColors.$white;
 
       .box-accordion-toggle {
-        background-image: image("box-accordion-minus.svg");
+        background-image: DSPathHelper.image("box-accordion-minus.svg");
         &::after {
           content: "\00a0";
           display: block;
@@ -65,7 +66,7 @@
       margin-top: 1rem;
       height: 4rem;
       width: 100%;
-      background-image: image("box-accordion-plus.svg");
+      background-image: DSPathHelper.image("box-accordion-plus.svg");
       background-size: 3.2rem;
       background-repeat: no-repeat;
       background-position: left 0.8rem;
@@ -178,11 +179,11 @@
       background-size: 1.2rem;
       background-repeat: no-repeat;
       background-position: right 0.9rem;
-      background-image: image("accordion-expand-blue.svg");
+      background-image: DSPathHelper.image("accordion-expand-blue.svg");
       text-decoration: none;
     }
     .card-accordion-show-less {
-      background-image: image("accordion-collapse-blue.svg");
+      background-image: DSPathHelper.image("accordion-collapse-blue.svg");
       background-position: right 1.3rem;
     }
   }

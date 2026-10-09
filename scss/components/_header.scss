@@ -1,14 +1,12 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
 @use '../../../farmers-gov-design-system/scss/elements/typography' as DSTypography;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 .header-button {
   position: absolute;
   top: 0;
   right: 0;
-  // float: right;
-  // margin-left: auto;
-  // margin-top: -20px;
   height: 48px;
   vertical-align: middle;
   border-radius: 0 0 2px 2px;
@@ -88,7 +86,7 @@
     line-height: 22px;
   }
   [type="submit"] {
-    background-image: image("search.svg");
+    background-image: DSPathHelper.image("search.svg");
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: DSColors.$grey1;

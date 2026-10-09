@@ -1,3 +1,5 @@
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
+
 .icon {
   width: 4.4rem;
   height: 4.4rem;
@@ -6,50 +8,50 @@
   background-position: center;
   background-repeat: no-repeat;
   &.caret-right {
-    background-image: image("caret-right.svg");
+    background-image: DSPathHelper.image("caret-right.svg");
   }
   &.search {
-    background-image: image("search.svg");
+    background-image: DSPathHelper.image("search.svg");
   }
   &.chevron-up {
-    background-image: image("chevron-up.svg");
+    background-image: DSPathHelper.image("chevron-up.svg");
     transform: rotateX(180deg);
   }
   &.chevron-down {
-    background-image: image("chevron-down.svg");
+    background-image: DSPathHelper.image("chevron-down.svg");
   }
   &.close {
-    background-image: image("close.svg");
+    background-image: DSPathHelper.image("close.svg");
   }
   &.external-link {
-    background-image: image("external-link.svg");
+    background-image: DSPathHelper.image("external-link.svg");
   }
   &.accordion-expand {
-    background-image: image("accordion-expand.svg");
+    background-image: DSPathHelper.image("accordion-expand.svg");
   }
   &.accordion-collapse {
-    background-image: image("accordion-collapse.svg");
+    background-image: DSPathHelper.image("accordion-collapse.svg");
   }
   &.popover {
-    background-image: image("popover.svg");
+    background-image: DSPathHelper.image("popover.svg");
   }
   &.info {
-    background-image: image("info.svg");
+    background-image: DSPathHelper.image("info.svg");
   }
   &.mail {
-    background-image: image("mail.svg");
+    background-image: DSPathHelper.image("mail.svg");
   }
   &.print {
-    background-image: image("print.svg");
+    background-image: DSPathHelper.image("print.svg");
   }
   &.location {
-    background-image: image("location.svg");
+    background-image: DSPathHelper.image("location.svg");
   }
   &.phone {
-    background-image: image("Phone.svg");
+    background-image: DSPathHelper.image("Phone.svg");
   }
   &.globe {
-    background-image: image("globe.svg");
+    background-image: DSPathHelper.image("globe.svg");
   }
 }
 .header-icon {
@@ -57,7 +59,7 @@
   &.globe:before {
     content: "";
     display: inline-block;
-    background-image: image("globe.svg");
+    background-image: DSPathHelper.image("globe.svg");
     background-repeat: no-repeat;
   }
 }
@@ -116,15 +118,15 @@ h6.header-icon.globe:before,
   background-position: center;
   background-repeat: no-repeat;
   &.farmer {
-    background-image: image("farmer.svg");
+    background-image: DSPathHelper.image("farmer.svg");
   }
   &.mfp {
-    background-image: image("mfp.svg");
+    background-image: DSPathHelper.image("mfp.svg");
   }
   &.land {
-    background-image: image("land.svg");
+    background-image: DSPathHelper.image("land.svg");
   }
   &.barn {
-    background-image: image("barn.svg");
+    background-image: DSPathHelper.image("barn.svg");
   }
 }

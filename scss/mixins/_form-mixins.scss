@@ -1,4 +1,5 @@
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 @mixin radio-button-input($dimension, $input-border-color, $checked-color) {
   label.checked input:not(:checked) {
@@ -56,7 +57,7 @@
       @include checked($checked-color);
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: image("correct8.svg");
+      background-image: DSPathHelper.image("correct8.svg");
       border: none !important;
     }
     &:hover {

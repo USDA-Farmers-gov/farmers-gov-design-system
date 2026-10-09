@@ -1,11 +1,9 @@
-// @import "../tb-megamenu/base_styles";
-// @import "../tb-megamenu/default_styles";
-@import "megamenu";
-@import "megamenu-no-sidemenu";
-@import "megamenu-mobile";
-@import "links-container";
-@import "sidemenu";
-@import "featured-section";
+@use "megamenu";
+@use "megamenu-no-sidemenu";
+@use "megamenu-mobile";
+@use "links-container";
+@use "sidemenu";
+@use "featured-section";
 
 $nav-link-top-spacing: 0.25rem;
 

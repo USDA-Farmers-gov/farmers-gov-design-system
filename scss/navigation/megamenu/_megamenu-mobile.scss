@@ -1,5 +1,6 @@
 @use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
 @use '../../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+@use "../../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 @use '../main-menu';
 
 $close-button-height: 5.5rem;
@@ -70,7 +71,7 @@ $close-button-height: 5.5rem;
         width: 1.2rem;
         height: 1.2rem;
         margin-left: 1rem;
-        background-image: image("close-plus-white.svg");
+        background-image: DSPathHelper.image("close-plus-white.svg");
         background-repeat: no-repeat;
       }
     }

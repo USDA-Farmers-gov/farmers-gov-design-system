@@ -1,5 +1,6 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 footer {
   @media (max-width: DSGridVars.$screen--L) {
@@ -190,17 +191,17 @@ footer {
   text-decoration: none;
 }
 .twitter-link {
-  background: image("social-icons/outline/svg/twitter-outline.svg") no-repeat;
+  background: DSPathHelper.image("social-icons/outline/svg/twitter-outline.svg") no-repeat;
 }
 .facebook-link {
-  background: image("social-icons/outline/svg/facebook-outline.svg") no-repeat;
+  background: DSPathHelper.image("social-icons/outline/svg/facebook-outline.svg") no-repeat;
 }
 .instagram-link {
-  background: image("social-icons/outline/svg/instagram-outline.svg") no-repeat;
+  background: DSPathHelper.image("social-icons/outline/svg/instagram-outline.svg") no-repeat;
 }
 .flickr-link {
-  background: image("social-icons/outline/svg/flickr-outline.svg") no-repeat;
+  background: DSPathHelper.image("social-icons/outline/svg/flickr-outline.svg") no-repeat;
 }
 .youtube-link {
-  background: image("social-icons/outline/svg/youtube-outline.svg") no-repeat;
+  background: DSPathHelper.image("social-icons/outline/svg/youtube-outline.svg") no-repeat;
 }

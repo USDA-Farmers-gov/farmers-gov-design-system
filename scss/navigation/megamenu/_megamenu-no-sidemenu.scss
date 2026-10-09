@@ -1,5 +1,7 @@
 @use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 
+$nav-panel-mobile-width: 96vw;
+
 .tbm-submenu.tbm-item-child.nav-submenu {
   .mm-landing-page-banner {
     left: 6rem;

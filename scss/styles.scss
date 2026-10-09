@@ -1,9 +1,9 @@
 // Farmers Design System 1.0 (...not)
+
 @use "settings";
 
 // Flexbox Grid
-// @use "grid/styles";
-@use "path-helper";
+@use "grid/styles" as *;
 
 // @use "mixins/mixins";
 @use "elements/colors";
@@ -53,3 +53,6 @@
 
 // Utilties
 @use "utilities/utilities";
+
+// Grid
+@use "grid/grid";

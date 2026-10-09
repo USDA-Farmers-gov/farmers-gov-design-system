@@ -1,5 +1,5 @@
 @use 'variables' as DSGridVars;
-@use 'utilities' as DSUtilities;
+@use 'utilities' as DSGridUtilities;
 
 //
 //  Grid
@@ -7,47 +7,47 @@
 
 
 .container {
-    @include DSUtilities.init-container();
+    @include DSGridUtilities.init-container();
 }
 
 .row {
-    @include DSUtilities.init-row();
+    @include DSGridUtilities.init-row();
 }
 
 //  Make all grid columns
 //  ---------------------------------------------
 
-@include DSUtilities.create-all-grid-columns();
+@include DSGridUtilities.create-all-grid-columns();
 
 //  Columns X
 //  ---------------------------------------------
 
-@include DSUtilities.create-grid-columns(DSGridVars.$name--X);
+@include DSGridUtilities.create-grid-columns(DSGridVars.$name--X);
 
 //  Columns S
 //  ---------------------------------------------
 
 @media (min-width: DSGridVars.$screen--S) {
-    @include DSUtilities.create-grid-columns(DSGridVars.$name--S);
+    @include DSGridUtilities.create-grid-columns(DSGridVars.$name--S);
 }
 
 //  Columns M
 //  ---------------------------------------------
 
 @media (min-width: DSGridVars.$screen--M) {
-    @include DSUtilities.create-grid-columns(DSGridVars.$name--M);
+    @include DSGridUtilities.create-grid-columns(DSGridVars.$name--M);
 }
 
 //  Columns L
 //  ---------------------------------------------
 
 @media (min-width: DSGridVars.$screen--L) {
-    @include DSUtilities.create-grid-columns(DSGridVars.$name--L);
+    @include DSGridUtilities.create-grid-columns(DSGridVars.$name--L);
 }
 
 //  Columns XL
 //  ---------------------------------------------
 
 @media (min-width: DSGridVars.$screen--XL) {
-    @include DSUtilities.create-grid-columns(DSGridVars.$name--XL);
+    @include DSGridUtilities.create-grid-columns(DSGridVars.$name--XL);
 }

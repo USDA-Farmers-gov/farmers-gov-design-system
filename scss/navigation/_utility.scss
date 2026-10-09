@@ -1,5 +1,6 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 .utility-nav-links {
   display: flex;
@@ -17,7 +18,7 @@
       font-size: 1.2rem;
       text-decoration: none;
       &.icon-globe {
-        background-image: image("globe.svg");
+        background-image: DSPathHelper.image("globe.svg");
         background-repeat: no-repeat;
         padding-left: 1.4rem;
         background-position: left 3px;

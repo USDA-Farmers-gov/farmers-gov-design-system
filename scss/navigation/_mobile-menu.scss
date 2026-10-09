@@ -1,6 +1,7 @@
 @use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
 @use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
 @use '../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
 
 .mobile-primary-nav,
 .mm-mobile-primary-nav {
@@ -81,7 +82,7 @@
               cursor: pointer;
 
               &.has-submenu {
-                background-image: image("arrow-right-white.svg");
+                background-image: DSPathHelper.image("arrow-right-white.svg");
                 background-repeat: no-repeat;
                 background-size: 1rem;
                 background-position: right center;
@@ -127,7 +128,7 @@
               }
 
               .nav-arrow {
-                background-image: image("arrow-right-white.svg");
+                background-image: DSPathHelper.image("arrow-right-white.svg");
                 background-size: 0.8rem;
               }
             }
@@ -150,7 +151,7 @@
       & > span {
         width: 2rem;
         height: 2rem;
-        background-image: image("close-white.svg");
+        background-image: DSPathHelper.image("close-white.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 1.8rem;
@@ -161,7 +162,7 @@
       }
       div.mobile-menu-back {
         width: 100%;
-        background-image: image("arrow-left-white.svg");
+        background-image: DSPathHelper.image("arrow-left-white.svg");
         background-repeat: no-repeat;
         background-size: 1rem;
         background-position: left center;
