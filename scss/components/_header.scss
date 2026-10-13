@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .header-button a {
   display: block;
   font-weight: Bold;
@@ -28,10 +29,12 @@
   width: 100%;
   text-align: center;
 }
+
 .header-button a:hover {
   text-shadow: 0 0 0.08rem #fff0;
   -webkit-text-stroke: 1px #fff0;
 }
+
 .header-button a .arrow {
   border: solid DSColors.$asphalt;
   border-width: 0 2px 2px 0;
@@ -44,6 +47,7 @@
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+
 @media screen and (max-width: 1000px) {
   .header-button {
     display: none;
@@ -56,17 +60,21 @@
   display: flex;
   margin-bottom: 0;
   background-color: DSColors.$heritage;
+
   label.usa-sr-only {
     background-color: DSColors.$heritage !important;
     color: #fff !important;
   }
+
   span.usa-sr-only {
     background-color: DSColors.$heritage !important;
     color: #fff !important;
   }
+
   form.search {
     margin: 1.5rem 2rem;
   }
+
   [type="search"] {
     font-family: DSTypography.$public-sans;
     display: block;
@@ -85,6 +93,7 @@
     margin: 0;
     line-height: 22px;
   }
+
   [type="submit"] {
     background-image: DSPathHelper.image("search.svg");
     background-position: 50%;
@@ -103,11 +112,13 @@
     border-top: none;
     border-right: none;
   }
+
   div[role="search"] {
     max-width: 21.6rem;
     display: flex;
   }
 }
+
 .main-header {
   .skip-nav {
     background: transparent;
@@ -128,6 +139,7 @@
       transition: all 0.2s ease-in-out;
     }
   }
+
   .header-inner-wrap {
     position: relative;
     height: 80px;
@@ -136,7 +148,8 @@
     @media (max-width: DSGridVars.$screen--M) {
       height: auto;
     }
-    & > div {
+
+    &>div {
       display: flex;
       justify-content: space-between;
 
@@ -159,6 +172,7 @@
 .utility-nav {
   display: flex;
   align-items: baseline;
+
   .utility-nav-links {
     margin-top: 3.2rem;
     margin-right: 0;
@@ -167,23 +181,28 @@
     display: flex;
     justify-content: space-around;
   }
+
   .utility-nav-buttons {
     padding-top: 2px !important;
     padding-right: 0 !important;
+
     .seperator {
       position: relative;
       top: -1px;
       font-size: 1.2rem;
       align-self: center;
     }
+
     a {
       border-radius: 0 !important;
       font-size: 1.2rem;
       padding-left: 0.3rem;
       padding-right: 0.3rem;
+
       &:first-child {
         padding-left: 1.5rem;
       }
+
       &:last-child {
         padding-right: 0;
       }
@@ -195,15 +214,18 @@
   a.agency-logo-text {
     text-decoration: none;
     color: DSColors.$asphalt;
+
     &:hover {
       color: DSColors.$asphalt;
       text-shadow: none;
       -webkit-text-stroke: inherit;
     }
   }
+
   img {
     height: 45px;
   }
+
   .agency-logo {
     margin-right: 12px;
   }
@@ -214,17 +236,20 @@
     float: left;
     font-size: 2rem;
     font-weight: 500;
+
     @media (max-width: DSGridVars.$screen--S) {
       margin-top: -0.5rem;
       font-size: 1.6rem;
     }
   }
+
   .tagline {
     float: left;
     font-weight: 200;
     text-transform: uppercase;
     font-size: 1.35rem;
     margin-top: 4px;
+
     @media (max-width: DSGridVars.$screen--S) {
       font-size: 1.2rem;
     }
@@ -236,7 +261,7 @@
   height: 64px;
   position: relative;
 
-  & > .container {
+  &>.container {
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -52,7 +52,7 @@ $nav-link-top-spacing: 0.25rem;
 body {
 
   // mobile device
-  @media only screen and (hover: none) and (pointer: coarse) {
+  @media (max-width: DSGridVars.$break--L) {
     @include mobile-menu-on-tablet;
 
     .main-header .header-inner-wrap {
@@ -71,8 +71,11 @@ body {
     }
 
     .main-header .header-inner-wrap {
-      padding-right: 0;
       margin-right: 0;
+
+      @media (max-width: DSGridVars.$break--L) {
+        padding-right: 0;
+      }
     }
   }
 }
