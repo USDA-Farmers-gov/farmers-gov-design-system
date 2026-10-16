@@ -1,7 +1,8 @@
-@import "./table-vars";
-@import "../mixins/_mobile-tables-mixins";
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../mixins/_mobile-tables-mixins" as DSMobileTableMixins;
 
-@media (max-width: $screen--M) {
+@media (max-width: DSGridVars.$screen--M) {
   table {
     visibility: hidden;
   }
@@ -9,19 +10,19 @@
     visibility: visible;
   }
   .simple-table:not(.table-minimal) {
-    @include simple-table-mobile;
+    @include DSMobileTableMixins.simple-table-mobile;
   }
   .complex-table {
-    @include complex-table-mobile;
+    @include DSMobileTableMixins.complex-table-mobile;
   }
 }
 
 .show-simple-mobile-table {
-  @include simple-table-mobile;
+  @include DSMobileTableMixins.simple-table-mobile;
 }
 
 .show-complex-mobile-table {
-  @include complex-table-mobile;
+  @include DSMobileTableMixins.complex-table-mobile;
   width: fit-content;
   td {
     max-width: 60px;
@@ -30,7 +31,7 @@
 }
 
 div.mobile-static-column-container {
-  @media screen and (max-width: $screen--M) {
+  @media screen and (max-width: DSGridVars.$screen--M) {
     overflow: auto;
     width: 100%;
 
@@ -43,21 +44,21 @@ div.mobile-static-column-container {
 
       td:first-child,
       th:first-child {
-        border-left: 1px solid $grey3;
+        border-left: 1px solid DSColors.$grey3;
         position: sticky;
         left: 0;
         z-index: 1;
-        box-shadow: 8px 2px 10px -2px $grey3;
+        box-shadow: 8px 2px 10px -2px DSColors.$grey3;
       }
       tr th {
-        background-color: $grey2;
+        background-color: DSColors.$grey2;
       }
       tr:nth-child(even) td {
-        background-color: $grey1;
+        background-color: DSColors.$grey1;
       }
 
       tr:nth-child(odd) td {
-        background-color: $white;
+        background-color: DSColors.$white;
       }
       thead tr th {
         position: sticky;

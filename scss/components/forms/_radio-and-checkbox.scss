@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../../farmers-gov-design-system/scss/mixins/form-mixins' as DSFormMixins;
+
 label.radio-button-label,
 label.cb-label {
   width: fit-content;
@@ -11,10 +14,10 @@ label.cb-label {
     cursor: pointer;
   }
   &:focus-within {
-    @include form-focus-outline;
+    @include DSFormMixins.form-focus-outline;
   }
   &.disabled {
-    color: $grey3;
+    color: DSColors.$grey3;
     background-color: unset !important;
     &:hover {
       cursor: auto;
@@ -22,5 +25,5 @@ label.cb-label {
   }
 }
 
-@include radio-button-input(2.4rem, $grey4, $heritage);
-@include cb-input(2.4rem, $grey4, $heritage);
+@include DSFormMixins.radio-button-input(2.4rem, DSColors.$grey4, DSColors.$heritage);
+@include DSFormMixins.cb-input(2.4rem, DSColors.$grey4, DSColors.$heritage);

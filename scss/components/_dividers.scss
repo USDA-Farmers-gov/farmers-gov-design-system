@@ -1,3 +1,6 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../mixins/mobile-mixins' as DSMobileMixins;
+
 // DIVIDERS
 
 // Tool Dividers
@@ -5,8 +8,8 @@
   margin: 2rem 0;
   height: 10px;
   width: 100%;
-  border-top: 2px solid $grey3;
-  border-bottom: 2px solid $grey3;
+  border-top: 2px solid DSColors.$grey3;
+  border-bottom: 2px solid DSColors.$grey3;
 }
 
 // Primary Divider
@@ -15,7 +18,7 @@
   max-width: 100%;
   margin: 35px auto;
   text-align: center;
-  @include mobile-mix("iPhone") {
+  @include DSMobileMixins.mobile-mix("iPhone") {
     margin: 45px auto 35px auto;
   }
   // Line without leaves image
@@ -65,7 +68,7 @@
 }
 
 .divider-solid-light {
-  border-bottom: 1px solid $grey2;
+  border-bottom: 1px solid DSColors.$grey2;
   margin: 35px auto;
   width: 100%;
 }

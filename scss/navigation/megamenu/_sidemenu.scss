@@ -1,9 +1,10 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 %sidemenu-active-link {
-  background: $softgreen !important;
+  background: DSColors.$softgreen !important;
   cursor: pointer;
-  // border-left: 0.4rem $heritage solid !important;
   overflow: hidden;
-  color: $asphalt;
+  color: DSColors.$asphalt;
   text-shadow: none;
   -webkit-text-stroke: unset;
 }
@@ -14,7 +15,7 @@
 }
 .tbm-item.level-1.open {
   > .tbm-submenu.tbm-item-child.nav-submenu {
-    background: $white;
+    background: DSColors.$white;
     visibility: visible !important;
   }
 }
@@ -36,13 +37,6 @@
   }
 }
 
-// .tbm-item.level-2.tbm-item--has-flyout {
-//   &.open {
-//     .tbm-submenu {
-//       visibility: visible !important;
-//     }
-//   }
-// }
 ul.sidemenu {
   list-style-type: none;
   padding-left: 0;
@@ -64,17 +58,15 @@ ul.sidemenu {
         width: 100%;
         padding: 0.5rem 0 !important;
         &:hover {
-          color: $asphalt !important;
+          color: DSColors.$asphalt !important;
         }
         &:focus {
           outline-style: none;
-          // outline-width: 0 !important;
           outline-color: unset !important;
         }
       }
       &:focus {
-        color: $asphalt !important;
-        // border: none !important;
+        color: DSColors.$asphalt !important;
         .tbm-toggle {
           outline-color: unset;
         }
@@ -82,8 +74,7 @@ ul.sidemenu {
       &:hover {
         @extend %sidemenu-active-link;
 
-        border-left: 0.4rem $heritage solid;
-        // padding-left: 0 !important;
+        border-left: 0.4rem DSColors.$heritage solid;
       }
     }
     &.tbm-item.level-2.tbm-item--has-flyout {
@@ -95,14 +86,12 @@ ul.sidemenu {
           &:before {
             content: "";
             position: relative;
-            // float: right;
             border-width: 0 2px 2px 0;
             border-style: solid;
             padding: 3.5px;
             height: 4px;
             width: 4px;
-            // margin-left: auto;
-            border-color: $asphalt;
+            border-color: DSColors.$asphalt;
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
           }
@@ -111,9 +100,9 @@ ul.sidemenu {
       &.open {
         .tbm-link-container {
           @extend %sidemenu-active-link;
-          border-left: 0.4rem $heritage solid;
+          border-left: 0.4rem DSColors.$heritage solid;
           &:focus {
-            color: $asphalt !important;
+            color: DSColors.$asphalt !important;
             border: none !important;
           }
         }
@@ -122,7 +111,7 @@ ul.sidemenu {
     .tbm-toggle {
       display: flex;
       text-decoration: none;
-      color: $asphalt;
+      color: DSColors.$asphalt;
       padding: 1rem 2rem 1rem 1rem !important;
       border-left: 0.4rem transparent solid;
       .arrow {
@@ -130,24 +119,15 @@ ul.sidemenu {
         margin-left: auto;
       }
       &:focus {
-        color: $asphalt !important;
-        // border: none !important;
+        color: DSColors.$asphalt !important;
       }
-
-      // &.active,
-      // &.active:hover,
-      // &.sidemenu-hover,
-      // &.sidemenu-hover:hover {
-      //   @extend %sidemenu-active-link;
-      //   border-left: 0.4rem $heritage solid;
-      // }
     }
 
     > a:hover,
     > a:visited:hover,
     .sidemenu-hover-plain {
       @extend %sidemenu-active-link;
-      border-left: 0.4rem $softgreen solid;
+      border-left: 0.4rem DSColors.$softgreen solid;
     }
   }
 }

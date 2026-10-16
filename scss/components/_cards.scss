@@ -1,10 +1,12 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 .card {
   border-radius: 2px;
   box-shadow: 0 3px 14px 0 #d8d8d8;
   background: #fff;
   &:focus {
     border: 0;
-    outline: 2px solid $focus;
+    outline: 2px solid DSColors.$focus;
   }
 }
 
@@ -34,7 +36,7 @@
   }
 
   .headline {
-    border-bottom: 0.4rem solid $heritage;
+    border-bottom: 0.4rem solid DSColors.$heritage;
     &.no-bottom-border {
       border-bottom: none;
     }
@@ -52,7 +54,7 @@
   }
 
   &.accent-top {
-    border-top: 0.6rem solid $heritage;
+    border-top: 0.6rem solid DSColors.$heritage;
     border-radius: 0.2rem 0.2rem 0 0;
     .content {
       p {
@@ -94,7 +96,7 @@
 
   .link {
     a {
-      color: $heritage;
+      color: DSColors.$heritage;
       cursor: pointer;
       font-family: "Public Sans";
       font-size: 20px;
@@ -104,17 +106,17 @@
       margin-bottom: 0.8rem;
       &:hover,
       &.hover {
-        color: $sweetgrass;
+        color: DSColors.$sweetgrass;
         text-shadow: 0 0 0px #fff0;
         -webkit-text-stroke: 0 #fff0;
       }
       &:focus,
       &.focus {
-        color: $sweetgrass;
+        color: DSColors.$sweetgrass;
       }
       &:visited,
       &.visited {
-        color: $visited;
+        color: DSColors.$visited;
       }
     }
   }

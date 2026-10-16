@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 .simple-stepper {
   .question-and-answer {
     .question {
@@ -29,7 +32,7 @@
   line-height: 40px;
   border-radius: 50%;
   color: #fff;
-  background: $sweetgrass;
+  background: DSColors.$sweetgrass;
   font-size: 20px;
   font-weight: bold;
 }
@@ -56,10 +59,10 @@
     .start-over {
       padding-left: 0;
     }
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
       align-items: flex-start;
       .start-over-container {
-        border-top: 2px solid $grey2;
+        border-top: 2px solid DSColors.$grey2;
         width: 100%;
         .start-over {
           padding-top: 1.5rem;
@@ -72,7 +75,7 @@
         margin-left: 0;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        @media (max-width: $screen--M) {
+        @media (max-width: DSGridVars.$screen--M) {
           .icon.print {
             margin-left: -1rem;
           }

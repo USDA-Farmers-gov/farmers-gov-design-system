@@ -1,4 +1,4 @@
-@import "flex";
+@use "flex";
 $textAlign: left, right, center, justify;
 $positions: static, fixed, absolute, relative, sticky;
 

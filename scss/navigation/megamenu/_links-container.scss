@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 @mixin underline-hover {
   text-shadow: none;
   -webkit-text-stroke: unset;
@@ -5,7 +8,7 @@
 }
 %nav-mega-menu-link {
   display: block;
-  color: $heritage;
+  color: DSColors.$heritage;
   font-size: 1.4rem;
   font-weight: 700;
   text-decoration: none;
@@ -20,7 +23,7 @@
 .tbm-item.level-2.tbm-item--has-flyout {
   .subcategory {
     grid-template-columns: repeat(2, 50%);
-    @media (max-width: $screen--M) {
+    @media (max-width: DSGridVars.$screen--M) {
       grid-template-columns: auto;
     }
   }
@@ -39,7 +42,7 @@
 
 .mm-card-grid {
   position: relative;
-  background: $white;
+  background: DSColors.$white;
   display: flex;
   width: 112.2rem;
   .mm-grid-blocks {
@@ -49,7 +52,7 @@
     padding-right: 1rem;
     padding-left: 2rem;
     width: 52.4rem;
-    @media (max-width: $screen--L) {
+    @media (max-width: DSGridVars.$screen--L) {
       width: auto;
     }
     .subcategory {
@@ -70,7 +73,7 @@
             text-decoration: underline;
             text-shadow: none;
             -webkit-text-stroke: unset;
-            background: $softgreen;
+            background: DSColors.$softgreen;
           }
         }
       }
@@ -82,7 +85,7 @@
       font-size: 1.4rem;
       line-height: 2.2rem;
       font-weight: 400;
-      color: $asphalt;
+      color: DSColors.$asphalt;
       word-break: break-word;
       p {
         @extend .nav-mega-menu-link-description;
@@ -131,7 +134,7 @@
           text-decoration: none;
           text-shadow: none;
           -webkit-text-stroke: unset;
-          background: $softgreen;
+          background: DSColors.$softgreen;
         }
         .link-text:hover {
           @include underline-hover;
@@ -142,7 +145,7 @@
           font-size: 1.4rem;
           line-height: 2.2rem;
           font-weight: 400;
-          color: $asphalt;
+          color: DSColors.$asphalt;
           word-break: break-word;
           p {
             @extend .nav-mega-menu-link-description;
@@ -152,9 +155,7 @@
       }
     }
     .nav-mega-menu-feature {
-      // position: relative;
-      // left: 0.6rem;
-      background: $grey1;
+      background: DSColors.$grey1;
       max-width: 34.8rem;
       height: 100%;
       display: flex;
@@ -169,7 +170,7 @@
           @include underline-hover;
         }
       }
-      background: $grey1;
+      background: DSColors.$grey1;
       .nav-mega-menu-featured-title {
         font-size: 1.6rem;
         font-weight: 700;

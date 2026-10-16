@@ -1,6 +1,8 @@
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
+
 .box-accordion {
-  // width: 34.6rem;
-  // margin: 1rem 1rem;
 
   @media screen and (max-width: 768px) {
     margin-bottom: 2rem;
@@ -14,9 +16,9 @@
     min-height: 20rem;
     min-height: 20rem;
     width: 100%;
-    background: $white;
+    background: DSColors.$white;
     padding: 2.4rem;
-    box-shadow: 0 1px 4px 0 $grey3;
+    box-shadow: 0 1px 4px 0 DSColors.$grey3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,16 +35,16 @@
     }
 
     &[aria-expanded="true"] {
-      background-color: $sweetgrass;
-      color: $white;
+      background-color: DSColors.$sweetgrass;
+      color: DSColors.$white;
 
       .box-accordion-toggle {
-        background-image: image("box-accordion-minus.svg");
+        background-image: DSPathHelper.image("box-accordion-minus.svg");
         &::after {
           content: "\00a0";
           display: block;
           visibility: visible;
-          background: $sweetgrass;
+          background: DSColors.$sweetgrass;
           width: 4rem;
           height: 4rem;
           position: relative;
@@ -64,7 +66,7 @@
       margin-top: 1rem;
       height: 4rem;
       width: 100%;
-      background-image: image("box-accordion-plus.svg");
+      background-image: DSPathHelper.image("box-accordion-plus.svg");
       background-size: 3.2rem;
       background-repeat: no-repeat;
       background-position: left 0.8rem;
@@ -74,10 +76,10 @@
   .Accordion-panel {
     padding: 4rem 2.4rem 3.2rem 2.4rem;
     position: relative;
-    background: $white;
-    box-shadow: 0 1px 6px 0 $grey3;
-    border-top: 0.8rem solid $sweetgrass;
-    @media (max-width: $screen--S) {
+    background: DSColors.$white;
+    box-shadow: 0 1px 6px 0 DSColors.$grey3;
+    border-top: 0.8rem solid DSColors.$sweetgrass;
+    @media (max-width: DSGridVars.$screen--S) {
       width: 100% !important;
     }
   }
@@ -87,8 +89,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: $white;
-  box-shadow: 0 1px 4px 0 $grey3;
+  background: DSColors.$white;
+  box-shadow: 0 1px 4px 0 DSColors.$grey3;
   padding: 3.2rem 3.2rem 2.4rem 3.2rem;
   overflow: hidden;
   width: 100%;
@@ -102,7 +104,7 @@
     }
   }
   &.accent-top {
-    border-top: 0.6rem solid $heritage;
+    border-top: 0.6rem solid DSColors.$heritage;
     border-radius: 0.2rem 0.2rem 0 0;
   }
   &.padding-sm {
@@ -167,8 +169,8 @@
     text-transform: uppercase;
     a:hover,
     a:visited:hover {
-      text-shadow: 0 0 0.08rem $dkblue !important;
-      -webkit-text-stroke: 1px $dkblue !important;
+      text-shadow: 0 0 0.08rem DSColors.$dkblue !important;
+      -webkit-text-stroke: 1px DSColors.$dkblue !important;
     }
 
     .btn {
@@ -177,16 +179,16 @@
       background-size: 1.2rem;
       background-repeat: no-repeat;
       background-position: right 0.9rem;
-      background-image: image("accordion-expand-blue.svg");
+      background-image: DSPathHelper.image("accordion-expand-blue.svg");
       text-decoration: none;
     }
     .card-accordion-show-less {
-      background-image: image("accordion-collapse-blue.svg");
+      background-image: DSPathHelper.image("accordion-collapse-blue.svg");
       background-position: right 1.3rem;
     }
   }
 }
 .card-accordion-horizontal-content {
   padding: 3.4rem 3.2rem;
-  box-shadow: 0 1px 4px 0 $grey3;
+  box-shadow: 0 1px 4px 0 DSColors.$grey3;
 }

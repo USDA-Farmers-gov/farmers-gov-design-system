@@ -1,3 +1,7 @@
+@use '../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use '../../../farmers-gov-design-system/scss/mixins/link-mixins' as DSLinkMixins;
+@use "../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
+
 .usa-banner-text #nav-branding-bar {
   margin-left: auto;
   margin-top: 4px;
@@ -18,17 +22,17 @@
       a {
         padding: 0 6px;
         &:visited {
-          color: $heritage;
+          color: DSColors.$heritage;
         }
       }
-      @include grey-bg-link-hover;
+      @include DSLinkMixins.grey-bg-link-hover;
     }
     li:last-of-type a {
       padding-right: 0;
     }
   }
   .icon-globe {
-    background-image: image("globe.svg") !important;
+    background-image: DSPathHelper.image("globe.svg") !important;
     background-repeat: no-repeat;
     padding-left: 1.7rem !important;
     margin-left: 7px;

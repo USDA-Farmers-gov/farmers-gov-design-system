@@ -1,3 +1,5 @@
+@use '../../../farmers-gov-design-system/scss/grid/variables' as DSGridVars;
+
 $flexWrap: wrap, "wrap-reverse", nowrap;
 $flexJustifyContent: "flex-start", "flex-end", center, end, "space-between",
   "space-around", "space-evenly";
@@ -7,13 +9,13 @@ $mobileSizes: "l", "m", "s";
 
 @function get-viewport-size($size) {
   @if ($size == "l") {
-    @return $screen--L;
+    @return DSGridVars.$screen--L;
   }
   @if ($size == "m") {
-    @return $screen--M;
+    @return DSGridVars.$screen--M;
   }
   @if ($size == "s") {
-    @return $screen--S;
+    @return DSGridVars.$screen--S;
   }
   @return 0;
 }

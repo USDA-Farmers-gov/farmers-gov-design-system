@@ -1,3 +1,6 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+@use "../../../../farmers-gov-design-system/scss/path-helper" as DSPathHelper;
+
 // Toast and alerts
 .alert-wrapper {
   padding-top: 0;
@@ -29,7 +32,7 @@
           &:before {
             content: "";
             display: inline-block;
-            background-image: image("alerts/error.svg");
+            background-image: DSPathHelper.image("alerts/error.svg");
             background-repeat: no-repeat;
             background-size: 2.4rem 2.4rem;
             background-position: 0 1px;
@@ -67,15 +70,15 @@
     }
     a {
       float: none;
-      color: $heritage !important;
+      color: DSColors.$heritage !important;
     }
     a.btn {
       float: none;
-      color: $white !important;
+      color: DSColors.$white !important;
     }
     a.btn.outline {
       float: none;
-      color: $bigsky !important;
+      color: DSColors.$bigsky !important;
     }
     p:first-of-type {
       margin-top: 0;
@@ -107,19 +110,19 @@
 }
 .usa-alert-info {
   background-color: #e2eeff;
-  border-left: 1rem solid $bigsky;
+  border-left: 1rem solid DSColors.$bigsky;
   &:before {
-    background-color: $bigsky;
+    background-color: DSColors.$bigsky;
   }
 }
 .usa-alert-warning {
-  background-color: $softyellow;
+  background-color: DSColors.$softyellow;
   border-left: 1rem solid #fdb81e;
 }
 
 .usa-alert-success {
   background-color: #dbede0;
-  border-left: 1rem solid $sweetgrass;
+  border-left: 1rem solid DSColors.$sweetgrass;
 }
 .usa-alert-error {
   background-color: #f9dede;
@@ -130,12 +133,12 @@
 .usa-alert-info,
 .usa-alert-error {
   .usa-alert-body {
-    background-image: image("alerts/info-icon.svg");
+    background-image: DSPathHelper.image("alerts/info-icon.svg");
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: 9px 11px;
     &.exclamation-icon {
-      background-image: image("alerts/error.svg");
+      background-image: DSPathHelper.image("alerts/error.svg");
     }
   }
 }

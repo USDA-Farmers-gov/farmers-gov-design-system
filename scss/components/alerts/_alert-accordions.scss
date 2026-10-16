@@ -1,3 +1,5 @@
+@use '../../../../farmers-gov-design-system/scss/elements/colors' as DSColors;
+
 // alert accordion
 .alert-accordion-wrapper {
   padding-bottom: 1.5rem;
@@ -19,7 +21,7 @@
   }
   .alert-accordion-content {
     background: #ffffff;
-    box-shadow: 0 0.3rem 0.4rem 0 $grey3;
+    box-shadow: 0 0.3rem 0.4rem 0 DSColors.$grey3;
     border-radius: 0.2rem;
     padding: 2rem 4rem 4rem 4rem;
   }

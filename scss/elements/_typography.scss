@@ -1,15 +1,18 @@
+@use 'colors';
+@use "../path-helper" as DSPathHelper;
+
 @at-root {
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Regular.eot"),
-      font("public-sans/PublicSans-Regular.eot?#iefix")
+    src: DSPathHelper.font("public-sans/PublicSans-Regular.eot"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.eot?#iefix")
         format("embedded-opentype"),
-      font("public-sans/PublicSans-Regular.woff2") format("woff2"),
-      font("public-sans/PublicSans-Regular.woff") format("woff"),
-      font("public-sans/PublicSans-Regular.woff2") format("woff2"),
-      font("public-sans/PublicSans-Regular.otf") format("opentype"),
-      font("public-sans/PublicSans-Regular.ttf") format("truetype"),
-      font("public-sans/PublicSans-Regular.svg#public_sansregular")
+      DSPathHelper.font("public-sans/PublicSans-Regular.woff2") format("woff2"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.woff") format("woff"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.woff2") format("woff2"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.otf") format("opentype"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.ttf") format("truetype"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.svg#public_sansregular")
         format("svg");
     font-weight: normal;
     font-style: normal;
@@ -17,106 +20,106 @@
 
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Black.ttf"),
-      font("public-sans/PublicSans-Black.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Black.ttf"),
+      DSPathHelper.font("public-sans/PublicSans-Black.ttf") format("truetype");
     font-weight: 900;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-ExtraBold.woff"),
-      font("public-sans/PublicSans-ExtraBold.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-ExtraBold.woff"),
+      DSPathHelper.font("public-sans/PublicSans-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Bold.woff"),
-      font("public-sans/PublicSans-Bold.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Bold.woff"),
+      DSPathHelper.font("public-sans/PublicSans-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-SemiBold.woff"),
-      font("public-sans/PublicSans-SemiBold.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-SemiBold.woff"),
+      DSPathHelper.font("public-sans/PublicSans-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Medium.woff"),
-      font("public-sans/PublicSans-Medium.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Medium.woff"),
+      DSPathHelper.font("public-sans/PublicSans-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Regular.woff"),
-      font("public-sans/PublicSans-Regular.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Regular.woff"),
+      DSPathHelper.font("public-sans/PublicSans-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Light.woff"),
-      font("public-sans/PublicSans-Light.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Light.woff"),
+      DSPathHelper.font("public-sans/PublicSans-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-ExtraLight.woff"),
-      font("public-sans/PublicSans-ExtraLight.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-ExtraLight.woff"),
+      DSPathHelper.font("public-sans/PublicSans-ExtraLight.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-Italic.woff"),
-      font("public-sans/PublicSans-Italic.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-Italic.woff"),
+      DSPathHelper.font("public-sans/PublicSans-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
   }
   @font-face {
     font-family: "Public Sans";
-    src: font("public-sans/PublicSans-BoldItalic.woff"),
-      font("public-sans/PublicSans-BoldItalic.ttf") format("truetype");
+    src: DSPathHelper.font("public-sans/PublicSans-BoldItalic.woff"),
+      DSPathHelper.font("public-sans/PublicSans-BoldItalic.ttf") format("truetype");
     font-weight: bold;
     font-style: italic;
   }
   @font-face {
     font-family: "Merriweather";
-    src: font("merriweather/Latin-Merriweather-Regular.woff"),
-      font("merriweather/Latin-Merriweather-Regular.ttf") format("truetype");
+    src: DSPathHelper.font("merriweather/Latin-Merriweather-Regular.woff"),
+      DSPathHelper.font("merriweather/Latin-Merriweather-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "Merriweather";
-    src: font("merriweather/Latin-Merriweather-Bold.woff"),
-      font("merriweather/Latin-Merriweather-Bold.ttf") format("truetype");
+    src: DSPathHelper.font("merriweather/Latin-Merriweather-Bold.woff"),
+      DSPathHelper.font("merriweather/Latin-Merriweather-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
     font-family: "Merriweather";
-    src: font("merriweather/Latin-Merriweather-BoldItalic.woff"),
-      font("merriweather/Latin-Merriweather-BoldItalic.ttf") format("truetype");
+    src: DSPathHelper.font("merriweather/Latin-Merriweather-BoldItalic.woff"),
+      DSPathHelper.font("merriweather/Latin-Merriweather-BoldItalic.ttf") format("truetype");
     font-weight: 700;
     font-style: italic;
   }
   @font-face {
     font-family: "Merriweather";
-    src: font("merriweather/Latin-Merriweather-Light.woff"),
-      font("merriweather/Latin-Merriweather-Light.ttf") format("truetype");
+    src: DSPathHelper.font("merriweather/Latin-Merriweather-Light.woff"),
+      DSPathHelper.font("merriweather/Latin-Merriweather-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "Merriweather";
-    src: font("merriweather/Latin-Merriweather-LightItalic.woff"),
-      font("merriweather/Latin-Merriweather-LightItalic.ttf") format("truetype");
+    src: DSPathHelper.font("merriweather/Latin-Merriweather-LightItalic.woff"),
+      DSPathHelper.font("merriweather/Latin-Merriweather-LightItalic.ttf") format("truetype");
     font-weight: 300;
     font-style: italic;
   }
@@ -135,7 +138,7 @@ $public-sans: "Public Sans";
 html {
   // firefox select option would default to a serif system font if a fall back is not specified
   font-family: $public-sans, sans-serif;
-  color: $asphalt;
+  color: colors.$asphalt;
 }
 
 h1,
@@ -145,7 +148,7 @@ h4,
 h5,
 h6 {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -189,7 +192,7 @@ h6,
 
 .label {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -197,7 +200,7 @@ h6,
 
 .lead-p {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 300;
   font-size: 2.2rem;
   line-height: 3.4rem;
@@ -206,7 +209,7 @@ h6,
 .body-p,
 p {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 2.8rem;
@@ -214,7 +217,7 @@ p {
 
 .subheading {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -222,7 +225,7 @@ p {
 
 .caption {
   font-family: $public-sans;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -230,7 +233,7 @@ p {
 
 .blog-body-p {
   font-family: $merriweather;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 3rem;
@@ -238,7 +241,7 @@ p {
 
 .blog-block-quote {
   font-family: $merriweather;
-  color: $asphalt;
+  color: colors.$asphalt;
   font-weight: 300;
   font-size: 2.8rem;
   line-height: 3.4rem;
