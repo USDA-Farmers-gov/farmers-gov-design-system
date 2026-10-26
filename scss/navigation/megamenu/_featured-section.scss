@@ -49,6 +49,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     &:hover {
       @include DSLinkMixins.underline-hover;
@@ -83,7 +84,7 @@
         border-radius: 50%;
         background: DSColors.$asphalt;
         display: inline-block;
-        margin: 0.8rem 1rem 0 0;
+        margin: 1.5rem 1rem 0 0;
       }
     }
   }
